@@ -1,0 +1,77 @@
+.registerBtn,
+.loginBtn,
+.registerBtn a,
+.loginBtn a,
+.slider,
+.footer,
+.footer p,
+.stepsSection .steps .count,
+.headerBox .darkSwitch
+ {
+    color: white;
+}
+.sideBar{
+    color: var(--secondary-color);
+}
+.infoText .socialLinks small {
+    color: blue;
+}
+
+.headerContainer .ulContainer ul li a {
+    color: var(--light-black-color);
+}
+
+.section2 .myAbout,
+.section2 .group2,
+.section2 .group3,
+.testimonialSection,
+.stepsSection .heading,
+.group1 .part1,
+.group1 .part3,
+.section5 .group2 p:nth-child(2),
+.infoText .subHeading1 {
+    color: var(--light-black-color);
+}
+
+.myAbout p:nth-child(1),
+.copy,
+.testimonialSection .reviewer h3:nth-child(2),
+.section5 .group2 p:nth-child(1),
+.section5 .group2 .btns .button1:nth-child(1) {
+    color: var(--secondary-color);
+}
+
+.stepsSection .steps .btn {
+    color: var(--primary-color);
+}
+
+.section2 span {
+    color: var(--light-black-color);
+}
+
+/* register login css */
+.container .section2 {
+    background-color: white;
+}
+
+.container .section1 {
+    background-color: var(--secondary-color);
+}
+
+.container .section1 .text {
+    color: white;
+}
+
+.container .section2 .group1 input {
+    color: var(--light-black-color);
+    border: .2rem solid var(--light-black-color);
+}
+
+.container .section2 {
+    color: var(--light-black-color);
+}
+
+.container .section2 .group1 input {
+    color: var(--light-black-color);
+    border: .2rem solid var(--light-black-color);
+}

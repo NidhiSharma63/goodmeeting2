@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container .section1 {
+    flex-grow: 1;
+}
+
+.container .section2 {
+    width: 55rem;
+}
+
+.container .section1 .logo img {
+    width: 14rem;
+    margin: 1rem;
+}
+
+.container .section2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .section2 .section2Container {
+    height: 46rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.container .section2 .section2Container p:nth-child(1) {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.container .section2 .group1 {
+    display: flex;
+    flex-direction: column;
+    height: 21rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .section2 .group1 input {
+    width: 20rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+}
+
+.container .section2 .group1 input:focus {
+    outline: none;
+}
+
+.container .section2 .group1 input::placeholder {
+    font-size: 1.6rem;
+}
+
+.container .section2 .group1 input[type='checkbox'] {
+    width: 3rem;
+}
+
+.container .section2 .group1 label {
+    font-size: 1.3rem;
+}
+
+.container .section2 .button1 {
+    width: 25rem;
+}
+
+.container .section2 .group2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .section2 .group2 p:nth-child(1) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container .section2 .group2 a {
+    font-size: 1.5rem;
+}

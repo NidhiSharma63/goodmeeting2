@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}
+
+.root {
+    max-width: 4098px
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.font1 {
+    font-family: 'Trocchi', serif;
+}
+
+.font2 {
+    font-family: 'Merriweather', serif;
+}
+
+.fontSize1 {
+    font-size: 1.6rem;
+}
+
+.fontSize2 {
+    font-size: 2.3rem;
+}
+
+span {
+    color: var(--primary-color);
+}
+
+.button1 {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    padding: 1.5rem 0rem;
+    color: white;
+    font-size: 1.8rem;
+    border-radius: 0.3rem;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    --primary-color: rgb(229, 80, 80);
+    --secondary-color: rgb(41, 99, 224);
+    --light-black-color: #313640;
+}
+
+.letterSpacing {
+    letter-spacing: .1rem;
+}
+
+.fixed {
+    position: fixed;
+    width: 86%;
+    top: 0;
+    z-index: 5;
+    padding-top: 1rem;
+}
+
+.headerBoxFixed {
+    padding-top: .8rem !important;
+    padding-bottom: .1rem !important;
+}
+
+.section2Fixed {
+    margin-top: -14rem !important;
+}
+.hide{
+    display: none !important;
+}

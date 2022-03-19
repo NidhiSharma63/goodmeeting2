@@ -1,0 +1,95 @@
+.heroSection {
+    height: 77%;
+    display: flex;
+    justify-content: center;
+    width: 87%;
+    margin: auto;
+    margin-top: 4%;
+}
+
+.imageSection {
+    width: 103rem;
+}
+
+.imageSection img {
+    width: 100%;
+}
+
+.GoodMeet_Info_container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.GoodMeet_Info_container .infoText {
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.infoText .subHeading1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    width: 54rem;
+}
+
+.infoText .meetingLink {
+    width: 21rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    background-color: rgb(241, 241, 241);
+}
+
+.copy {
+    margin-left: .5rem;
+}
+
+.copy:hover {
+    transform: scale(1.1);
+}
+
+.infoText .subHeading2 {
+    width: 80%;
+}
+
+.infoText .getStartedBtn {
+    width: 20rem;
+    background-color: var(--secondary-color);
+}
+
+.infoText .socialLinks {
+    width: 10rem;
+}
+
+.infoText .socialLinks small {
+    font-size: 1.3rem;
+}
+
+.infoText .socialLinks .supportLogo {
+    padding-top: 2.3rem;
+    width: 9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialLinks .supportLogo .gmail,
+.socialLinks .supportLogo .outlook {
+    width: 3rem;
+}
+
+.socialLinks .supportLogo .gmail img,
+.socialLinks .supportLogo .outlook img {
+    width: 100%;
+}
+
+.socialLinks .supportLogo .gmail p,
+.socialLinks .supportLogo .outlook p {
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
+}
+
+.socialLinks .supportLogo .outlook p {
+    margin-top: 0rem;
+}

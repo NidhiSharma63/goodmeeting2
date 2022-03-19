@@ -1,0 +1,232 @@
+
+.section1 {
+    height: 100vh;
+    width: 100%;
+}
+
+.headerContainer {
+    padding: 0rem 9rem;
+    height: 13%;
+    background-color: white;
+}
+
+.headerContainer .headerBox {
+    background-color: inherit;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: .3rem;
+    align-items: center;
+    box-shadow: 0rem 0.1rem 0.1rem -0.1rem #313640;
+}
+
+.headerContainer .logoContainer, .headerContainer .sideBarLogo {
+    width: 22rem;
+}
+
+.headerContainer .logoContainer img,
+.headerContainer .sideBarLogo img 
+{
+    width: 100%;
+}
+
+.headerContainer .ulContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 29rem;
+}
+
+.headerContainer .ulContainer ul {
+    font-weight: 400;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+} 
+.headerContainer .ulContainer ul li:nth-child(1):after,
+.headerContainer .ulContainer ul li:nth-child(2):after,
+.headerContainer .ulContainer ul li:nth-child(3):after,
+.headerContainer .ulContainer ul li:nth-child(4):after {
+    content: '';
+    width: 0;
+    height: 0.2rem;
+    position: absolute;
+    background-color: var(--primary-color);
+    top: 6rem;
+    transition: all .7s;
+}
+
+.headerContainer .ulContainer ul li:nth-child(1):after {
+    left: 41rem;
+}
+
+.headerContainer .ulContainer ul li:nth-child(2):after {
+    left: 51rem;
+}
+
+.headerContainer .ulContainer ul li:nth-child(3):after {
+    left: 63.8rem;
+}
+
+.headerContainer .ulContainer ul li:nth-child(2):hover::after,
+.headerContainer .ulContainer ul li:nth-child(3):hover::after,
+.headerContainer .ulContainer ul li:nth-child(3):hover::after {
+    width: 8rem;
+}
+
+.headerContainer .ulContainer ul li:nth-child(1):hover::after {
+    width: 6rem;
+}
+
+.headerContainer .login_logout_section {
+    display: flex;
+    width: 30rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.registerBtn,
+.loginBtn {
+    font-weight: 400;
+    background-color: var(--primary-color); 
+    border-radius: .2rem;
+    padding: .8rem 2rem;
+}
+
+.loginBtn {
+    background-color: var(--secondary-color);
+    padding: .8rem 1rem;
+}
+
+.headerBox .darkSwitch {
+    border: 1px solid;
+    display: flex;
+    font-size: 2rem;
+    width: 6rem;
+    height: 4rem;
+    border-radius: 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.headerBox .darkSwitch .moon {
+    width: 4rem;
+    position: relative;
+    left: 1.5rem;
+    opacity: 0;
+}
+
+.headerBox .darkSwitch .sun {
+    width: 3rem;
+    position: relative;
+    right: 2rem;
+    z-index: 0;
+    opacity: 1;
+    transition: 1s;
+}
+
+.visible {
+    opacity: 1 !important;
+    transition: 1s;
+}
+
+.nonVisible {
+    opacity: 0 !important;
+    transition: 1s;
+}
+
+.sideBarHeaderContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.sideBar{
+    font-size: 4rem;
+}
+.sideBarDiv{
+    background-color: var(--primary-color) !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 120vh;
+    overflow: hidden;
+    width: 24rem;
+    animation: barDiv 1s;
+    display: none !important;
+}
+.sideBarDivShow{
+    display: block !important;
+}
+.sideBarDivUl{
+    margin-top: 8rem;
+    margin-right: 2rem;
+    flex-direction: column;
+    align-items: center;
+    height: 18rem;
+    justify-content: space-around;
+    font-size: 2.2rem;
+}
+.sideBarDivUl a{
+    color:  white !important;
+}
+.sideBarDivloginLogoutSection{
+    justify-content: space-between;
+    width: 24rem !important;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    height: 14rem;
+    margin-right: 2rem;
+    align-items: center;
+} 
+.sideBarDivloginLogoutSection .registerBtn{
+    background-color: var(--secondary-color);
+}
+
+.sideBarLogoAnim{
+    margin-right: 16rem;
+    animation: logoAnim 1s;
+}
+.sideBarLogoAnimHide{
+    margin-right: 0rem;
+    animation: LogoAnimHide 1s;
+}
+.sideBarDivHide{
+    width: 0;
+    animation: barDivHide 1s;
+}
+@keyframes logoAnim {
+    from{
+        margin-right: 0rem;
+    }
+    to{
+        margin-right: 16rem;
+    }
+}
+@keyframes LogoAnimHide {
+    from{
+        margin-right: 16rem;
+    }
+    to{
+        margin-right: 0rem;
+    }
+}
+@keyframes barDivHide {
+    from{
+        width: 24rem;
+    }
+    to{
+        width: 0rem;
+    }
+}
+@keyframes barDiv {
+    from{
+        width: 0rem;
+    }
+    to{
+        width: 24rem;
+    }
+}

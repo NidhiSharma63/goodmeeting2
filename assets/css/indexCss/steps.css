@@ -1,0 +1,142 @@
+.root .stepsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+.stepsSection .heading {
+    font-size: 4rem;
+}
+
+.stepsSection .steps {
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.stepsSection .steps .step1,
+.stepsSection .steps .step3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center
+}
+
+.stepsSection .steps .step2,
+.stepsSection .steps .step4 {
+    display: flex;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    justify-content: flex-end;
+}
+
+.stepsSection .steps .step2 .count {
+    margin-top: 5rem;
+}
+
+.stepsSection .steps img {
+    width: 20rem;
+}
+
+.stepsSection .steps .count {
+    margin-left: 2rem;
+    background: black;
+    margin-right: 2rem;
+    padding: 1rem 2rem;
+    height: 3rem;
+    border-radius: 50%;
+    position: relative;
+    z-index: 3;
+}
+
+.step1_text,
+.step2_text,
+.step3_text,
+.step4_text {
+    position: relative;
+}
+
+.stepsSection .steps .one::after,
+.stepsSection .steps .two::after,
+.stepsSection .steps .three::after,
+.step1_text::after,
+.stepsSection .steps .two::before,
+.stepsSection .steps .three::before,
+.stepsSection .steps .four::before,
+.step2_text::after,
+.step3_text::after {
+    content: '';
+    position: absolute;
+    border: 1px dashed var(--light-black-color);
+    width: 0;
+}
+
+.stepsSection .steps .one::after,
+.stepsSection .steps .two::after,
+.stepsSection .steps .three::after {
+    height: 11rem;
+    top: 5.1rem;
+    right: 2.1rem;
+}
+
+.step1_text::after {
+    height: 64rem;
+    top: -9.9rem;
+    right: -3.2rem;
+    transform: rotate(89.5deg);
+}
+
+.stepsSection .steps .two::before,
+.stepsSection .steps .three::before {
+    height: 12rem;
+    top: -12rem;
+    right: 2.1rem;
+}
+
+.stepsSection .steps .four::before {
+    height: 4rem;
+    top: -4rem;
+    right: 2.rem;
+}
+
+.step2_text::after {
+    height: 64rem;
+    top: -10.9rem;
+    right: 63.8rem;
+    transform: rotate(90deg);
+}
+
+.step3_text::after {
+    height: 57rem;
+    top: -4.9rem;
+    right: 4.8rem;
+    transform: rotate(90deg);
+}
+
+.stepsSection .steps .text {
+    font-size: 2.6rem;
+    letter-spacing: .1rem;
+    margin-bottom: 1.3rem;
+}
+
+.stepsSection .steps .btn {
+    margin-top: 3rem;
+    cursor: pointer;
+    background-color: inherit;
+    border: 2px solid var(--primary-color);
+    width: 20rem;
+    transition: all .3s;
+}
+
+.stepsSection .steps .btnStart {
+    width: 15rem;
+}
+
+.stepsSection .steps .btn:hover {
+    color: white;
+    background-color: var(--primary-color);
+}

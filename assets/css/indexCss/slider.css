@@ -1,0 +1,117 @@
+.slider {
+    background-color: var(--light-black-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0rem;
+    font-family: 'Merriweather', serif;
+    letter-spacing: .2rem;
+    font-weight: 600;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.section5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 63%;
+    height: 67rem;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+.testimonialSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonialSection h1 {
+    font-size: 4.6rem;
+}
+
+.testimonialSection .testimonialsText {
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+.testimonialsText .comma1,
+.testimonialsText .comma2 {
+    display: flex;
+}
+
+.testimonialsText .comma1 {
+    justify-content: flex-start;
+}
+.testimonialsText .comma1 img{
+    width: 4rem;
+}
+.testimonialsText .comma2 {
+    justify-content: flex-end;
+}
+
+.testimonialsText .comma2 img {
+    transform: rotate(180deg);
+    width: 4rem;
+}
+
+.testimonialSection .reviewer {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+}
+
+.section5 .group2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 108rem;
+    height: 22rem;
+    justify-content: space-between;
+}
+
+.section5 .group2 p:nth-child(1) {
+    font-size: 2rem;
+}
+
+.section5 .group2 p:nth-child(2) {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.section5 .group2 .btns {
+    display: flex;
+    width: 37rem;
+    justify-content: space-between;
+}
+
+.section5 .group2 .btns .button1:nth-child(1) {
+    width: 19rem;
+    border: 2px solid var(--secondary-color);
+    background-color: transparent;
+    transition: .3s ease-in-out;
+}
+
+.section5 .group2 .btns .button1:nth-child(1):hover {
+    color: white;
+    background-color: var(--secondary-color);
+}
+
+.section5 .group2 .btns .button1:nth-child(2) {
+    width: 15rem;
+}

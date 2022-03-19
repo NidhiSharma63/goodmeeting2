@@ -1,0 +1,87 @@
+.section2 {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section2 .myAbout {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 18rem; 
+}
+.myAbout p:nth-child(2) {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.section2 .group1 {
+    display: flex;
+    width: 90%;
+    height: 30rem;
+    margin: auto;
+    margin-top: 5rem;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.group1 .part1,
+.group1 .part3 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+.section2 .group1 .part3 {
+    width: 40rem;
+}
+
+.section2 .group1 .part2 {
+    margin-left: 3rem;
+}
+
+.section2 .group1 .part1 img,
+.section2 .group1 .part3 img {
+    width: 20rem;
+    margin-bottom: 3rem;
+}
+
+.section2 .group1 .part1 p:last-child {
+    font-size: 3rem;
+}
+
+.section2 .group2 {
+    text-align: center;
+}
+
+.section2 .group3 {
+    text-align: center;
+    margin-top: 6rem;
+    height: 34rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.section2 .group3 p:nth-child(2) {
+    font-size: 4rem;
+}
+
+.section2 .group3 p:nth-child(3) {
+    font-size: 2rem;
+}
+
+.section2 .group3 p:nth-child(3),
+.section2 .group3 p:nth-child(4),
+.section2 .group3 p:nth-child(2) {
+    line-height: 3.3rem;
+}
