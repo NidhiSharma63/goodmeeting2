@@ -1,9 +1,10 @@
 @media screen and (max-width: 1280px) {
-  .headerSection {
-    grid-template-columns: 20rem 1fr;
-  }
 
   .headerSection .col2 {
     display: none !important;
   }
+  .headerSection {
+    grid-template-columns: 20rem minmax(0,auto) !important;
+  }
+
 }

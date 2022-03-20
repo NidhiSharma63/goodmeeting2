@@ -1,83 +1,54 @@
 .section1{
-    border: 1px solid;
     max-width: 100%;
-    max-height: 100vh;
-    display: grid;
-    /* grid-template-columns:minmax(auto,90%); */
-   grid-template-columns: minmax(auto,500px);
-    grid-template-rows: 13vh auto;
+    border: 2px solid red;
+    grid-area: section1;
+    padding: 1rem 3rem;
 }
 .headerSection{
-    border: 1px solid;
-    padding-bottom: .7rem;
+    max-width: 100%;
     display: grid;
-    grid-template-columns: 20rem 1fr 5rem;
-    grid-template-rows: 6rem;
-    max-height: 13vh;
-    /* max-width: 90%; */
-    margin-top: 1rem;
-    /* margin-left: 5%; */
+    grid-template-columns: 22rem auto 10rem;
 }
-.section1 .headerSection .col1 img{
-    height: 100%;
-    cursor: pointer;
-}
-.section1 .headerSection .col1{
-    /* border: 1px solid red; */
-}
-.section1 .headerSection .col2{
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.section1 .headerSection .col2 .ulContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 37rem;
-}
-
- .ulContainer ul {
-    font-weight: 400;
-    display: flex;
-    font-size: 1.6rem;
+.headerSection .col1 img{
     width: 100%;
-    justify-content: space-between;
-} 
-.ulContainer ul li a{
-    color: var( --light-black-color);
 }
- .login_logout_section {
+.headerSection .col2{
+    border: 1px solid;
     display: flex;
-    width: 30rem;
     justify-content: space-around;
-    align-items: center;
 }
-
-.registerBtn,
-.loginBtn {
-    font-weight: 400;
-    background-color: var(--primary-color); 
-    border-radius: .2rem;
-    padding: .8rem 2rem;
+.headerSection .col2 .ulContainer{
+    border: 1px solid;
+    width: 58rem;
+    font-size: 1.6rem;
 }
-.registerBtn a,
-.loginBtn a {
-    color: white;
-}
-
-.loginBtn {
-    background-color: var(--secondary-color);
-    padding: .8rem 1rem;
-}
-.section1 .headerSection .col3{
-    border: 1px solid red;
+.headerSection .col2 .ulContainer ul{
     display: flex;
-    justify-content: flex-end;
+    width: 73%;
+    margin: auto;
+    height: 100%;
     align-items: center;
-    font-size: 3rem;
+    justify-content: space-around;
 }
-.section1 .headerSection .col3 img{
-    width: 100%;
+.headerSection .col2 .login_logout_section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+.headerSection .col2 .login_logout_section .loginBtn{
+    width: 16rem;
+}
+.headerSection .col2 .login_logout_section .registerBtn{
+    width: 20rem;
+}
+.headerSection .col3{
+    border: 1px solid;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.headerSection .col3 img{
+    border: 1px solid;
 }
