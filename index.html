@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="stylesheet" href="/assets/css/indexCss/header.css" />
     <link rel="stylesheet" href="/assets/css/indexCss/heroSection.css" />
+    <link rel="stylesheet" href="/assets/css/lightTheme.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
     <title>GoodMeetingGrid</title>
 </head>
@@ -20,12 +21,22 @@
     <div class="root">
         <div class="section1">
             <!-- header section -->
-            <div class="headerSection">
-                <div class="col1">
-                    <img src="/assets/images/logo.png" alt="logo">
+            <div class="headerContainer">
+                <!--side bar logo -->
+                <div class="sideBarLogo cursor hide">
+                    <img src="./assets/images/logo.png" alt="logo" width="22rem" />
                 </div>
-                <div class="col2">
-                    <div class="ulContainer font1">
+                <!-- side bar div -->
+                <div class="sideBar hide cursor">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="headerBox">
+                    <!-- logo -->
+                    <div class="logoContainer cursor">
+                        <img src="./assets/images/logo.png" alt="logo" width="22rem" />
+                    </div>
+                    <!-- ul info -->
+                    <div class="ulContainer font1 fontSize1">
                         <ul class="ul">
                             <li class="cursor"> <a href="">Home</a></li>
                             <li class="cursor"> <a href="">How it work</a></li>
@@ -41,10 +52,15 @@
                             <a href="/pages/authentication/login.html">Login</a>
                         </div>
                     </div>
-                </div>
-                <div class="col3 cursor">
-                    <i class="fa-solid fa-bars"></i>
-                    <!-- <img src="/assets/images/header/moon.png" alt="darkMode"> -->
+
+
+                    <!-- dark mode switch -->
+                    <div class="darkSwitch cursor">
+                            <img src="./assets/images/header/moon.png" alt="moon" class="moon" width="4rem">
+                            <img src="./assets/images/header/sun.png" alt="sun" class="sun" width="3rem">
+                    </div>
+
+                    <!-- header box end -->
                 </div>
             </div>
         </div>
@@ -54,22 +70,34 @@
             <!-- textSection -->
             <div class="textSection">
                 <div class="col1">
-                    <h1>A Good Meeting starts off with</h1>
+                    <h1 class="font2">A Good Meeting starts off with</h1>
                 </div>
                 <div class="col2">
                     <a href="">havea@goodmeeting.today</a><span><i class="fa-solid fa-copy copy cursor"></i></span>
                 </div>
-                <div class="col3">
+                <div class="col3 font1">
+                <p>It’s simple, create an account and keep us in cc. We will then do the rest to give you feedback on your meetings, just log back in to receive your statistics.</p>
+                </div>
+                <div class="col4">
                     <div class="button1">
                         Get Started For Free
                     </div>
                 </div>
-                <div class="col4">
+                <div class="col5 font1">
                     <small>support</small>
-                    div.g -->
+                    <div class="images">
+                        <div class="gmail">
+                            <img src="./assets/images/gmail.png" alt="gmail" width=" 3rem">
+                            <p>gmail</p>
+                        </div>
+                        <div class="outlook">
+                            <img src="./assets/images/outlook.png" alt="img" width=" 3rem">
+                            <p>outlook</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            mainImgSection -->
+            <!-- mainImgSectionzzzz -->
             <div class="mainImgSection">
                 <img src="/assets/images/main.png" alt="img">
             </div>

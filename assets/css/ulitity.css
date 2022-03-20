@@ -46,7 +46,6 @@ span {
     border-radius: 0.3rem;
     background-color: var(--primary-color);
     cursor: pointer;
-    width: 20rem;
 }
 ul{
     list-style: none;

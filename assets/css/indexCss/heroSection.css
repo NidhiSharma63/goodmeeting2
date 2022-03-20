@@ -1,7 +1,113 @@
-/* .col3 .button1{
-    width: 20rem;
-}
-.heroSection{
-    border: 1px solid yellow;
+.section2 {
+    max-width: 90%;
     margin: auto;
-} */
+    padding: 3rem 0rem;
+    display: grid;
+    gap: 3rem;
+    grid-template-areas:
+        'textSection mainImgSection'
+    ;
+    
+}
+
+.section2 .textSection {
+    grid-area: textSection;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 39rem;
+    min-width: 300px;
+    max-width: 100%;
+    margin: auto;
+    /* border: 1px solid blue; */
+}
+
+.section2 .textSection .col1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.section2 .textSection .col2 {
+    font-size: 1.6rem;
+    width: 18rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    background-color: rgb(241, 241, 241);
+}
+
+.section2 .textSection .col2 a {
+    font-weight: 700;
+}
+
+.section2 .textSection .col3 {
+    font-size: 1.4rem;
+    width: 90%;
+    letter-spacing: .1rem;
+}
+
+.copy {
+    margin-left: .5rem;
+}
+
+.copy:hover {
+    transform: scale(1.1);
+}
+
+.section2 .col4 .button1 {
+    width: 20rem;
+    background-color: var(--secondary-color);
+}
+
+.section2 .textSection .col5 {
+    width: 8rem;
+    height: 8rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section2 .textSection .col5 small {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.section2 .textSection .col5 .images {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+}
+
+.section2 .textSection .col5 .gmail,
+.section2 .textSection .col5 .outlook {
+    width: 3rem;
+}
+
+.section2 .textSection .col5 .gmail img,
+.section2 .textSection .col5 .outlook img {
+    width: 100%;
+}
+
+.section2 .textSection .col5 .gmail p,
+.section2 .textSection .col5 .outlook p {
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
+}
+
+.section2 .textSection .col5 .outlook p {
+    margin-top: 0rem;
+}
+
+.section2 .mainImgSection {
+    grid-area: mainImgSection;
+    max-width: 45rem;
+    min-width: 23rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section2 .mainImgSection img {
+    width: 100%;
+}
