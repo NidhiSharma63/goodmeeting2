@@ -5,13 +5,20 @@
     margin: 0;
     padding: 0;
 }
+html {
+    font-size: 62.5%;
+    --primary-color: rgb(229, 80, 80);
+    --secondary-color: rgb(41, 99, 224);
+    --light-black-color: #313640;
+}
 
 body {
     background-color: white;
 }
 
 .root {
-    max-width: 4098px
+    max-width: 4000px;
+    margin: auto;
 }
 
 .cursor {
@@ -24,14 +31,6 @@ body {
 
 .font2 {
     font-family: 'Merriweather', serif;
-}
-
-.fontSize1 {
-    font-size: 1.6rem;
-}
-
-.fontSize2 {
-    font-size: 2.3rem;
 }
 
 span {
@@ -48,16 +47,11 @@ span {
     background-color: var(--primary-color);
     cursor: pointer;
 }
-
+ul{
+    list-style: none;
+}
 a {
     text-decoration: none;
-}
-
-html {
-    font-size: 62.5%;
-    --primary-color: rgb(229, 80, 80);
-    --secondary-color: rgb(41, 99, 224);
-    --light-black-color: #313640;
 }
 
 .letterSpacing {
