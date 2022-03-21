@@ -33,10 +33,12 @@ body {
     font-family: 'Merriweather', serif;
 }
 
-span {
+.primaryColor {
     color: var(--primary-color);
 }
-
+.secondaryColor {
+    color: var(--secondary-color);
+}
 .button1 {
     font-family: 'Merriweather', serif;
     text-align: center;

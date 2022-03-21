@@ -15,7 +15,6 @@
 }
 .section3 .col1{
     grid-area: col1;
-    border: 1px solid;
     flex-direction: column;
     justify-content: space-between;
     min-height: 20rem;
@@ -84,11 +83,10 @@
 }
 .section3 .col5{
     grid-area: col5;
-    border: 1px solid;
     max-width: 90%;
     margin: auto;
     flex-direction: column;
-    min-height: 20rem;
+    min-height: 25rem;
     justify-content: space-between;
 }
 .section3 .col5 p:nth-child(1){

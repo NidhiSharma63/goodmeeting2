@@ -29,6 +29,17 @@
 .section3 .col3{
     color: var(--light-black-color);
 }
-.col5{
+.section3 .col5{
     color: var(--light-black-color);
+}
+/* section4 */
+.section4 .col1 p{
+    color: var(--light-black-color);
+}
+.section4 .col2 .button1,
+.section4 .col3 .button1,
+.section4 .col4 .button1,
+.section4 .col5 .button1 {
+    border: .2rem solid var(--primary-color);
+    color: var(--primary-color);
 }
