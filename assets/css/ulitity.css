@@ -47,7 +47,12 @@ span {
     background-color: var(--primary-color);
     cursor: pointer;
 }
-ul{
+ ul {
+    font-weight: 400;
+    font-size: 1.6rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
     list-style: none;
 }
 a {
@@ -57,7 +62,14 @@ a {
 .letterSpacing {
     letter-spacing: .1rem;
 }
-
+.hide{
+    display: none !important;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .fixed {
     position: fixed;
     width: 86%;
@@ -70,25 +82,6 @@ a {
     padding-top: .8rem !important;
     padding-bottom: .1rem !important;
 }
-
-.section2Fixed {
-    margin-top: -14rem !important;
-}
-.flex{
-    display: flex;
-    justify-content: space-between;
-}
-.flex2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 14rem;
-    font-size: 1.6rem;
-}
-.flex3{
-    flex-direction: column;
-}
 .headerBoxFlex{
     display: flex;
     justify-content: space-evenly;
@@ -100,11 +93,5 @@ a {
     height: 100vh;
     flex-direction: column;
     background: var(--primary-color) !important;
-}
-
-.flexGrowHalf{
-    flex-grow: .5;
-}
-.hide{
-    display: none !important;
+    display: none;
 }

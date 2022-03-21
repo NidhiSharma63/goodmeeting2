@@ -9,3 +9,7 @@
 .section2 .textSection .col5 small{
     color: var(--secondary-color);
 }
+/* sideBarDiv */
+.sideBarDivContainer .col .sideBarUl li a{
+    color: white;
+}

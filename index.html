@@ -21,18 +21,14 @@
     <div class="root">
         <div class="section1">
             <!-- header section -->
-            <div class="headerContainer">
+            <div class="headerContainer flex">
                 <!--side bar logo -->
-                <div class="logoContainer cursor hide headerLogo">
+                <div class="logoContainer cursor headerLogo">
                     <img src="/assets/images/header/logo.png" alt="logo" class="logo">
                 </div>
-                <div class="headerBox">
-                    <!-- logo -->
-                    <div class="logoContainer cursor headerBoxLogo">
-                        <img src="/assets/images/header/logo.png" alt="logo" class="logo">
-                    </div>
+                <div class="headerBox flex">
                     <!-- ul info -->
-                    <div class="ulContainer font1 fontSize1">
+                    <div class="ulContainer flex font1 fontSize1">
                         <ul class="ul">
                             <li class="cursor"> <a href="">Home</a></li>
                             <li class="cursor"> <a href="">How it work</a></li>
@@ -40,7 +36,36 @@
                         </ul>
                     </div>
                     <!-- logout login -->
-                    <div class="login_logout_section font1">
+                    <div class="login_logout_section flex font1">
+                        <div class="button1  registerBtn fontSize1">
+                            <a href="/pages/authentication/register.html">Register Now</a>
+                        </div>
+                        <div class="loginBtn fontSize1 cursor button1">
+                            <a href="/pages/authentication/login.html">Login</a>
+                        </div>
+                    </div>
+
+
+                    <!-- dark mode switch -->
+                    <div class="darkSwitch flex cursor">
+                            <img src="./assets/images/header/moon.png" alt="moon" class="moon" width="4rem">
+                            <img src="./assets/images/header/sun.png" alt="sun" class="sun" width="3rem">
+                    </div>
+
+                    <!-- header box end -->
+                </div>
+                <div class="sideBar hide">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="sideBarDivContainer hide">
+                <div class="col flex">
+                    <ul class="ul sideBarUl">
+                        <li class="cursor"> <a href="">Home</a></li>
+                        <li class="cursor"> <a href="">How it work</a></li>
+                        <li class="cursor"> <a href="">About Us</a></li>
+                    </ul>
+                    <div class="login_logout_section flex font1">
                         <div class="button1  registerBtn fontSize1">
                             <a href="/pages/authentication/register.html">Register Now</a>
                         </div>
@@ -52,14 +77,9 @@
 
                     <!-- dark mode switch -->
                     <div class="darkSwitch cursor">
-                            <img src="./assets/images/header/moon.png" alt="moon" class="moon" width="4rem">
-                            <img src="./assets/images/header/sun.png" alt="sun" class="sun" width="3rem">
+                            <img src="/assets/images/header/moon.png" alt="moon" class="moon" width="4rem">
+                            <img src="/assets/images/header/sun.png" alt="sun" class="sun" width="3rem">
                     </div>
-
-                    <!-- header box end -->
-                </div>
-                <div class="sideBar hide">
-                    <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
         </div>
@@ -86,11 +106,11 @@
                     <small>support</small>
                     <div class="images">
                         <div class="gmail">
-                            <img src="./assets/images/gmail.png" alt="gmail" width=" 3rem">
+                            <img src="/assets/images/gmail.png" alt="gmail" width=" 3rem">
                             <p>gmail</p>
                         </div>
                         <div class="outlook">
-                            <img src="./assets/images/outlook.png" alt="img" width=" 3rem">
+                            <img src="/assets/images/outlook.png" alt="img" width=" 3rem">
                             <p>outlook</p>
                         </div>
                     </div>
