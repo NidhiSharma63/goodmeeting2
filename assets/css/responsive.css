@@ -9,11 +9,13 @@
     font-size: 55.5%;
   }
 }
+
 @media screen and (max-width: 916px) {
   html {
     font-size: 49.5%;
   }
 }
+
 @media screen and (max-width: 761px) {
 
   html {
@@ -26,49 +28,74 @@
       'mainImgSection'
     ;
   }
-/* .sideBarDivContainer */
+
+  /* .sideBarDivContainer */
   .sideBarDivContainer {
     width: 18rem;
   }
-  .barMarginShow{
+
+  .barMarginShow {
     margin-right: 18rem;
-}
+  }
+
   @keyframes barMarginAnim1 {
-    from{
-        margin-right: 0rem;
+    from {
+      margin-right: 0rem;
     }
-    to{
-        margin-right: 18rem;
+
+    to {
+      margin-right: 18rem;
     }
-}
-@keyframes barMarginAnim2 {
-    from{
-        margin-right: 18rem;
+  }
+
+  @keyframes barMarginAnim2 {
+    from {
+      margin-right: 18rem;
     }
-    to{
-        margin-right: 0rem;
+
+    to {
+      margin-right: 0rem;
     }
-}
-@keyframes sideBarDivContainerAnim1 {
-    from{
-        width: 0rem;
+  }
+
+  @keyframes sideBarDivContainerAnim1 {
+    from {
+      width: 0rem;
     }
-    to{
-        width: 18rem;
+
+    to {
+      width: 18rem;
     }
-}
-@keyframes sideBarDivContainerAnim2 {
-    from{
-        width: 18rem;
+  }
+
+  @keyframes sideBarDivContainerAnim2 {
+    from {
+      width: 18rem;
     }
-    to{
-        width: 0rem;
+
+    to {
+      width: 0rem;
     }
-}
+  }
+
   .section2 .textSection {
     align-items: center;
   }
 
+  /* section3 */
+  .section3 .col1 {
+    max-width: 100%;
+  }
+
+  .section3 .col1 h1 {
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (max-width: 665px) {
+  html {
+    font-size: 59.5%;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -80,4 +107,12 @@
   .section2 {
     gap: 8rem;
   }
+  .section3 .col2{
+    gap: 6rem;
+    grid-template-areas:
+    'img1'
+    'img2'
+    'img3'
+    ;
+}
 }
