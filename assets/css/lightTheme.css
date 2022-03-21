@@ -13,3 +13,16 @@
 .sideBarDivContainer .col .sideBarUl li a{
     color: white;
 }
+/* section3 */
+.section3 .col1 p:nth-child(1){
+    color: var(--secondary-color);
+}
+.section3 .col1 h1,
+.section3 .col1 p:last-child
+{
+    color: var(--light-black-color);
+}
+.section3 .col2 .img1 p,
+.section3 .col2 .img3 p{
+    color: var(--light-black-color);
+}
