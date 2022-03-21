@@ -1,0 +1,17 @@
+.root{
+    max-width: 3500px;
+    min-width: 300px;
+    display: grid;
+    grid-template-areas: 
+    'section1'
+    'section2'
+    'section3'
+    'section4'
+    'section5'
+    'section6'
+    'section7'
+    'section8'
+    'section9'
+    ;
+    /* border: 2px solid green; */
+}
