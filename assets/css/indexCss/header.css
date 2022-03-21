@@ -133,13 +133,14 @@
     background-color: var(--primary-color);
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: revert;
     overflow: hidden;
 }
 .sideBarDivContainer .col{
     height: 45rem;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 .sideBarDivContainer .col .sideBarUl{
     flex-direction: column;
@@ -167,7 +168,6 @@
     animation: sideBarDivContainerAnim1 1s;
 }
 .sideBarDivContainerHide{
-    width: 0;
     animation: sideBarDivContainerAnim2 1s;
 }
 @keyframes barMarginAnim1 {

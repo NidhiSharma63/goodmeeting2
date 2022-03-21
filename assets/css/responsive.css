@@ -8,32 +8,75 @@
   html {
     font-size: 55.5%;
   }
+
   .section2 .textSection .col1 {
     font-size: 1.5rem;
   }
 }
+
 @media screen and (max-width: 761px) {
+
+  html {
+    font-size: 62.5%;
+  }
+
   .section2 {
     grid-template-areas:
       'textSection'
       'mainImgSection'
     ;
   }
-
-  html {
-    font-size: 62.5%;
+/* .sideBarDivContainer */
+  .sideBarDivContainer {
+    width: 18rem;
   }
-
+  .barMarginShow{
+    margin-right: 18rem;
+}
+  @keyframes barMarginAnim1 {
+    from{
+        margin-right: 0rem;
+    }
+    to{
+        margin-right: 18rem;
+    }
+}
+@keyframes barMarginAnim2 {
+    from{
+        margin-right: 18rem;
+    }
+    to{
+        margin-right: 0rem;
+    }
+}
+@keyframes sideBarDivContainerAnim1 {
+    from{
+        width: 0rem;
+    }
+    to{
+        width: 18rem;
+    }
+}
+@keyframes sideBarDivContainerAnim2 {
+    from{
+        width: 18rem;
+    }
+    to{
+        width: 0rem;
+    }
+}
   .section2 .textSection {
     align-items: center;
   }
 
 }
+
 @media screen and (max-width: 550px) {
 
   html {
     font-size: 51.5%;
   }
+
   .section2 {
     gap: 8rem;
   }
