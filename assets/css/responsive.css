@@ -8,17 +8,10 @@
   html {
     font-size: 55.5%;
   }
-/* .section1 .headerBox{
-display: none;
-} */
-/* .section1 .sideBarLogo{
-  display: block;
-} */
   .section2 .textSection .col1 {
     font-size: 1.5rem;
   }
 }
-
 @media screen and (max-width: 761px) {
   .section2 {
     grid-template-areas:

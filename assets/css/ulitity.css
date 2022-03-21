@@ -74,6 +74,37 @@ a {
 .section2Fixed {
     margin-top: -14rem !important;
 }
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.flex2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 14rem;
+    font-size: 1.6rem;
+}
+.flex3{
+    flex-direction: column;
+}
+.headerBoxFlex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 22rem;
+    height: 100vh;
+    flex-direction: column;
+    background: var(--primary-color) !important;
+}
+
+.flexGrowHalf{
+    flex-grow: .5;
+}
 .hide{
     display: none !important;
 }
