@@ -3,7 +3,7 @@
     color: var(--light-black-color);
 }
 /* section2  */
-.section2 .textSection .col1 h1{
+.section2 .textSection .col1 p{
     color: var(--light-black-color);
 }
 .section2 .textSection .col5 small{
@@ -17,12 +17,18 @@
 .section3 .col1 p:nth-child(1){
     color: var(--secondary-color);
 }
-.section3 .col1 h1,
+.section3 .col1 p:nth-child(2),
 .section3 .col1 p:last-child
 {
     color: var(--light-black-color);
 }
 .section3 .col2 .img1 p,
 .section3 .col2 .img3 p{
+    color: var(--light-black-color);
+}
+.section3 .col3{
+    color: var(--light-black-color);
+}
+.col5{
     color: var(--light-black-color);
 }
