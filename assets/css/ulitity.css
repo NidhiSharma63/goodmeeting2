@@ -22,7 +22,16 @@ body {
     --light-black-color: #313640;
     background-color: white;
 }
-
+.primaryColor {
+    color: var(--primary-color);
+}
+.secondaryColor {
+    color: var(--secondary-color);
+}
+.lightBlackColor{
+    color: var(--light-black-color);
+}
+.ligh
 .root {
     max-width: 4000px;
     margin: auto;
@@ -38,13 +47,6 @@ body {
 
 .font2 {
     font-family: 'Merriweather', serif;
-}
-
-.primaryColor {
-    color: var(--primary-color);
-}
-.secondaryColor {
-    color: var(--secondary-color);
 }
 .button1 {
     font-family: 'Merriweather', serif;

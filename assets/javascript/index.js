@@ -48,7 +48,11 @@ $(document).ready(function () {
         $(document.body).removeClass("darkTheme");
         $(".logoContainer").html(`<img src = "/assets/images/header/logo.png"></img>`);
     }
-
+    // make testimonial and footer light black
+    const changeTestimonialsFooterColor = () =>{
+        $(".section6").css("background-color","");
+        $(".slider").css("background-color","");
+    }
     let setMode = localStorage.getItem("goodmeeting_today_color_scheme");
     if (setMode === 'dark') {
         switchDarkTheme()
