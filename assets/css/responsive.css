@@ -214,6 +214,16 @@
   }
 }
 
+@media screen and (max-width: 450px) {
+
+  html {
+    font-size: 36.5%;
+  }
+  .section3 .col5 p:nth-child(1) {
+    font-size: 3rem;
+}
+}
+
 
 
 /* .section6 {
