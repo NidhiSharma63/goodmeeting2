@@ -41,12 +41,12 @@ $(document).ready(function () {
     // declare switchDarkTheme function
     const switchDarkTheme = () =>{
         $(document.body).addClass("darkTheme");
-        $(".logoContainer").html(`<img src = "/assets/images/header/logo2.png"></img>`);
+        $(".logoContainer").html(`<img src = "/goodmeeting2/assets/images/header/logo2.png"></img>`);
     }
     // declare switchLightTheme function
     const switchLightTheme = () =>{
         $(document.body).removeClass("darkTheme");
-        $(".logoContainer").html(`<img src = "/assets/images/header/logo.png"></img>`);
+        $(".logoContainer").html(`<img src = "/goodmeeting2/assets/images/header/logo.png"></img>`);
     }
     // make testimonial and footer light black
     const changeTestimonialsFooterColor = () =>{
@@ -68,8 +68,7 @@ $(document).ready(function () {
             if ($(document.body).hasClass("darkTheme")) {
                 // ... then switch it to "lightTheme-mode.css"
                 localStorage.setItem("goodmeeting_today_color_scheme", 'light');
-                switchLightTheme()
-                $(".logoContainer").html(`<img src = "/assets/images/header/logo.png"></img>`)
+                switchLightTheme();
             } else {
                 // ... switch it to "darkTheme-mode.css"
                 switchDarkTheme();
