@@ -1,3 +1,49 @@
+@media screen and (max-width: 3840px) {
+  html {
+    font-size: 169.5%;
+  }
+}
+
+@media screen and (max-width: 3200px) {
+  html {
+    font-size: 121.5%;
+  }
+}
+
+@media screen and (max-width: 3000px) {
+  html {
+    font-size: 115.5%;
+  }
+}
+
+@media screen and (max-width: 2880px) {
+  html {
+    font-size: 110.5%;
+  }
+}
+
+@media screen and (max-width: 2560px) {
+  html {
+    font-size: 101.5%;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  html {
+    font-size: 60.5%;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  html {
+    font-size: 71.5%;
+  }
+}
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 62.5%;
+  }
+}
 @media screen and (max-width: 1280px) {
   .section2 .textSection {
     min-height: 40rem;
@@ -219,27 +265,8 @@
   html {
     font-size: 36.5%;
   }
+
   .section3 .col5 p:nth-child(1) {
     font-size: 3rem;
-}
-}
-
-
-
-/* .section6 {
-    grid-template-areas:
-      'col1'
-      'col2'
-      'col3'
-    ;
-  } */
-
-/* .section6 .col1,
-  .section6 .col2,
-  .section6 .col3 {
-    align-items: center;
   }
-
-  .section6 .col3 .footerLinks {
-    align-items: center;
-  } */
+}

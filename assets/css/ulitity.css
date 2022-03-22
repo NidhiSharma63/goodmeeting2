@@ -9,7 +9,6 @@ html {
     font-size: 62.5%;
 }
 body.darkTheme {
-    font-size: 62.5%;
     --primary-color: rgb(229, 80, 80);
     --secondary-color: rgb(41, 99, 224);
     --light-black-color: white;
