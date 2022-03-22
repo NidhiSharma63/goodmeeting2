@@ -68,9 +68,9 @@
 
 .testimonial .commaImg1 img,
 .testimonial .commaImg2 img {
-    width: 5rem;
+    width: 4.5rem;
 }
-.testimonial .commaImg2 img{
+.testimonial .commaImg1 img{
     transform: rotate(180deg);
 }
 .testimonial .userName p{
