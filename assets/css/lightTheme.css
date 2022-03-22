@@ -62,3 +62,10 @@
 .section5 .col3 p:nth-child(2){
     color: var(--light-black-color);
 }
+/* authentication section */
+.container .section1 p{
+    color: white;
+}
+.container .section2 p{
+    color: var(--light-black-color)
+}
