@@ -20,14 +20,14 @@ $(document).ready(function () {
             sideBar.addClass("hide")
         }
     }
-    sideBar.click(()=>{
-        if(sideBarDivContainer.hasClass("hide")){
+    sideBar.click(() => {
+        if (sideBarDivContainer.hasClass("hide")) {
             sideBarDivContainer.removeClass("hide");
             sideBarDivContainer.addClass("sideBarDivContainerShow");
             sideBarDivContainer.removeClass("sideBarDivContainerHide");
             sideBar.addClass("barMarginShow");
             sideBar.removeClass("barMarginHide");
-        }else{
+        } else {
             sideBarDivContainer.removeClass("sideBarDivContainerShow");
             sideBarDivContainer.addClass("sideBarDivContainerHide");
             sideBar.removeClass("barMarginShow");
@@ -36,5 +36,40 @@ $(document).ready(function () {
                 sideBarDivContainer.addClass("hide");
             }, 800);
         }
-    })
+    });
+
+    // declare switchDarkTheme function
+    const switchDarkTheme = () =>{
+        $(document.body).addClass("darkTheme");
+        $(".logoContainer").html(`<img src = "/assets/images/header/logo2.png"></img>`);
+    }
+    // declare switchLightTheme function
+    const switchLightTheme = () =>{
+        $(document.body).removeClass("darkTheme");
+        $(".logoContainer").html(`<img src = "/assets/images/header/logo.png"></img>`);
+    }
+
+    let setMode = localStorage.getItem("goodmeeting_today_color_scheme");
+    if (setMode === 'dark') {
+        switchDarkTheme()
+    } else {
+        switchLightTheme()
+    }
+    // Select the button
+    const btns = document.querySelectorAll(".darkSwitch");
+    // Listen for a click on the button
+    btns.forEach(btn => {
+        btn.addEventListener("click", function () {
+            if ($(document.body).hasClass("darkTheme")) {
+                // ... then switch it to "lightTheme-mode.css"
+                localStorage.setItem("goodmeeting_today_color_scheme", 'light');
+                switchLightTheme()
+                $(".logoContainer").html(`<img src = "/assets/images/header/logo.png"></img>`)
+            } else {
+                // ... switch it to "darkTheme-mode.css"
+                switchDarkTheme()
+                localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
+            }
+        });
+    });
 });
