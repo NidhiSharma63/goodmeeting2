@@ -26,7 +26,7 @@
     align-items: center;
 }
 
-.container .section2 .section2Container {
+.container .section2 .dashboardSection {
     height: 46rem;
     display: flex;
     align-items: center;
@@ -34,7 +34,7 @@
     flex-direction: column;
 }
 
-.container .section2 .section2Container p:nth-child(1) {
+.container .section2 .dashboardSection p:nth-child(1) {
     font-size: 3rem;
     font-weight: 700;
 }

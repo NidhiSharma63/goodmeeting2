@@ -131,17 +131,20 @@
   .section6 .col3 p:nth-child(1) {
     font-size: 1.8rem;
   }
+
   /* authentication section */
-  .container{
+  .container {
     flex-direction: column;
     max-height: fit-content;
   }
+
   .container .section1 {
     max-height: 45rem;
-}
-.container .section1 img{
-  max-width: 25rem;
-}
+  }
+
+  .container .section1 img {
+    max-width: 25rem;
+  }
 }
 
 @media screen and (max-width: 665px) {
@@ -203,6 +206,11 @@
       'img2'
       'img3'
     ;
+  }
+
+  /* authentication section */
+  .container .section2 .midSection {
+    margin-bottom: -4rem;
   }
 }
 
