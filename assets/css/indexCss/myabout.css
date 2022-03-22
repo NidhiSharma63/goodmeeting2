@@ -11,7 +11,6 @@
     'col4'
     'col5'
     ;
-    border: 2px solid;
 }
 .section3 .col1{
     grid-area: col1;

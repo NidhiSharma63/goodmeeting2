@@ -43,3 +43,22 @@
     border: .2rem solid var(--primary-color);
     color: var(--primary-color);
 }
+/* section 5 */
+.section5 .slider p{
+    color: white;
+}
+.testimonial p:nth-child(1) {
+    color: var(--light-black-color);
+}
+.testimonial .userName p:nth-child(2){
+    color: var(--secondary-color);
+}
+.section5 .col3 .buttons .getStarted{
+    color: var(--primary-color);
+}
+.section5 .col3 p:nth-child(1){
+    color: var(--secondary-color);
+}
+.section5 .col3 p:nth-child(2){
+    color: var(--light-black-color);
+}

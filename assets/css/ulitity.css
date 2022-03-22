@@ -72,6 +72,11 @@ a {
     align-items: center;
     justify-content: center;
 }
+.hoverPrimaryColor:hover{
+    transition: .7s;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
 .fixed {
     position: fixed;
     width: 86%;

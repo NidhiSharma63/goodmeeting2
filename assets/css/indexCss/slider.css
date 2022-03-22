@@ -1,117 +1,121 @@
-.slider {
+.section5 {
+    grid-area: section5;
+    display: grid;
+    gap: 7rem;
+    grid-template-areas:
+        'slider'
+        'testimonials'
+        'col3'
+    ;
+}
+
+.section5 .slider {
     background-color: var(--light-black-color);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 4rem 0rem;
-    font-family: 'Merriweather', serif;
-    letter-spacing: .2rem;
+    min-height: 6rem;
+    justify-content: space-between;
+    padding: 3rem 0rem;
+}
+
+.section5 .slider p {
+    font-size: 3rem;
     font-weight: 600;
 }
-
+.section5 .sliderDots{
+    padding-top: 2rem;
+    margin: auto;
+    width: 7rem;
+    justify-content: space-around;
+}
 .dot {
-    height: 10px;
-    width: 10px;
+    height: 1rem;
+    width: 1rem;
     background-color: #bbb;
     border-radius: 50%;
-    margin-top: 2rem;
-    margin-left: 2rem;
     display: inline-block;
-    cursor: pointer;
+    
 }
 
-.section5 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 63%;
-    height: 67rem;
+.testimonial {
+    width: 65%;
     margin: auto;
-    margin-top: 10rem;
-}
-
-.testimonialSection {
-    position: relative;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-.testimonialSection h1 {
-    font-size: 4.6rem;
+.testimonial p:nth-child(1) {
+    font-size: 3.6rem;
+    font-weight: 700;
 }
 
-.testimonialSection .testimonialsText {
-    font-size: 2.3rem;
+.testimonial p:nth-child(3) {
     text-align: center;
+    margin: auto;
+    font-size: 2.2rem;
+    line-height: 3rem;
+    letter-spacing: .1rem;
 }
 
-.testimonialsText .comma1,
-.testimonialsText .comma2 {
-    display: flex;
-}
+.testimonial .commaImg1 {
 
-.testimonialsText .comma1 {
     justify-content: flex-start;
 }
-.testimonialsText .comma1 img{
-    width: 4rem;
-}
-.testimonialsText .comma2 {
+
+.testimonial .commaImg2 {
     justify-content: flex-end;
 }
 
-.testimonialsText .comma2 img {
+.testimonial .commaImg1 img,
+.testimonial .commaImg2 img {
+    width: 5rem;
+}
+.testimonial .commaImg2 img{
     transform: rotate(180deg);
-    width: 4rem;
 }
-
-.testimonialSection .reviewer {
-    width: 100%;
-    margin-top: 1rem;
-    font-size: 1.4rem;
-}
-
-.section5 .group2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 108rem;
-    height: 22rem;
-    justify-content: space-between;
-}
-
-.section5 .group2 p:nth-child(1) {
+.testimonial .userName p{
     font-size: 2rem;
 }
-
-.section5 .group2 p:nth-child(2) {
-    font-size: 3rem;
-    text-align: center;
-    font-weight: 600;
+.testimonial .testimonialDots{
+    padding-top: 2rem;
+    margin: auto;
+    width: 7rem;
+    justify-content: space-around;
 }
-
-.section5 .group2 .btns {
-    display: flex;
-    width: 37rem;
+.testimonial .testimonialDots .dot{
+   background-color: var(--primary-color); 
+}
+.section5 .col3{
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+    min-height: 20rem;
+    justify-content: space-around;
+}
+.section5 .col3 p:nth-child(1){
+    font-size: 2.5rem;
+}
+.section5 .col3 p:nth-child(2){
+    font-size: 2.6rem;
+    text-align: center;
+}
+.section5 .col3 .buttons{
+    width: 43rem;
     justify-content: space-between;
 }
-
-.section5 .group2 .btns .button1:nth-child(1) {
-    width: 19rem;
-    border: 2px solid var(--secondary-color);
-    background-color: transparent;
-    transition: .3s ease-in-out;
+.section5 .col3 .buttons .button1{
+    width: 20rem;
 }
-
-.section5 .group2 .btns .button1:nth-child(1):hover {
-    color: white;
+.section5 .col3 .buttons .requestDemo{
+    border: .2rem solid var(--secondary-color);
     background-color: var(--secondary-color);
 }
-
-.section5 .group2 .btns .button1:nth-child(2) {
-    width: 15rem;
+.section5 .col3 .buttons .getStarted{
+    border: .2rem solid var(--primary-color);
+    background-color: inherit;
+}
+.section5 .col3 .buttons .requestDemo:hover{
+    transition: .7s;
+    background-color: inherit;
+    color: var(--secondary-color);
 }

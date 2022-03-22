@@ -137,8 +137,10 @@
   .section4 .col5 .text {
     align-items: center;
     width: 60%;
-    border: 2px solid  red;
   }
+  .section5 .col3{
+    min-height: 27rem;
+}
 }
 
 @media screen and (max-width: 550px) {
