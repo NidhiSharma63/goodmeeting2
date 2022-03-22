@@ -50,12 +50,13 @@ $(document).ready(function () {
     }
     // make testimonial and footer light black
     const changeTestimonialsFooterColor = () =>{
-        $(".section6").css("background-color","");
-        $(".slider").css("background-color","");
+        $(".section6").css("background-color","#313640");
+        $(".slider").css("background-color","#313640");
     }
     let setMode = localStorage.getItem("goodmeeting_today_color_scheme");
     if (setMode === 'dark') {
-        switchDarkTheme()
+        switchDarkTheme();
+        changeTestimonialsFooterColor();
     } else {
         switchLightTheme()
     }
@@ -71,7 +72,8 @@ $(document).ready(function () {
                 $(".logoContainer").html(`<img src = "/assets/images/header/logo.png"></img>`)
             } else {
                 // ... switch it to "darkTheme-mode.css"
-                switchDarkTheme()
+                switchDarkTheme();
+                changeTestimonialsFooterColor();
                 localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
             }
         });

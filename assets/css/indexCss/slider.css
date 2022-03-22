@@ -85,6 +85,9 @@
 .testimonial .testimonialDots .dot{
    background-color: var(--primary-color); 
 }
+.section5 .col1 p{
+    color: white;
+}
 .section5 .col3{
     width: 90%;
     margin: auto;
@@ -109,11 +112,11 @@
 .section5 .col3 .buttons .requestDemo{
     border: .2rem solid var(--secondary-color);
     background-color: var(--secondary-color);
+    color: white;
 }
 .section5 .col3 .buttons .getStarted{
     border: .2rem solid var(--primary-color);
     background-color: inherit;
-    color: var(--primary-color) !important;
 }
 .section5 .col3 .buttons .requestDemo:hover{
     transition: .7s;
