@@ -112,6 +112,7 @@
 .section4 .col2 .text::after,
 .section4 .col4 .text::after,
 .section4 .col3 .img::before,
+.section4 .col3 .text::after,
 .section4 .col3 .count::before,
 .section4 .col5 .count::before,
 .section4 .col5 .img::after{
@@ -121,11 +122,8 @@
 .section4 .col2 .img::before,
 .section4 .col4 .img::before
 {
-    height: 4px;
     width: 66%;
-    color: green;
     top: 17.5rem;
-    background: yellow;
     transform: rotate(90deg);
     left: 16rem;
 }
@@ -134,26 +132,16 @@
     width: 156%;
     left: 7.5rem;
 }
-.section4 .col4 .img::after {
-    background: yellow;
-    height: 9px;
-    width: 141%;
-    left: -3.2rem;
-    top: -4.8rem;
-}
 .section4 .col4 .img::after{
-    height: 9px;
-    width: 141%;
-    left: -3.2rem;
-    top: -4.8rem;
+    height: 9rem;
+    width: 295%;
+    left: -28.3rem;
+    top: -8.8rem;
 }
 .section4 .col2 .text::after,
 .section4 .col4 .text::after {
-    height: 4px;
     width: 185%;
-    color: green;
     top: 20.3rem;
-    background: red;
     left: -4rem;
     z-index: -1;
 }
@@ -163,11 +151,8 @@
 }
 .section4 .col3 .img::before
  {
-    height: 4px;
     width: 61%;
-    color: green;
     top: 14.5rem;
-    background: yellow;
     transform: rotate(90deg);
     left: -9.6rem;
     z-index: -1;
@@ -175,11 +160,8 @@
 .section4 .col3 .count::before,
 .section4 .col5 .count::before
  {
-    height: 4px;
     width: 260%;
-    color: green;
     top: -4.5rem;
-    background: yellow;
     transform: rotate(90deg);
     left: -3.4rem;
     z-index: -1;
@@ -196,22 +178,35 @@
     height: 2rem;
     position: absolute;
     width: 162%;
-    color: green;
     top: -4.2rem;
-    background: yellow;
     left: -4rem;
     z-index: 1;
 }
 .section4 .col5 .img::after {
     top: -9.2rem;
 }
-.section4 .col3 .text::after {
-    /* content: ''; */
-    height: 4px;
-    /* position: absolute; */
+.section4 .col3 .text::after { 
     width: 160%;
-    color: green;
     top: 19.3rem;
-    background: red;
     right: -4.3rem;
+}
+.section4 .col2 .img::before,
+.section4 .col4 .img::before,
+.section4 .col3 .img::before,
+.section4 .col3 .count::before,
+.section4 .col5 .count::before,
+.section4 .col2 .text::after,
+.section4 .col4 .text::after,
+.section4 .col3 .text::after
+{
+    height: .2rem;
+    background-color: var(--light-black-color);
+    
+}
+.section4 .col4 .img::after,
+.section4 .col5 .img::after,
+.section4 .col3 .img::after{
+    /* height: 2rem; */
+    /* background-color:var(--blue-color); */
+background-color: yellow;
 }

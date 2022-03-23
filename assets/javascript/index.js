@@ -53,10 +53,17 @@ $(document).ready(function () {
         $(".section6").css("background-color","#313640");
         $(".slider").css("background-color","#313640");
     }
+
+    const changedStepsLineColor = () =>{
+        $(".section4 col4 img::after").css("background-color","#0E1525")
+// .section4 .col5 .img::after,
+// .section4 .col3 .img::after
+    }
     let setMode = localStorage.getItem("goodmeeting_today_color_scheme");
     if (setMode === 'dark') {
         switchDarkTheme();
         changeTestimonialsFooterColor();
+        changedStepsLineColor()
     } else {
         switchLightTheme()
     }
@@ -73,6 +80,7 @@ $(document).ready(function () {
                 // ... switch it to "darkTheme-mode.css"
                 switchDarkTheme();
                 changeTestimonialsFooterColor();
+                changedStepsLineColor();
                 localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
             }
         });
