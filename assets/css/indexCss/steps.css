@@ -107,8 +107,8 @@
 }
 /* steps lines */
 .section4 .col2 .img::before,
-.section4 .col4 .img::before,
 .section4 .col4 .img::after,
+.section4 .col4 .img::before,
 .section4 .col2 .text::after,
 .section4 .col4 .text::after,
 .section4 .col3 .img::before,
@@ -120,19 +120,19 @@
     position: absolute;
 }
 .section4 .col2 .img::before,
-.section4 .col4 .img::before
+.section4 .col4 .img::after
 {
     width: 66%;
     top: 17.5rem;
     transform: rotate(90deg);
     left: 16rem;
 }
-.section4 .col4 .img::before{
+.section4 .col4 .img::after{
     top: 8.8rem;
     width: 156%;
     left: 7.5rem;
 }
-.section4 .col4 .img::after{
+.section4 .col4 .img::before{
     height: 9rem;
     width: 295%;
     left: -28.3rem;
@@ -175,20 +175,22 @@
 
 .section4 .col5 .img::after {
     content: '';
-    height: 2rem;
+    height: 4rem;
     position: absolute;
-    width: 162%;
-    top: -4.2rem;
-    left: -4rem;
+    width: 200%;
+    top: -5.2rem;
+    left: -4.1rem;
     z-index: 1;
+    background-color: var(--blue-color);
 }
 .section4 .col5 .img::after {
-    top: -9.2rem;
+    top: -10.2rem;
 }
 .section4 .col3 .text::after { 
+    height: 6rem;
     width: 160%;
     top: 19.3rem;
-    right: -4.3rem;
+    right: -4.1rem;
 }
 .section4 .col2 .img::before,
 .section4 .col4 .img::before,
@@ -203,10 +205,10 @@
     background-color: var(--light-black-color);
     
 }
-.section4 .col4 .img::after,
+.section4 .col4 .img::before,
 .section4 .col5 .img::after,
 .section4 .col3 .img::after{
     /* height: 2rem; */
     /* background-color:var(--blue-color); */
-background-color: yellow;
+/* background-color: yellow; */
 }
