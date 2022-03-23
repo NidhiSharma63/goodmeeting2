@@ -18,33 +18,50 @@
     font-size: 4rem;
 }
 
-.section4 img {
+.section4 .img {
     width: 18rem;
+    position: relative;
+}
+.section4 .text {
+    position: relative;
+}
+.section4 .img img{
+    width: 100%;
+    position: relative;
 }
 
 .section4 .col2,
-.section4 .col4
-{
+.section4 .col4 {
     justify-content: flex-start;
 }
+
 .section4 .col3,
-.section4 .col5
-{
+.section4 .col5 {
     justify-content: flex-end;
 }
-.section4  .text {
-    min-height: 17rem;
+
+.section4 .text {
+    min-height: 15rem;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
+
 .section4 .col2 .text,
-.section4 .col4 .text{
+.section4 .col4 .text {
     align-items: flex-start;
 }
+
 .section4 .col3 .text,
-.section4 .col5 .text{
+.section4 .col5 .text {
     align-items: flex-end;
+}
+
+.section4 .col4 .text {
+    min-height: 21rem;
+}
+.section4 .col5 .text {
+    min-height: 24rem;
 }
 .section4 .text p:first-child {
     font-weight: 600;
@@ -55,13 +72,15 @@
     width: 63%;
     font-size: 1.7rem;
 }
+
 .section4 .col4 .text p:nth-child(2),
-.section4 .col5 .text p:nth-child(2)
-{
+.section4 .col5 .text p:nth-child(2) {
     width: 39%;
     font-size: 1.7rem;
 }
+
 .section4 .count {
+    position: relative;
     margin-left: 2rem;
     margin-right: 2rem;
     background: black;
@@ -81,7 +100,118 @@
     width: 13rem;
     background-color: inherit;
 }
-.section4 .button1{
+
+.section4 .button1 {
     border: .2rem solid var(--primary-color);
     color: var(--primary-color);
+}
+/* steps lines */
+.section4 .col2 .img::before,
+.section4 .col4 .img::before,
+.section4 .col4 .img::after,
+.section4 .col2 .text::after,
+.section4 .col4 .text::after,
+.section4 .col3 .img::before,
+.section4 .col3 .count::before,
+.section4 .col5 .count::before,
+.section4 .col5 .img::after{
+    content: '';
+    position: absolute;
+}
+.section4 .col2 .img::before,
+.section4 .col4 .img::before
+{
+    height: 4px;
+    width: 66%;
+    color: green;
+    top: 17.5rem;
+    background: yellow;
+    transform: rotate(90deg);
+    left: 16rem;
+}
+.section4 .col4 .img::before{
+    top: 8.8rem;
+    width: 156%;
+    left: 7.5rem;
+}
+.section4 .col4 .img::after {
+    background: yellow;
+    height: 9px;
+    width: 141%;
+    left: -3.2rem;
+    top: -4.8rem;
+}
+.section4 .col4 .img::after{
+    height: 9px;
+    width: 141%;
+    left: -3.2rem;
+    top: -4.8rem;
+}
+.section4 .col2 .text::after,
+.section4 .col4 .text::after {
+    height: 4px;
+    width: 185%;
+    color: green;
+    top: 20.3rem;
+    background: red;
+    left: -4rem;
+    z-index: -1;
+}
+.section4 .col4 .text::after {
+    top: 23.9rem;
+    width: 100%;
+}
+.section4 .col3 .img::before
+ {
+    height: 4px;
+    width: 61%;
+    color: green;
+    top: 14.5rem;
+    background: yellow;
+    transform: rotate(90deg);
+    left: -9.6rem;
+    z-index: -1;
+}
+.section4 .col3 .count::before,
+.section4 .col5 .count::before
+ {
+    height: 4px;
+    width: 260%;
+    color: green;
+    top: -4.5rem;
+    background: yellow;
+    transform: rotate(90deg);
+    left: -3.4rem;
+    z-index: -1;
+}
+.section4 .col5 .count::before{
+    width: 349%;
+    left: -5.4rem;
+    top: -5.5rem;
+}
+.section4 .col3 .img::after,
+
+.section4 .col5 .img::after {
+    content: '';
+    height: 2rem;
+    position: absolute;
+    width: 162%;
+    color: green;
+    top: -4.2rem;
+    background: yellow;
+    left: -4rem;
+    z-index: 1;
+}
+.section4 .col5 .img::after {
+    top: -9.2rem;
+}
+.section4 .col3 .text::after {
+    /* content: ''; */
+    height: 4px;
+    /* position: absolute; */
+    width: 160%;
+    color: green;
+    top: 19.3rem;
+    background: red;
+    right: -4.3rem;
 }
