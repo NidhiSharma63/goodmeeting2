@@ -53,6 +53,7 @@ $(document).ready(function () {
         $(".section6").css("background-color", "#313640");
         $(".slider").css("background-color", "#313640");
     }
+    // show dark text and move circle
     const showDarkMode = () =>{
         if($(".circle").hasClass("circleMoveLeft")){
             $(".circle").removeClass("circleMoveLeft");
@@ -63,6 +64,7 @@ $(document).ready(function () {
         $(".dark").addClass("visible");
         $(".dark").removeClass("nonVisible");
     }
+       // show light text and move circle
     const showLightMode = () =>{
         if($(".circle").hasClass("circleMoveRight")){
             $(".circle").removeClass("circleMoveRight");
