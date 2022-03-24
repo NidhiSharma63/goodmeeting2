@@ -111,113 +111,6 @@
 }
 
 /* steps lines */
-/* .section4 .col2 .img::before,
-.section4 .col4 .img::after,
-.section4 .col4 .img::before,
-.section4 .col2 .text::after,
-.section4 .col4 .text::after,
-.section4 .col3 .img::before,
-.section4 .col3 .text::after,
-.section4 .col3 .count::before,
-.section4 .col5 .count::before,
-.section4 .col5 .img::after{
-    content: '';
-    position: absolute;
-}
-.section4 .col2 .img::before,
-.section4 .col4 .img::after
-{
-    width: 66%;
-    top: 17.5rem;
-    transform: rotate(90deg);
-    left: 16rem;
-}
-.section4 .col4 .img::after{
-    top: 8.8rem;
-    width: 156%;
-    left: 7.5rem;
-}
-.section4 .col4 .img::before{
-    height: 9rem;
-    width: 295%;
-    left: -28.3rem;
-    top: -8.8rem;
-}
-.section4 .col2 .text::after,
-.section4 .col4 .text::after {
-    width: 185%;
-    top: 20.3rem;
-    left: -4rem;
-    z-index: -1;
-}
-.section4 .col4 .text::after {
-    top: 23.9rem;
-    width: 100%;
-}
-.section4 .col3 .img::before
- {
-    width: 61%;
-    top: 14.5rem;
-    transform: rotate(90deg);
-    left: -9.6rem;
-    z-index: -1;
-}
-.section4 .col3 .count::before,
-.section4 .col5 .count::before
- {
-    width: 260%;
-    top: -4.5rem;
-    transform: rotate(90deg);
-    left: -3.4rem;
-    z-index: -1;
-}
-.section4 .col5 .count::before{
-    width: 349%;
-    left: -5.4rem;
-    top: -5.5rem;
-}
-.section4 .col3 .img::after,
-
-.section4 .col5 .img::after {
-    content: '';
-    height: 4rem;
-    position: absolute;
-    width: 200%;
-    top: -5.2rem;
-    left: -4.1rem;
-    z-index: 1;
-    background-color: var(--blue-color);
-}
-.section4 .col5 .img::after {
-    top: -10.2rem;
-}
-.section4 .col3 .text::after { 
-    height: 6rem;
-    width: 160%;
-    top: 19.3rem;
-    right: -4.1rem;
-}
-.section4 .col2 .img::before,
-.section4 .col4 .img::before,
-.section4 .col3 .img::before,
-.section4 .col3 .count::before,
-.section4 .col5 .count::before,
-.section4 .col2 .text::after,
-.section4 .col4 .text::after,
-.section4 .col3 .text::after
-{
-    height: .2rem;
-    background-color: var(--light-black-color);
-    
-} */
-.section4 .col4 .img::before,
-.section4 .col5 .img::after,
-.section4 .col3 .img::after {
-    /* height: 2rem; */
-    /* background-color:var(--blue-color); */
-    /* background-color: yellow; */
-}
-/* steps lines */
 .section4 .col2,
 .section4 .col3,
 .section4 .col4,
@@ -225,7 +118,6 @@
     position: relative;
 
 }
-
 .section4 .col2::after,
 .section4 .col2 .count::after,
 .section4 .col2 .img::after,
@@ -244,16 +136,25 @@
 
     position: absolute;
     content: '';
-    border: .1rem solid red;
+    border: .1rem solid var(--light-black-color);
     border-style: dashed;
 }
 
+.section4 .col2 .img::after,
+.section4 .col4 .img::after,
+.section4 .col4 .img::before,
+.section4 .col3 .img::before,
+.section4 .col3 .img::after,
+.section4 .col5 .img::before{
+    border: none;
+    background-color: #0E1525 !important;
+    /* background-color: aqua; */
+    /* z-index: -99; */
+}
 .section4 .col2::after,
 .section4 .col3::after,
 .section4 .col4::after{
-    /* background-color: green; */
     width: 100%;
-    /* height: .2rem; */
     bottom: -3rem;
     z-index: 0;
 }
@@ -262,18 +163,16 @@
 .section4 .col4 .count::after,
 .section4 .col4 .count::before,
 .section4 .col5 .count::before {
-    background-color: green;
     width: 13rem;
-    height: 0.2rem;
     transform: rotate(90deg);
-    top: 9.6rem;
+    top: 9.4rem;
     left: -4.6rem;
 }
 
 .section4 .col2 .img::after,
 .section4 .col4 .img::after,
 .section4 .col4 .img::before {
-    background-color: yellow;
+    /* background-color: yellow; */
     width: 40rem;
     height: 5.2rem;
     top: 22.6rem;
@@ -284,11 +183,11 @@
 .section4 .col3 .img::after,
 .section4 .col5 .img::before
 {    
-    background-color: yellow;
+    /* background-color: yellow; */
     width: 40rem;
     height: 5.2rem;
     top: -5.4rem;
-    left: -3.9rem;
+    left: -3.6rem;
     z-index: 1;
 }
 .section4 .col3 .img::after{    
@@ -296,9 +195,7 @@
 }
 .section4 .col3 .count::before,
 .section4 .col3 .count::after{
-    background-color: green;
     width: 11rem;
-    height: 0.2rem;
     transform: rotate(90deg);
     top: -3.5rem;
     left: -3.5rem;
@@ -320,6 +217,7 @@
 }
 .section4 .col4::after{
     top: 24.3rem;
+    z-index: 0;
 }
 .section4 .col5 .count::before{   
     top: -5.9rem;
@@ -327,5 +225,5 @@
 .section4 .col5 .img::before
 {    
     top: -10.3rem;
-    left: -4rem;
+    left: -3.8rem;
 }
