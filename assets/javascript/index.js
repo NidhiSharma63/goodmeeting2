@@ -14,39 +14,54 @@ const testimonialUserStatus = [
     "Owner, Brashears Insurance",
     "Owner, Joors Welding and Metal Service"
 ]
-let i=0;
-$(document).ready(()=>{
-    $(".testimonialDot1").click(()=>{
+
+$(document).ready(() => {
+    const testimonialDot = document.querySelectorAll(".testimonialDot")
+    let i = 1;
+    $(".testimonialText").html((testimonialArrayText)[0]);
+    $(".userName").html(testimonialUserName[0]);
+    $(".userStatus").html(testimonialUserStatus[0]);
+    testimonialDot.forEach((item) => {
+        if (0 == item.dataset.testimonial) {
+            item.classList.add("opacity")
+        } else {
+            item.classList.remove("opacity")
+        }
+    });
+    $("#testimonialDot1").click(() => {
         $(".testimonialText").html((testimonialArrayText)[0]);
         $(".userName").html(testimonialUserName[0]);
         $(".userStatus").html(testimonialUserStatus[0]);
+        i=0;
     });
-    $(".testimonialDot2").click(()=>{
+    $("#testimonialDot2").click(() => {
         $(".testimonialText").html((testimonialArrayText)[1]);
         $(".userName").html(testimonialUserName[1]);
         $(".userStatus").html(testimonialUserStatus[1]);
+        i=1;
     });
-    $(".testimonialDot3").click(()=>{
+    $("#testimonialDot3").click(() => {
         $(".testimonialText").html((testimonialArrayText)[2]);
         $(".userName").html(testimonialUserName[2]);
         $(".userStatus").html(testimonialUserStatus[2]);
+        i=2;
     });
-    let testimonialDot = document.querySelector(".testimonialDot")
+ 
     setInterval(() => {
-        console.log("i incresed");
-        if(i==3){
-            i=-1;
+        if (i == 3) {
+            i = 0;
         }
-        document.querySelectorAll(".testimonialDot").forEach((item)=>{
-            if(i==item.dataset.testimonial){
-                console.log("matched")
-                console.log(testimonialDot.innerHTML)
-                // item.css("opacity","1")
+        $(".testimonialText").html((testimonialArrayText)[i]);
+        $(".userName").html(testimonialUserName[i]);
+        $(".userStatus").html(testimonialUserStatus[i]);
+        testimonialDot.forEach((item) => {
+            if (i == item.dataset.testimonial) {
+                item.classList.add("opacity")
+            } else {
+                item.classList.remove("opacity")
             }
-        })
-       i+=1
-       $(".testimonialText").html((testimonialArrayText)[i]);
-       $(".userName").html(testimonialUserName[i]);
-       $(".userStatus").html(testimonialUserStatus[i]);
+        });
+        i += 1
     }, 4000);
+
 });

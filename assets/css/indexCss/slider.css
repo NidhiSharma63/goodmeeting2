@@ -87,6 +87,9 @@
    opacity: .5;
    cursor: pointer;
 }
+.opacity{
+    opacity: 1 !important;
+}
 .section5 .col1 p{
     color: white;
 }
