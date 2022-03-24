@@ -91,6 +91,7 @@
     padding: 1rem 1.5rem;
     color: white;
     border-radius: 50%;
+    z-index: 2;
 }
 
 .section4 .col2 .button1,
@@ -147,9 +148,7 @@
 .section4 .col3 .img::after,
 .section4 .col5 .img::before{
     border: none;
-    background-color: #0E1525 !important;
-    /* background-color: aqua; */
-    /* z-index: -99; */
+    background-color: var(--blue-color) !important;
 }
 .section4 .col2::after,
 .section4 .col3::after,
@@ -172,7 +171,6 @@
 .section4 .col2 .img::after,
 .section4 .col4 .img::after,
 .section4 .col4 .img::before {
-    /* background-color: yellow; */
     width: 40rem;
     height: 5.2rem;
     top: 22.6rem;
@@ -183,7 +181,6 @@
 .section4 .col3 .img::after,
 .section4 .col5 .img::before
 {    
-    /* background-color: yellow; */
     width: 40rem;
     height: 5.2rem;
     top: -5.4rem;
