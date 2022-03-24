@@ -27,11 +27,13 @@ $(document).ready(function () {
             sideBarDivContainer.removeClass("sideBarDivContainerHide");
             sideBar.addClass("barMarginShow");
             sideBar.removeClass("barMarginHide");
+            $("body").css("overflow-y", "hidden");
         } else {
             sideBarDivContainer.removeClass("sideBarDivContainerShow");
             sideBarDivContainer.addClass("sideBarDivContainerHide");
             sideBar.removeClass("barMarginShow");
             sideBar.addClass("barMarginHide");
+            $("body").css("overflow-y", "visible");
             setTimeout(() => {
                 sideBarDivContainer.addClass("hide");
             }, 800);
