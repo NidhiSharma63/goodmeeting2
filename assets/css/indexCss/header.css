@@ -30,42 +30,43 @@
 .headerContainer .ulContainer {
     width: 29rem;
 }
- 
-.headerContainer .ulContainer ul li:nth-child(1):after,
-.headerContainer .ulContainer ul li:nth-child(2):after,
-.headerContainer .ulContainer ul li:nth-child(3):after,
-.headerContainer .ulContainer ul li:nth-child(4):after {
+.headerContainer  ul li,
+.sideBarDivContainer  ul li{
+    position: relative;
+}
+.headerContainer  ul li:nth-child(1)::after,
+.headerContainer  ul li:nth-child(2)::after,
+.headerContainer  ul li:nth-child(3)::after,
+.sideBarDivContainer  ul li:nth-child(1)::after,
+.sideBarDivContainer  ul li:nth-child(2)::after,
+.sideBarDivContainer  ul li:nth-child(3)::after{
     content: '';
     width: 0;
     height: 0.2rem;
     position: absolute;
-    background-color: var(--primary-color);
+    /* background-color: var(--primary-color); */
+    background-color: yellow;
     top: 6rem;
     transition: all .7s;
+    left: 0rem;
+    top: 3rem;
 }
-
-.headerContainer .ulContainer ul li:nth-child(1):after {
-    left: 41rem;
+.headerContainer  ul li:nth-child(2):hover::after,
+.sideBarDivContainer  ul li:nth-child(2):hover::after {
+    width: 9.5rem;
 }
-
-.headerContainer .ulContainer ul li:nth-child(2):after {
-    left: 51rem;
+.headerContainer  ul li:nth-child(3):hover::after,
+.sideBarDivContainer  ul li:nth-child(3):hover::after  {
+    width: 7.5rem;
 }
-
-.headerContainer .ulContainer ul li:nth-child(3):after {
-    left: 63.8rem;
+.headerContainer  ul li:nth-child(1):hover::after,
+.sideBarDivContainer  ul li:nth-child(1):hover::after  {
+    width: 4.5rem;
 }
-
-.headerContainer .ulContainer ul li:nth-child(2):hover::after,
-.headerContainer .ulContainer ul li:nth-child(3):hover::after,
-.headerContainer .ulContainer ul li:nth-child(3):hover::after {
-    width: 8rem;
+.sideBarDivContainer  ul li:nth-child(1):hover::after,
+.sideBarDivContainer  ul li:nth-child(3):hover::after {
+    height: .3rem;
 }
-
-.headerContainer .ulContainer ul li:nth-child(1):hover::after {
-    width: 6rem;
-}
-
 .login_logout_section {
     width: 30rem;
     justify-content: space-around;
