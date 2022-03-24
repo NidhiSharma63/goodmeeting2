@@ -13,6 +13,8 @@
     background-color: inherit;
     justify-content: space-around;
     flex-grow: .5;
+    position: relative;
+    z-index: 1;
 }
 
 .headerContainer .logoContainer, .headerContainer .sideBarLogo {
@@ -88,28 +90,52 @@
  .darkSwitch {
     border: 1px solid;
     font-size: 2rem;
-    width: 6rem;
-    height: 4rem;
+    width: 8rem;
+    height: 3rem;
+    padding-left: 1rem;
     border-radius: 1rem;
     background-color: var(--secondary-color);
     color: white;
-    position: relative;
+    justify-content: flex-start;
 }
-
- .darkSwitch .moon {
-    width: 4rem;
-    position: relative;
-    left: 1.5rem;
+.darkSwitch .circle{
+    margin-left: -4rem;
+    border: 1px solid;
+}
+.darkSwitch span{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.darkSwitch .dark{
     opacity: 0;
 }
+.darkSwitch .light{
+    margin-left: 1rem;
+}
+.circleMoveRight{
+    margin-left: 1rem ;
+    animation: marginLeft 2s;
+}
+.circleMoveLeft{
+    margin-left: 1rem ;
+    animation: removeMarginLeft 2s;
+}
 
- .darkSwitch .sun {
-    width: 3rem;
-    position: relative;
-    right: 2rem;
-    z-index: 0;
-    opacity: 1;
-    transition: 1s;
+@keyframes marginLeft{
+    from{
+        margin-left: -4rem;
+    }
+    to{
+        margin-left:1rem;
+    }
+}
+@keyframes removeMarginLeft{
+    from{
+        margin-left: 1rem;
+    }
+    to{
+        margin-left:-4rem;
+    }
 }
 
 .visible {
