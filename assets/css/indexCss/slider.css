@@ -73,7 +73,7 @@
 .testimonial .commaImg1 img{
     transform: rotate(180deg);
 }
-.testimonial .userName p{
+.testimonial .testimonialUser p{
     font-size: 2rem;
 }
 .testimonial .testimonialDots{
@@ -84,6 +84,8 @@
 }
 .testimonial .testimonialDots .dot{
    background-color: var(--primary-color); 
+   opacity: .5;
+   cursor: pointer;
 }
 .section5 .col1 p{
     color: white;
