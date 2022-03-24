@@ -22,10 +22,12 @@
     width: 18rem;
     position: relative;
 }
+
 .section4 .text {
     position: relative;
 }
-.section4 .img img{
+
+.section4 .img img {
     width: 100%;
     position: relative;
 }
@@ -60,9 +62,11 @@
 .section4 .col4 .text {
     min-height: 21rem;
 }
+
 .section4 .col5 .text {
     min-height: 24rem;
 }
+
 .section4 .text p:first-child {
     font-weight: 600;
     font-size: 2.5rem;
@@ -105,8 +109,9 @@
     border: .2rem solid var(--primary-color);
     color: var(--primary-color);
 }
+
 /* steps lines */
-.section4 .col2 .img::before,
+/* .section4 .col2 .img::before,
 .section4 .col4 .img::after,
 .section4 .col4 .img::before,
 .section4 .col2 .text::after,
@@ -204,11 +209,50 @@
     height: .2rem;
     background-color: var(--light-black-color);
     
-}
+} */
 .section4 .col4 .img::before,
 .section4 .col5 .img::after,
-.section4 .col3 .img::after{
+.section4 .col3 .img::after {
     /* height: 2rem; */
     /* background-color:var(--blue-color); */
-/* background-color: yellow; */
+    /* background-color: yellow; */
+}
+
+.section4 .col2 {
+    position: relative;
+
+}
+
+.section4 .col2::after,
+.section4 .col2 .count::after,
+.section4 .col2 .img::after {
+
+    position: absolute;
+    content: '';
+}
+
+.section4 .col2::after {
+    background-color: green;
+    width: 100%;
+    height: .2rem;
+    bottom: -3rem;
+    z-index: 0;
+}
+
+.section4 .col2 .count::after {
+    background-color: green;
+    width: 13rem;
+    height: 0.2rem;
+    transform: rotate(90deg);
+    top: 9.6rem;
+    left: -4.6rem;
+}
+
+.section4 .col2 .img::after {
+    background-color: yellow;
+    width: 40rem;
+    height: 5.2rem;
+    top: 22.6rem;
+    left: -18.1rem;
+    z-index: 1;
 }
