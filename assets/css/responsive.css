@@ -2,12 +2,17 @@
   html {
     font-size: 169.5%;
   }
+  .section4 .col4 .img::before,
+  .section4 .col4 .img::after {
+    left: -20.2rem;
+  }
 }
 
 @media screen and (max-width: 3200px) {
   html {
     font-size: 121.5%;
   }
+ 
 }
 
 @media screen and (max-width: 3000px) {
@@ -20,31 +25,64 @@
   html {
     font-size: 110.5%;
   }
+
+  .section4 .col4 .img::before,
+  .section4 .col4 .img::after {
+    left: -18rem;
+  }
 }
 
 @media screen and (max-width: 2560px) {
   html {
     font-size: 101.5%;
   }
-}
 
+  .section4 .col4 .img::before,
+  .section4 .col4 .img::after {
+    left: -18rem;
+  }
+}
 @media screen and (max-width: 1920px) {
   html {
     font-size: 60.5%;
   }
+
 }
 
 @media screen and (max-width: 1600px) {
   html {
     font-size: 71.5%;
   }
+
+  .section4 .col4 .img::before,
+  .section4 .col4 .img::after {
+    left: -20.2rem;
+  }
 }
-@media screen and (max-width: 1366px) {
+
+@media screen and (max-width: 1520px) {
+
+  .section4 .col4 .img::before,
+  .section4 .col4 .img::after {
+    left: -19.2rem;
+  }
+}
+
+@media screen and (max-width: 1368px) {
   html {
     font-size: 62.5%;
   }
+
+  .section4 .col4 .img::before,
+  .section4 .col4 .img::after {
+    left: -19.2rem;
+  }
 }
+
 @media screen and (max-width: 1280px) {
+  html {
+    font-size: 55.5%;
+  }
   .section2 .textSection {
     min-height: 40rem;
   }
@@ -53,28 +91,44 @@
   .section6 .col3 .footerLinks {
     width: 100%;
   }
+  
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1150px) {
   html {
-    font-size: 55.5%;
+    font-size: 51.5%;
   }
 
 }
-
-@media screen and (max-width: 916px) {
+@media screen and (max-width: 1046px) {
   html {
-    font-size: 49.5%;
+    font-size: 47.5%;
+  }
+}
+ @media screen and (max-width: 916px) {
+  html {
+    font-size: 40.5%;
   }
 
   /* footer links*/
   .section6 .col3 .footerLinks {
     flex-direction: column;
     align-items: center;
+  } 
+
+} 
+@media screen and (max-width: 831px) {
+  html {
+    font-size: 36.5%;
   }
 
-}
+  /* footer links*/
+  .section6 .col3 .footerLinks {
+    flex-direction: column;
+    align-items: center;
+  } 
 
+} 
 @media screen and (max-width: 761px) {
 
   html {
@@ -191,6 +245,31 @@
   .container .section1 img {
     max-width: 25rem;
   }
+
+.section4 .col2::after,
+.section4 .col2 .count::after,
+.section4 .col2 .img::after,
+.section4 .col3 .img::before,
+.section4 .col3 .img::after,
+.section4 .col3 .count::after,
+.section4 .col3 .count::before,
+.section4 .col3::after,
+.section4 .col4 .img::after,
+.section4 .col4 .img::before,
+.section4 .col4 .count::after,
+.section4 .col4 .count::before,
+.section4 .col4::after,
+.section4 .col5 .img::before,
+.section4 .col5 .count::before {
+  display: none;
+}
+.section4 .col2,
+.section4 .col3,
+.section4 .col4,
+.section4 .col5{
+  padding-bottom: 1rem;
+  border-bottom: .1rem solid gray;
+}
 }
 
 @media screen and (max-width: 665px) {

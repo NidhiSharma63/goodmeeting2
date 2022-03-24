@@ -162,10 +162,10 @@
 .section4 .col4 .count::after,
 .section4 .col4 .count::before,
 .section4 .col5 .count::before {
-    width: 13rem;
+    width: 11rem;
     transform: rotate(90deg);
-    top: 9.4rem;
-    left: -4.6rem;
+    top: 10.4rem;
+    left: -3.7rem;
 }
 
 .section4 .col2 .img::after,
@@ -192,32 +192,34 @@
 }
 .section4 .col3 .count::before,
 .section4 .col3 .count::after{
-    width: 11rem;
+    width: 8rem;
     transform: rotate(90deg);
-    top: -3.5rem;
-    left: -3.5rem;
+    top: -4.5rem;
+    left: -1.9rem;
 
 }
 .section4 .col3 .count::after{
-    top: 7.7rem;
+    top: 9rem;
+}
+.section4 .col4 .img::before{
+    left: -18.2rem;
 }
 .section4 .col4 .img::before{
     top: -7.4rem;
-    left: -18.2rem;
 }
 .section4 .col4 .img::after{
     top: 20.6rem;
-    left: -18.2rem;
 }
 .section4 .col4 .count::before{   
-    top: -4.9rem;
+    top: -5.9rem;
 }
 .section4 .col4::after{
     top: 24.3rem;
     z-index: 0;
 }
-.section4 .col5 .count::before{   
-    top: -5.9rem;
+.section4 .col5 .count::before{ 
+    width: 11.6rem;  
+    top: -6.4rem;
 }
 .section4 .col5 .img::before
 {    
