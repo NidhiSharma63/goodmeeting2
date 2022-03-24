@@ -61,16 +61,16 @@ $(document).ready(function () {
         $(".circle").css("margin-left", "1rem");
         $(".light").addClass("nonVisible");
         $(".dark").addClass("visible");
+        $(".dark").removeClass("nonVisible");
     }
     const showLightMode = () =>{
         if($(".circle").hasClass("circleMoveRight")){
             $(".circle").removeClass("circleMoveRight");
         }
-        // $(".circle").removeClass("circleMoveRight");
         $(".circle").addClass("circleMoveLeft");
         $(".circle").css("margin-left", "-4rem");
         $(".light").removeClass("nonVisible");
-        $(".dark").removeClass("nonVisible");
+        $(".dark").addClass("nonVisible");
     }
     let setMode = localStorage.getItem("goodmeeting_today_color_scheme");
     if (setMode === 'dark') {

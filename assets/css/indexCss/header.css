@@ -100,7 +100,6 @@
 }
 .darkSwitch .circle{
     margin-left: -4rem;
-    border: 1px solid;
 }
 .darkSwitch span{
     font-size: 1.6rem;
@@ -114,11 +113,11 @@
 }
 .circleMoveRight{
     margin-left: 1rem ;
-    animation: marginLeft 2s;
+    animation: marginLeft 1s;
 }
 .circleMoveLeft{
     margin-left: 1rem ;
-    animation: removeMarginLeft 2s;
+    animation: removeMarginLeft 1s;
 }
 
 @keyframes marginLeft{
