@@ -137,15 +137,6 @@
     }
 }
 
-.visible {
-    opacity: 1 !important;
-    transition: 1s;
-}
-
-.nonVisible {
-    opacity: 0 !important;
-    transition: 1s;
-}
 .sideBar{
     color:var(--secondary-color);
     font-size: 3rem;

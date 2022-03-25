@@ -16,6 +16,7 @@ const testimonialUserStatus = [
 ]
 
 $(document).ready(() => {
+    // upload first testimonialArrayText
     const testimonialDot = document.querySelectorAll(".testimonialDot")
     let i = 1;
     $(".testimonialText").html((testimonialArrayText)[0]);
@@ -28,6 +29,7 @@ $(document).ready(() => {
             item.classList.remove("opacity")
         }
     });
+    // show testimonialArrayText on click of each btn
     $("#testimonialDot1").click(() => {
         $(".testimonialText").html((testimonialArrayText)[0]);
         $(".userName").html(testimonialUserName[0]);
@@ -46,14 +48,16 @@ $(document).ready(() => {
         $(".userStatus").html(testimonialUserStatus[2]);
         i=2;
     });
- 
+ // change testimonialArrayText on after 4second 
     setInterval(() => {
         if (i == 3) {
             i = 0;
         }
         $(".testimonialText").html((testimonialArrayText)[i]);
+        $(".testimonialText").html((testimonialArrayText)[i]);
         $(".userName").html(testimonialUserName[i]);
         $(".userStatus").html(testimonialUserStatus[i]);
+        // $(".testimonialUser").css("margin-left","12rem")
         testimonialDot.forEach((item) => {
             if (i == item.dataset.testimonial) {
                 item.classList.add("opacity")
