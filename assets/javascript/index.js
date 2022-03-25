@@ -17,15 +17,13 @@ const nexSlide = () => {
         testimonialSlider.style.left = -width * count + "px"
         testimonialDot[count].classList.add("opacity");
     }
-
+    // addEventListener on each dot
     testimonialDot.forEach((dot) => {
         dot.addEventListener("click", (e) => {
             timer = false;
-            if (count != undefined) {
                 if (count != e.target.dataset.testimonial) {
                     testimonialDot[count].classList.remove("opacity");
                 }
-            }
             testimonialDot[e.target.dataset.testimonial].classList.add("opacity");
             count = e.target.dataset.testimonial;
             testimonialSlider.style.left = -width * count + "px"
