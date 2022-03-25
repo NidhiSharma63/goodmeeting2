@@ -9,7 +9,7 @@ window.addEventListener('resize', function () {
 });
 // initialize varibale
 let count = 0;
-let timer = true;
+let moveSlide = true;
 
 const nexSlide = () => {
     // if count less than testimonialContent.length move slider
@@ -20,7 +20,8 @@ const nexSlide = () => {
     // addEventListener on each dot
     testimonialDot.forEach((dot) => {
         dot.addEventListener("click", (e) => {
-            timer = false;
+            // make moveSlide = false
+            moveSlide = false;
                 if (count != e.target.dataset.testimonial) {
                     testimonialDot[count].classList.remove("opacity");
                 }
@@ -28,7 +29,7 @@ const nexSlide = () => {
             count = e.target.dataset.testimonial;
             testimonialSlider.style.left = -width * count + "px"
             setTimeout(() => {
-                timer = true
+                moveSlide = true
             }, 8000);
         })
     })
@@ -48,7 +49,7 @@ const mainFunction = () => {
     nexSlide();
 }
 setInterval(() => {
-    if (timer) {
+    if (moveSlide) {
         count++
         mainFunction();
     }
