@@ -108,6 +108,7 @@
    background-color: var(--primary-color); 
    opacity: .5;
    cursor: pointer;
+   transition: all .7s;
 }
 
 .section5 .col1 p{
