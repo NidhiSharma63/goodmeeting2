@@ -86,16 +86,17 @@
 .testimonial .testimonialTextContainer .testimonialSlider{
     display: flex;
     position: relative;
+    left: 0;
     transition: all 1s;
 }
-.testimonial .testimonialTextContainer .testimonialSlider .testimonial{
+.testimonial .testimonialTextContainer .testimonialSlider .testimonialContent{
     line-height: 3rem;
     width: 85rem;
 }
-.testimonial .testimonialUser{
+.testimonialContent .testimonialUser{
     padding-top: 1rem;
 }
-.testimonial .testimonial .testimonialUser p{
+.testimonial .testimonialContent .testimonialUser p{
     font-size: 2rem;
 }
 .testimonial .testimonialDots{
