@@ -31,5 +31,5 @@ $(document).ready(() => {
    }
 setInterval(() => {
     nexSlide();
-}, 4000);
+}, 3000);
 });
