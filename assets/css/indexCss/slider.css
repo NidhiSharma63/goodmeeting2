@@ -43,10 +43,15 @@
     margin: auto;
     flex-direction: column;
 }
-
-.testimonial p:nth-child(1) {
-    font-size: 3.6rem;
-    font-weight: 700;
+.testimonial .heading{
+    font-size: 4rem;
+}
+.testimonial .testimonialTextContainer{
+    display: flex;
+}
+.testimonial .testimonialText {
+    font-size: 2rem;
+    text-align: center;
 }
 
 .testimonial p:nth-child(3) {
@@ -73,7 +78,24 @@
 .testimonial .commaImg1 img{
     transform: rotate(180deg);
 }
-.testimonial .testimonialUser p{
+.testimonial .testimonialTextContainer{
+    width: 85rem;
+    margin: auto;
+    overflow: hidden;
+}
+.testimonial .testimonialTextContainer .testimonialSlider{
+    display: flex;
+    position: relative;
+    transition: all 1s;
+}
+.testimonial .testimonialTextContainer .testimonialSlider .testimonial{
+    line-height: 3rem;
+    width: 85rem;
+}
+.testimonial .testimonialUser{
+    padding-top: 1rem;
+}
+.testimonial .testimonial .testimonialUser p{
     font-size: 2rem;
 }
 .testimonial .testimonialDots{

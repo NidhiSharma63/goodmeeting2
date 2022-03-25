@@ -14,58 +14,22 @@ const testimonialUserStatus = [
     "Owner, Brashears Insurance",
     "Owner, Joors Welding and Metal Service"
 ]
-
+const testimonialTextContainer = document.querySelector(".testimonialTextContainer")
+const width = testimonialTextContainer.offsetWidth;
+const testimonialSlider = document.querySelector(".testimonialSlider");
+const testimonials = document.querySelectorAll(".testimonial");
 $(document).ready(() => {
-    // upload first testimonialArrayText
-    const testimonialDot = document.querySelectorAll(".testimonialDot")
-    let i = 1;
-    $(".testimonialText").html((testimonialArrayText)[0]);
-    $(".userName").html(testimonialUserName[0]);
-    $(".userStatus").html(testimonialUserStatus[0]);
-    testimonialDot.forEach((item) => {
-        if (0 == item.dataset.testimonial) {
-            item.classList.add("opacity")
-        } else {
-            item.classList.remove("opacity")
-        }
-    });
-    // show testimonialArrayText on click of each btn
-    $("#testimonialDot1").click(() => {
-        $(".testimonialText").html((testimonialArrayText)[0]);
-        $(".userName").html(testimonialUserName[0]);
-        $(".userStatus").html(testimonialUserStatus[0]);
-        i=0;
-    });
-    $("#testimonialDot2").click(() => {
-        $(".testimonialText").html((testimonialArrayText)[1]);
-        $(".userName").html(testimonialUserName[1]);
-        $(".userStatus").html(testimonialUserStatus[1]);
-        i=1;
-    });
-    $("#testimonialDot3").click(() => {
-        $(".testimonialText").html((testimonialArrayText)[2]);
-        $(".userName").html(testimonialUserName[2]);
-        $(".userStatus").html(testimonialUserStatus[2]);
-        i=2;
-    });
- // change testimonialArrayText on after 4second 
-    setInterval(() => {
-        if (i == 3) {
-            i = 0;
-        }
-        $(".testimonialText").html((testimonialArrayText)[i]);
-        $(".testimonialText").html((testimonialArrayText)[i]);
-        $(".userName").html(testimonialUserName[i]);
-        $(".userStatus").html(testimonialUserStatus[i]);
-        // $(".testimonialUser").css("margin-left","12rem")
-        testimonialDot.forEach((item) => {
-            if (i == item.dataset.testimonial) {
-                item.classList.add("opacity")
-            } else {
-                item.classList.remove("opacity")
-            }
-        });
-        i += 1
-    }, 4000);
-
+   let count = 0;
+   const nexSlide = () =>{
+       if(count<testimonials.length-1){
+        testimonialSlider.style.left = -width*count+"px"
+       }
+       count++
+       if(count==testimonials.length){
+           count=0;
+       }
+   }
+setInterval(() => {
+    nexSlide();
+}, 4000);
 });
