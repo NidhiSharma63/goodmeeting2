@@ -22,31 +22,34 @@
 .section5 .slider p {
     font-size: 3rem;
     font-weight: 600;
+    padding-bottom: 2rem;
 }
 
 .section5 .slider .dashboardImageContainer {
-    width: 80rem;
+    width: 80.5rem;
     display: flex;
     overflow: hidden;
     margin: auto;
 }
 
-.section5 .slider .dashboardImages {
+.section5 .slider .dashboardImagesSlider {
     display: flex;
     position: relative;
+    transition: all 1s;
 }
 
-.section5 .slider .dashboardImages .img1,
-.section5 .slider .dashboardImages .img2,
-.section5 .slider .dashboardImages .img3 {
+.section5 .slider .dashboardImagesSlider .img1,
+.section5 .slider .dashboardImagesSlider .img2,
+.section5 .slider .dashboardImagesSlider .img3 {
     width: 80rem;
-    margin-right: 1rem;
+    margin-right: .5rem;
 }
 
-.section5 .slider .dashboardImages .img1 img,
-.section5 .slider .dashboardImages .img2 img,
-.section5 .slider .dashboardImages .img3 img {
+.section5 .slider .dashboardImagesSlider .img1 img,
+.section5 .slider .dashboardImagesSlider .img2 img,
+.section5 .slider .dashboardImagesSlider .img3 img {
     width: 100%;
+    border-radius: 2rem;
 }
 
 .section5 .sliderDotContainer {
