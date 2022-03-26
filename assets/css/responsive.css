@@ -312,6 +312,21 @@
   .section5 .col3 {
     min-height: 27rem;
   }
+  /* dashboard and testimonial responsive */
+
+.testimonial .testimonialTextContainer,
+.testimonial .testimonialTextContainer .testimonialSlider .testimonialContent {
+  width: 40rem;
+}
+.section5 .slider .dashboardImageContainer {
+  width: 39rem;
+}
+
+.section5 .slider .dashboardImagesSlider .img1,
+.section5 .slider .dashboardImagesSlider .img2,
+.section5 .slider .dashboardImagesSlider .img3 {
+    width: 39rem;
+}
 }
 
 @media screen and (max-width: 550px) {
@@ -336,6 +351,11 @@
   /* authentication section */
   .container .section2 .midSection {
     margin-bottom: -4rem;
+  }
+  .section5 .slider .dashboardImagesSlider .img1,
+  .section5 .slider .dashboardImagesSlider .img2,
+  .section5 .slider .dashboardImagesSlider .img3 {
+      width: 38.5rem;
   }
 }
 
