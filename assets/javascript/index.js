@@ -55,6 +55,8 @@ const nexSlide = () => {
         if(touchend>touchStart){
             if(testimonialSlide>0&&testimonialSlide<testimonialSlider.children.length){
                 testimonialSlider.style.left = -testimonialTextContainerWidth * (testimonialSlide-1) + "px";
+                testimonialDot[testimonialSlide - 1].classList.add("opacity");
+                testimonialDot[testimonialSlide].classList.remove("opacity");
                 setTimeout(() => {
                     moveSlide = true
                 }, 8000);
