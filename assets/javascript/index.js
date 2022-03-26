@@ -42,30 +42,25 @@ const nexSlide = () => {
         // if slide is move then make current testimonialSlide = testimonialSlide + 1
         e.preventDefault();
         if (touchStart > touchend) {
-            if (testimonialSlide < testimonialSlider.children.length - 1 && testimonialSlide > -1) {
+            if (testimonialSlide < testimonialSlider.children.length - 1 && testimonialSlide >= -1) {
                 testimonialSlider.style.left = -testimonialTextContainerWidth * (testimonialSlide + 1) + "px";
                 testimonialDot[testimonialSlide + 1].classList.add("opacity");
                 testimonialDot[testimonialSlide].classList.remove("opacity");
                 setTimeout(() => {
-                    moveSlide = true
+                    moveSlide = true;
                 }, 8000);
+                testimonialSlide = testimonialSlide + 1
             }
         }
         if(touchend>touchStart){
             if(testimonialSlide>0&&testimonialSlide<testimonialSlider.children.length){
                 testimonialSlider.style.left = -testimonialTextContainerWidth * (testimonialSlide-1) + "px";
+                testimonialDot[testimonialSlide - 1].classList.add("opacity");
+                testimonialDot[testimonialSlide].classList.remove("opacity");
                 setTimeout(() => {
                     moveSlide = true
                 }, 8000);
-            }
-        }
-
-        if (isTestimonialTouchMove) {
-            if (touchend > touchStart) {
                 testimonialSlide = testimonialSlide - 1;
-            }
-            if (touchend < touchStart) {
-                testimonialSlide = testimonialSlide + 1
             }
         }
     })
