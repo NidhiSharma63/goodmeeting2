@@ -340,22 +340,24 @@
   .section2 .textSection .col3 {
     font-size: 2.4rem;
     line-height: 4rem;
+    text-align: center;
 }
   .section2 {
-    gap: 8rem;
+    gap: 12rem;
   }
   .section2 .textSection .col5 {
     width: 17rem;
+}
+
+.section2 .textSection .col5 .gmail, 
+.section2 .textSection .col5 .outlook {
+  width: 7rem;
 }
 .section2 .textSection .col5 .gmail p,
 .section2 .textSection .col5 .outlook p,
 .section2 .textSection .col5 small{
   font-size: 2rem;
   text-align: center;
-}
-.section2 .textSection .col5 .gmail, 
-.section2 .textSection .col5 .outlook {
-  width: 7rem;
 }
 .section2 .textSection .col5 .images {
   margin-top: 1rem;
