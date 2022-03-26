@@ -43,7 +43,7 @@ const nexSlide = () => {
 const mainFunction = () => {
     // remove class opacity from last dot and call nextslide function
     if (count > 0 && count <= testimonialContent.length) {
-        testimonialDot[count - 1].classList.remove("opacity");
+       testimonialDot[count - 1].classList.remove("opacity");
 
     }
     nexSlide();
