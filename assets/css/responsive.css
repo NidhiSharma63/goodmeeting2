@@ -280,11 +280,6 @@
   .section3 .col5 {
     min-height: 33rem;
   }
-
-  .section3 .col5 p:nth-child(2) {
-    line-height: 3rem;
-  }
-
   .section4 .col2,
   .section4 .col4 {
     flex-direction: column;
@@ -337,6 +332,10 @@
   .section2 .textSection {
     min-height: 55rem;
   }
+  .section2 .textSection .col2 {
+    font-size: 2.3rem;
+    width: 35rem;
+}
   .section2 .textSection .col3 {
     font-size: 2.4rem;
     line-height: 4rem;
