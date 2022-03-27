@@ -150,11 +150,12 @@
     background-color: var(--primary-color);
     display: flex;
     justify-content: space-around;
-    align-items: revert;
+    align-items: center;
     overflow: hidden;
 }
 .sideBarDivContainer .col{
     height: 45rem;
+    margin-top: -44rem;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
