@@ -10,6 +10,8 @@ window.addEventListener('resize', function () {
     testimonialTextContainerWidth = testimonialTextContainer.offsetWidth;
     dashboardImageContainerWidth = dashboardImageContainer.offsetWidth;
 });
+//geting the values
+const totalTestinomialSlideLength = dashboardImagesSlider.children.length;
 // initialize varibale for testimonial slide
 let testimonialSlide = 0;
 let testimonialMoveSlide = true;
@@ -24,15 +26,34 @@ let isDashboardTouchMove;
 let dashboardTouchStart;
 let dashboardTouchEnd;
 
+//common next slide function
+const commonNextSlide = (slide,totalSlideLength,slider,containerWidth,dot) => {
+    // if curentSlide less than totalSlideLength
+    console.log("commn slide"+slider.style.left);
+    console.log(slide);
+       // if curentSlide equal than totalSlideLength
+       if (slide == totalSlideLength) {
+        console.log("slide is become equal")
+        slider.style.left = 0 + "px";
+        dot[0].classList.add("opacity");
+    }
+    // console.log(slide)
+    if (slide < (totalSlideLength)) {
+        slider.style.left = -containerWidth * slide + "px";
+        dot[slide].classList.add("opacity");
+    }
+ 
+}
 // show next slide function
 const showNextSlide = () => {
-    // if testimonialSlide less than testimonialSlider.children.length
-    if (testimonialSlide < (testimonialSlider.children.length)) {
+    console.log(testimonialSlider.style.left);
+    // if testimonialSlide less than totalTestinomialSlideLengths
+    if (testimonialSlide < (totalTestinomialSlideLength)) {
         testimonialSlider.style.left = -testimonialTextContainerWidth * testimonialSlide + "px";
         testimonialDot[testimonialSlide].classList.add("opacity");
     }
-// if testimonialSlide equal than testimonialSlider.children.length
-    if (testimonialSlide == testimonialSlider.children.length) {
+// if testimonialSlide equal than totalTestinomialSlideLengths
+    if (testimonialSlide == totalTestinomialSlideLength) {
         testimonialSlide = 0;
         testimonialSlider.style.left = 0 + "px"
         testimonialDot[testimonialSlide].classList.add("opacity");
@@ -53,7 +74,7 @@ const testimonialTouchEndHandler = (e) => {
     e.preventDefault();
     // if touchStart > touchend it means touch is move to left so show the next slide
     if (testimonialTouchStart > testimonialTouchEnd) {
-        if (testimonialSlide < testimonialSlider.children.length - 1 && testimonialSlide >= -1) {
+        if (testimonialSlide < totalTestinomialSlideLength - 1 && testimonialSlide >= -1) {
             testimonialSlider.style.left = -testimonialTextContainerWidth * (testimonialSlide + 1) + "px";
             testimonialDot[testimonialSlide + 1].classList.add("opacity");
             testimonialDot[testimonialSlide].classList.remove("opacity");
@@ -66,7 +87,7 @@ const testimonialTouchEndHandler = (e) => {
     }
     // if testimonialTouchEnd > touchStart it means touch is move to right so show the prev slide
     if (testimonialTouchEnd > testimonialTouchStart) {
-        if (testimonialSlide > 0 && testimonialSlide < testimonialSlider.children.length) {
+        if (testimonialSlide > 0 && testimonialSlide < totalTestinomialSlideLength) {
             testimonialSlider.style.left = -testimonialTextContainerWidth * (testimonialSlide - 1) + "px";
             testimonialDot[testimonialSlide - 1].classList.add("opacity");
             testimonialDot[testimonialSlide].classList.remove("opacity");
@@ -97,7 +118,8 @@ const testimonialDotsClicked = (e) => {
 }
 // show next slide function when any event is trigger
 const nexSlide = () => {
-    showNextSlide();
+    // showNextSlide();
+    commonNextSlide(testimonialSlide, totalTestinomialSlideLength, testimonialSlider, testimonialTextContainerWidth, testimonialDot);
     testimonialSlider.addEventListener("touchstart", testimonialTouchStartHandler);
     testimonialSlider.addEventListener("touchmove", testimonialTouchMoveHandler);
     testimonialSlider.addEventListener("touchend", testimonialTouchEndHandler);
@@ -110,7 +132,7 @@ const nexSlide = () => {
 // mainTestimonialFunction()
 const mainTestimonialFunction = () => {
     // remove class opacity from last dot and call nextslide function
-    if (testimonialSlide > 0 && testimonialSlide <= testimonialSlider.children.length) {
+    if (testimonialSlide > 0 && testimonialSlide <= totalTestinomialSlideLength) {
         testimonialDot[testimonialSlide - 1].classList.remove("opacity");
 
     }
@@ -218,16 +240,22 @@ const mainDashboardFunction = () => {
     nexDashboardSlide();
 }
 // call the function after every 4sec
+// setInterval(() => {
+//     // for dashboardSlide
+//     if (dashboardMoveSlide) {
+//         dashboardSlide++
+//         mainDashboardFunction();
+//     }
+// }, 4000);
 setInterval(() => {
     // for testimonialSlide
     if (testimonialMoveSlide) {
+        // testimonialSlide++
+        if(testimonialSlide == totalTestinomialSlideLength){
+            testimonialSlide = 0;
+        }
         testimonialSlide++
         mainTestimonialFunction();
-    }
-    // for dashboardSlide
-    if (dashboardMoveSlide) {
-        dashboardSlide++
-        mainDashboardFunction();
     }
 }, 4000);
 // and call the function when widow is load
