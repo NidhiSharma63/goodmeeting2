@@ -82,8 +82,8 @@ const testimonialTouchEndHandler = (e) => {
     if (showNextTestimonialSLide) {
         if (currentTestimonialSlide < totalTestinomialSlideLength - 1 && currentTestimonialSlide >= -1) {
             touchEndNextSlideHandler(currentTestimonialSlide,testimonialSlider, testimonialTextContainerWidth, testimonialDot);
-            startTestimonialMoveSlide();
             currentTestimonialSlide = currentTestimonialSlide + 1
+            startTestimonialMoveSlide();
         }
     }
     if (showPrevTestimonialSLide) {
@@ -163,7 +163,7 @@ const dashboardDotsClicked = (e) => {
     }
     dashboardDots[clickedDashboardDotIndex].classList.add("opacity");
     dashboardSlide = clickedDashboardDotIndex;
-    dashboardImagesSlider.style.left = -dashboardImageContainerWidth * dashboardSlide + 2 + "px"
+    dashboardImagesSlider.style.left = -dashboardImageContainerWidth * dashboardSlide + "px"
     startDashboardMoveSlide();
 }
 
