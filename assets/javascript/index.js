@@ -27,10 +27,9 @@ let isDashboardTouchMove;
 let dashboardTouchStart;
 let dashboardTouchEnd;
 
-//common next slide function to call next slide
+// common next slide function to call next slide
 const commonNextSlide = (slide, totalSlideLength, slider, containerWidth, dots) => {
     // if curentSlide less than totalSlideLength;
-    console.log(slide + "  slideCame")
     if (slide == totalSlideLength) {
         slider.style.left = 0 + "px";
     }
@@ -40,15 +39,15 @@ const commonNextSlide = (slide, totalSlideLength, slider, containerWidth, dots) 
     }
     removeOPacityFromLastDot(slide, totalSlideLength, dots);
 }
-// remove opacity class from previous dot and add class to current slide dot
+// common remove opacity class from previous dot and add class to current slide dot
 const removeOPacityFromLastDot = (slide, totalSlideLength, dots) => {
     if (slide > 0 && slide < totalSlideLength) {
         dots[slide - 1].classList.remove("opacity");
         dots[slide].classList.add("opacity");
     }
+    // if slide = 0 then remove opacity from last dot
     if(slide===0){
         dots[totalSlideLength-1].classList.remove("opacity");
-        console.log("last slide   "+slide);
         dots[0].classList.add("opacity");
     }
 }
@@ -62,12 +61,25 @@ const testimonialTouchMoveHandler = (e) => {
     testimonialMoveSlide = false;
     e.preventDefault();
 }
+// show the next slide when touch event is end
+const touchEndNextSlideHandler = (slide,totalSlideLength,slider,containerWidth,dots,moveSlide) => {
+    if (slide < totalSlideLength-1 && slide >= -1) {
+        slider.style.left = -containerWidth * (slide + 1) + "px";
+        dots[slide + 1].classList.add("opacity");
+        dots[slide].classList.remove("opacity");
+        // show to current slide for 8sec and after that call the next slide function 
+        setTimeout(() => {
+            moveSlide = true;
+        }, 8000);
+        slide = slide + 1
+    }
+}
 // when touch is end and after getting the direction in which touch is move
 const testimonialTouchEndHandler = (e) => {
     e.preventDefault();
     // if touchStart > touchend it means touch is move to left so show the next slide
     if (testimonialTouchStart > testimonialTouchEnd) {
-        if (testimonialSlide < totalTestinomialSlideLength - 1 && testimonialSlide >= -1) {
+        if (testimonialSlide < totalTestinomialSlideLength-1 && testimonialSlide >= -1) {
             testimonialSlider.style.left = -testimonialTextContainerWidth * (testimonialSlide + 1) + "px";
             testimonialDot[testimonialSlide + 1].classList.add("opacity");
             testimonialDot[testimonialSlide].classList.remove("opacity");
@@ -77,6 +89,7 @@ const testimonialTouchEndHandler = (e) => {
             }, 8000);
             testimonialSlide = testimonialSlide + 1
         }
+        touchEndNextSlideHandler(testimonialSlide,totalTestinomialSlideLength,testimonialSlider,testimonialTextContainerWidth,testimonialDot,testimonialMoveSlide);
     }
     // if testimonialTouchEnd > touchStart it means touch is move to right so show the prev slide
     if (testimonialTouchEnd > testimonialTouchStart) {
@@ -116,37 +129,19 @@ const nexSlide = () => {
     testimonialSlider.addEventListener("touchend", testimonialTouchEndHandler);
     // addEventListener on each dot
     testimonialDot.forEach((dot) => {
-        // console.log("slide passed" + testimonialSlide)
         dot.addEventListener("click", testimonialDotsClicked);
     })
 
 }
-// mainTestimonialFunction()
-// const mainTestimonialFunction = () => {
-//     // call remove OPactiy from last dot function
-//     // removeOPacityFromLastDot(testimonialSlide, totalTestinomialSlideLength, testimonialDot);
-//     nexSlide();
-// };
-
 setInterval(() => {
     // for testimonialSlide
     if (testimonialMoveSlide) {
         testimonialSlide++;
-
-        // removeOPacityFromLastDot(testimonialSlide, totalTestinomialSlideLength, testimonialDot);
         if (testimonialSlide == totalTestinomialSlideLength) {
             testimonialSlide = 0;
         }
-        // if (testimonialSlide === totalTestinomialSlideLength - 1) {
-        //     console.log(testimonialSlide)
-        //     testimonialDot[totalTestinomialSlideLength - 1].classList.remove("opacity");
-        //     // console.log("last slide   " + slide)
-        // }
-        // removeOPacityFromLastDot(testimonialSlide, totalTestinomialSlideLength, testimonialDot);
-        // mainTestimonialFunction();
         nexSlide();
     }
-    // console.log("intervalslide"+testimonialSlide)
 }, 4000);
 nexSlide();
 
