@@ -27,8 +27,8 @@ let isDashboardTouchMove;
 let dashboardTouchStart;
 let dashboardTouchEnd;
 
-// common next slide function to call next slide
-const commonNextSlide = (slide, totalSlideLength, slider, containerWidth, dots) => {
+// next slide function to call next slide
+const NextSlide = (slide, totalSlideLength, slider, containerWidth, dots) => {
     // if curentSlide less than totalSlideLength;
     if (slide == totalSlideLength) {
         slider.style.left = 0 + "px";
@@ -39,7 +39,7 @@ const commonNextSlide = (slide, totalSlideLength, slider, containerWidth, dots) 
     }
     removeOPacityFromLastDot(slide, totalSlideLength, dots);
 }
-// common remove opacity class from previous dot and add class to current slide dot
+// remove opacity class from previous dot and add class to current slide dot
 const removeOPacityFromLastDot = (slide, totalSlideLength, dots) => {
     if (slide > 0 && slide < totalSlideLength) {
         dots[slide - 1].classList.remove("opacity");
@@ -115,7 +115,7 @@ const testimonialDotsClicked = (e) => {
 }
 // show next slide function when any event is trigger
 const mainTestimonialFunction = () => {
-    commonNextSlide(testimonialSlide, totalTestinomialSlideLength, testimonialSlider, testimonialTextContainerWidth, testimonialDot);
+    NextSlide(testimonialSlide, totalTestinomialSlideLength, testimonialSlider, testimonialTextContainerWidth, testimonialDot);
     testimonialSlider.addEventListener("touchstart", testimonialTouchStartHandler);
     testimonialSlider.addEventListener("touchmove", testimonialTouchMoveHandler);
     testimonialSlider.addEventListener("touchend", testimonialTouchEndHandler);
@@ -179,7 +179,7 @@ const dashboardDotsClicked = (e) => {
 
 const mainDashboardFunction = () => {
     // call nextslide function
-    commonNextSlide(dashboardSlide, totalDashboardSlideLength, dashboardImagesSlider, dashboardImageContainerWidth, dashboardDots);
+    NextSlide(dashboardSlide, totalDashboardSlideLength, dashboardImagesSlider, dashboardImageContainerWidth, dashboardDots);
     dashboardImagesSlider.addEventListener("touchstart", dashboardTouchStartHandler);
     dashboardImagesSlider.addEventListener("touchmove", dashboardTouchMoveHandler);
     dashboardImagesSlider.addEventListener("touchend", dashboardTouchEndHandler);
