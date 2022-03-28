@@ -83,6 +83,7 @@
     background-color: var(--secondary-color);
     padding: .8rem 1rem;
 }
+.sideBarDivContainer  ul li a,
 .registerBtn a,
 .loginBtn a{
     color: white;

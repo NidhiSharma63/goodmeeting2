@@ -27,7 +27,7 @@ let isDashboardTouchMove;
 let dashboardTouchStart;
 let dashboardTouchEnd;
 
-//common next slide function to call next slide
+// common next slide function to call next slide
 const commonNextSlide = (slide, totalSlideLength, slider, containerWidth, dots) => {
     // if curentSlide less than totalSlideLength;
     if (slide == totalSlideLength) {
@@ -39,7 +39,7 @@ const commonNextSlide = (slide, totalSlideLength, slider, containerWidth, dots) 
     }
     removeOPacityFromLastDot(slide, totalSlideLength, dots);
 }
-// remove opacity class from previous dot and add class to current slide dot
+// common remove opacity class from previous dot and add class to current slide dot
 const removeOPacityFromLastDot = (slide, totalSlideLength, dots) => {
     if (slide > 0 && slide < totalSlideLength) {
         dots[slide - 1].classList.remove("opacity");
@@ -121,7 +121,6 @@ const mainTestimonialFunction = () => {
     testimonialSlider.addEventListener("touchend", testimonialTouchEndHandler);
     // addEventListener on each dot
     testimonialDot.forEach((dot) => {
-        // console.log("slide passed" + testimonialSlide)
         dot.addEventListener("click", testimonialDotsClicked);
     })
 
