@@ -29,22 +29,27 @@ let dashboardTouchEnd;
 
 //common next slide function to call next slide
 const commonNextSlide = (slide, totalSlideLength, slider, containerWidth, dots) => {
-    // if curentSlide less than totalSlideLength
+    // if curentSlide less than totalSlideLength;
+    console.log(slide + "  slideCame")
     if (slide == totalSlideLength) {
         slider.style.left = 0 + "px";
-        dots[0].classList.add("opacity");
     }
     // if curentSlide equal to totalSlideLength
     if (slide < (totalSlideLength)) {
         slider.style.left = -containerWidth * slide + "px";
+    }
+    removeOPacityFromLastDot(slide, totalSlideLength, dots);
+}
+// remove opacity class from previous dot and add class to current slide dot
+const removeOPacityFromLastDot = (slide, totalSlideLength, dots) => {
+    if (slide > 0 && slide < totalSlideLength) {
+        dots[slide - 1].classList.remove("opacity");
         dots[slide].classList.add("opacity");
     }
-
-}
-// when slide become last then remove the opactity class from last dot 
-const removeOPacityFromLastDot = (slide, totalSlideLength, dots) => {
-    if (slide > 0 && slide <= totalTestinomialSlideLength) {
-        dots[slide - 1].classList.remove("opacity");
+    if(slide===0){
+        dots[totalSlideLength-1].classList.remove("opacity");
+        console.log("last slide   "+slide);
+        dots[0].classList.add("opacity");
     }
 }
 // get the initial touch positon of testimonial slider and keep isTestimonialTouchMove = false
@@ -111,16 +116,62 @@ const nexSlide = () => {
     testimonialSlider.addEventListener("touchend", testimonialTouchEndHandler);
     // addEventListener on each dot
     testimonialDot.forEach((dot) => {
+        // console.log("slide passed" + testimonialSlide)
         dot.addEventListener("click", testimonialDotsClicked);
     })
 
 }
 // mainTestimonialFunction()
-const mainTestimonialFunction = () => {
-    // call remove OPactiy from last dot function
-    removeOPacityFromLastDot(testimonialSlide, totalTestinomialSlideLength, testimonialDot);
-    nexSlide();
-};
+// const mainTestimonialFunction = () => {
+//     // call remove OPactiy from last dot function
+//     // removeOPacityFromLastDot(testimonialSlide, totalTestinomialSlideLength, testimonialDot);
+//     nexSlide();
+// };
+
+setInterval(() => {
+    // for testimonialSlide
+    if (testimonialMoveSlide) {
+        testimonialSlide++;
+
+        // removeOPacityFromLastDot(testimonialSlide, totalTestinomialSlideLength, testimonialDot);
+        if (testimonialSlide == totalTestinomialSlideLength) {
+            testimonialSlide = 0;
+        }
+        // if (testimonialSlide === totalTestinomialSlideLength - 1) {
+        //     console.log(testimonialSlide)
+        //     testimonialDot[totalTestinomialSlideLength - 1].classList.remove("opacity");
+        //     // console.log("last slide   " + slide)
+        // }
+        // removeOPacityFromLastDot(testimonialSlide, totalTestinomialSlideLength, testimonialDot);
+        // mainTestimonialFunction();
+        nexSlide();
+    }
+    // console.log("intervalslide"+testimonialSlide)
+}, 4000);
+nexSlide();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // dashboardSlider function start
 // get the initial touch positon of dashboard slider and keep isdashboardTouchMove = false
@@ -186,7 +237,7 @@ const showNextDashboardSlide = () => {
 const dashboardDotsClicked = (e) => {
     e.preventDefault();
     // make dashboardMoveSlide = false
-    console.log("slide from outside" + dashboardSlide);
+    // console.log("slide from outside" + dashboardSlide);
     dashboardMoveSlide = false;
     if (dashboardSlide != e.target.dataset.dashboard) {
         dashboardDots[dashboardSlide].classList.remove("opacity");
@@ -220,29 +271,24 @@ const mainDashboardFunction = () => {
     nexDashboardSlide();
 }
 // call the function after every 4sec
-setInterval(() => {
-    // for dashboardSlide
-    if (dashboardMoveSlide) {
-        if (dashboardSlide == totalDashboardSlideLength) {
-            dashboardSlide = 0;
-        }
-        dashboardSlide++
-        mainDashboardFunction();
-    }
-    // for testimonialSlide
-    if (testimonialMoveSlide) {
-        if (testimonialSlide == totalTestinomialSlideLength) {
-            testimonialSlide = 0;
-        }
-        testimonialSlide++
-        mainTestimonialFunction();
-    }
-}, 4000);
+// setInterval(() => {
+//     // for dashboardSlide
+//     if (dashboardMoveSlide) {
+//         console.log("setInterval slide" + testimonialSlide)
+//         if (dashboardSlide == totalDashboardSlideLength) {
+//             dashboardSlide = 0;
+//         }
+//         dashboardSlide++;
+//         mainDashboardFunction();
+//     }
+
+// }, 4000);
 // and call the function when widow is load
 
-window.onload = () => {
 
-    mainTestimonialFunction();
-    mainDashboardFunction();
+// window.onload = () => {
 
-}
+//     // mainTestimonialFunction();
+//     mainDashboardFunction();
+
+// }
