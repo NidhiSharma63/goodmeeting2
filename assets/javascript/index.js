@@ -10,22 +10,16 @@ window.addEventListener('resize', function () {
     testimonialTextContainerWidth = testimonialTextContainer.offsetWidth;
     dashboardImageContainerWidth = dashboardImageContainer.offsetWidth;
 });
-
 // initialize varibale for testimonialand dashboard slide
 let currentTestimonialSlide = 0;
 let testimonialMoveSlide = true;
-let isTestimonialTouchMove;
-let testimonialTouchStart;
-let testimonialTouchEnd;
+let testimonialTouchStart , dashboardTouchStart;
+let testimonialTouchEnd , dashboardTouchEnd;
 let dashboardSlide = 0;
 let dashboardMoveSlide = true;
-let isDashboardTouchMove;
-let dashboardTouchStart;
-let dashboardTouchEnd;
 //geting the values
 const totalTestinomialSlideLength = dashboardImagesSlider.children.length;
 const totalDashboardSlideLength = dashboardImagesSlider.children.length;
-
 //show next slide
 const NextSlide = (currentSlide, totalSlideLength, slider, containerWidth, dots) => {
     // move slider to left
@@ -51,7 +45,6 @@ const handleDotOpacity = (currentSlide, totalSlideLength, dots) => {
 const startTestimonialMoveSlide =()=> setTimeout(() => {
     testimonialMoveSlide = true
 }, 8000);
-
 // get testimonial touch point
 const testimonialTouchStartHandler = (e) => {
     testimonialTouchStart = e.changedTouches[0].clientX;
