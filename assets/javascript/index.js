@@ -12,6 +12,7 @@ window.addEventListener('resize', function () {
 });
 //geting the values
 const totalTestinomialSlideLength = dashboardImagesSlider.children.length;
+const totalDashboardSlideLength = dashboardImagesSlider.children.length;
 // initialize varibale for testimonial slide
 let testimonialSlide = 0;
 let testimonialMoveSlide = true;
@@ -29,35 +30,16 @@ let dashboardTouchEnd;
 //common next slide function
 const commonNextSlide = (slide,totalSlideLength,slider,containerWidth,dot) => {
     // if curentSlide less than totalSlideLength
-    console.log("commn slide"+slider.style.left);
-    console.log(slide);
-       // if curentSlide equal than totalSlideLength
        if (slide == totalSlideLength) {
-        console.log("slide is become equal")
         slider.style.left = 0 + "px";
         dot[0].classList.add("opacity");
     }
-    // console.log(slide)
+    // if curentSlide equal to totalSlideLength
     if (slide < (totalSlideLength)) {
         slider.style.left = -containerWidth * slide + "px";
         dot[slide].classList.add("opacity");
     }
  
-}
-// show next slide function
-const showNextSlide = () => {
-    console.log(testimonialSlider.style.left);
-    // if testimonialSlide less than totalTestinomialSlideLengths
-    if (testimonialSlide < (totalTestinomialSlideLength)) {
-        testimonialSlider.style.left = -testimonialTextContainerWidth * testimonialSlide + "px";
-        testimonialDot[testimonialSlide].classList.add("opacity");
-    }
-// if testimonialSlide equal than totalTestinomialSlideLengths
-    if (testimonialSlide == totalTestinomialSlideLength) {
-        testimonialSlide = 0;
-        testimonialSlider.style.left = 0 + "px"
-        testimonialDot[testimonialSlide].classList.add("opacity");
-    }
 }
 // get the initial touch positon of testimonial slider and keep isTestimonialTouchMove = false
 const testimonialTouchStartHandler = (e) => {
@@ -118,7 +100,6 @@ const testimonialDotsClicked = (e) => {
 }
 // show next slide function when any event is trigger
 const nexSlide = () => {
-    // showNextSlide();
     commonNextSlide(testimonialSlide, totalTestinomialSlideLength, testimonialSlider, testimonialTextContainerWidth, testimonialDot);
     testimonialSlider.addEventListener("touchstart", testimonialTouchStartHandler);
     testimonialSlider.addEventListener("touchmove", testimonialTouchMoveHandler);
@@ -221,7 +202,9 @@ const dashboardDotsClicked = (e) => {
 
 const nexDashboardSlide = () => {
     // call nextslide function
-    showNextDashboardSlide();
+    // showNextDashboardSlide();
+    commonNextSlide(dashboardSlide,totalDashboardSlideLength,dashboardImagesSlider,dashboardImageContainerWidth,dashboardDots);
+
     dashboardImagesSlider.addEventListener("touchstart", dashboardTouchStartHandler);
     dashboardImagesSlider.addEventListener("touchmove", dashboardTouchMoveHandler);
     dashboardImagesSlider.addEventListener("touchend", dashboardTouchEndHandler);
@@ -240,23 +223,23 @@ const mainDashboardFunction = () => {
     nexDashboardSlide();
 }
 // call the function after every 4sec
-// setInterval(() => {
-//     // for dashboardSlide
-//     if (dashboardMoveSlide) {
-//         dashboardSlide++
-//         mainDashboardFunction();
-//     }
-// }, 4000);
 setInterval(() => {
-    // for testimonialSlide
-    if (testimonialMoveSlide) {
-        // testimonialSlide++
-        if(testimonialSlide == totalTestinomialSlideLength){
-            testimonialSlide = 0;
+    // for dashboardSlide
+    if (dashboardMoveSlide) {
+        if(dashboardSlide == totalDashboardSlideLength){
+            dashboardSlide = 0;
         }
-        testimonialSlide++
-        mainTestimonialFunction();
+        dashboardSlide++
+        mainDashboardFunction();
     }
+        // for testimonialSlide
+        if (testimonialMoveSlide) {
+            if(testimonialSlide == totalTestinomialSlideLength){
+                testimonialSlide = 0;
+            }
+            testimonialSlide++
+            mainTestimonialFunction();
+        }
 }, 4000);
 // and call the function when widow is load
 
