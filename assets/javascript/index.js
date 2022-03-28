@@ -30,7 +30,6 @@ let dashboardTouchEnd;
 //common next slide function to call next slide
 const commonNextSlide = (slide, totalSlideLength, slider, containerWidth, dots) => {
     // if curentSlide less than totalSlideLength;
-    console.log(slide + "  slideCame")
     if (slide == totalSlideLength) {
         slider.style.left = 0 + "px";
     }
@@ -46,9 +45,8 @@ const removeOPacityFromLastDot = (slide, totalSlideLength, dots) => {
         dots[slide - 1].classList.remove("opacity");
         dots[slide].classList.add("opacity");
     }
-    if(slide===0){
-        dots[totalSlideLength-1].classList.remove("opacity");
-        console.log("last slide   "+slide);
+    if (slide === 0) {
+        dots[totalSlideLength - 1].classList.remove("opacity");
         dots[0].classList.add("opacity");
     }
 }
@@ -62,15 +60,25 @@ const testimonialTouchMoveHandler = (e) => {
     testimonialMoveSlide = false;
     e.preventDefault();
 }
+// show the next slide when touch event is end
+const touchEndNextSlideHandler = (slide, slider, containerWidth, dots) => {
+    slider.style.left = -containerWidth * (slide + 1) + "px";
+    dots[slide + 1].classList.add("opacity");
+    dots[slide].classList.remove("opacity");
+}
+// show the prevoius slide when touch event is end
+const touchEndPrevSlideHandler = (slide, slider, containerWidth, dots) => {
+    slider.style.left = -containerWidth * (slide - 1) + "px";
+    dots[slide - 1].classList.add("opacity");
+    dots[slide].classList.remove("opacity");
+}
 // when touch is end and after getting the direction in which touch is move
 const testimonialTouchEndHandler = (e) => {
     e.preventDefault();
     // if touchStart > touchend it means touch is move to left so show the next slide
     if (testimonialTouchStart > testimonialTouchEnd) {
         if (testimonialSlide < totalTestinomialSlideLength - 1 && testimonialSlide >= -1) {
-            testimonialSlider.style.left = -testimonialTextContainerWidth * (testimonialSlide + 1) + "px";
-            testimonialDot[testimonialSlide + 1].classList.add("opacity");
-            testimonialDot[testimonialSlide].classList.remove("opacity");
+            touchEndNextSlideHandler(testimonialSlide, testimonialSlider, testimonialTextContainerWidth, testimonialDot);
             // show to current slide for 8sec and after that call the next slide function 
             setTimeout(() => {
                 testimonialMoveSlide = true;
@@ -81,11 +89,8 @@ const testimonialTouchEndHandler = (e) => {
     // if testimonialTouchEnd > touchStart it means touch is move to right so show the prev slide
     if (testimonialTouchEnd > testimonialTouchStart) {
         if (testimonialSlide > 0 && testimonialSlide < totalTestinomialSlideLength) {
-            testimonialSlider.style.left = -testimonialTextContainerWidth * (testimonialSlide - 1) + "px";
-            testimonialDot[testimonialSlide - 1].classList.add("opacity");
-            testimonialDot[testimonialSlide].classList.remove("opacity");
+            touchEndPrevSlideHandler(testimonialSlide, testimonialSlider, testimonialTextContainerWidth, testimonialDot);
             // show to current slide for 8sec and after that call the next slide function 
-
             setTimeout(() => {
                 testimonialMoveSlide = true
             }, 8000);
@@ -109,7 +114,7 @@ const testimonialDotsClicked = (e) => {
     }, 8000);
 }
 // show next slide function when any event is trigger
-const nexSlide = () => {
+const mainTestimonialFunction = () => {
     commonNextSlide(testimonialSlide, totalTestinomialSlideLength, testimonialSlider, testimonialTextContainerWidth, testimonialDot);
     testimonialSlider.addEventListener("touchstart", testimonialTouchStartHandler);
     testimonialSlider.addEventListener("touchmove", testimonialTouchMoveHandler);
@@ -121,58 +126,6 @@ const nexSlide = () => {
     })
 
 }
-// mainTestimonialFunction()
-// const mainTestimonialFunction = () => {
-//     // call remove OPactiy from last dot function
-//     // removeOPacityFromLastDot(testimonialSlide, totalTestinomialSlideLength, testimonialDot);
-//     nexSlide();
-// };
-
-setInterval(() => {
-    // for testimonialSlide
-    if (testimonialMoveSlide) {
-        testimonialSlide++;
-
-        // removeOPacityFromLastDot(testimonialSlide, totalTestinomialSlideLength, testimonialDot);
-        if (testimonialSlide == totalTestinomialSlideLength) {
-            testimonialSlide = 0;
-        }
-        // if (testimonialSlide === totalTestinomialSlideLength - 1) {
-        //     console.log(testimonialSlide)
-        //     testimonialDot[totalTestinomialSlideLength - 1].classList.remove("opacity");
-        //     // console.log("last slide   " + slide)
-        // }
-        // removeOPacityFromLastDot(testimonialSlide, totalTestinomialSlideLength, testimonialDot);
-        // mainTestimonialFunction();
-        nexSlide();
-    }
-    // console.log("intervalslide"+testimonialSlide)
-}, 4000);
-nexSlide();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // dashboardSlider function start
 // get the initial touch positon of dashboard slider and keep isdashboardTouchMove = false
 const dashboardTouchStartHandler = (e) => {
@@ -190,9 +143,7 @@ const dashboardTouchEndHandler = (e) => {
     // if touchStart > touchend it means touch is move to left so show the next slide
     if (dashboardTouchStart > dashboardTouchEnd) {
         if (dashboardSlide < dashboardImagesSlider.children.length - 1 && dashboardSlide >= -1) {
-            dashboardImagesSlider.style.left = -dashboardImageContainerWidth * (dashboardSlide + 1) + 2 + "px";
-            dashboardDots[dashboardSlide + 1].classList.add("opacity");
-            dashboardDots[dashboardSlide].classList.remove("opacity");
+            touchEndNextSlideHandler(dashboardSlide, dashboardImagesSlider, dashboardImageContainerWidth, dashboardDots);
             // show to current slide for 8sec and after that call the next slide function 
             setTimeout(() => {
                 testimonialMoveSlide = true;
@@ -203,11 +154,8 @@ const dashboardTouchEndHandler = (e) => {
     // if testimonialTouchEnd > touchStart it means touch is move to right so show the prev slide
     if (dashboardTouchEnd > dashboardTouchStart) {
         if (dashboardSlide > 0 && dashboardSlide < dashboardImagesSlider.children.length) {
-            dashboardImagesSlider.style.left = -dashboardImageContainerWidth * (dashboardSlide - 1) + 2 + "px";
-            dashboardDots[dashboardSlide - 1].classList.add("opacity");
-            dashboardDots[dashboardSlide].classList.remove("opacity");
+            touchEndPrevSlideHandler(dashboardSlide, dashboardImagesSlider, dashboardImageContainerWidth, dashboardDots);
             // show to current slide for 8sec and after that call the next slide function 
-
             setTimeout(() => {
                 testimonialMoveSlide = true
             }, 8000);
@@ -215,29 +163,9 @@ const dashboardTouchEndHandler = (e) => {
         }
     }
 }
-// show nextdashboard slide and handle it
-const showNextDashboardSlide = () => {
-    // if dashboardSlide less dashboardImagesSlider.children.length 
-    if (dashboardSlide < (dashboardImagesSlider.children.length)) {
-        // adding 2 to dashboardImagesSlider left to make fit the image
-        dashboardImagesSlider.style.left = -dashboardImageContainerWidth * dashboardSlide + 2 + "px";
-        dashboardDots[dashboardSlide].classList.add("opacity");
-    }
-    // if dashboardSlide equall dashboardImagesSlider.children.length 
-
-    if (dashboardSlide == dashboardImagesSlider.children.length) {
-        dashboardSlide = 0;
-        dashboardImagesSlider.style.left = 0 + "px";
-        dashboardDots[dashboardSlide].classList.add("opacity");
-    }
-
-}
-
 // show slide when dashboard dots clicked
 const dashboardDotsClicked = (e) => {
     e.preventDefault();
-    // make dashboardMoveSlide = false
-    // console.log("slide from outside" + dashboardSlide);
     dashboardMoveSlide = false;
     if (dashboardSlide != e.target.dataset.dashboard) {
         dashboardDots[dashboardSlide].classList.remove("opacity");
@@ -250,12 +178,9 @@ const dashboardDotsClicked = (e) => {
     }, 8000);
 }
 
-
-const nexDashboardSlide = () => {
+const mainDashboardFunction = () => {
     // call nextslide function
-    // showNextDashboardSlide();
     commonNextSlide(dashboardSlide, totalDashboardSlideLength, dashboardImagesSlider, dashboardImageContainerWidth, dashboardDots);
-
     dashboardImagesSlider.addEventListener("touchstart", dashboardTouchStartHandler);
     dashboardImagesSlider.addEventListener("touchmove", dashboardTouchMoveHandler);
     dashboardImagesSlider.addEventListener("touchend", dashboardTouchEndHandler);
@@ -263,32 +188,29 @@ const nexDashboardSlide = () => {
     dashboardDots.forEach((dot) => {
         dot.addEventListener("click", dashboardDotsClicked);
     })
-
-}
-const mainDashboardFunction = () => {
-    // call remove OPactiy from last dot function
-    removeOPacityFromLastDot(dashboardSlide, totalDashboardSlideLength, dashboardDots);
-    nexDashboardSlide();
 }
 // call the function after every 4sec
-// setInterval(() => {
-//     // for dashboardSlide
-//     if (dashboardMoveSlide) {
-//         console.log("setInterval slide" + testimonialSlide)
-//         if (dashboardSlide == totalDashboardSlideLength) {
-//             dashboardSlide = 0;
-//         }
-//         dashboardSlide++;
-//         mainDashboardFunction();
-//     }
+setInterval(() => {
+    // for testimonialSlide
+    if (testimonialMoveSlide) {
+        testimonialSlide++;
+        if (testimonialSlide == totalTestinomialSlideLength) {
+            testimonialSlide = 0;
+        }
+        mainTestimonialFunction();
+    }
+    // for dashboardSlide
+    if (dashboardMoveSlide) {
+        dashboardSlide++;
+        if (dashboardSlide == totalDashboardSlideLength) {
+            dashboardSlide = 0;
+        }
+        mainDashboardFunction();
+    }
 
-// }, 4000);
+}, 4000);
 // and call the function when widow is load
-
-
-// window.onload = () => {
-
-//     // mainTestimonialFunction();
-//     mainDashboardFunction();
-
-// }
+window.onload = () => {
+    mainTestimonialFunction();
+    mainDashboardFunction();
+}
