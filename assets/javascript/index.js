@@ -165,14 +165,14 @@ const dashboardTouchEndHandler = (e) => {
     const showNextdashboardSLide = (dashboardTouchStart > dashboardTouchEnd);
     const showPrevdashboardSLide = (dashboardTouchStart < dashboardTouchEnd);
     if (showNextdashboardSLide) {
-        if (dashboardSlide < dashboardImagesSlider.children.length - 1 && dashboardSlide >= -1) {
+        if (dashboardSlide < totalDashboardSlideLength - 1 && dashboardSlide >= -1) {
             touchEndNextSlideHandler(arguementOfNextPrevSlideDashboard);
             dashboardSlide = dashboardSlide + 1
             startDashboardMoveSlide();
         }
     }
     if (showPrevdashboardSLide) {
-        if (dashboardSlide > 0 && dashboardSlide < dashboardImagesSlider.children.length) {
+        if (dashboardSlide > 0 && dashboardSlide < totalDashboardSlideLength) {
             touchEndPrevSlideHandler(arguementOfNextPrevSlideDashboard);
             dashboardSlide = dashboardSlide - 1;
             startDashboardMoveSlide();
