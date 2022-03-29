@@ -118,7 +118,7 @@ const testimonialDotsClicked = (e) => {
     }
     testimonialDot[clickedTestimonialDotIndex].classList.add("opacity");
     currentTestimonialSlide = clickedTestimonialDotIndex;
-    testimonialSlider.style.left = -testimonialTextContainerWidth * testimonialSlide + "px"
+    testimonialSlider.style.left = -testimonialTextContainerWidth * currentTestimonialSlide + "px"
     startTestimonialMoveSlide();
 }
 // manage all function of testimonial slider
