@@ -10,24 +10,25 @@ window.addEventListener('resize', function () {
     testimonialTextContainerWidth = testimonialTextContainer.offsetWidth;
     dashboardImageContainerWidth = dashboardImageContainer.offsetWidth;
 });
-
 // initialize varibale for testimonialand dashboard slide
 let currentTestimonialSlide = 0;
 let testimonialMoveSlide = true;
-let isTestimonialTouchMove;
-let testimonialTouchStart;
-let testimonialTouchEnd;
+let testimonialTouchStart, dashboardTouchStart;
+let testimonialTouchEnd, dashboardTouchEnd;
 let dashboardSlide = 0;
 let dashboardMoveSlide = true;
-let isDashboardTouchMove;
-let dashboardTouchStart;
-let dashboardTouchEnd;
+
 //geting the values
 const totalTestinomialSlideLength = dashboardImagesSlider.children.length;
 const totalDashboardSlideLength = dashboardImagesSlider.children.length;
-
 //show next slide
-const NextSlide = (currentSlide, totalSlideLength, slider, containerWidth, dots) => {
+const NextSlide = ({
+    currentSlide,
+    totalSlideLength,
+    slider,
+    containerWidth,
+    dots
+}) => {
     // move slider to left
     if (currentSlide == totalSlideLength) {
         slider.style.left = 0 + "px";
@@ -47,11 +48,9 @@ const handleDotOpacity = (currentSlide, totalSlideLength, dots) => {
         dots[0].classList.add("opacity");
     }
 }
-// start testimonialMoveSlide 
-const startTestimonialMoveSlide =()=> setTimeout(() => {
+const startTestimonialMoveSlide = () => setTimeout(() => {
     testimonialMoveSlide = true
 }, 8000);
-
 // get testimonial touch point
 const testimonialTouchStartHandler = (e) => {
     testimonialTouchStart = e.changedTouches[0].clientX;
@@ -63,32 +62,48 @@ const testimonialTouchMoveHandler = (e) => {
     testimonialMoveSlide = false;
 }
 // handle next slide when touch is end
-const touchEndNextSlideHandler = (currentSlide, slider, containerWidth, dots) => {
+const touchEndNextSlideHandler = ({
+    currentSlide,
+    slider,
+    containerWidth,
+    dots
+}) => {
     slider.style.left = -containerWidth * (currentSlide + 1) + "px";
     dots[currentSlide + 1].classList.add("opacity");
     dots[currentSlide].classList.remove("opacity");
 }
 // handle prev slide when touch is end
-const touchEndPrevSlideHandler = (curentSlide, slider, containerWidth, dots) => {
-    slider.style.left = -containerWidth * (curentSlide - 1) + "px";
-    dots[curentSlide - 1].classList.add("opacity");
-    dots[curentSlide].classList.remove("opacity");
+const touchEndPrevSlideHandler = ({
+    currentSlide,
+    slider,
+    containerWidth,
+    dots
+}) => {
+    slider.style.left = -containerWidth * (currentSlide - 1) + "px";
+    dots[currentSlide - 1].classList.add("opacity");
+    dots[currentSlide].classList.remove("opacity");
 }
 // handle touch end event
 const testimonialTouchEndHandler = (e) => {
     e.preventDefault();
+    let arguementOfNextPrevSlideTestimonial = {
+        currentSlide: currentTestimonialSlide,
+        slider: testimonialSlider,
+        containerWidth: testimonialTextContainerWidth,
+        dots: testimonialDot
+    }
     const showNextTestimonialSLide = (testimonialTouchStart > testimonialTouchEnd);
     const showPrevTestimonialSLide = (testimonialTouchStart < testimonialTouchEnd);
     if (showNextTestimonialSLide) {
         if (currentTestimonialSlide < totalTestinomialSlideLength - 1 && currentTestimonialSlide >= -1) {
-            touchEndNextSlideHandler(currentTestimonialSlide,testimonialSlider, testimonialTextContainerWidth, testimonialDot);
+            touchEndNextSlideHandler(arguementOfNextPrevSlideTestimonial);
             currentTestimonialSlide = currentTestimonialSlide + 1
             startTestimonialMoveSlide();
         }
     }
     if (showPrevTestimonialSLide) {
         if (currentTestimonialSlide > 0 && currentTestimonialSlide < totalTestinomialSlideLength) {
-            touchEndPrevSlideHandler(currentTestimonialSlide, testimonialSlider, testimonialTextContainerWidth, testimonialDot);
+            touchEndPrevSlideHandler(arguementOfNextPrevSlideTestimonial);
             currentTestimonialSlide = currentTestimonialSlide - 1;
             startTestimonialMoveSlide();
         }
@@ -108,7 +123,13 @@ const testimonialDotsClicked = (e) => {
 }
 // manage all function of testimonial slider
 const mainTestimonialFunction = () => {
-    NextSlide(currentTestimonialSlide, totalTestinomialSlideLength, testimonialSlider, testimonialTextContainerWidth, testimonialDot);
+    NextSlide({
+        currentSlide: currentTestimonialSlide,
+        totalSlideLength: totalTestinomialSlideLength,
+        slider: testimonialSlider,
+        containerWidth: testimonialTextContainerWidth,
+        dots: testimonialDot
+    });
     testimonialSlider.addEventListener("touchstart", testimonialTouchStartHandler);
     testimonialSlider.addEventListener("touchmove", testimonialTouchMoveHandler);
     testimonialSlider.addEventListener("touchend", testimonialTouchEndHandler);
@@ -119,8 +140,7 @@ const mainTestimonialFunction = () => {
 
 }
 // dashboardSlider function start
-// start dashboardlMoveSlide 
-const startDashboardMoveSlide =()=> setTimeout(() => {
+const startDashboardMoveSlide = () => setTimeout(() => {
     dashboardMoveSlide = true
 }, 8000);
 // get dashboard touch point
@@ -136,18 +156,24 @@ const dashboardTouchMoveHandler = (e) => {
 // handle touch end event
 const dashboardTouchEndHandler = (e) => {
     e.preventDefault();
+    let arguementOfNextPrevSlideDashboard = {
+        currentSlide: currentDashboardSlide,
+        slider: dashboardSlider,
+        containerWidth: dashboardContainerWidth,
+        dots: dashboardDot
+    }
     const showNextdashboardSLide = (dashboardTouchStart > dashboardTouchEnd);
     const showPrevdashboardSLide = (dashboardTouchStart < dashboardTouchEnd);
     if (showNextdashboardSLide) {
-        if (dashboardSlide < dashboardImagesSlider.children.length - 1 && dashboardSlide >= -1) {
-            touchEndNextSlideHandler(dashboardSlide, dashboardImagesSlider, dashboardImageContainerWidth, dashboardDots);
+        if (dashboardSlide < totalDashboardSlideLength - 1 && dashboardSlide >= -1) {
+            touchEndNextSlideHandler(arguementOfNextPrevSlideDashboard);
             dashboardSlide = dashboardSlide + 1
             startDashboardMoveSlide();
         }
     }
     if (showPrevdashboardSLide) {
-        if (dashboardSlide > 0 && dashboardSlide < dashboardImagesSlider.children.length) {
-            touchEndPrevSlideHandler(dashboardSlide, dashboardImagesSlider, dashboardImageContainerWidth, dashboardDots);
+        if (dashboardSlide > 0 && dashboardSlide < totalDashboardSlideLength) {
+            touchEndPrevSlideHandler(arguementOfNextPrevSlideDashboard);
             dashboardSlide = dashboardSlide - 1;
             startDashboardMoveSlide();
         }
@@ -168,7 +194,13 @@ const dashboardDotsClicked = (e) => {
 }
 
 const mainDashboardFunction = () => {
-    NextSlide(dashboardSlide, totalDashboardSlideLength, dashboardImagesSlider, dashboardImageContainerWidth, dashboardDots);
+    NextSlide({
+        currentSlide: dashboardSlide,
+        totalSlideLength: totalDashboardSlideLength,
+        slider: dashboardImagesSlider,
+        containerWidth: dashboardImageContainerWidth,
+        dots: dashboardDots
+    });
     dashboardImagesSlider.addEventListener("touchstart", dashboardTouchStartHandler);
     dashboardImagesSlider.addEventListener("touchmove", dashboardTouchMoveHandler);
     dashboardImagesSlider.addEventListener("touchend", dashboardTouchEndHandler);
@@ -182,6 +214,7 @@ setInterval(() => {
     // for testimonialSlider
     if (testimonialMoveSlide) {
         currentTestimonialSlide++;
+        console.log(currentTestimonialSlide);
         if (currentTestimonialSlide == totalTestinomialSlideLength) {
             currentTestimonialSlide = 0;
         }
