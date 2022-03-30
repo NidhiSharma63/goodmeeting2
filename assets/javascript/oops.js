@@ -18,7 +18,7 @@ let dashboardMoveSlide = true;
 const totalTestinomialSlideLength = dashboardImagesSlider.children.length;
 const totalDashboardSlideLength = dashboardImagesSlider.children.length;
 // move slides
-class HandleNextSlide {
+class CommonVaribles {
     constructor({
         currentSlide,
         totalSlideLength,
@@ -32,6 +32,9 @@ class HandleNextSlide {
         this.containerWidth = containerWidth;
         this.dots = dots;
     }
+}
+
+class MoveSlides extends CommonVaribles{
     showNextSlide() {
         // move slider to left
         if (this.currentSlide == this.totalSlideLength) {
@@ -59,15 +62,14 @@ class HandleNextSlide {
         }
     }
 }
-
-const moveTestimonialSlide = new HandleNextSlide({
+const moveTestimonialSlide = new MoveSlides({
     currentSlide: currentTestimonialSlide,
     totalSlideLength: totalTestinomialSlideLength,
     slider: testimonialSlider,
     containerWidth: testimonialTextContainerWidth,
     dots: testimonialDot
 });
-const moveDashboardSlide = new HandleNextSlide({
+const moveDashboardSlide = new MoveSlides({
     currentSlide: currentDashboardSlide,
     totalSlideLength: totalDashboardSlideLength,
     slider: dashboardImagesSlider,
