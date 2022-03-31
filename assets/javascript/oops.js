@@ -37,16 +37,15 @@ class CommonVaribles {
 class MoveSlides extends CommonVaribles {
     showNextSlide() {
         // move slider to left
-        console.log("came current slide", this.currentSlide);
+        console.log("coming slide" + this.currentSlide);
         if (this.currentSlide == this.totalSlideLength) {
             this.slider.style.left = 0 + "px";
         } else {
             this.slider.style.left = -this.containerWidth * this.currentSlide + "px";
         }
         this.handleDotOpacity();
-        // this.increaseSlide();
-        console.log("passing" + this.currentSlide);
     }
+    // handleDotOpacity in nextslide
     handleDotOpacity() {
         if (this.currentSlide > 0 && this.currentSlide < this.totalSlideLength) {
             this.dots[this.currentSlide - 1].classList.remove("opacity");
@@ -57,23 +56,17 @@ class MoveSlides extends CommonVaribles {
             this.dots[0].classList.add("opacity");
         }
     }
-    increaseSlide() {
-        this.currentSlide++;
-        if (this.currentSlide == this.totalSlideLength) {
-            this.currentSlide = 0;
-        }
-    }
+    // handle slide when dot clicked
     dotsClickHandler() {
         this.dots.forEach(dot => {
             dot.addEventListener("click", (e) => {
-                // console.log(e.target)
-                let dotClickedIndex ;
-                if(e.target.classList.contains("testimonialDot")){
+                let dotClickedIndex;
+                if (e.target.classList.contains("testimonialDot")) {
                     testimonialMoveSlide = false;
                     dotClickedIndex = e.target.dataset.index;
                     this.dotsClickedSlideHandler(dotClickedIndex);
                 }
-                if(e.target.classList.contains("dashboardDot")){
+                if (e.target.classList.contains("dashboardDot")) {
                     dashboardMoveSlide = false;
                     dotClickedIndex = e.target.dataset.index;
                     this.dotsClickedSlideHandler(dotClickedIndex);
@@ -81,9 +74,23 @@ class MoveSlides extends CommonVaribles {
             })
         });
     }
-    dotsClickedSlideHandler(dotIndex)  {
-        // console.log(dotIndex+"dotIndex");
-        // console.log(this.currentSlide+"currenslide");
+
+    dotsClickedSlideHandler(dotIndex) {
+        console.log(dotIndex + "dotIndex");
+        console.log(this.currentSlide + "currenslide");
+        if (dotIndex != this.currentSlide) {
+            this.dots[this.currentSlide].classList.remove("opacity");
+            this.dots[dotIndex].classList.add("opacity");
+            // this.currentSlide = dotIndex;
+        }
+        this.slider.style.left = -this.containerWidth * this.currentSlide + "px";
+    }
+    // increase slide after every 3sec
+    increaseSlide() {
+        this.currentSlide += 1;
+        if (this.currentSlide == this.totalSlideLength) {
+            this.currentSlide = 0;
+        }
     }
 }
 const moveTestimonialSlide = new MoveSlides({
@@ -101,20 +108,20 @@ const moveDashboardSlide = new MoveSlides({
     dots: dashboardDots
 });
 setInterval(() => {
-   if(testimonialMoveSlide){
-    moveTestimonialSlide.showNextSlide();
-    moveTestimonialSlide.increaseSlide();
+    // first call increaseSlide:to increase slide
+    // second call showNextSlide:to show next slide
+    if (testimonialMoveSlide) {
+        moveTestimonialSlide.increaseSlide();
+        moveTestimonialSlide.showNextSlide();
     }
-   if(dashboardMoveSlide){
-    moveDashboardSlide.showNextSlide();
-    moveDashboardSlide.increaseSlide();
+    if (dashboardMoveSlide) {
+        moveDashboardSlide.increaseSlide();
+        moveDashboardSlide.showNextSlide();
     }
 }, 3000);
 window.onload = () => {
     moveTestimonialSlide.showNextSlide();
     moveDashboardSlide.showNextSlide();
-    moveTestimonialSlide.increaseSlide();
-    moveDashboardSlide.increaseSlide();
     moveTestimonialSlide.dotsClickHandler();
     moveDashboardSlide.dotsClickHandler();
 }
