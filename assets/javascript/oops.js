@@ -37,7 +37,6 @@ class CommonVaribles {
 class MoveSlides extends CommonVaribles {
     showNextSlide() {
         // move slider to left
-        console.log("coming slide" + this.currentSlide);
         if (this.currentSlide == this.totalSlideLength) {
             this.slider.style.left = 0 + "px";
         } else {
@@ -63,27 +62,43 @@ class MoveSlides extends CommonVaribles {
                 let dotClickedIndex;
                 if (e.target.classList.contains("testimonialDot")) {
                     testimonialMoveSlide = false;
-                    dotClickedIndex = e.target.dataset.index;
-                    this.dotsClickedSlideHandler(dotClickedIndex);
+                    if (testimonialMoveSlide === false) {
+                        dotClickedIndex = e.target.dataset.index;
+                        this.dotsClickedSlideHandler(dotClickedIndex);
+                    }
+                    setTimeout(() => {
+                        this.dots[dotClickedIndex].classList.remove("active");
+                        testimonialMoveSlide = true;
+                    }, 5000);
                 }
                 if (e.target.classList.contains("dashboardDot")) {
                     dashboardMoveSlide = false;
-                    dotClickedIndex = e.target.dataset.index;
-                    this.dotsClickedSlideHandler(dotClickedIndex);
+                    if(dashboardMoveSlide === false){
+                        dotClickedIndex = e.target.dataset.index;
+                        this.dotsClickedSlideHandler(dotClickedIndex);
+                    }
+                    setTimeout(() => {
+                        this.dots[dotClickedIndex].classList.remove("active");
+                        dashboardMoveSlide = true;
+                    }, 5000);
                 }
+
             })
         });
     }
 
     dotsClickedSlideHandler(dotIndex) {
-        console.log(dotIndex + "dotIndex");
-        console.log(this.currentSlide + "currenslide");
         if (dotIndex != this.currentSlide) {
             this.dots[this.currentSlide].classList.remove("opacity");
             this.dots[dotIndex].classList.add("opacity");
-            // this.currentSlide = dotIndex;
+            this.dots[dotIndex].classList.add("active");
         }
-        this.slider.style.left = -this.containerWidth * this.currentSlide + "px";
+        this.slider.style.left = -this.containerWidth * dotIndex + "px";
+        console.log(this.currentSlide);
+        console.log(dotIndex+"dotIndex");
+        this.currentSlide = parseInt(dotIndex);
+        console.log(this.currentSlide);
+        console.log(dotIndex+"dotIndex");
     }
     // increase slide after every 3sec
     increaseSlide() {
@@ -93,6 +108,7 @@ class MoveSlides extends CommonVaribles {
         }
     }
 }
+
 const moveTestimonialSlide = new MoveSlides({
     currentSlide: currentTestimonialSlide,
     totalSlideLength: totalTestinomialSlideLength,
