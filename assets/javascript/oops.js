@@ -15,7 +15,7 @@ let currentDashboardSlide = 0;
 let dashboardMoveSlide = true;
 
 //geting the values
-const totalTestinomialSlideLength = dashboardImagesSlider.children.length;
+const totalTestinomialSlideLength = testimonialSlider.children.length;
 const totalDashboardSlideLength = dashboardImagesSlider.children.length;
 // move slides
 class CommonVaribles {
@@ -34,16 +34,18 @@ class CommonVaribles {
     }
 }
 
-class MoveSlides extends CommonVaribles{
+class MoveSlides extends CommonVaribles {
     showNextSlide() {
         // move slider to left
+        console.log("came current slide", this.currentSlide);
         if (this.currentSlide == this.totalSlideLength) {
             this.slider.style.left = 0 + "px";
         } else {
             this.slider.style.left = -this.containerWidth * this.currentSlide + "px";
         }
         this.handleDotOpacity();
-        this.increaseSlide();
+        // this.increaseSlide();
+        console.log("passing" + this.currentSlide);
     }
     handleDotOpacity() {
         if (this.currentSlide > 0 && this.currentSlide < this.totalSlideLength) {
@@ -61,6 +63,28 @@ class MoveSlides extends CommonVaribles{
             this.currentSlide = 0;
         }
     }
+    dotsClickHandler() {
+        this.dots.forEach(dot => {
+            dot.addEventListener("click", (e) => {
+                // console.log(e.target)
+                let dotClickedIndex ;
+                if(e.target.classList.contains("testimonialDot")){
+                    testimonialMoveSlide = false;
+                    dotClickedIndex = e.target.dataset.index;
+                    this.dotsClickedSlideHandler(dotClickedIndex);
+                }
+                if(e.target.classList.contains("dashboardDot")){
+                    dashboardMoveSlide = false;
+                    dotClickedIndex = e.target.dataset.index;
+                    this.dotsClickedSlideHandler(dotClickedIndex);
+                }
+            })
+        });
+    }
+    dotsClickedSlideHandler(dotIndex)  {
+        // console.log(dotIndex+"dotIndex");
+        // console.log(this.currentSlide+"currenslide");
+    }
 }
 const moveTestimonialSlide = new MoveSlides({
     currentSlide: currentTestimonialSlide,
@@ -77,10 +101,20 @@ const moveDashboardSlide = new MoveSlides({
     dots: dashboardDots
 });
 setInterval(() => {
+   if(testimonialMoveSlide){
     moveTestimonialSlide.showNextSlide();
+    moveTestimonialSlide.increaseSlide();
+    }
+   if(dashboardMoveSlide){
     moveDashboardSlide.showNextSlide();
+    moveDashboardSlide.increaseSlide();
+    }
 }, 3000);
 window.onload = () => {
     moveTestimonialSlide.showNextSlide();
     moveDashboardSlide.showNextSlide();
+    moveTestimonialSlide.increaseSlide();
+    moveDashboardSlide.increaseSlide();
+    moveTestimonialSlide.dotsClickHandler();
+    moveDashboardSlide.dotsClickHandler();
 }
