@@ -186,6 +186,10 @@ const showData = async () => {
         content.addEventListener("touchend", (e) => {
             e.preventDefault();
             if (testimonialTouchStart > testimonialTouchEnd) {
+                moveTestimonialSlide.touchEndNextSlideHandler(e);
+            }
+            if(testimonialTouchStart < testimonialTouchEnd){
+                moveTestimonialSlide.touchEndPreviousSlideHandler(e);
             }
         });
     });
