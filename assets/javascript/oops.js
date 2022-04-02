@@ -6,6 +6,8 @@ const testimonialSlider = document.querySelector(".testimonialSlider");
 const testimonialDot = document.querySelectorAll(".testimonialDot");
 const dashboardImagesSlider = document.querySelector(".dashboardImagesSlider");
 const dashboardDots = document.querySelectorAll(".dashboardDot");
+const testimonialContent = document.querySelectorAll(".testimonialContent");
+const dashboardImg = document.querySelectorAll(".dashboardImg");
 // initialize varibale for testimonialand dashboard slide
 let currentTestimonialSlide = 0;
 let testimonialMoveSlide = true;
@@ -73,7 +75,7 @@ class MoveSlides extends CommonVaribles {
                 }
                 if (e.target.classList.contains("dashboardDot")) {
                     dashboardMoveSlide = false;
-                    if(dashboardMoveSlide === false){
+                    if (dashboardMoveSlide === false) {
                         dotClickedIndex = e.target.dataset.index;
                         this.dotsClickedSlideHandler(dotClickedIndex);
                     }
@@ -82,11 +84,10 @@ class MoveSlides extends CommonVaribles {
                         dashboardMoveSlide = true;
                     }, 5000);
                 }
-
             })
         });
     }
-
+    // dotsClickedSlideHandler  
     dotsClickedSlideHandler(dotIndex) {
         if (dotIndex != this.currentSlide) {
             this.dots[this.currentSlide].classList.remove("opacity");
@@ -94,12 +95,40 @@ class MoveSlides extends CommonVaribles {
             this.dots[dotIndex].classList.add("active");
         }
         this.slider.style.left = -this.containerWidth * dotIndex + "px";
-        console.log(this.currentSlide);
-        console.log(dotIndex+"dotIndex");
         this.currentSlide = parseInt(dotIndex);
-        console.log(this.currentSlide);
-        console.log(dotIndex+"dotIndex");
     }
+    // get the touchstart value
+    getTouchStart(e) {
+        if(e.target.classList.contains("testimonialText")){
+            testimonialTouchStart = e.touches[0].clientX;
+        }
+        if(e.target.classList.contains("dashboardImage")){
+            dashboardTouchStart = e.touches[0].clientX;
+        }
+    }
+    // get touch move value
+    getTouchMove(e) {
+        if(e.target.classList.contains("testimonialText")){
+            testimonialTouchEnd = e.touches[0].clientX;
+            testimonialMoveSlide=false;
+            setTimeout(() => {
+                testimonialMoveSlide=true;
+            }, 8000);
+        }
+        if(e.target.classList.contains("dashboardImage")){
+            dashboardTouchEnd = e.touches[0].clientX;
+        }
+    }
+    // handle slide when touch end
+    touchEndNextSlideHandler(e) {
+        if (this.currentSlide < this.totalSlideLength - 1 && this.currentSlide >= -1) {
+            this.slider.style.left = -this.containerWidth * (this.currentSlide + 1) + "px";
+            this.dots[this.currentSlide + 1].classList.add("opacity");
+            this.dots[this.currentSlide].classList.remove("opacity");
+            this.currentSlide = this.currentSlide + 1
+        }
+    }
+
     // increase slide after every 3sec
     increaseSlide() {
         this.currentSlide += 1;
@@ -123,6 +152,37 @@ const moveDashboardSlide = new MoveSlides({
     containerWidth: dashboardImageContainerWidth,
     dots: dashboardDots
 });
+
+// touch start and end
+testimonialContent.forEach(content => {
+    content.addEventListener("touchstart", (e) => {
+        e.preventDefault()
+        moveTestimonialSlide.getTouchStart(e);
+        console.log("testimonial touch start"+testimonialTouchStart);
+    });
+    content.addEventListener("touchmove", (e) => {
+        e.preventDefault()
+        moveTestimonialSlide.getTouchMove(e);
+        console.log("testimonial touch move"+testimonialTouchEnd);
+    });
+    content.addEventListener("touchend", (e) => {
+        e.preventDefault();
+        testimonialMoveSlide = false;
+        if(testimonialTouchStart > testimonialTouchEnd){
+            moveTestimonialSlide.touchEndNextSlideHandler(e);
+        }
+        
+    });
+});
+dashboardImg.forEach(img => {
+    img.addEventListener("touchstart", (e) => {
+        moveDashboardSlide.getTouchStart(e);
+    });
+    img.addEventListener("touchmove", (e) => {
+        moveDashboardSlide.getTouchMove(e);
+    });
+});
+
 setInterval(() => {
     // first call increaseSlide:to increase slide
     // second call showNextSlide:to show next slide
