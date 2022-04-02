@@ -10,10 +10,10 @@ const testimonialContent = document.querySelectorAll(".testimonialContent");
 const dashboardImg = document.querySelectorAll(".dashboardImg");
 // initialize varibale for testimonialand dashboard slide
 let currentTestimonialSlide = 0;
+let currentDashboardSlide = 0;
 let testimonialMoveSlide = true;
 let testimonialTouchStart, dashboardTouchStart;
 let testimonialTouchEnd, dashboardTouchEnd;
-let currentDashboardSlide = 0;
 let dashboardMoveSlide = true;
 
 //geting the values
@@ -27,7 +27,7 @@ class CommonVaribles {
         slider,
         containerWidth,
         dots
-    }) {
+    }={}) {
         this.currentSlide = currentSlide;
         this.totalSlideLength = totalSlideLength;
         this.slider = slider;
@@ -102,7 +102,7 @@ class MoveSlides extends CommonVaribles {
         if(e.target.classList.contains("testimonialText")){
             testimonialTouchStart = e.touches[0].clientX;
         }
-        if(e.target.classList.contains("dashboardImage")){
+        if(e.target.classList.contains("dashboardImg")){
             dashboardTouchStart = e.touches[0].clientX;
         }
     }
@@ -115,8 +115,12 @@ class MoveSlides extends CommonVaribles {
                 testimonialMoveSlide=true;
             }, 8000);
         }
-        if(e.target.classList.contains("dashboardImage")){
+        if(e.target.classList.contains("dashboardImg")){
             dashboardTouchEnd = e.touches[0].clientX;
+            dashboardMoveSlide=false;
+            setTimeout(() => {
+                dashboardMoveSlide=true;
+            }, 8000);
         }
     }
     // handle slide when touch end
@@ -128,7 +132,14 @@ class MoveSlides extends CommonVaribles {
             this.currentSlide = this.currentSlide + 1
         }
     }
-
+    touchEndPreviousSlideHandler(e){
+        if(this.currentSlide > 0 && this.currentSlide < this.totalSlideLength){
+            this.slider.style.left = -this.containerWidth * (this.currentSlide - 1) + "px";
+            this.dots[this.currentSlide - 1].classList.add("opacity");
+            this.dots[this.currentSlide].classList.remove("opacity");
+            this.currentSlide = this.currentSlide - 1
+        }
+    }
     // increase slide after every 3sec
     increaseSlide() {
         this.currentSlide += 1;
@@ -156,33 +167,42 @@ const moveDashboardSlide = new MoveSlides({
 // touch start and end
 testimonialContent.forEach(content => {
     content.addEventListener("touchstart", (e) => {
-        e.preventDefault()
+        e.preventDefault();
         moveTestimonialSlide.getTouchStart(e);
-        console.log("testimonial touch start"+testimonialTouchStart);
     });
     content.addEventListener("touchmove", (e) => {
-        e.preventDefault()
+        e.preventDefault();
         moveTestimonialSlide.getTouchMove(e);
-        console.log("testimonial touch move"+testimonialTouchEnd);
     });
     content.addEventListener("touchend", (e) => {
         e.preventDefault();
-        testimonialMoveSlide = false;
         if(testimonialTouchStart > testimonialTouchEnd){
             moveTestimonialSlide.touchEndNextSlideHandler(e);
         }
-        
+        if(testimonialTouchStart < testimonialTouchEnd){
+            moveTestimonialSlide.touchEndPreviousSlideHandler(e);
+        }
     });
 });
 dashboardImg.forEach(img => {
     img.addEventListener("touchstart", (e) => {
+        e.preventDefault();
         moveDashboardSlide.getTouchStart(e);
     });
     img.addEventListener("touchmove", (e) => {
+        e.preventDefault();
         moveDashboardSlide.getTouchMove(e);
     });
+    img.addEventListener("touchend", (e) => {
+        e.preventDefault();
+        if(dashboardTouchStart > dashboardTouchEnd){
+            moveDashboardSlide.touchEndNextSlideHandler(e);
+        }
+        if(dashboardTouchStart < dashboardTouchEnd){
+            moveDashboardSlide.touchEndPreviousSlideHandler(e);
+        }
+    });
 });
-
 setInterval(() => {
     // first call increaseSlide:to increase slide
     // second call showNextSlide:to show next slide
