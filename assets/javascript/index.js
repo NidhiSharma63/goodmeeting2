@@ -10,145 +10,228 @@ window.addEventListener('resize', function () {
     testimonialTextContainerWidth = testimonialTextContainer.offsetWidth;
     dashboardImageContainerWidth = dashboardImageContainer.offsetWidth;
 });
-// initialize varibale
-let testimonialSlide = 0;
+// initialize varibale for testimonialand dashboard slide
+let currentTestimonialSlide = 0;
+let testimonialMoveSlide = true;
+let testimonialTouchStart, dashboardTouchStart;
+let testimonialTouchEnd, dashboardTouchEnd;
 let dashboardSlide = 0;
-let moveSlide = true;
-let isTestimonialTouchMove;
-let touchStart;
-let touchend;
-const nexSlide = () => {
-    // if testimonialSlide less than testimonialSlider.children.length and dashboardImagesSlider.children.length
-    if (testimonialSlide < (testimonialSlider.children.length)) {
-        testimonialSlider.style.left = -testimonialTextContainerWidth * testimonialSlide + "px";
-        testimonialDot[testimonialSlide].classList.add("opacity");
+let dashboardMoveSlide = true;
+
+//geting the values
+const totalTestinomialSlideLength = dashboardImagesSlider.children.length;
+const totalDashboardSlideLength = dashboardImagesSlider.children.length;
+//show next slide
+const NextSlide = ({
+    currentSlide,
+    totalSlideLength,
+    slider,
+    containerWidth,
+    dots
+}) => {
+    // move slider to left
+    if (currentSlide == totalSlideLength) {
+        slider.style.left = 0 + "px";
+    } else {
+        slider.style.left = -containerWidth * currentSlide + "px";
     }
-    // make slide move on Touch and do isTestimonialTouchMove = false
-    testimonialSlider.addEventListener("touchstart", (e) => {
-        e.preventDefault();
-        touchStart = e.targetTouches[0].clientX;
-        isTestimonialTouchMove = false;
-    });
-    testimonialSlider.addEventListener("touchmove", (e) => {
-        // when touch is move then do move slide false and isTestimonialTouchMove = true;
-        touchend = e.targetTouches[0].clientX;
-
-        moveSlide = false;
-        isTestimonialTouchMove = true;
-        e.preventDefault();
-
-    });
-    testimonialSlider.addEventListener("touchend", (e) => {
-        // if slide is move then make current testimonialSlide = testimonialSlide + 1
-        e.preventDefault();
-        if (touchStart > touchend) {
-            if (testimonialSlide < testimonialSlider.children.length - 1 && testimonialSlide >= -1) {
-                testimonialSlider.style.left = -testimonialTextContainerWidth * (testimonialSlide + 1) + "px";
-                testimonialDot[testimonialSlide + 1].classList.add("opacity");
-                testimonialDot[testimonialSlide].classList.remove("opacity");
-                setTimeout(() => {
-                    moveSlide = true;
-                }, 8000);
-                testimonialSlide = testimonialSlide + 1
-            }
+    handleDotOpacity(currentSlide, totalSlideLength, dots);
+}
+// handle opactiy 
+const handleDotOpacity = (currentSlide, totalSlideLength, dots) => {
+    if (currentSlide > 0 && currentSlide < totalSlideLength) {
+        dots[currentSlide - 1].classList.remove("opacity");
+        dots[currentSlide].classList.add("opacity");
+    }
+    if (currentSlide === 0) {
+        dots[totalSlideLength - 1].classList.remove("opacity");
+        dots[0].classList.add("opacity");
+    }
+}
+const startTestimonialMoveSlide = () => setTimeout(() => {
+    testimonialMoveSlide = true
+}, 8000);
+// get testimonial touch point
+const testimonialTouchStartHandler = (e) => {
+    testimonialTouchStart = e.changedTouches[0].clientX;
+}
+// get direction of move
+const testimonialTouchMoveHandler = (e) => {
+    e.preventDefault();
+    testimonialTouchEnd = e.targetTouches[0].clientX;
+    testimonialMoveSlide = false;
+}
+// handle next slide when touch is end
+const touchEndNextSlideHandler = ({
+    currentSlide,
+    slider,
+    containerWidth,
+    dots
+}) => {
+    slider.style.left = -containerWidth * (currentSlide + 1) + "px";
+    dots[currentSlide + 1].classList.add("opacity");
+    dots[currentSlide].classList.remove("opacity");
+}
+// handle prev slide when touch is end
+const touchEndPrevSlideHandler = ({
+    currentSlide,
+    slider,
+    containerWidth,
+    dots
+}) => {
+    slider.style.left = -containerWidth * (currentSlide - 1) + "px";
+    dots[currentSlide - 1].classList.add("opacity");
+    dots[currentSlide].classList.remove("opacity");
+}
+// handle touch end event
+const testimonialTouchEndHandler = (e) => {
+    e.preventDefault();
+    let arguementOfNextPrevSlideTestimonial = {
+        currentSlide: currentTestimonialSlide,
+        slider: testimonialSlider,
+        containerWidth: testimonialTextContainerWidth,
+        dots: testimonialDot
+    }
+    const showNextTestimonialSLide = (testimonialTouchStart > testimonialTouchEnd);
+    const showPrevTestimonialSLide = (testimonialTouchStart < testimonialTouchEnd);
+    if (showNextTestimonialSLide) {
+        if (currentTestimonialSlide < totalTestinomialSlideLength - 1 && currentTestimonialSlide >= -1) {
+            touchEndNextSlideHandler(arguementOfNextPrevSlideTestimonial);
+            currentTestimonialSlide = currentTestimonialSlide + 1
+            startTestimonialMoveSlide();
         }
-        if(touchend>touchStart){
-            if(testimonialSlide>0&&testimonialSlide<testimonialSlider.children.length){
-                testimonialSlider.style.left = -testimonialTextContainerWidth * (testimonialSlide-1) + "px";
-                testimonialDot[testimonialSlide - 1].classList.add("opacity");
-                testimonialDot[testimonialSlide].classList.remove("opacity");
-                setTimeout(() => {
-                    moveSlide = true
-                }, 8000);
-                testimonialSlide = testimonialSlide - 1;
-            }
+    }
+    if (showPrevTestimonialSLide) {
+        if (currentTestimonialSlide > 0 && currentTestimonialSlide < totalTestinomialSlideLength) {
+            touchEndPrevSlideHandler(arguementOfNextPrevSlideTestimonial);
+            currentTestimonialSlide = currentTestimonialSlide - 1;
+            startTestimonialMoveSlide();
         }
-    })
+    }
+}
+//dots clicked function
+const testimonialDotsClicked = (e) => {
+    testimonialMoveSlide = false;
+    const clickedTestimonialDotIndex = e.target.dataset.testimonial;
+    if (currentTestimonialSlide != clickedTestimonialDotIndex) {
+        testimonialDot[currentTestimonialSlide].classList.remove("opacity");
+    }
+    testimonialDot[clickedTestimonialDotIndex].classList.add("opacity");
+    currentTestimonialSlide = clickedTestimonialDotIndex;
+    testimonialSlider.style.left = -testimonialTextContainerWidth * currentTestimonialSlide + "px"
+    startTestimonialMoveSlide();
+}
+// manage all function of testimonial slider
+const mainTestimonialFunction = () => {
+    NextSlide({
+        currentSlide: currentTestimonialSlide,
+        totalSlideLength: totalTestinomialSlideLength,
+        slider: testimonialSlider,
+        containerWidth: testimonialTextContainerWidth,
+        dots: testimonialDot
+    });
+    testimonialSlider.addEventListener("touchstart", testimonialTouchStartHandler);
+    testimonialSlider.addEventListener("touchmove", testimonialTouchMoveHandler);
+    testimonialSlider.addEventListener("touchend", testimonialTouchEndHandler);
     // addEventListener on each dot
     testimonialDot.forEach((dot) => {
-        dot.addEventListener("click", (e) => {
-            // make moveSlide = false
-            moveSlide = false;
-            if (testimonialSlide != e.target.dataset.testimonial) {
-                testimonialDot[testimonialSlide].classList.remove("opacity");
-            }
-            testimonialDot[e.target.dataset.testimonial].classList.add("opacity");
-            testimonialSlide = e.target.dataset.testimonial;
-            testimonialSlider.style.left = -testimonialTextContainerWidth * testimonialSlide + "px"
-            setTimeout(() => {
-                moveSlide = true
-            }, 8000);
-        })
+        dot.addEventListener("click", testimonialDotsClicked);
     })
 
-    if (testimonialSlide == testimonialSlider.children.length) {
-        testimonialSlide = 0;
-        testimonialSlider.style.left = 0 + "px"
-        testimonialDot[testimonialSlide].classList.add("opacity");
+}
+// dashboardSlider function start
+const startDashboardMoveSlide = () => setTimeout(() => {
+    dashboardMoveSlide = true
+}, 8000);
+// get dashboard touch point
+const dashboardTouchStartHandler = (e) => {
+    dashboardTouchStart = e.changedTouches[0].clientX;
+}
+// get direction of move
+const dashboardTouchMoveHandler = (e) => {
+    e.preventDefault();
+    dashboardTouchEnd = e.targetTouches[0].clientX;
+    dashboardMoveSlide = false;
+}
+// handle touch end event
+const dashboardTouchEndHandler = (e) => {
+    e.preventDefault();
+    let arguementOfNextPrevSlideDashboard = {
+        currentSlide: currentDashboardSlide,
+        slider: dashboardSlider,
+        containerWidth: dashboardContainerWidth,
+        dots: dashboardDot
+    }
+    const showNextdashboardSLide = (dashboardTouchStart > dashboardTouchEnd);
+    const showPrevdashboardSLide = (dashboardTouchStart < dashboardTouchEnd);
+    if (showNextdashboardSLide) {
+        if (dashboardSlide < totalDashboardSlideLength - 1 && dashboardSlide >= -1) {
+            touchEndNextSlideHandler(arguementOfNextPrevSlideDashboard);
+            dashboardSlide = dashboardSlide + 1
+            startDashboardMoveSlide();
+        }
+    }
+    if (showPrevdashboardSLide) {
+        if (dashboardSlide > 0 && dashboardSlide < totalDashboardSlideLength) {
+            touchEndPrevSlideHandler(arguementOfNextPrevSlideDashboard);
+            dashboardSlide = dashboardSlide - 1;
+            startDashboardMoveSlide();
+        }
     }
 }
-const mainTestimonialFunction = () => {
-    // remove class opacity from last dot and call nextslide function
-    if (testimonialSlide > 0 && testimonialSlide <= testimonialSlider.children.length) {
-        testimonialDot[testimonialSlide - 1].classList.remove("opacity");
-
+//dots clicked function
+const dashboardDotsClicked = (e) => {
+    e.preventDefault();
+    dashboardMoveSlide = false;
+    const clickedDashboardDotIndex = e.target.dataset.dashboard;
+    if (dashboardSlide != clickedDashboardDotIndex) {
+        dashboardDots[dashboardSlide].classList.remove("opacity");
     }
-    nexSlide();
+    dashboardDots[clickedDashboardDotIndex].classList.add("opacity");
+    dashboardSlide = clickedDashboardDotIndex;
+    dashboardImagesSlider.style.left = -dashboardImageContainerWidth * dashboardSlide + "px"
+    startDashboardMoveSlide();
 }
-setInterval(() => {
-    if (moveSlide) {
-        testimonialSlide++
-        mainTestimonialFunction();
-    }
-}, 4000);
 
-mainTestimonialFunction();
-
-// dashboardSlider function
-
-const nexDashboardSlide = () => {
-    // if count less  dashboardImagesSlider.children.length 
-    if (dashboardSlide < (dashboardImagesSlider.children.length)) {
-        // adding 2 to dashboardImagesSlider left to make fit the image
-        dashboardImagesSlider.style.left = -dashboardImageContainerWidth * dashboardSlide + 2 + "px";
-        dashboardDots[dashboardSlide].classList.add("opacity");
-    }
+const mainDashboardFunction = () => {
+    NextSlide({
+        currentSlide: dashboardSlide,
+        totalSlideLength: totalDashboardSlideLength,
+        slider: dashboardImagesSlider,
+        containerWidth: dashboardImageContainerWidth,
+        dots: dashboardDots
+    });
+    dashboardImagesSlider.addEventListener("touchstart", dashboardTouchStartHandler);
+    dashboardImagesSlider.addEventListener("touchmove", dashboardTouchMoveHandler);
+    dashboardImagesSlider.addEventListener("touchend", dashboardTouchEndHandler);
     // addEventListener on each dot
     dashboardDots.forEach((dot) => {
-        dot.addEventListener("click", (e) => {
-            // make moveSlide = false
-            moveSlide = false;
-            if (dashboardSlide != e.target.dataset.dashboard) {
-                dashboardDots[dashboardSlide].classList.remove("opacity");
-            }
-            dashboardDots[e.target.dataset.dashboard].classList.add("opacity");
-            dashboardSlide = e.target.dataset.dashboard;
-            dashboardImagesSlider.style.left = -dashboardImageContainerWidth * dashboardSlide + 2 + "px"
-            setTimeout(() => {
-                moveSlide = true
-            }, 8000);
-        })
+        dot.addEventListener("click", dashboardDotsClicked);
     })
-
-    if (dashboardSlide == dashboardImagesSlider.children.length) {
-        dashboardSlide = 0;
-        dashboardImagesSlider.style.left = 0 + "px";
-        dashboardDots[dashboardSlide].classList.add("opacity");
-    }
 }
-const mainDashboardFunction = () => {
-    // remove class opacity from last dot and call nextslide function
-    if (dashboardSlide > 0 && dashboardSlide <= dashboardImagesSlider.children.length) {
-        dashboardDots[dashboardSlide - 1].classList.remove("opacity");
-
-    }
-    nexDashboardSlide();
-}
+// call the function after every 4sec
 setInterval(() => {
-    if (moveSlide) {
-        dashboardSlide++
+    // for testimonialSlider
+    if (testimonialMoveSlide) {
+        currentTestimonialSlide++;
+        console.log(currentTestimonialSlide);
+        if (currentTestimonialSlide == totalTestinomialSlideLength) {
+            currentTestimonialSlide = 0;
+        }
+        mainTestimonialFunction();
+    }
+    // for dashboardSlide
+    if (dashboardMoveSlide) {
+        dashboardSlide++;
+        if (dashboardSlide == totalDashboardSlideLength) {
+            dashboardSlide = 0;
+        }
         mainDashboardFunction();
     }
-}, 4000);
 
-mainDashboardFunction();
+}, 4000);
+// and call the function when window is load
+window.onload = () => {
+    mainTestimonialFunction();
+    mainDashboardFunction();
+}

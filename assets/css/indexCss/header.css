@@ -83,6 +83,7 @@
     background-color: var(--secondary-color);
     padding: .8rem 1rem;
 }
+.sideBarDivContainer  ul li a,
 .registerBtn a,
 .loginBtn a{
     color: white;
@@ -150,11 +151,12 @@
     background-color: var(--primary-color);
     display: flex;
     justify-content: space-around;
-    align-items: revert;
+    align-items: center;
     overflow: hidden;
 }
 .sideBarDivContainer .col{
     height: 45rem;
+    margin-top: -44rem;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
