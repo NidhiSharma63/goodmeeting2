@@ -186,10 +186,6 @@ const showData = async () => {
         content.addEventListener("touchend", (e) => {
             e.preventDefault();
             if (testimonialTouchStart > testimonialTouchEnd) {
-                moveTestimonialSlide.touchEndNextSlideHandler(e);
-            }
-            if (testimonialTouchStart < testimonialTouchEnd) {
-                moveTestimonialSlide.touchEndPreviousSlideHandler(e);
             }
         });
     });
@@ -204,6 +200,7 @@ const showData = async () => {
     moveTestimonialSlide.showNextSlide();
     moveTestimonialSlide.dotsClickHandler();
 }
+// declaring the class
 const moveDashboardSlide = new MoveSlides({
     currentSlide: currentDashboardSlide,
     totalSlideLength: totalDashboardSlideLength,
