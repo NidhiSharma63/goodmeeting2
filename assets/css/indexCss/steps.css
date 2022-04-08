@@ -148,7 +148,7 @@
 .section4 .col3 .img::after,
 .section4 .col5 .img::before{
     border: none;
-    background-color: var(--blue-color) !important;
+    background-color: var(--white-background-color) !important;
 }
 .section4 .col2::after,
 .section4 .col3::after,

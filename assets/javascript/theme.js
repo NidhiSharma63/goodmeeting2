@@ -7,7 +7,7 @@ $(document).ready(() => {
     // declare switchLightTheme function
     const switchLightTheme = () => {
         $(document.body).removeClass("darkTheme");
-        $(".logoContainer").html(`<img src = "./assets/images/header/logo.png"></img>`);
+        $(".logoContainer").html(`<img src = "./assets/images/logo.png"></img>`);
     }
     // make testimonial and footer light black
     const changeTestimonialsFooterColor = () => {

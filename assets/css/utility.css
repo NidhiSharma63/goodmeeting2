@@ -10,12 +10,12 @@ html {
     font-size: 62.5%;
 
 }
-
+/* changes acolor to dark theme */
 body.darkTheme {
     overflow-x: hidden;
     --light-black-color: white;
     background-color: #0E1525;
-    --blue-color: #0E1525;
+    --white-background-color: #0E1525;
 }
 
 body {
@@ -23,10 +23,22 @@ body {
     --primary-color: rgb(229, 80, 80);
     --secondary-color: rgb(41, 99, 224);
     --light-black-color: #313640;
-    background-color: white;
-    --blue-color: white;
+    --white-background-color: white;
 }
-
+.root{
+    max-width: 3500px;
+    min-width: 300px;
+    display: grid;
+    gap: 4rem;
+    grid-template-areas: 
+    'section1'
+    'section2'
+    'section3'
+    'section4'
+    'section5'
+    'section6'
+    ;
+}
 .primaryColor {
     color: var(--primary-color);
 }
