@@ -10,7 +10,8 @@
         integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/css/utility.css">
-    <link rel="stylesheet" href="/assets/css/account/dashboard.css">
+    <link rel="stylesheet" href="/assets/css/account/dashboard_header.css">
+    <link rel="stylesheet" href="/assets/css/account/dashboard_chart.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 
@@ -22,13 +23,14 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
             <div class="logo">
-                <img src="/assets/images/header/logo2.png" alt="logo">
+                <img src="/assets/images/logo.png" alt="logo">
             </div>
         </div>
         <div class="col2 flex">
             <div class="col2Container flex secondaryColor">
                 <i class="fa-solid fa-moon"></i>
                 <i class="fa-solid fa-bell"></i>
+                <button id="signOutBtn">Sign Out</button>
                 <img src="/assets/images/dashboardImages/images.jpeg" alt="userimage">
             </div>
         </div>
@@ -39,7 +41,7 @@
         <div class="col1 flex font1 letterSpacing">
             <div class="Image_text">
                 <img src="/assets/images/dashboardImages/images.jpeg" alt="userimage">
-                <p class="lightBlackColor">Hi,Welcome Back <span class="secondaryColor">Mimi</span></p>
+                <p class="lightBlackColor">Hi,Welcome Back 'Mimi'</p>
             </div>
             <p class="primaryColor">Your Dashbaoard Look's Like</p>
         </div>
@@ -66,53 +68,60 @@
     </div>
     <!-- section2End -->
     <div class="section3">
-        <div class="col1 font2 lightBlackColor letterSpacing">
-            Recent Meetings
+        <div class="group1">
+            <div class="col1 font2 lightBlackColor letterSpacing">
+                Recent Meetings
+            </div>
+            <div class="col2 lightBlackColor letterSpacing flex">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Date & Time</th>
+                            <th>Members</th>
+                            <th>Feedback</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Save Enviroment Dicussion</td>
+                            <td>13july,2022,1:34pm</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td class="primaryColor">Show Details</td>
+                        </tr>
+                        <tr>
+                            <td>Save Soli Dicussion</td>
+                            <td>1jne,2022,1:4pm</td>
+                            <td>35</td>
+                            <td>25</td>
+                            <td class="primaryColor">Show Details</td>
+                        </tr>
+                        <tr>
+                            <td>Block Chain</td>
+                            <td>13july,2022,1:34pm</td>
+                            <td>13</td>
+                            <td>11</td>
+                            <td class="primaryColor">Show Details</td>
+                        </tr>
+                         <tr>
+                            <td>Freelancing Dicussion</td>
+                            <td>3April,2022,9:34pm</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td class="primaryColor">Show Details</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="col2 lightBlackColor letterSpacing flex">
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Subject</th>
-                        <th>Date & Time</th>
-                        <th>Members</th>
-                        <th>Feedback</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Save Enviroment Dicussion</td>
-                        <td>13july,2022,1:34pm</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td class="primaryColor">Show Details</td>
-                    </tr>
-                    <tr>
-                        <td>Save Soli Dicussion</td>
-                        <td>1jne,2022,1:4pm</td>
-                        <td>35</td>
-                        <td>25</td>
-                        <td class="primaryColor">Show Details</td>
-                    </tr>
-                    <tr>
-                        <td>Block Chain</td>
-                        <td>13july,2022,1:34pm</td>
-                        <td>13</td>
-                        <td>11</td>
-                        <td class="primaryColor">Show Details</td>
-                    </tr>
-                     <tr>
-                        <td>Freelancing Dicussion</td>
-                        <td>3April,2022,9:34pm</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td class="primaryColor">Show Details</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="group2">
+            <canvas id="canva"></canvas>
+            <!-- <img src="/assets/images/dashboardImages/graph1.gif" alt=""> -->
         </div>
     </div>
 </body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/assets/javascript/dashboard/chart.js"></script>
 </html>
