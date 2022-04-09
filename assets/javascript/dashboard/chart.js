@@ -36,8 +36,8 @@ const myChart = new Chart(ctx1, {
             },
         },
         animation: {
-            duration: 3000,
-            easing: 'easeInOutBounce'
+            duration: 1000,
+            easing: 'linear'
 
         },
         plugins: {
@@ -51,7 +51,7 @@ const myChart = new Chart(ctx1, {
             legend: {
                 labels: {
                     font: {
-                        size: 18
+                        size: 10
                     },
                     boxWidth: 20,
                 }
@@ -66,14 +66,9 @@ const myChart2 = new Chart(ctx2, {
         datasets: [{
             label: 'Meetings Score',
             data: avgAnswerFeedback,
-            backgroundColor: [
-                'rgba(229, 80, 80, 1)',
-                'rgba(229, 80, 80, 1)',
-                'rgba(229, 80, 80, 1)',
-                'rgba(229, 80, 80, 1)',
-                'rgba(229, 80, 80, 1)',
-                'rgba(229, 80, 80, 1)'
-            ],
+            backgroundColor: 'rgb(229,80,80)',
+            borderColor:'rgb(229,80,80)',
+            tension:.3,
         }]
     },
     options: {
@@ -89,8 +84,8 @@ const myChart2 = new Chart(ctx2, {
             },
         },
         animation: {
-            duration: 3000,
-            easing: 'easeInOutBounce'
+            duration: 1000,
+            easing: 'linear'
 
         },
         plugins: {
@@ -104,9 +99,10 @@ const myChart2 = new Chart(ctx2, {
             legend: {
                 labels: {
                     font: {
-                        size: 30
+                        size: 10
                     },
-                    boxWidth: 40,
+                    boxWidth: 20,
+                    boxHeight:15,
                 }
             },
         }
@@ -119,14 +115,9 @@ const myChart3 = new Chart(ctx3, {
         datasets: [{
             label: 'Meetings Score',
             data: avgAnswerFeedback,
-            backgroundColor: [
-                'rgb(41,99,224)',
-                'rgb(41,99,224)',
-                'rgb(41,99,224)',
-                'rgb(41,99,224)',
-                'rgb(41,99,224)',
-                'rgb(41,99,224)'
-            ],
+            backgroundColor: 'rgb(41,99,224)',
+            borderColor:'rgb(41,99,224)',
+            tension:.3,
         }]
     },
     options: {
@@ -142,8 +133,8 @@ const myChart3 = new Chart(ctx3, {
             },
         },
         animation: {
-            duration: 3000,
-            easing: 'easeInOutBounce'
+            duration: 1000,
+            easing: 'linear'
 
         },
         plugins: {
@@ -156,18 +147,16 @@ const myChart3 = new Chart(ctx3, {
             },
             legend: {
                 labels: {
+                    // padding:43,
+                    color: 'rgba(225,225,225)',
+                    textAlign:'right',
                     font: {
-                        size: 30
+                        size: 10
                     },
-                    boxWidth: 40,
+                    boxWidth: 20,
+                    boxHeight:15,
                 }
             },
         }
     }
 });
-// 'rgba(229, 80, 80, 1)',
-// 'rgba(229, 80, 80, 1)',
-// 'rgba(229, 80, 80, 1)',
-// 'rgba(229, 80, 80, 1)',
-// 'rgba(229, 80, 80, 1)',
-// 'rgba(229, 80, 80, 1)'

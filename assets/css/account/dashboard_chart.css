@@ -31,9 +31,23 @@
     width: 100%;
 }
 
-.section3 .col1 {
+.section3 .group1 .col1 {
     font-size: 1.6rem;
     font-weight: 600;
+    position: relative;
+}
+
+.section3 .group1 .col1::after {
+    content: '';
+    position: absolute;
+    top: 2.4rem;
+    left: 0;
+    right: 0;
+    width: 14.7rem;
+    height: 0.2rem;
+    background-color: var(--secondary-color);
+    bottom: 0;
+    border-radius: 1rem;
 }
 
 .section3 .col2 .data-table {
@@ -44,46 +58,77 @@
     align-self: center;
 }
 
+/* select all heading */
 .data-table thead th {
+    background-color: rgba(122, 132, 219, 0.123);
     text-align: left;
     padding: 1rem 0rem;
     border-bottom: .1rem solid var(--light-black-color);
 }
-.data-table tbody tr:hover{
-    transition: .7s;
-    background-color: rgba(122, 132, 219, 0.123)
-    ;
+
+/* select last heading */
+.data-table thead th:last-child {
+    text-align: center;
 }
+
+/* sleceting all tr tab in tbody */
+.data-table tbody tr {
+    text-align: -webkit-center;
+}
+
+/* slecting all the meetings text to not make text-align: -webkit-center; */
+.data-table tbody tr td:nth-child(1) {
+    text-align: start;
+}
+
+.data-table tbody tr:hover {
+    transition: .7s;
+    background-color: rgba(122, 132, 219, 0.123);
+}
+
 .data-table tbody td {
     padding: 1rem 0rem;
     font-weight: 800;
 }
-/* chart2 */
-.section4,.section5{
+.data-table tbody td span{
+    border: 1px solid;
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    border-radius: 0.2rem;
+    background-color: rgba(229, 80, 80, 0.137);
+}
+
+/* chart */
+.section4 {
     grid-area: section4;
     padding: 1rem;
-    flex-direction: column;
-    justify-content: space-around;
+    display: grid;
+    grid-template-areas:
+        'group1 group2'
+    ;
     width: 96%;
+    gap: 1rem;
     margin: auto;
     min-height: 34rem;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.group1 {
+    grid-area: group1;
+}
+
+.group2 {
+    grid-area: group2;
+}
+
+.group1,
+.group2 {
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem;
     background-color: white;
     border-radius: .5rem;
-    margin-top: 2rem;
     box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
-}
-.section5{
-    grid-area: section5;
-}
-.section4 .col1,
-.section5 .col1{
-    font-size: 1.6rem;
-    font-weight: 800;
-    text-align: center;
-}
-.section4 .col2,
-.section5 .col2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

@@ -31,7 +31,8 @@
             <div class="col2Container flex secondaryColor">
                 <i class="fa-solid fa-moon"></i>
                 <i class="fa-solid fa-bell"></i>
-                <button id="signOutBtn">Sign Out</button>
+                <div class="button1" id="signOutBtn">Sign Out</div>
+                <!-- <button id="signOutBtn">Sign Out</button> -->
                 <img src="/assets/images/dashboardImages/images.jpeg" alt="userimage">
             </div>
         </div>
@@ -90,28 +91,36 @@
                             <td>13july,2022,1:34pm</td>
                             <td>15</td>
                             <td>15</td>
-                            <td class="primaryColor">Show Details</td>
+                            <td class="primaryColor">
+                                <span class="action">Show Details</span>
+                            </td>
                         </tr>
                         <tr>
                             <td>Save Soli Dicussion</td>
                             <td>1jne,2022,1:4pm</td>
                             <td>35</td>
                             <td>25</td>
-                            <td class="primaryColor">Show Details</td>
+                            <td class="primaryColor">
+                                <span class="action">Show Details</span>
+                            </td>
                         </tr>
                         <tr>
                             <td>Block Chain</td>
                             <td>13july,2022,1:34pm</td>
                             <td>13</td>
                             <td>11</td>
-                            <td class="primaryColor">Show Details</td>
+                            <td class="primaryColor">
+                                <span class="action">Show Details</span>
+                            </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>Freelancing Dicussion</td>
                             <td>3April,2022,9:34pm</td>
                             <td>15</td>
                             <td>15</td>
-                            <td class="primaryColor">Show Details</td>
+                                <td class="primaryColor">
+                                    <span class="action">Show Details</span>
+                                </td>
                         </tr>
                     </tbody>
                 </table>
@@ -123,25 +132,36 @@
         </div>
     </div>
     <!-- section3End -->
-    <div class="section4 flex">
-        <div class="col1 font2 lightBlackColor letterSpacing">
-            <p>On a scale from 1 - 10 how necessary were you for this meeting? With 1 being completely unnecessary and 10 being extremely necessary.</p>
+    <div class="section4">
+        <div class="group1 flex">
+            <div class="col1 font2 lightBlackColor letterSpacing">
+                <p>On a scale from 1 - 10 how necessary were you for this meeting? With 1 being completely unnecessary
+                    and 10 being extremely necessary.</p>
+            </div>
+            <div class="col2">
+                <canvas id="canva2" width="500" height="250"></canvas>
+            </div>
         </div>
-        <div class="col2">
-            <canvas id="canva2" width="900" height="250"></canvas>
+        <div class="group2 flex">
+            <div class="col1 font2 lightBlackColor letterSpacing">
+                <p>How was the time management of the meeting? 1 being extremely poor time control that caused the
+                    meeting
+                    to go on for too long and 10 being time was quick and efficient..</p>
+            </div>
+            <div class="col2">
+                <canvas id="canva3" width="500" height="250"></canvas>
+            </div>
         </div>
     </div>
     <!-- section4End -->
-    <div class="section5 flex">
-        <div class="col1 font2 lightBlackColor letterSpacing">
-            <p>How was the time management of the meeting? 1 being extremely poor time control that caused the meeting to go on for too long and 10 being time was quick and efficient..</p>
-        </div>
-        <div class="col2">
-            <canvas id="canva3" width="900" height="250"></canvas>
-        </div>
-    </div>
+    <!-- <div class="section5 flex">
+       
+    </div> -->
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+    integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/assets/javascript/dashboard/chart.js"></script>
+
 </html>
