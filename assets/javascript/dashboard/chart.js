@@ -13,22 +13,14 @@ gradientBg2.addColorStop(0.4, 'rgb(41,99,224,0.79)');
 gradientBg2.addColorStop(1, 'rgb(41,99,224,0.29)');
 const avgAnswerFeedback = [2, 6, 8, 1, 4, 10]
 const myChart = new Chart(ctx1, {
-    type: 'bar',
+    type: 'line',
     data: {
         labels: Meetings,
         datasets: [{
-            barPercentage: 0.9,
-            barThickness: 8,
             label: 'Meetings Score',
             data: Score,
-            backgroundColor: [
-                'rgb(41,99,224)',
-                'rgb(41,99,224)',
-                'rgb(41,99,224)',
-                'rgb(41,99,224)',
-                'rgb(41,99,224)',
-                'rgb(41,99,224)'
-            ],
+            borderColor:'rgb(41,99,224)',
+            backgroundColor:'rgb(41,99,224)',
         }]
     },
     options: {

@@ -21,23 +21,26 @@
 
 .section3 .group2 {
     grid-area: group2;
-    padding: 1rem;
+    padding: 1rem 0rem;
+    display: grid;
+    grid-template-areas: 
+    'col1'
+    'col2'
+    ;
+    gap: 2rem;
     background-color: white;
     border-radius: .5rem;
     box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
 }
-
-.section3 .group2 #canva1 {
-    width: 100%;
-}
-
-.section3 .group1 .col1 {
+.section3 .group1 .col1,
+.section3 .group2 .col1 {
     font-size: 1.6rem;
     font-weight: 600;
     position: relative;
 }
 
-.section3 .group1 .col1::after {
+.section3 .group1 .col1::after,
+.section3 .group2 .col1::after {
     content: '';
     position: absolute;
     top: 2.4rem;
@@ -49,7 +52,12 @@
     bottom: 0;
     border-radius: 1rem;
 }
-
+.section3 .group2 .col1::after{
+    width: 11.7rem;
+}
+.section3 .group2 .col2{
+    margin-left: -5rem;
+}
 .section3 .col2 .data-table {
     border-collapse: collapse;
     font-size: 1.2rem;
