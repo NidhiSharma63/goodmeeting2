@@ -42,10 +42,10 @@ const myChart = new Chart(ctx1, {
         },
         plugins: {
             tooltip: {
-                backgroundColor: 'rgba(229, 80, 80, 0.33)',
-                titleColor: 'rgba(229, 80, 80, 1)',
-                bodyColor: 'rgba(229, 80, 80, 1)',
-                borderColor: 'rgba(229, 80, 80, 1)',
+                backgroundColor: 'rgb(41,99,224,0.88)',
+                titleColor: 'rgba(225,225,225)',
+                bodyColor: 'rgba(225,225,225)',
+                borderColor: 'rgba(225,225,225)',
                 borderWidth: 1,
             },
             legend: {
@@ -91,7 +91,7 @@ const myChart2 = new Chart(ctx2, {
         plugins: {
             tooltip: {
                 backgroundColor: 'rgba(229, 80, 80, 0.33)',
-                titleColor: 'rgba(229, 80, 80, 1)',
+                titleColor: 'rgba(225,225,225)',
                 bodyColor: 'rgba(229, 80, 80, 1)',
                 borderColor: 'rgba(229, 80, 80, 1)',
                 borderWidth: 1,
