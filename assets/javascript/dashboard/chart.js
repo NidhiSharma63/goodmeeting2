@@ -70,11 +70,11 @@ const myChart2 = new Chart(ctx2, {
             pointBackgroundColor: '#fff',
             pointHighlightFill: "#fff",
             pointHighlightStroke: "#fff",
-            label: 'Meetings Score',
-            data: avgAnswerFeedback,
             backgroundColor: gradientBg,
             borderColor: 'rgb(229,80,80)',
             tension: .3,
+            label: 'Meetings Score',
+            data: avgAnswerFeedback,
         }]
     },
     options: {
@@ -124,10 +124,10 @@ const myChart3 = new Chart(ctx3, {
             pointBackgroundColor: '#fff',
             pointHighlightFill: "#fff",
             pointHighlightStroke: "#fff",
-            label: 'Meetings Score',
-            data: avgAnswerFeedback,
             backgroundColor:gradientBg2 ,
             borderColor: 'rgb(41,99,224)',
+            label: 'Meetings Score',
+            data: avgAnswerFeedback,
             tension: .3,
         }]
     },
@@ -171,3 +171,4 @@ const myChart3 = new Chart(ctx3, {
         }
     }
 });
+console.log(gradientBg2)
