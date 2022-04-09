@@ -83,3 +83,11 @@
 .section2 .col2 .visits4 {
     margin-left: -2rem;
 }
+.section2 .col2 .visits1 i,
+.section2 .col2 .visits2 i,
+.section2 .col2 .visits3 i,
+.section2 .col2 .visits4 i
+{
+    padding: 1rem;
+    font-size: 2.3rem;
+}
