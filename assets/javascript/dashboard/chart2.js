@@ -3,6 +3,7 @@ const Score = [10, 40, 50, 80, 60, 100];
 const avgAnswerFeedback = [2, 6, 8, 1, 4, 10];
 var ctx1 = document.getElementById('canva1').getContext('2d');
 var ctx2 = document.getElementById('canva2').getContext('2d');
+// make gradientBg
 var gradientBg = ctx2.createLinearGradient(0, 0, 0, 400);
 gradientBg.addColorStop(0, 'rgba(229,80,80,1)');
 gradientBg.addColorStop(0.3, 'rgba(229,80,80,0.99)');
@@ -12,7 +13,14 @@ var gradientBg2 = ctx3.createLinearGradient(0, 0, 0, 400);
 gradientBg2.addColorStop(0, 'rgb(41,99,224)');
 gradientBg2.addColorStop(0.4, 'rgb(41,99,224,0.59)');
 gradientBg2.addColorStop(1, 'rgb(41,99,224,0.29)');
+// ctx2.canvas.width =ctx2.canvas.parentNode.parentElement.clientWidth
+// ctx3.canvas.width =ctx3.canvas.parentNode.parentElement.clientWidth
 
+// window.addEventListener('resize', ()=>{
+//     ctx2.canvas.width =ctx2.canvas.parentNode.parentElement.clientWidth
+// ctx3.canvas.width =ctx3.canvas.parentNode.parentElement.clientWidth
+// });
+console.log(ctx3.canvas.parentNode.parentElement.clientWidth)
 const scales = {
     y: {
         beginAtZero: true,
@@ -96,7 +104,7 @@ const overAllStatChartConfig = {
         responsive: false,
         scales,
         plugins: {
-            tooltip: pinkToolTips,
+            tooltip: blueToolTip,
             legend,
         },
         animation,
@@ -106,7 +114,8 @@ const howNeccesaryConfig = {
     type: 'line',
     data: howNeccesaryData,
     options: {
-        responsive: false,
+        // maintainAspectRatio:false,
+        // responsive: false,
         scales,
         plugins: {
             tooltip: pinkToolTips,
@@ -119,7 +128,7 @@ const timeManagmentConfig = {
     type: 'line',
     data: timeManagmentData,
     options: {
-        responsive: false,
+        // responsive: false,
         scales,
         plugins: {
             tooltip: blueToolTip,
