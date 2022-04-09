@@ -83,7 +83,7 @@
 
 .data-table tbody tr:hover {
     transition: .7s;
-    background-color: rgba(122, 132, 219, 0.123);
+    background-color: rgba(229, 80, 80, 0.137);
 }
 
 .data-table tbody td {
