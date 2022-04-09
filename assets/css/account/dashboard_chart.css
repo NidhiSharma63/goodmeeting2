@@ -55,9 +55,6 @@
 .section3 .group2 .col1::after{
     width: 11.7rem;
 }
-.section3 .group2 .col2{
-    margin-left: -5rem;
-}
 .section3 .col2 .data-table {
     border-collapse: collapse;
     font-size: 1.2rem;
@@ -123,16 +120,16 @@
     font-weight: 800;
 }
 
-.group1 {
+.section4 .group1 {
     grid-area: group1;
 }
 
-.group2 {
+.section4 .group2 {
     grid-area: group2;
 }
 
-.group1,
-.group2 {
+.section4 .group1 ,
+.section4 .group2 {
     flex-direction: column;
     justify-content: space-around;
     padding: 2rem;

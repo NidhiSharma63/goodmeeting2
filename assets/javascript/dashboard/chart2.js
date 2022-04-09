@@ -13,7 +13,6 @@ gradientBg2.addColorStop(0, 'rgb(41,99,224)');
 gradientBg2.addColorStop(0.4, 'rgb(41,99,224,0.59)');
 gradientBg2.addColorStop(1, 'rgb(41,99,224,0.29)');
 
-
 const scales = {
     y: {
         beginAtZero: true,
@@ -94,6 +93,7 @@ const overAllStatChartConfig = {
     type:'line',
     data:overAllStatData,
     options: {
+        responsive: false,
         scales,
         plugins: {
             tooltip: pinkToolTips,
@@ -106,6 +106,7 @@ const howNeccesaryConfig = {
     type: 'line',
     data: howNeccesaryData,
     options: {
+        responsive: false,
         scales,
         plugins: {
             tooltip: pinkToolTips,
@@ -118,6 +119,7 @@ const timeManagmentConfig = {
     type: 'line',
     data: timeManagmentData,
     options: {
+        responsive: false,
         scales,
         plugins: {
             tooltip: blueToolTip,
@@ -132,9 +134,9 @@ const overAllStatDataChart = new Chart(
 );
 const howNeccesaryChart = new Chart(
     ctx2,
-    howNeccesaryConfig
+    howNeccesaryConfig,
 );
 const myChart = new Chart(
     ctx3,
-    timeManagmentConfig
+    timeManagmentConfig,
 );
