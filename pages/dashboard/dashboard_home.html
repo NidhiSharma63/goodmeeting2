@@ -11,6 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/css/utility.css">
     <link rel="stylesheet" href="/assets/css/account/dashboard_header.css">
+    <link rel="stylesheet" href="/assets/css/account/dashboard_visits.css">
     <link rel="stylesheet" href="/assets/css/account/dashboard_chart.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
@@ -117,10 +118,29 @@
             </div>
         </div>
         <div class="group2">
-            <canvas id="canva"></canvas>
+            <canvas id="canva1"></canvas>
             <!-- <img src="/assets/images/dashboardImages/graph1.gif" alt=""> -->
         </div>
     </div>
+    <!-- section3End -->
+    <div class="section4 flex">
+        <div class="col1 font2 lightBlackColor letterSpacing">
+            <p>On a scale from 1 - 10 how necessary were you for this meeting? With 1 being completely unnecessary and 10 being extremely necessary.</p>
+        </div>
+        <div class="col2">
+            <canvas id="canva2" width="900" height="250"></canvas>
+        </div>
+    </div>
+    <!-- section4End -->
+    <div class="section5 flex">
+        <div class="col1 font2 lightBlackColor letterSpacing">
+            <p>How was the time management of the meeting? 1 being extremely poor time control that caused the meeting to go on for too long and 10 being time was quick and efficient..</p>
+        </div>
+        <div class="col2">
+            <canvas id="canva3" width="900" height="250"></canvas>
+        </div>
+    </div>
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/assets/javascript/dashboard/chart.js"></script>

@@ -1,0 +1,59 @@
+body {
+    /* background-color: rgba(122, 132, 219, 0.281); */
+}
+
+.section1 {
+    grid-area: section1;
+    display: grid;
+    grid-template-areas:
+        'col1 col2'
+    ;
+    min-height: 7rem;
+    padding: 1rem;
+    background-color: rgba(253, 253, 253, 0.938);
+    margin-bottom: 1rem;
+    box-shadow: 0rem -2.1rem 1rem 2rem var(--secondary-color);
+}
+
+.section1 .col1 {
+    grid-area: col1;
+    justify-content: flex-start;
+}
+
+.section1 .col1 .Menu {
+    font-size: 2.5rem;
+}
+
+.section1 .col1 .logo img {
+    width: 20rem;
+    margin-left: 2rem;
+}
+
+.section1 .col2 {
+    grid-area: col2;
+    justify-content: flex-end;
+}
+
+.section1 .col2 .col2Container {
+    min-width: 34rem;
+    justify-content: space-between;
+    font-size: 3rem;
+}
+.section1 .col2 .col2Container i:nth-child(1){
+    text-shadow: 0.1rem 0.1rem .5rem;
+}
+.section1 .col2 .col2Container #signOutBtn {
+    border: none;
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 0.4rem;
+}
+
+.section1 .col2 img {
+    width: 7rem;
+    border-radius: 50%;
+    box-shadow: 0.1rem 0.1rem 1rem 0rem var(--primary-color);
+}

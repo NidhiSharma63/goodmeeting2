@@ -1,0 +1,89 @@
+.section3 {
+    grid-area: section3;
+    width: 93%;
+    display: grid;
+    grid-template-areas:
+        'group2 group1'
+    ;
+    margin: auto;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.section3 .group1 {
+    grid-area: group1;
+    padding: 1rem;
+    background-color: white;
+    min-height: 22rem;
+    border-radius: .5rem;
+    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
+}
+
+.section3 .group2 {
+    grid-area: group2;
+    padding: 1rem;
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
+}
+
+.section3 .group2 #canva1 {
+    width: 100%;
+}
+
+.section3 .col1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.section3 .col2 .data-table {
+    border-collapse: collapse;
+    font-size: 1.4rem;
+    margin: 2rem 0rem;
+    width: 100%;
+    align-self: center;
+}
+
+.data-table thead th {
+    text-align: left;
+    padding: 1rem 0rem;
+    border-bottom: .1rem solid var(--light-black-color);
+}
+.data-table tbody tr:hover{
+    transition: .7s;
+    background-color: rgba(122, 132, 219, 0.123)
+    ;
+}
+.data-table tbody td {
+    padding: 1rem 0rem;
+    font-weight: 800;
+}
+/* chart2 */
+.section4,.section5{
+    grid-area: section4;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 96%;
+    margin: auto;
+    min-height: 34rem;
+    background-color: white;
+    border-radius: .5rem;
+    margin-top: 2rem;
+    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
+}
+.section5{
+    grid-area: section5;
+}
+.section4 .col1,
+.section5 .col1{
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+}
+.section4 .col2,
+.section5 .col2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,85 @@
+.section2 {
+    grid-area: section2;
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        'col1 col2 col2'
+    ;
+    margin-bottom: .7rem;
+}
+
+.section2 .col1 {
+    grid-area: col1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    max-width: 34rem;
+    border-radius: 0.6rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.705);
+}
+
+.section2 .col1 .Image_text {
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    font-weight: 600;
+}
+
+.section2 .col1 .Image_text img {
+    width: 6rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+.section2 .col1 p:last-child {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1.2rem;
+    color: white;
+}
+
+.section2 .col2 {
+    grid-area: col2;
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+        'visits1 visits2 visits3 visits4'
+    ;
+}
+
+.section2 .col2 .visits1 {
+    grid-area: visits1;
+}
+
+.section2 .col2 .visits2 {
+    grid-area: visits2;
+}
+
+.section2 .col2 .visits3 {
+    grid-area: visits3;
+}
+
+.section2 .col2 .visits4 {
+    grid-area: visits4;
+}
+
+.section2 .col2 .visits1,
+.section2 .col2 .visits2,
+.section2 .col2 .visits3,
+.section2 .col2 .visits4 {
+    justify-content: space-between;
+    padding: 0rem 0.8rem;
+    font-size: 2rem;
+    max-width: 18rem;
+    border-radius: .5rem;
+    color: var(--secondary-color);
+    background-color: white;
+    box-shadow: 0.3rem 0.3rem 1rem 0rem rgba(122, 132, 219, 0.24);
+}
+
+.section2 .col2 .visits3,
+.section2 .col2 .visits4 {
+    margin-left: -2rem;
+}

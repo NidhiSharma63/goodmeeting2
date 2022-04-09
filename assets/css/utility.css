@@ -24,6 +24,7 @@ body {
     --secondary-color: rgb(41, 99, 224);
     --light-black-color: #313640;
     --white-background-color: white;
+        background-color: rgba(122, 132, 219, 0.034);
 }
 .root{
     max-width: 3500px;
