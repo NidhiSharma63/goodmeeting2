@@ -1,6 +1,6 @@
-const Meetings = ['Save Enviroment', 'BlockChain Discussion', 'Save Soil Discussion', 'Freelancing Challenges', 'Tech Challenges','tatti khalo','pad pilo']
-const Score = [10, 40, 50, 80, 60, 100,40,30,90];
-const avgAnswerFeedback = [2, 6, 8, 1, 4, 10,3,6,9];
+const Meetings = ['Save Enviroment', 'BlockChain Discussion', 'Save Soil Discussion', 'Freelancing Challenges', 'Tech Challenges', 'tatti khalo', 'pad pilo']
+const Score = [10, 40, 50, 80, 60, 100, 40, 30, 90];
+const avgAnswerFeedback = [2, 6, 8, 1, 4, 10, 3, 6, 9];
 const MeetingsAdjusted = Meetings.map(meeting => meeting.split(' '));
 console.log(MeetingsAdjusted)
 var ctx1 = document.getElementById('canva1').getContext('2d');
@@ -17,35 +17,39 @@ gradientBg2.addColorStop(0.8, 'rgb(41,99,224,0.89)');
 gradientBg2.addColorStop(1, 'rgb(41,99,224,0.9)');
 console.log(ctx3.canvas.parentNode.parentElement.clientWidth)
 
-const yAxis = {
-    ticks: {
-        color: '#313640',
-        padding: 9,
-        stepSize: 4,
-        font: {
-            size: 12,
-            weight: 560
-        }
-    },
-    grid: {
-        display: false,
-        borderColor: 'rgba(19, 27, 99, 0.055)'
-    },
-};
+const gridConfig = {
+    display: false,
+    borderWidth: 0,
+}
+const yAxisTicks_stepSize2 = {
+    color: '#313640',
+    padding: 9,
+    stepSize: 2,
+    font: {
+        size: 12,
+        weight: 560
+    }
+}
+const yAxisTicks_stepSize20 = {
+    color: '#313640',
+    padding: 9,
+    stepSize: 20,
+    font: {
+        size: 12,
+        weight: 560
+    }
+}
 const xAxis = {
     barPercentage: 0.4,
     ticks: {
         color: '#313640',
         padding: 9,
-
-        font: {
-            size: 12,
-            weight: 600
-        }
     },
-    grid: {
-        display: false,
+    font: {
+        size: 12,
+        weight: 600
     },
+    grid:gridConfig,
 };
 const legend = {
     labels: {
@@ -121,7 +125,10 @@ const overAllStatChartConfig = {
     data: overAllStatData,
     options: {
         scales: {
-            y:yAxis,
+            y: {
+                ticks: yAxisTicks_stepSize20,
+                grid:gridConfig
+            },
             x: xAxis,
         },
         plugins: {
@@ -135,8 +142,11 @@ const howNeccesaryConfig = {
     type: 'line',
     data: howNeccesaryData,
     options: {
-        scales:{
-            y:yAxis,
+        scales: {
+            y: {
+                ticks: yAxisTicks_stepSize20,
+                grid:gridConfig
+            },
             x: xAxis,
         },
         plugins: {
@@ -150,8 +160,11 @@ const timeManagmentConfig = {
     type: 'bar',
     data: timeManagmentData,
     options: {
-        scales:{
-            y:yAxis,
+        scales: {
+            y: {
+                ticks: yAxisTicks_stepSize20,
+                grid:gridConfig
+            },
             x: xAxis,
         },
         plugins: {

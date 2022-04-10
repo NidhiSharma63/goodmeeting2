@@ -42,7 +42,7 @@
 }
 
 .section3 .group2 .col2{
-    max-width: 85%;
+    max-width: 90%;
 }
 .section3 .group1 .col1::after,
 .section3 .group2 .col1::after {
@@ -71,14 +71,13 @@
 /* select all heading */
 .data-table thead th {
     background-color: rgba(122, 132, 219, 0.123);
-    text-align: left;
     padding: 1rem 0rem;
     border-bottom: .1rem solid var(--light-black-color);
 }
 
 /* select last heading */
-.data-table thead th:last-child {
-    text-align: center;
+.data-table thead th:first-child {
+    text-align: left;
 }
 
 /* sleceting all tr tab in tbody */
