@@ -1,0 +1,23 @@
+.sideBar{
+    position: fixed;
+    top: 7rem;
+    left: 0;
+    bottom:0;
+    width: 4rem;
+    /* background-color:#313640; */
+    z-index: -1;
+}
+.sideBar .iconsContainer{
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+    padding: 0rem .8rem;
+    background-color:#313640;
+}
+.sideBar .iconsContainer i{
+    font-size: 2rem;
+    color: var(--secondary-color);
+}

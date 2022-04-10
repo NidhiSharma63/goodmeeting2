@@ -11,6 +11,8 @@
     margin-bottom: 1rem;
     background-color: rgba(19, 27, 99, 0.030);
     box-shadow: 0rem -2.1rem 1rem 1.6rem var(--secondary-color);
+    position: relative;
+    z-index: 1;
 }
 
 .section1 .col1 {
