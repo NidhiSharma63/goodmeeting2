@@ -2,27 +2,23 @@ const Meetings = ['Save Enviroment', 'BlockChain Discussion', 'Save Soil Discuss
 const Score = [10, 40, 50, 80, 60, 100, 40, 30, 90];
 const avgAnswerFeedback = [2, 6, 8, 1, 4, 10, 3, 6, 9];
 const MeetingsAdjusted = Meetings.map(meeting => meeting.split(' '));
-console.log(MeetingsAdjusted)
 var ctx1 = document.getElementById('canva1').getContext('2d');
 var ctx2 = document.getElementById('canva2').getContext('2d');
-// make gradientBg
-var gradientBg = ctx2.createLinearGradient(0, 0, 0, 400);
-gradientBg.addColorStop(0, 'rgba(229,80,80,1)');
-gradientBg.addColorStop(0.3, 'rgba(229,80,80,0.99)');
-gradientBg.addColorStop(1, 'rgba(229,80,80,0.39)');
 var ctx3 = document.getElementById('canva3').getContext('2d');
-var gradientBg2 = ctx3.createLinearGradient(0, 0, 0, 400);
-gradientBg2.addColorStop(0, 'rgb(41,99,224)');
-gradientBg2.addColorStop(0.8, 'rgb(41,99,224,0.89)');
-gradientBg2.addColorStop(1, 'rgb(41,99,224,0.9)');
-console.log(ctx3.canvas.parentNode.parentElement.clientWidth)
 
+let textColor = '#313640';
+const getMode = localStorage.getItem("goodmeeting_today_color_scheme");
+if(getMode=='dark'){
+    textColor = 'rgb(225,225,225)'
+}else{
+    textColor = '#313640';
+}
 const gridConfig = {
     display: false,
     borderWidth: 0,
 }
 const yAxisTicks_stepSize2 = {
-    color: '#313640',
+    color: textColor,
     padding: 9,
     stepSize: 2,
     font: {
@@ -31,7 +27,7 @@ const yAxisTicks_stepSize2 = {
     }
 }
 const yAxisTicks_stepSize20 = {
-    color: '#313640',
+    color: textColor,
     padding: 9,
     stepSize: 20,
     font: {
@@ -39,20 +35,22 @@ const yAxisTicks_stepSize20 = {
         weight: 560
     }
 }
+
 const xAxis = {
     barPercentage: 0.4,
     ticks: {
-        color: '#313640',
+        color: textColor,
         padding: 9,
-    },
-    font: {
-        size: 12,
-        weight: 600
+        font: {
+            size: 12,
+            weight: 600
+        }
     },
     grid:gridConfig,
 };
 const legend = {
     labels: {
+        color:textColor,
         font: {
             size: 15,
             weight: 700,
@@ -102,7 +100,7 @@ const howNeccesaryData = {
     labels: MeetingsAdjusted,
     datasets: [{
         label: 'Meetings Score',
-        backgroundColor: gradientBg,
+        backgroundColor: 'rgba(229,80,80,1)',
         borderColor: 'rgba(229,80,80,1)',
         data: Score,
         tension: .5,
@@ -113,8 +111,8 @@ const timeManagmentData = {
     datasets: [{
         barThickness: 10,
         borderRadius: 100,
-        backgroundColor: gradientBg2,
-        borderColor: gradientBg2,
+        backgroundColor: 'rgb(41,99,224)',
+        borderColor: 'rgb(41,99,224)',
         label: 'Meetings Score',
         data: avgAnswerFeedback,
         tension: .6,
@@ -162,7 +160,7 @@ const timeManagmentConfig = {
     options: {
         scales: {
             y: {
-                ticks: yAxisTicks_stepSize20,
+                ticks: yAxisTicks_stepSize2,
                 grid:gridConfig
             },
             x: xAxis,
