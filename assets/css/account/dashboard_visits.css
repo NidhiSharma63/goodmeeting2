@@ -14,7 +14,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
-    max-width: 30rem;
+    max-width: 32rem;
     border-radius: 0.6rem;
     background-color: var(--secondary-color);
     box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.705);
@@ -31,7 +31,6 @@
     border-radius: 50%;
     margin-right: 2rem;
 }
-
 .section2 .col1 p{
     font-size: 1.7rem;
     font-weight: 600;
@@ -42,10 +41,10 @@
 .section2 .col2 {
     grid-area: col2;
     display: grid;
-    gap: 1rem;
     grid-template-areas:
-        'visits1 visits2 visits3 visits4'
+    'visits1 visits2 visits3 visits4'
     ;
+    gap: 1rem;
 }
 
 .section2 .col2 .visits1 {
@@ -79,9 +78,8 @@
     box-shadow: 0.3rem 0.3rem 1rem 0rem #313640a1;
 }
 
-.section2 .col2 .visits3,
-.section2 .col2 .visits4 {
-    margin-left: -2rem;
+.section2 .col2 .visits2{
+    margin-left: 3rem;
 }
 .section2 .col2 .visits1 i,
 .section2 .col2 .visits2 i,
@@ -92,8 +90,6 @@
     font-size: 1.3rem;
     border: 1px solid;
     border-radius: 3rem;
-    color: var(--secondary-color) ;
-    color: var(--primary-color);
-    /* background-color: rgba(19, 27, 99, 0.137); */
+    color: var(--primary-color) ;
     background-color: rgba(229, 80, 80, 0.15);
 }

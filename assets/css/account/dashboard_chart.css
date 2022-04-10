@@ -16,7 +16,8 @@
     background-color: white;
     min-height: 22rem;
     border-radius: .5rem;
-    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
+    box-shadow: 0.3rem 0.3rem 1rem 0rem #31364028;
+    background-color: rgba(19, 27, 99, 0.030);
 }
 
 .section3 .group2 {
@@ -30,7 +31,7 @@
     gap: 2rem;
     background-color: white;
     border-radius: .5rem;
-    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
+    box-shadow: 0.3rem 0.3rem 1rem 0rem #31364028;  
     background-color: rgba(19, 27, 99, 0.030);
 }
 .section3 .group1 .col1,
@@ -39,9 +40,9 @@
     font-weight: 600;
     position: relative;
 }
+
 .section3 .group2 .col2{
     max-width: 85%;
-    
 }
 .section3 .group1 .col1::after,
 .section3 .group2 .col1::after {
@@ -121,17 +122,14 @@
     margin-top: 1rem;
     font-size: 1.3rem;
     font-weight: 800;
-    /* border: 1px solid; */
 }
 
 .section4 .group1 {
     grid-area: group1;
-    /* border: 1px solid; */
 }
 
 .section4 .group2 {
     grid-area: group2;
-    /* border: 1px solid; */
 }
 
 .section4 .group1 ,
@@ -144,7 +142,7 @@
     height: 95%;
     border-radius: .5rem;
     background-color: rgba(19, 27, 99, 0.055);; 
-    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
+    box-shadow: 0.3rem 0.3rem 1rem 0rem #31364028;
 }
 .section4 .group1 .col2,
 .section4 .group2 .col2{
