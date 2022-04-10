@@ -75,6 +75,7 @@
     border-radius: .5rem;
     color: var(--secondary-color);
     background-color: white;
+    background-color: rgba(19, 27, 99, 0.116);
     box-shadow: 0.3rem 0.3rem 1rem 0rem rgba(122, 132, 219, 0.24);
 }
 
@@ -92,9 +93,9 @@
     border: 1px solid;
     border-radius: 3rem;
     color: var(--secondary-color) ;
-    /* color: var(--primary-color); */
-    background-color: rgba(19, 27, 99, 0.137);
-    /* background-color: rgba(229, 80, 80, 0.15); */
+    color: var(--primary-color);
+    /* background-color: rgba(19, 27, 99, 0.137); */
+    background-color: rgba(229, 80, 80, 0.15);
 }
 .section2 .col2 .visits4{
     background-color: rgba(19, 27, 99, 0.116);

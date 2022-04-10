@@ -22,7 +22,7 @@
 }
 
 .section1 .col1 .logo img {
-    width: 20rem;
+    width: 16rem;
     margin-left: 2rem;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .section1 .col2 img {
-    width: 7rem;
+    width: 5rem;
     border-radius: 50%;
     box-shadow: 0.1rem 0.1rem 1rem 0rem var(--primary-color);
 }
