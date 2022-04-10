@@ -7,23 +7,19 @@ var ctx2 = document.getElementById('canva2').getContext('2d');
 var gradientBg = ctx2.createLinearGradient(0, 0, 0, 400);
 gradientBg.addColorStop(0, 'rgba(229,80,80,1)');
 gradientBg.addColorStop(0.3, 'rgba(229,80,80,0.99)');
-gradientBg.addColorStop(1, 'rgba(22,80,80,0.29)');
+gradientBg.addColorStop(1, 'rgba(229,80,80,0.39)');
 var ctx3 = document.getElementById('canva3').getContext('2d');
 var gradientBg2 = ctx3.createLinearGradient(0, 0, 0, 400);
 gradientBg2.addColorStop(0, 'rgb(41,99,224)');
-gradientBg2.addColorStop(0.4, 'rgb(41,99,224,0.59)');
-gradientBg2.addColorStop(1, 'rgb(41,99,224,0.29)');
-// ctx2.canvas.width =ctx2.canvas.parentNode.parentElement.clientWidth
-// ctx3.canvas.width =ctx3.canvas.parentNode.parentElement.clientWidth
-
-// window.addEventListener('resize', ()=>{
-//     ctx2.canvas.width =ctx2.canvas.parentNode.parentElement.clientWidth
-// ctx3.canvas.width =ctx3.canvas.parentNode.parentElement.clientWidth
-// });
+gradientBg2.addColorStop(0.4, 'rgb(41,99,224,0.99)');
+gradientBg2.addColorStop(1, 'rgb(41,99,224,0.39)');
 console.log(ctx3.canvas.parentNode.parentElement.clientWidth)
 const scales = {
     y: {
         beginAtZero: true,
+        grid: {
+            display: false
+        },
     },
     x: {
         grid: {
@@ -114,8 +110,6 @@ const howNeccesaryConfig = {
     type: 'line',
     data: howNeccesaryData,
     options: {
-        // maintainAspectRatio:false,
-        // responsive: false,
         scales,
         plugins: {
             tooltip: pinkToolTips,
@@ -128,7 +122,6 @@ const timeManagmentConfig = {
     type: 'line',
     data: timeManagmentData,
     options: {
-        // responsive: false,
         scales,
         plugins: {
             tooltip: blueToolTip,

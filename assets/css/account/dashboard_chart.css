@@ -106,7 +106,6 @@
 /* chart */
 .section4 {
     grid-area: section4;
-    padding: 1rem;
     display: grid;
     grid-template-areas:
         'group1 group2'
@@ -114,18 +113,21 @@
     width: 96%;
     gap: 1rem;
     margin: auto;
-    min-height: 34rem;
+    max-height: 34rem;
     margin-top: 2rem;
     font-size: 1.3rem;
     font-weight: 800;
+    border: 1px solid;
 }
 
 .section4 .group1 {
     grid-area: group1;
+    border: 1px solid;
 }
 
 .section4 .group2 {
     grid-area: group2;
+    border: 1px solid;
 }
 
 .section4 .group1 ,
@@ -134,7 +136,8 @@
     justify-content: space-around;
     padding: 2rem;
     background-color: white;
-    min-width: 60rem;
+    min-width: 50%;
+    height: 90%;
     border-radius: .5rem;
     box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
 }
