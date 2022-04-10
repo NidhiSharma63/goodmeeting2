@@ -4,11 +4,9 @@
     left: 0;
     bottom:0;
     width: 4rem;
-    /* background-color:#313640; */
     z-index: -1;
 }
 .sideBar .iconsContainer{
-    /* border: 1px solid; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
