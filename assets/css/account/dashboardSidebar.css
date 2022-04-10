@@ -13,7 +13,9 @@
     flex-direction: column;
     height: 100%;
     padding: 0rem .8rem;
-    background-color:#313640;
+    /* background-color:#313640; */
+    background-color: rgba(19, 27, 99, 0.030);
+    box-shadow: 1rem 0.2rem 2rem -1.7rem var(--secondary-color);
 }
 .sideBar .iconsContainer i{
     font-size: 2rem;

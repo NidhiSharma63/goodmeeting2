@@ -1,6 +1,6 @@
 .section2 {
     grid-area: section2;
-    width: 90%;
+    width: 93%;
     margin: auto;
     display: grid;
     grid-template-areas:
