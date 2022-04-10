@@ -1,6 +1,8 @@
-const Meetings = ['SaveEnviroment', 'BlockChain Discussion', 'Save Soil Discussion', 'Freelancing Challenges', 'Tech Challenges']
+const Meetings = ['Save Enviroment', 'BlockChain Discussion', 'Save Soil Discussion', 'Freelancing Challenges', 'Tech Challenges']
 const Score = [10, 40, 50, 80, 60, 100];
 const avgAnswerFeedback = [2, 6, 8, 1, 4, 10];
+const MeetingsAdjusted = Meetings.map(meeting => meeting.split(' '));
+console.log(MeetingsAdjusted)
 var ctx1 = document.getElementById('canva1').getContext('2d');
 var ctx2 = document.getElementById('canva2').getContext('2d');
 // make gradientBg
@@ -11,96 +13,119 @@ gradientBg.addColorStop(1, 'rgba(229,80,80,0.39)');
 var ctx3 = document.getElementById('canva3').getContext('2d');
 var gradientBg2 = ctx3.createLinearGradient(0, 0, 0, 400);
 gradientBg2.addColorStop(0, 'rgb(41,99,224)');
-gradientBg2.addColorStop(0.4, 'rgb(41,99,224,0.99)');
-gradientBg2.addColorStop(1, 'rgb(41,99,224,0.39)');
+gradientBg2.addColorStop(0.8, 'rgb(41,99,224,0.89)');
+gradientBg2.addColorStop(1, 'rgb(41,99,224,0.9)');
 console.log(ctx3.canvas.parentNode.parentElement.clientWidth)
-const scales = {
-    y: {
-        beginAtZero: true,
-        grid: {
-            display: false
-        },
+
+const yAxis = {
+    ticks: {
+        color: '#313640',
+        padding: 9,
+        stepSize: 4,
+        font: {
+            size: 12,
+            weight: 560
+        }
     },
-    x: {
-        grid: {
-            display: false
-        },
+    grid: {
+        display: false,
+        borderColor: 'rgba(19, 27, 99, 0.055)'
+    },
+};
+const xAxis = {
+    barPercentage: 0.4,
+    ticks: {
+        color: '#313640',
+        padding: 9,
+
+        font: {
+            size: 12,
+            weight: 600
+        }
+    },
+    grid: {
+        display: false,
     },
 };
 const legend = {
     labels: {
         font: {
-            size: 15
+            size: 15,
+            weight: 700,
         },
-        boxWidth: 20,
+        boxWidth: 15,
+        boxHeight: 10
     }
 };
-const blueToolTip = {
-    backgroundColor: 'rgb(41,99,224,0.88)',
+
+const tooltip = {
+    backgroundColor: 'rgb(33,35,49)',
+    padding: 15,
+    titleAlign: 'center',
+    titleSpacing: 12,
     titleColor: 'rgba(225,225,225)',
+    font: {
+        size: 32,
+    },
     bodyColor: 'rgba(225,225,225)',
-    borderColor: 'rgba(225,225,225)',
-    borderWidth: 1
-}
-const pinkToolTips = {
-    backgroundColor: 'rgba(229, 80, 80, 0.88)',
-    titleColor: 'rgba(225,225,225)',
-    bodyColor: 'rgba(225,225,225)',
-    borderColor: 'rgba(225,225,225)',
-    borderWidth: 1,
-}
+    bodyAlign: 'center',
+    bodySpacing: 9,
+    bodyFont: {
+        font: {
+            size: 34
+        }
+    },
+    caretSize: 12,
+    displayColors: false,
+};
 const animation = {
     duration: 1000,
     easing: 'linear'
 }
 const overAllStatData = {
-    labels: Meetings,
+    labels: MeetingsAdjusted,
     datasets: [{
+        barThickness: 10,
+        borderRadius: 100,
         label: 'Meetings Score',
         data: Score,
         borderColor: 'rgb(41,99,224)',
-        backgroundColor: 'rgb(41,99,224)',
-        tension:.4
+        backgroundColor: 'rgb(229,80,80)',
+        tension: .4
     }]
 }
 const howNeccesaryData = {
-    labels: Meetings,
+    labels: MeetingsAdjusted,
     datasets: [{
         label: 'Meetings Score',
-        fill: true,
-        pointColor: "#fff",
-        pointBackgroundColor: '#fff',
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "#fff",
         backgroundColor: gradientBg,
         borderColor: 'rgba(229,80,80,1)',
         data: Score,
-        tension: .4,
+        tension: .5,
     }]
 };
 const timeManagmentData = {
-    labels: Meetings,
+    labels: MeetingsAdjusted,
     datasets: [{
-        fill: true,
-        pointColor: "#fff",
-        pointBackgroundColor: '#fff',
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "#fff",
+        barThickness: 10,
+        borderRadius: 100,
         backgroundColor: gradientBg2,
-        borderColor: 'rgb(41,99,224)',
+        borderColor: gradientBg2,
         label: 'Meetings Score',
         data: avgAnswerFeedback,
-        tension: .4,
+        tension: .6,
     }]
 }
 const overAllStatChartConfig = {
-    type:'line',
-    data:overAllStatData,
+    type: 'bar',
+    data: overAllStatData,
     options: {
-        responsive: false,
-        scales,
+        scales: {
+            y:yAxis,
+            x: xAxis,
+        },
         plugins: {
-            tooltip: blueToolTip,
+            tooltip,
             legend,
         },
         animation,
@@ -110,21 +135,27 @@ const howNeccesaryConfig = {
     type: 'line',
     data: howNeccesaryData,
     options: {
-        scales,
+        scales:{
+            y:yAxis,
+            x: xAxis,
+        },
         plugins: {
-            tooltip: pinkToolTips,
+            tooltip,
             legend,
         },
         animation,
     }
 };
 const timeManagmentConfig = {
-    type: 'line',
+    type: 'bar',
     data: timeManagmentData,
     options: {
-        scales,
+        scales:{
+            y:yAxis,
+            x: xAxis,
+        },
         plugins: {
-            tooltip: blueToolTip,
+            tooltip,
             legend,
         },
         animation,
