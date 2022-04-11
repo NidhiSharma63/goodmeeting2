@@ -8,5 +8,8 @@ $(document).ready(function () {
             $(document.body).removeClass("darkTheme")
         }
     }
-    changeTheme()
+    changeTheme();
+    $('.sideBar').click(function(){
+        $('.contentContainer').toggleClass('shrinkContainerWidht')
+    });
 });
