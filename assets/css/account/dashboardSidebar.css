@@ -20,6 +20,7 @@
 
 .sideBarList .iconsContainer {
     padding: 0rem .8rem;
+    box-shadow: .4rem 0.2rem 2rem -1.7rem var(--secondary-color);
 }
 
 .iconsInfo {
@@ -48,3 +49,6 @@
     transition: .2s;
     color: var(--secondary-color);
 }
+.boxShadowRemove{
+    box-shadow: none !important;
+ }

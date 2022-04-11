@@ -11,26 +11,32 @@ $(document).ready(function () {
     changeTheme();
     $('.sideBar').click(function(){
         $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show')
+        $('.iconsInfo').toggleClass('show');
+        $('.iconsContainer').toggleClass('boxShadowRemove');
     });
     $('.stat1').click(function(){
         $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show')
+        $('.iconsInfo').toggleClass('show');
+        $('.iconsContainer').toggleClass('boxShadowRemove');
     });
     $('.stat2').click(function(){
         $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show')
+        $('.iconsInfo').toggleClass('show');
+        $('.iconsContainer').toggleClass('boxShadowRemove');
     });
     $('.stat3').click(function(){
         $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show')
+        $('.iconsInfo').toggleClass('show');
+        $('.iconsContainer').toggleClass('boxShadowRemove');
     });
     $('.help').click(function(){
         $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show')
+        $('.iconsInfo').toggleClass('show');
+        $('.iconsContainer').toggleClass('boxShadowRemove');
     });
      $('.feedback').click(function(){
         $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show')
+        $('.iconsInfo').toggleClass('show');
+        $('.iconsContainer').toggleClass('boxShadowRemove');
     });
 });

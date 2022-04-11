@@ -17,7 +17,7 @@
     max-width: 30rem;
     border-radius: 0.6rem;
     background-color: var(--secondary-color);
-    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.705);
+    box-shadow: 0.1rem 0.1rem .3rem 0rem rgba(122, 132, 219, 0.705);
 }
 
 .section2 .col1 .Image_text {
