@@ -6,37 +6,19 @@ var ctx1 = document.getElementById('canva1').getContext('2d');
 var ctx2 = document.getElementById('canva2').getContext('2d');
 var ctx3 = document.getElementById('canva3').getContext('2d');
 let overAllStatDataChart = null;
-
 let howNeccesaryChart = null;
-
 let myChart = null;
-
 let textColor = '#313640';
-const getMode = localStorage.getItem("goodmeeting_today_color_scheme");
-if (getMode == 'dark') {
+// get value on load
+const getModeOnLoad = localStorage.getItem("goodmeeting_today_color_scheme");
+if (getModeOnLoad == 'dark') {
     textColor = 'rgb(225,225,225)'
 } else {
     textColor = '#313640';
 }
-$('.moon').click(() => {
-    console.log(`clicked ${textColor}`)
-    const getModeValue = localStorage.getItem("goodmeeting_today_color_scheme");
-    if (getModeValue === 'dark') {
-        $(document.body).removeClass("darkTheme");
-        localStorage.setItem("goodmeeting_today_color_scheme", 'light');
-        textColor = '#313640';
-    } else {
-        $(document.body).addClass("darkTheme");
-        localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
-        textColor = 'rgb(225,225,225)'
-    }
-
-    let gridConfig = {
-        display: false,
-        borderWidth: 0,
-    }
+const yAxisHandler = (color) => {
     let yAxisTicks_stepSize2 = {
-        color: textColor,
+        color: color,
         padding: 9,
         stepSize: 2,
         font: {
@@ -44,8 +26,11 @@ $('.moon').click(() => {
             weight: 560
         }
     }
+    return yAxisTicks_stepSize2
+}
+const yAxisHandler2 = (color) => {
     let yAxisTicks_stepSize20 = {
-        color: textColor,
+        color: color,
         padding: 9,
         stepSize: 20,
         font: {
@@ -53,11 +38,13 @@ $('.moon').click(() => {
             weight: 560
         }
     }
-    
+    return yAxisTicks_stepSize20
+}
+const xAxisHandler = (color) => {
     let xAxis = {
         barPercentage: 0.4,
         ticks: {
-            color: textColor,
+            color: color,
             padding: 9,
             font: {
                 size: 12,
@@ -66,9 +53,12 @@ $('.moon').click(() => {
         },
         grid: gridConfig,
     };
+    return xAxis;
+}
+const legendFun = (color) => {
     let legend = {
         labels: {
-            color: textColor,
+            color: color,
             font: {
                 size: 15,
                 weight: 700,
@@ -76,188 +66,13 @@ $('.moon').click(() => {
             boxWidth: 15,
             boxHeight: 10
         }
-    };
-    
-    let tooltip = {
-        backgroundColor: 'rgb(33,35,49)',
-        padding: 15,
-        titleAlign: 'center',
-        titleSpacing: 12,
-        titleColor: 'rgba(225,225,225)',
-        font: {
-            size: 32,
-        },
-        bodyColor: 'rgba(225,225,225)',
-        bodyAlign: 'center',
-        bodySpacing: 9,
-        bodyFont: {
-            font: {
-                size: 34
-            }
-        },
-        caretSize: 12,
-        displayColors: false,
-    };
-    let animation = {
-        duration: 1000,
-        easing: 'linear'
     }
-    let overAllStatData = {
-        labels: MeetingsAdjusted,
-        datasets: [{
-            barThickness: 10,
-            borderRadius: 100,
-            label: 'Meetings Score',
-            data: Score,
-            borderColor: 'rgb(41,99,224)',
-            backgroundColor: 'rgb(229,80,80)',
-            tension: .4
-        }]
-    }
-    let howNeccesaryData = {
-        labels: MeetingsAdjusted,
-        datasets: [{
-            label: 'Meetings Score',
-            backgroundColor: 'rgba(229,80,80,1)',
-            borderColor: 'rgba(229,80,80,1)',
-            data: Score,
-            tension: .5,
-        }]
-    };
-    let timeManagmentData = {
-        labels: MeetingsAdjusted,
-        datasets: [{
-            barThickness: 10,
-            borderRadius: 100,
-            backgroundColor: 'rgb(41,99,224)',
-            borderColor: 'rgb(41,99,224)',
-            label: 'Meetings Score',
-            data: avgAnswerFeedback,
-            tension: .6,
-        }]
-    }
-    let overAllStatChartConfig = {
-        type: 'bar',
-        data: overAllStatData,
-        options: {
-            scales: {
-                y: {
-                    ticks: yAxisTicks_stepSize20,
-                    grid: gridConfig
-                },
-                x: xAxis,
-            },
-            plugins: {
-                tooltip,
-                legend,
-            },
-            animation,
-        }
-    }
-    let howNeccesaryConfig = {
-        type: 'line',
-        data: howNeccesaryData,
-        options: {
-            scales: {
-                y: {
-                    ticks: yAxisTicks_stepSize20,
-                    grid: gridConfig
-                },
-                x: xAxis,
-            },
-            plugins: {
-                tooltip,
-                legend,
-            },
-            animation,
-        }
-    };
-    let timeManagmentConfig = {
-        type: 'bar',
-        data: timeManagmentData,
-        options: {
-            scales: {
-                y: {
-                    ticks: yAxisTicks_stepSize2,
-                    grid: gridConfig
-                },
-                x: xAxis,
-            },
-            plugins: {
-                tooltip,
-                legend,
-            },
-            animation,
-        },
-    }
-
-    // checking if any chart is not null then destroy and create new
-    if (overAllStatDataChart != null) {
-        overAllStatDataChart.destroy();
-        howNeccesaryChart.destroy();
-        myChart.destroy();
-    }
-    overAllStatDataChart = new Chart(
-        ctx1,
-        overAllStatChartConfig,
-    );
-    howNeccesaryChart = new Chart(
-        ctx2,
-        howNeccesaryConfig,
-    );
-    myChart = new Chart(
-        ctx3,
-        timeManagmentConfig,
-    );
-})
-
+    return legend;
+}
 let gridConfig = {
     display: false,
     borderWidth: 0,
 }
-let yAxisTicks_stepSize2 = {
-    color: textColor,
-    padding: 9,
-    stepSize: 2,
-    font: {
-        size: 12,
-        weight: 560
-    }
-}
-let yAxisTicks_stepSize20 = {
-    color: textColor,
-    padding: 9,
-    stepSize: 20,
-    font: {
-        size: 12,
-        weight: 560
-    }
-}
-
-let xAxis = {
-    barPercentage: 0.4,
-    ticks: {
-        color: textColor,
-        padding: 9,
-        font: {
-            size: 12,
-            weight: 600
-        }
-    },
-    grid: gridConfig,
-};
-let legend = {
-    labels: {
-        color: textColor,
-        font: {
-            size: 15,
-            weight: 700,
-        },
-        boxWidth: 15,
-        boxHeight: 10
-    }
-};
-
 let tooltip = {
     backgroundColor: 'rgb(33,35,49)',
     padding: 15,
@@ -278,11 +93,11 @@ let tooltip = {
     caretSize: 12,
     displayColors: false,
 };
-let animation = {
+const animation = {
     duration: 1000,
     easing: 'linear'
 }
-let overAllStatData = {
+const overAllStatData = {
     labels: MeetingsAdjusted,
     datasets: [{
         barThickness: 10,
@@ -294,7 +109,7 @@ let overAllStatData = {
         tension: .4
     }]
 }
-let howNeccesaryData = {
+const howNeccesaryData = {
     labels: MeetingsAdjusted,
     datasets: [{
         label: 'Meetings Score',
@@ -304,7 +119,7 @@ let howNeccesaryData = {
         tension: .5,
     }]
 };
-let timeManagmentData = {
+const timeManagmentData = {
     labels: MeetingsAdjusted,
     datasets: [{
         barThickness: 10,
@@ -316,69 +131,97 @@ let timeManagmentData = {
         tension: .6,
     }]
 }
-let overAllStatChartConfig = {
-    type: 'bar',
-    data: overAllStatData,
-    options: {
-        scales: {
-            y: {
-                ticks: yAxisTicks_stepSize20,
-                grid: gridConfig
+const commonConfigHandler = ({
+    type,
+    data,
+    yAxis
+}) => {
+    let commonConfig = {
+        type: type,
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    ticks: yAxis,
+                    grid: gridConfig
+                },
+                x: xAxisHandler(textColor),
             },
-            x: xAxis,
-        },
-        plugins: {
-            tooltip,
-            legend,
-        },
-        animation,
+            plugins: {
+                tooltip,
+                legend: legendFun(textColor),
+            },
+            animation,
+        }
     }
+    return commonConfig;
 }
-let howNeccesaryConfig = {
-    type: 'line',
-    data: howNeccesaryData,
-    options: {
-        scales: {
-            y: {
-                ticks: yAxisTicks_stepSize20,
-                grid: gridConfig
-            },
-            x: xAxis,
-        },
-        plugins: {
-            tooltip,
-            legend,
-        },
-        animation,
+// handle dark mode on click
+$('.moon').click(() => {
+    const getModeValue = localStorage.getItem("goodmeeting_today_color_scheme");
+    if (getModeValue === 'dark') {
+        $(document.body).removeClass("darkTheme");
+        localStorage.setItem("goodmeeting_today_color_scheme", 'light');
+        textColor = '#313640';
+    } else {
+        $(document.body).addClass("darkTheme");
+        localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
+        textColor = 'rgb(225,225,225)'
     }
-};
-let timeManagmentConfig = {
-    type: 'bar',
-    data: timeManagmentData,
-    options: {
-        scales: {
-            y: {
-                ticks: yAxisTicks_stepSize2,
-                grid: gridConfig
-            },
-            x: xAxis,
-        },
-        plugins: {
-            tooltip,
-            legend,
-        },
-        animation,
-    },
-}
+
+    // checking if any chart is not null then destroy and create new
+    if (overAllStatDataChart != null) {
+        overAllStatDataChart.destroy();
+        howNeccesaryChart.destroy();
+        myChart.destroy();
+    }
+    overAllStatDataChart = new Chart(
+        ctx1,
+        // overAllStatChartConfigFun(),
+        commonConfigHandler({
+            type: 'bar',
+            data: overAllStatData,
+            yAxis: yAxisHandler2(textColor)
+        })
+    );
+    howNeccesaryChart = new Chart(
+        ctx2,
+        commonConfigHandler({
+            type: 'line',
+            data: howNeccesaryData,
+            yAxis: yAxisHandler(textColor)
+        })
+    );
+    myChart = new Chart(
+        ctx3,
+        commonConfigHandler({
+            type: 'bar',
+            data: timeManagmentData,
+            yAxis: yAxisHandler(textColor)
+        }),
+    );
+})
 overAllStatDataChart = new Chart(
     ctx1,
-    overAllStatChartConfig,
+    commonConfigHandler({
+        type: 'bar',
+        data: overAllStatData,
+        yAxis: yAxisHandler2(textColor)
+    }),
 );
 howNeccesaryChart = new Chart(
     ctx2,
-    howNeccesaryConfig,
+    commonConfigHandler({
+        type: 'line',
+        data: howNeccesaryData,
+        yAxis: yAxisHandler(textColor)
+    })
 );
 myChart = new Chart(
     ctx3,
-    timeManagmentConfig,
+    commonConfigHandler({
+        type: 'bar',
+        data: timeManagmentData,
+        yAxis: yAxisHandler(textColor)
+    }),
 );
