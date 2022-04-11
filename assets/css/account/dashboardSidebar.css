@@ -3,7 +3,7 @@
     top: 7rem;
     left: 0;
     bottom: 0;
-    width: 15rem;
+    width: 16rem;
     z-index: 4;
     justify-content: flex-start;
 }
@@ -24,11 +24,12 @@
 }
 
 .iconsInfo {
+    align-items: baseline;
     width: 0;
     overflow: hidden;
     font-weight: 800;
     transition: width .4s;
-    box-shadow: .4rem 0.2rem 2rem -1.7rem var(--secondary-color);
+    box-shadow: 1.1rem 0.2rem 2rem -1.7rem var(--secondary-color);
 }
 
 .show {
@@ -37,15 +38,18 @@
     padding: 0rem .8rem;
 }
 
-.sideBarList .iconsContainer i,
-.iconsInfo {
+.sideBarList .iconsContainer i{
     font-size: 2rem;
+}
+.iconsInfo {
+    font-size: 1.7rem;
 }
 .stat1Text:hover,
 .stat2Text:hover,
 .stat3Text:hover,
 .helpText:hover,
-.feedbackText:hover{
+.feedbackText:hover,
+.profileText:hover{
     transition: .2s;
     color: var(--secondary-color);
 }
