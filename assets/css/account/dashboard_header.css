@@ -64,7 +64,7 @@
     overflow-y: scroll;
 }
 .shrinkContainerWidht{
-    transition: .4s;
+    transition: .2s;
     width: 90%;
     margin-left: 10%;
 }

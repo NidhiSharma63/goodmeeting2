@@ -1,26 +1,50 @@
-.sideBarList{
+.sideBarList {
     position: fixed;
     top: 7rem;
     left: 0;
-    bottom:0;
+    bottom: 0;
     width: 15rem;
     z-index: 4;
+    justify-content: flex-start;
 }
-.sideBarList .iconsContainer, .iconsInfo{
+
+.sideBarList .iconsContainer,
+.iconsInfo {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
     height: 100%;
+    background-color: rgba(19, 27, 99, 0.030);
+}
+
+.sideBarList .iconsContainer {
     padding: 0rem .8rem;
-    background-color: rgb(239, 239, 240);
-    /* box-shadow: 1rem 0.2rem 2rem -1.7rem var(--secondary-color); */
 }
-.iconsInfo{
-    /* background-color: rgb(206, 208, 228); */
+
+.iconsInfo {
+    width: 0;
+    overflow: hidden;
     font-weight: 800;
-    box-shadow: 1rem 0.2rem 2rem -1.7rem var(--secondary-color);
+    transition: width .4s;
+    box-shadow: .4rem 0.2rem 2rem -1.7rem var(--secondary-color);
 }
-.sideBarList .iconsContainer i, .iconsInfo{
+
+.show {
+    width: 100%;
+    transition: width .2s;
+    padding: 0rem .8rem;
+}
+
+.sideBarList .iconsContainer i,
+.iconsInfo {
     font-size: 2rem;
+}
+.stat1Text:hover,
+.stat2Text:hover,
+.stat3Text:hover,
+.helpText:hover,
+.feedbackText:hover{
+    transition: .2s;
+    color: var(--secondary-color);
 }

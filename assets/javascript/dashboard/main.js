@@ -10,6 +10,27 @@ $(document).ready(function () {
     }
     changeTheme();
     $('.sideBar').click(function(){
-        $('.contentContainer').toggleClass('shrinkContainerWidht')
+        $('.contentContainer').toggleClass('shrinkContainerWidht');
+        $('.iconsInfo').toggleClass('show')
+    });
+    $('.stat1').click(function(){
+        $('.contentContainer').toggleClass('shrinkContainerWidht');
+        $('.iconsInfo').toggleClass('show')
+    });
+    $('.stat2').click(function(){
+        $('.contentContainer').toggleClass('shrinkContainerWidht');
+        $('.iconsInfo').toggleClass('show')
+    });
+    $('.stat3').click(function(){
+        $('.contentContainer').toggleClass('shrinkContainerWidht');
+        $('.iconsInfo').toggleClass('show')
+    });
+    $('.help').click(function(){
+        $('.contentContainer').toggleClass('shrinkContainerWidht');
+        $('.iconsInfo').toggleClass('show')
+    });
+     $('.feedback').click(function(){
+        $('.contentContainer').toggleClass('shrinkContainerWidht');
+        $('.iconsInfo').toggleClass('show')
     });
 });
