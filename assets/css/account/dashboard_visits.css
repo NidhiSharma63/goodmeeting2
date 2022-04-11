@@ -68,18 +68,11 @@
 .section2 .col2 .visits2,
 .section2 .col2 .visits3,
 .section2 .col2 .visits4 {
-    justify-content: space-between;
-    padding: 0rem 0.8rem;
-    font-size: 2rem;
     max-width: 18rem;
     border-radius: .5rem;
     color: white;
     background-color: #313640fb;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #313640a1;
-}
-
-.section2 .col2 .visits2 {
-    margin-left: 3rem;
 }
 
 .section2 .col2 .visits1 i,
@@ -90,7 +83,6 @@
     font-size: 1.3rem;
     border: 1px solid;
     border-radius: 3rem;
-    /* color: var(--primary-color) ; */
     background-color: rgba(229, 80, 80, 0.15);
 }
 .section2 .col2 .visits1 #totalMeeting,
@@ -98,7 +90,7 @@
 .section2 .col2 .visits3 #negativesReview, 
 .section2 .col2 .visits4 #avgMeetings
 {
-    padding: 0.5rem 0.6rem;
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -112,10 +104,10 @@
 .section2 .col2 .visits4 #avgMeetingsCount
  {
     border-top-left-radius: 14rem;
-    padding: 4rem 4rem;
-    background: blue;
-    border-bottom-right-radius: 1rem;
-    border-top-right-radius: 1rem;
+    padding: 4rem 3.9rem;
+    background: var(--secondary-color);
+    border-bottom-right-radius: .5rem;
+    border-top-right-radius: .5rem;
     font-size: 2.6rem;
 }
 
