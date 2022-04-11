@@ -11,6 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/css/utility.css">
     <link rel="stylesheet" href="/assets/css/account/dashboard_header.css">
+    <link rel="stylesheet" href="/assets/css/account/dashboardSidebar.css">
     <link rel="stylesheet" href="/assets/css/account/dashboard_visits.css">
     <link rel="stylesheet" href="/assets/css/account/dashboard_chart.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
@@ -21,7 +22,7 @@
     <div class="section1">
         <div class="col1 flex">
             <div class="Menu secondaryColor pointer">
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars sideBar"></i>
             </div>
             <div class="logo">
                 <img src="/assets/images/logo.png" alt="logo">
@@ -32,146 +33,179 @@
                 <i class="fa-solid fa-moon"></i>
                 <i class="fa-solid fa-bell"></i>
                 <div class="button1" id="signOutBtn">Sign Out</div>
-                <!-- <button id="signOutBtn">Sign Out</button> -->
                 <img src="/assets/images/dashboardImages/images.jpeg" alt="userimage">
             </div>
         </div>
     </div>
     <!-- headerSectionEnd -->
+    <div class="sideBarList flex">
+        <div class="iconsContainer secondaryColor">
+            <img src="/assets/images/dashboardImages/stat1.png" alt="img" class="stat1 pointer">
+            <img src="/assets/images/dashboardImages/stat2.png" alt="img" class="stat2 pointer">
+            <img src="/assets/images/dashboardImages/stat3.png" alt="img" class="stat3 pointer">
+            <i class="fa-solid fa-handshake-angle help"></i>
+            <i class="fa-solid fa-handshake-angle feedback"></i>
+        </div>
+        <div class="iconsInfo lightBlackColor letterSpacing">
+            <p class="stat1Text pointer">Dashboard</p>
+            <p class="stat2Text pointer">Meetings</p>
+            <p class="stat3Text pointer">Stats</p>
+            <p class="helpText pointer">help</p>
+            <p class="feedbackText pointer">Feedback</p>
+        </div>
+    </div>
+    <!-- sideBar div End-->
     <!-- section2 -->
-    <div class="section2">
-        <div class="col1 flex font1 letterSpacing">
-            <div class="Image_text">
-                <img src="/assets/images/dashboardImages/images.jpeg" alt="userimage">
-                <p class="lightBlackColor">Hi,Welcome Back 'Mimi'</p>
+    <div class="contentContainer">
+        <div class="section2">
+            <div class="col1 flex font1 letterSpacing">
+                <div class="Image_text">
+                    <img src="/assets/images/dashboardImages/images.jpeg" alt="userimage">
+                    <p class="lightBlackColor">Hi,Welcome Back 'Mimi'</p>
+                </div>
+                <p class="primaryColor">Your Dashbaoard Look's Like</p>
             </div>
-            <p class="primaryColor">Your Dashbaoard Look's Like</p>
+            <!-- col1 end -->
+            <div class="col2 font1">
+                <div class="visits1 flex">
+                    <span id="totalMeeting">
+                        <p>Total </p>
+                        <p> Meetings</p>
+                        <i class="fa-solid fa-handshake secondaryColor"></i>
+                    </span>
+                   <span id="totalMeetingCount">
+                    <p>3</p>
+                   </span>
+                </div>
+                <div class="visits2 flex">
+                    <span id="positiveReview">
+                        <p>Positive Reviews</p>
+                        <i class="fa-solid fa-user-plus secondaryColor"></i>
+                    </span>
+                    <span id="positiveReviewCount">
+                        <p>27</p>
+                    </span>
+                </div>
+                <div class="visits3 flex">
+                    <span id="negativesReview">
+                        <p>Negatives Reviews</p>
+                        <i class="fa-solid fa-user-minus secondaryColor"></i>
+                    </span>
+                    <span id="negativesReviewsCount">
+                        <p>13</p>
+                    </span>
+                </div>
+                <div class="visits4 flex">
+                    <span id="avgMeetings">
+                        <p>Avg Meetings Score</p>
+                        <i class="fa-solid fa-hourglass-end secondaryColor"></i>
+                    </span>
+                    <span id="avgMeetingsCount">
+                        <p>3</p>
+                    </span>
+                </div>
+            </div>
+            <!-- colo2 end -->
         </div>
-        <!-- col1 end -->
-        <div class="col2 font1">
-            <div class="visits1 flex">
-                <span>
-                    <p>Total Meetings</p>
-                    <i class="fa-solid fa-handshake primaryColor"></i>
-                </span>
-                <p id="TotalMeeting">3</p>
+        <!-- section2End -->
+        <div class="section3">
+            <div class="group1">
+                <div class="col1 font2 lightBlackColor letterSpacing">
+                    Recent Meetings
+                </div>
+                <div class="col2 lightBlackColor letterSpacing flex">
+                    <table class="data-table">
+                        <thead class="font2">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Date & Time</th>
+                                <th>Members</th>
+                                <th>Feedback</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Save Enviroment Dicussion</td>
+                                <td>13july,2022,1:34pm</td>
+                                <td>15</td>
+                                <td>15</td>
+                                <td class="primaryColor">
+                                    <span class="action">Show Details</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Save Soli Dicussion</td>
+                                <td>1jne,2022,1:4pm</td>
+                                <td>35</td>
+                                <td>25</td>
+                                <td class="primaryColor">
+                                    <span class="action">Show Details</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Block Chain</td>
+                                <td>13july,2022,1:34pm</td>
+                                <td>13</td>
+                                <td>11</td>
+                                <td class="primaryColor">
+                                    <span class="action">Show Details</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Freelancing Dicussion</td>
+                                <td>3April,2022,9:34pm</td>
+                                <td>15</td>
+                                <td>15</td>
+                                <td class="primaryColor">
+                                    <span class="action">Show Details</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="visits2 flex">
-                <span>
-                    <p>Positive Reviews</p>
-                    <i class="fa-solid fa-user-plus primaryColor"></i>
-                </span>
-                <p id="TotalMeeting">27</p>
-            </div>
-            <div class="visits3 flex">
-                <span>
-                    <p>Negatives Reviews</p>
-                    <i class="fa-solid fa-user-minus primaryColor"></i>
-                </span>
-                <p id="TotalMeeting">13</p>
-            </div>
-            <div class="visits4 flex">
-                <span>
-                    <p>Avg Meetings Score</p>
-                    <i class="fa-solid fa-hourglass-end primaryColor"></i>
-                </span>
-                <p id="TotalMeeting">3</p>
+            <div class="group2">
+                <div class="col1 lightBlackColor font2 letterSpacing">
+                    <p>OverAll Stats</p>
+                </div>
+                <div class="col2">
+                    <canvas id="canva1"></canvas>
+                </div>
             </div>
         </div>
-        <!-- colo2 end -->
+        <!-- section3End -->
+        <div class="section4">
+            <div class="group1 flex">
+                <div class="col1 font2 lightBlackColor letterSpacing">
+                    <p>On a scale from 1 - 10 how necessary were you for this meeting? With 1 being completely
+                        unnecessary
+                        and 10 being extremely necessary.</p>
+                </div>
+                <div class="col2">
+                    <canvas id="canva2"></canvas>
+                </div>
+            </div>
+            <div class="group2 flex">
+                <div class="col1 font2 lightBlackColor letterSpacing">
+                    <p>How was the time management of the meeting? 1 being extremely poor time control that caused the
+                        meeting
+                        to go on for too long and 10 being time was quick and efficient..</p>
+                </div>
+                <div class="col2">
+                    <canvas id="canva3"></canvas>
+                </div>
+            </div>
+        </div>
+        <!-- section4End -->
     </div>
-    <!-- section2End -->
-    <div class="section3">
-        <div class="group1">
-            <div class="col1 font2 lightBlackColor letterSpacing">
-                Recent Meetings
-            </div>
-            <div class="col2 lightBlackColor letterSpacing flex font2">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Date & Time</th>
-                            <th>Members</th>
-                            <th>Feedback</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Save Enviroment Dicussion</td>
-                            <td>13july,2022,1:34pm</td>
-                            <td>15</td>
-                            <td>15</td>
-                            <td class="primaryColor">
-                                <span class="action">Show Details</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Save Soli Dicussion</td>
-                            <td>1jne,2022,1:4pm</td>
-                            <td>35</td>
-                            <td>25</td>
-                            <td class="primaryColor">
-                                <span class="action">Show Details</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Block Chain</td>
-                            <td>13july,2022,1:34pm</td>
-                            <td>13</td>
-                            <td>11</td>
-                            <td class="primaryColor">
-                                <span class="action">Show Details</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Freelancing Dicussion</td>
-                            <td>3April,2022,9:34pm</td>
-                            <td>15</td>
-                            <td>15</td>
-                            <td class="primaryColor">
-                                <span class="action">Show Details</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="group2">
-            <div class="col1 lightBlackColor font2 letterSpacing">
-                <p>OverAll Stats</p>
-            </div>
-            <div class="col2">
-                <canvas id="canva1" width="450" height="200"></canvas>
-            </div>
-        </div>
-    </div>
-    <!-- section3End -->
-    <div class="section4">
-        <div class="group1 flex">
-            <div class="col1 font2 lightBlackColor letterSpacing">
-                <p>On a scale from 1 - 10 how necessary were you for this meeting? With 1 being completely unnecessary
-                    and 10 being extremely necessary.</p>
-            </div>
-            <div class="col2">
-                <canvas id="canva2"></canvas>
-            </div>
-        </div>
-        <div class="group2 flex">
-            <div class="col1 font2 lightBlackColor letterSpacing">
-                <p>How was the time management of the meeting? 1 being extremely poor time control that caused the
-                    meeting
-                    to go on for too long and 10 being time was quick and efficient..</p>
-            </div>
-            <div class="col2">
-                <canvas id="canva3"></canvas>
-            </div>
-        </div>
-    </div>
-    <!-- section4End -->
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/assets/javascript/allPageTheme.js"></script>
+<script src="/assets/javascript/dashboard/main.js"></script>
 <script src="/assets/javascript/dashboard/chart2.js"></script>
 
 </html>

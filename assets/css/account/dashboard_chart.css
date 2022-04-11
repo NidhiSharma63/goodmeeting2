@@ -16,12 +16,13 @@
     background-color: white;
     min-height: 22rem;
     border-radius: .5rem;
-    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
+    box-shadow: 0.3rem 0.3rem 1rem 0rem #31364028;
+    background-color: rgba(19, 27, 99, 0.030);
 }
 
 .section3 .group2 {
     grid-area: group2;
-    padding: 1rem 0rem;
+    padding: 1rem 1rem;
     display: grid;
     grid-template-areas: 
     'col1'
@@ -30,7 +31,8 @@
     gap: 2rem;
     background-color: white;
     border-radius: .5rem;
-    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
+    box-shadow: 0.3rem 0.3rem 1rem 0rem #31364028;  
+    background-color: rgba(19, 27, 99, 0.030);
 }
 .section3 .group1 .col1,
 .section3 .group2 .col1 {
@@ -39,6 +41,9 @@
     position: relative;
 }
 
+.section3 .group2 .col2{
+    max-width: 90%;
+}
 .section3 .group1 .col1::after,
 .section3 .group2 .col1::after {
     content: '';
@@ -66,14 +71,13 @@
 /* select all heading */
 .data-table thead th {
     background-color: rgba(122, 132, 219, 0.123);
-    text-align: left;
     padding: 1rem 0rem;
     border-bottom: .1rem solid var(--light-black-color);
 }
 
 /* select last heading */
-.data-table thead th:last-child {
-    text-align: center;
+.data-table thead th:first-child {
+    text-align: left;
 }
 
 /* sleceting all tr tab in tbody */
@@ -88,12 +92,12 @@
 
 .data-table tbody tr:hover {
     transition: .7s;
-    background-color: rgba(229, 80, 80, 0.137);
+    background-color: rgba(122, 132, 219, 0.075);
 }
 
 .data-table tbody td {
+    font-family: 'Nunito', sans-serif;
     padding: 1rem 0rem;
-    font-weight: 800;
 }
 .data-table tbody td span{
     border: 1px solid;
@@ -110,24 +114,21 @@
     grid-template-areas:
         'group1 group2'
     ;
-    width: 96%;
+    width: 93%;
     gap: 1rem;
     margin: auto;
     max-height: 34rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 1.3rem;
     font-weight: 800;
-    border: 1px solid;
 }
 
 .section4 .group1 {
     grid-area: group1;
-    border: 1px solid;
 }
 
 .section4 .group2 {
     grid-area: group2;
-    border: 1px solid;
 }
 
 .section4 .group1 ,
@@ -137,9 +138,10 @@
     padding: 2rem;
     background-color: white;
     min-width: 50%;
-    height: 90%;
+    height: 95%;
     border-radius: .5rem;
-    box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(122, 132, 219, 0.199);
+    background-color: rgba(19, 27, 99, 0.055);; 
+    box-shadow: 0.3rem 0.3rem 1rem 0rem #31364028;
 }
 .section4 .group1 .col2,
 .section4 .group2 .col2{

@@ -1,6 +1,6 @@
 .section2 {
     grid-area: section2;
-    width: 95%;
+    width: 93%;
     margin: auto;
     display: grid;
     grid-template-areas:
@@ -32,7 +32,7 @@
     margin-right: 2rem;
 }
 
-.section2 .col1 p{
+.section2 .col1 p {
     font-size: 1.7rem;
     font-weight: 600;
     margin-top: 1.2rem;
@@ -42,10 +42,10 @@
 .section2 .col2 {
     grid-area: col2;
     display: grid;
-    gap: 1rem;
     grid-template-areas:
         'visits1 visits2 visits3 visits4'
     ;
+    gap: 1rem;
 }
 
 .section2 .col2 .visits1 {
@@ -73,29 +73,52 @@
     font-size: 2rem;
     max-width: 18rem;
     border-radius: .5rem;
-    color: var(--secondary-color);
-    background-color: white;
-    box-shadow: 0.3rem 0.3rem 1rem 0rem rgba(122, 132, 219, 0.24);
+    color: white;
+    background-color: #313640fb;
+    box-shadow: 0.3rem 0.3rem 1rem 0rem #313640a1;
 }
 
-.section2 .col2 .visits3,
-.section2 .col2 .visits4 {
-    margin-left: -2rem;
+.section2 .col2 .visits2 {
+    margin-left: 3rem;
 }
+
 .section2 .col2 .visits1 i,
 .section2 .col2 .visits2 i,
 .section2 .col2 .visits3 i,
-.section2 .col2 .visits4 i
-{
+.section2 .col2 .visits4 i {
     padding: 1rem;
     font-size: 1.3rem;
     border: 1px solid;
     border-radius: 3rem;
-    color: var(--secondary-color) ;
-    /* color: var(--primary-color); */
-    background-color: rgba(19, 27, 99, 0.137);
-    /* background-color: rgba(229, 80, 80, 0.15); */
+    /* color: var(--primary-color) ; */
+    background-color: rgba(229, 80, 80, 0.15);
 }
-.section2 .col2 .visits4{
-    background-color: rgba(19, 27, 99, 0.116);
+.section2 .col2 .visits1 #totalMeeting,
+.section2 .col2 .visits2 #positiveReview,
+.section2 .col2 .visits3 #negativesReview, 
+.section2 .col2 .visits4 #avgMeetings
+{
+    padding: 0.5rem 0.6rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.section2 .col2 .visits1 #totalMeetingCount,
+.section2 .col2 .visits2 #positiveReviewCount,
+.section2 .col2 .visits3 #negativesReviewsCount,
+.section2 .col2 .visits4 #avgMeetingsCount
+ {
+    border-top-left-radius: 14rem;
+    padding: 4rem 4rem;
+    background: blue;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    font-size: 2.6rem;
+}
+
+.section2 .col2 .visits3 #negativesReviewsCount {
+    padding: 4rem 3.4rem;
 }
