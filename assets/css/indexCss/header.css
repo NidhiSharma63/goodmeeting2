@@ -2,7 +2,7 @@
     max-width: 100%;
     grid-area: section1;
     min-width: 30px;
-    box-shadow: .4rem 0.2rem 2rem -1.7rem var(--secondary-color);
+    box-shadow: .7rem 0.2rem 2rem -1.7rem var(--secondary-color);
 }
 .headerContainer {
     padding: 1rem;

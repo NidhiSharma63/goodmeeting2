@@ -42,7 +42,7 @@ const xAxis = {
         color: textColor,
         padding: 9,
         font: {
-            size: 12,
+            size: 10,
             weight: 600
         }
     },
