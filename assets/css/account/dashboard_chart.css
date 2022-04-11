@@ -76,10 +76,14 @@
 }
 
 /* select last heading */
-.data-table thead th:first-child {
+.data-table thead th:first-child,
+.data-table thead th:last-child {
     text-align: left;
+    padding: 0rem .8rem;
 }
-
+.data-table thead th:last-child {
+    text-align: end;
+}
 /* sleceting all tr tab in tbody */
 .data-table tbody tr {
     text-align: -webkit-center;
