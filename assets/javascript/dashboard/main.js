@@ -3,9 +3,11 @@ $(document).ready(function () {
     // console.log(modevalue)
     const changeTheme = () => {
         if (modevalue == 'dark') {
-            $(document.body).addClass("darkTheme")
+            $(document.body).addClass("darkTheme");
+            $('.section1 .col2 .col2Container').css('color','white')
         } else {
             $(document.body).removeClass("darkTheme")
+            $('.section1 .col2 .col2Container').css('color','var(--secondary-color)')
         }
     }
     changeTheme();

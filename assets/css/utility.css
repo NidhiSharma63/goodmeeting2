@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +11,7 @@
 html {
     font-size: 62.5%;
 }
+
 /* changes acolor to dark theme */
 body.darkTheme {
     overflow-x: hidden;
@@ -24,22 +26,24 @@ body {
     --secondary-color: rgb(41, 99, 224);
     --light-black-color: #313640;
     --white-background-color: white;
-        background-color: rgba(122, 132, 219, 0.014);
+    background-color: rgba(122, 132, 219, 0.027);
 }
-.root{
+
+.root {
     max-width: 3500px;
     min-width: 300px;
     display: grid;
     gap: 4rem;
-    grid-template-areas: 
-    'section1'
-    'section2'
-    'section3'
-    'section4'
-    'section5'
-    'section6'
+    grid-template-areas:
+        'section1'
+        'section2'
+        'section3'
+        'section4'
+        'section5'
+        'section6'
     ;
 }
+
 .primaryColor {
     color: var(--primary-color);
 }
@@ -68,9 +72,11 @@ body {
 .font2 {
     font-family: 'Merriweather', serif;
 }
-.font3{
+
+.font3 {
     font-family: 'Nunito', sans-serif;
 }
+
 .button1 {
     font-family: 'Merriweather', serif;
     text-align: center;
@@ -104,7 +110,7 @@ a {
 
 .opacity {
     opacity: 1 !important;
-    transform: scale(1.5,1.5);
+    transform: scale(1.5, 1.5);
 }
 
 .visible {
@@ -155,5 +161,3 @@ a {
     background: var(--primary-color) !important;
     display: none;
 }
-
-
