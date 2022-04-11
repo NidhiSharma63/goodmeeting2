@@ -5,62 +5,75 @@ const MeetingsAdjusted = Meetings.map(meeting => meeting.split(' '));
 var ctx1 = document.getElementById('canva1').getContext('2d');
 var ctx2 = document.getElementById('canva2').getContext('2d');
 var ctx3 = document.getElementById('canva3').getContext('2d');
-
+let overAllStatDataChart = null;
+let howNeccesaryChart = null;
+let myChart = null;
 let textColor = '#313640';
-const getMode = localStorage.getItem("goodmeeting_today_color_scheme");
-if(getMode=='dark'){
+// get value on load
+const getModeOnLoad = localStorage.getItem("goodmeeting_today_color_scheme");
+if (getModeOnLoad == 'dark') {
     textColor = 'rgb(225,225,225)'
-}else{
+} else {
     textColor = '#313640';
 }
-const gridConfig = {
+const yAxisHandler = (color) => {
+    let yAxisTicks_stepSize2 = {
+        color: color,
+        padding: 9,
+        stepSize: 2,
+        font: {
+            size: 12,
+            weight: 560
+        }
+    }
+    return yAxisTicks_stepSize2
+}
+const yAxisHandler2 = (color) => {
+    let yAxisTicks_stepSize20 = {
+        color: color,
+        padding: 9,
+        stepSize: 20,
+        font: {
+            size: 12,
+            weight: 560
+        }
+    }
+    return yAxisTicks_stepSize20
+}
+const xAxisHandler = (color) => {
+    let xAxis = {
+        barPercentage: 0.4,
+        ticks: {
+            color: color,
+            padding: 9,
+            font: {
+                size: 12,
+                weight: 600
+            }
+        },
+        grid: gridConfig,
+    };
+    return xAxis;
+}
+const legendFun = (color) => {
+    let legend = {
+        labels: {
+            color: color,
+            font: {
+                size: 15,
+                weight: 700,
+            },
+            boxWidth: 15,
+            boxHeight: 10
+        }
+    }
+    return legend;
+}
+let gridConfig = {
     display: false,
     borderWidth: 0,
 }
-const yAxisTicks_stepSize2 = {
-    color: textColor,
-    padding: 9,
-    stepSize: 2,
-    font: {
-        size: 12,
-        weight: 560
-    }
-}
-const yAxisTicks_stepSize20 = {
-    color: textColor,
-    padding: 9,
-    stepSize: 20,
-    font: {
-        size: 12,
-        weight: 560
-    }
-}
-
-const xAxis = {
-    barPercentage: 0.4,
-    ticks: {
-        color: textColor,
-        padding: 9,
-        font: {
-            size: 12,
-            weight: 600
-        }
-    },
-    grid:gridConfig,
-};
-const legend = {
-    labels: {
-        color:textColor,
-        font: {
-            size: 15,
-            weight: 700,
-        },
-        boxWidth: 15,
-        boxHeight: 10
-    }
-};
-
-const tooltip = {
+let tooltip = {
     backgroundColor: 'rgb(33,35,49)',
     padding: 15,
     titleAlign: 'center',
@@ -118,69 +131,97 @@ const timeManagmentData = {
         tension: .6,
     }]
 }
-const overAllStatChartConfig = {
-    type: 'bar',
-    data: overAllStatData,
-    options: {
-        scales: {
-            y: {
-                ticks: yAxisTicks_stepSize20,
-                grid:gridConfig
+const commonConfigHandler = ({
+    type,
+    data,
+    yAxis
+}) => {
+    let commonConfig = {
+        type: type,
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    ticks: yAxis,
+                    grid: gridConfig
+                },
+                x: xAxisHandler(textColor),
             },
-            x: xAxis,
-        },
-        plugins: {
-            tooltip,
-            legend,
-        },
-        animation,
+            plugins: {
+                tooltip,
+                legend: legendFun(textColor),
+            },
+            animation,
+        }
     }
+    return commonConfig;
 }
-const howNeccesaryConfig = {
-    type: 'line',
-    data: howNeccesaryData,
-    options: {
-        scales: {
-            y: {
-                ticks: yAxisTicks_stepSize20,
-                grid:gridConfig
-            },
-            x: xAxis,
-        },
-        plugins: {
-            tooltip,
-            legend,
-        },
-        animation,
+// handle dark mode on click
+$('.moon').click(() => {
+    const getModeValue = localStorage.getItem("goodmeeting_today_color_scheme");
+    if (getModeValue === 'dark') {
+        $(document.body).removeClass("darkTheme");
+        localStorage.setItem("goodmeeting_today_color_scheme", 'light');
+        textColor = '#313640';
+    } else {
+        $(document.body).addClass("darkTheme");
+        localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
+        textColor = 'rgb(225,225,225)'
     }
-};
-const timeManagmentConfig = {
-    type: 'bar',
-    data: timeManagmentData,
-    options: {
-        scales: {
-            y: {
-                ticks: yAxisTicks_stepSize2,
-                grid:gridConfig
-            },
-            x: xAxis,
-        },
-        plugins: {
-            tooltip,
-            legend,
-        },
-        animation,
-    },
-}
-const overAllStatDataChart = new Chart(
+
+    // checking if any chart is not null then destroy and create new
+    if (overAllStatDataChart != null) {
+        overAllStatDataChart.destroy();
+        howNeccesaryChart.destroy();
+        myChart.destroy();
+    }
+    overAllStatDataChart = new Chart(
+        ctx1,
+        // overAllStatChartConfigFun(),
+        commonConfigHandler({
+            type: 'bar',
+            data: overAllStatData,
+            yAxis: yAxisHandler2(textColor)
+        })
+    );
+    howNeccesaryChart = new Chart(
+        ctx2,
+        commonConfigHandler({
+            type: 'line',
+            data: howNeccesaryData,
+            yAxis: yAxisHandler(textColor)
+        })
+    );
+    myChart = new Chart(
+        ctx3,
+        commonConfigHandler({
+            type: 'bar',
+            data: timeManagmentData,
+            yAxis: yAxisHandler(textColor)
+        }),
+    );
+})
+overAllStatDataChart = new Chart(
     ctx1,
-    overAllStatChartConfig,
+    commonConfigHandler({
+        type: 'bar',
+        data: overAllStatData,
+        yAxis: yAxisHandler2(textColor)
+    }),
 );
-const howNeccesaryChart = new Chart(
+howNeccesaryChart = new Chart(
     ctx2,
-    howNeccesaryConfig,
+    commonConfigHandler({
+        type: 'line',
+        data: howNeccesaryData,
+        yAxis: yAxisHandler(textColor)
+    })
 );
-const myChart = new Chart(
+myChart = new Chart(
     ctx3,
-    timeManagmentConfig,
+    commonConfigHandler({
+        type: 'bar',
+        data: timeManagmentData,
+        yAxis: yAxisHandler(textColor)
+    }),
 );
