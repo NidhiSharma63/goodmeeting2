@@ -1,44 +1,36 @@
 $(document).ready(function () {
-    const modevalue = localStorage.getItem("goodmeeting_today_color_scheme");
-    // console.log(modevalue)
-    const changeTheme = () => {
-        if (modevalue == 'dark') {
-            $(document.body).addClass("darkTheme");
-            $('.section1 .col2 .col2Container').css('color','white')
-        } else {
-            $(document.body).removeClass("darkTheme")
-            $('.section1 .col2 .col2Container').css('color','var(--secondary-color)')
-        }
+    $('.moon').click(() => {
+        const getModeValue = localStorage.getItem("goodmeeting_today_color_scheme");
+            if(getModeValue==='dark'){
+                $(document.body).removeClass("darkTheme");
+                localStorage.setItem("goodmeeting_today_color_scheme", 'light');
+            }else{
+                $(document.body).addClass("darkTheme");
+                localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
+            }
+    })
+
+    const handleSideBar = () => {
+        $('.contentContainer').toggleClass('shrinkContainerWidht');
+        $('.iconsInfo').toggleClass('show');
+        $('.iconsContainer').toggleClass('boxShadowRemove');
     }
-    changeTheme();
-    $('.sideBar').click(function(){
-        $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show');
-        $('.iconsContainer').toggleClass('boxShadowRemove');
+    $('.sideBar').click(() => {
+        handleSideBar();
     });
-    $('.stat1').click(function(){
-        $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show');
-        $('.iconsContainer').toggleClass('boxShadowRemove');
+    $('.stat1').click(() => {
+        handleSideBar();
     });
-    $('.stat2').click(function(){
-        $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show');
-        $('.iconsContainer').toggleClass('boxShadowRemove');
+    $('.stat2').click(() => {
+        handleSideBar();
     });
-    $('.stat3').click(function(){
-        $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show');
-        $('.iconsContainer').toggleClass('boxShadowRemove');
+    $('.stat3').click(() => {
+        handleSideBar();
     });
-    $('.help').click(function(){
-        $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show');
-        $('.iconsContainer').toggleClass('boxShadowRemove');
+    $('.help').click(() => {
+        handleSideBar();
     });
-     $('.feedback').click(function(){
-        $('.contentContainer').toggleClass('shrinkContainerWidht');
-        $('.iconsInfo').toggleClass('show');
-        $('.iconsContainer').toggleClass('boxShadowRemove');
+    $('.feedback').click(() => {
+        handleSideBar();
     });
 });
