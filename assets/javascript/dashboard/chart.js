@@ -199,7 +199,6 @@ $('.moon').click(() => {
     }
     overAllStatDataChart = new Chart(
         ctx1,
-        // overAllStatChartConfigFun(),
         commonConfigHandler({
             type: 'bar',
             data: overAllStatData,
