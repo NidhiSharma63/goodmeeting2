@@ -111,8 +111,9 @@ const testimonialTouchEndHandler = (e) => {
 }
 //dots clicked function
 const testimonialDotsClicked = (e) => {
+    console.log(e.target.dataset.testimonial)
     testimonialMoveSlide = false;
-    const clickedTestimonialDotIndex = e.target.dataset.testimonial;
+    const clickedTestimonialDotIndex = e.target.dataset.index;
     if (currentTestimonialSlide != clickedTestimonialDotIndex) {
         testimonialDot[currentTestimonialSlide].classList.remove("opacity");
     }
@@ -214,7 +215,6 @@ setInterval(() => {
     // for testimonialSlider
     if (testimonialMoveSlide) {
         currentTestimonialSlide++;
-        console.log(currentTestimonialSlide);
         if (currentTestimonialSlide == totalTestinomialSlideLength) {
             currentTestimonialSlide = 0;
         }

@@ -105,20 +105,6 @@ a {
     letter-spacing: .1rem;
 }
 
-.hide {
-    display: none !important;
-}
-
-.visible {
-    opacity: 1 !important;
-    transition: 1s;
-}
-
-.nonVisible {
-    opacity: 0 !important;
-    transition: 1s;
-}
-
 .flex {
     display: flex;
     align-items: center;
@@ -129,4 +115,24 @@ a {
     transition: .7s;
     background-color: var(--primary-color) !important;
     color: white !important;
+}
+/* hide headerbox on width change */
+.hide {
+    display: none !important;
+}
+/* handle visibility of moon and sun */
+.visible {
+    opacity: 1 !important;
+    transition: 1s;
+}
+
+.nonVisible {
+    opacity: 0 !important;
+    transition: 1s;
+}
+/* dots opacity dashboard and testimonial*/
+.opacity{
+    opacity: 1 !important;
+    transition: 1s;
+    transform: scale(1.2,1.2);
 }
