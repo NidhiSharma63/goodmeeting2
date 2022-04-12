@@ -10,6 +10,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 /* changes acolor to dark theme */
@@ -21,6 +22,7 @@ body.darkTheme {
 }
 
 body {
+    overflow-y: scroll;;
     overflow-x: hidden;
     --primary-color: rgb(229, 80, 80);
     --secondary-color: rgb(41, 99, 224);
@@ -133,14 +135,13 @@ a {
     background-color: var(--primary-color) !important;
     color: white !important;
 }
-
-.fixed {
+/* .fixed {
     position: fixed;
     width: 86%;
     top: 0;
     z-index: 5;
     padding-top: 1rem;
-}
+} */
 
 .headerBoxFixed {
     padding-top: .8rem !important;

@@ -6,6 +6,7 @@
     width: 16rem;
     z-index: 4;
     justify-content: flex-start;
+    /* background: var(--white-background-color); */
 }
 
 .sideBarList .iconsContainer,
@@ -14,8 +15,8 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    height: 100%;
-    background-color: rgba(19, 27, 99, 0.030);
+    height: 95%;
+    background: var(--white-background-color);
 }
 
 .sideBarList .iconsContainer {
@@ -38,21 +39,24 @@
     padding: 0rem .8rem;
 }
 
-.sideBarList .iconsContainer i{
+.sideBarList .iconsContainer i {
     font-size: 2rem;
 }
+
 .iconsInfo {
     font-size: 1.7rem;
 }
+
 .stat1Text:hover,
 .stat2Text:hover,
 .stat3Text:hover,
 .helpText:hover,
 .feedbackText:hover,
-.profileText:hover{
+.profileText:hover {
     transition: .2s;
     color: var(--secondary-color);
 }
-.boxShadowRemove{
+
+.boxShadowRemove {
     box-shadow: none !important;
- }
+}
