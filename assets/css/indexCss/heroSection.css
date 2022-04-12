@@ -58,9 +58,10 @@
 .section2 .col4 .button1 {
     width: 20rem;
     background-color: var(--secondary-color);
+}
+.section2 .col4 .button1 a{
     color: white;
 }
-
 .section2 .textSection .col5 {
     width: 8rem;
     height: 8rem;
