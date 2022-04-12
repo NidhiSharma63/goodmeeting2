@@ -1,6 +1,6 @@
-const Meetings = ['Save Enviroment', 'BlockChain Discussion', 'Save Soil Discussion', 'Freelancing Challenges', 'Tech Challenges']
-const Score = [10, 40, 50, 80, 60, 100, 40];
-const avgAnswerFeedback = [2, 6, 8, 1, 4, 10, 3];
+const Meetings = ['Save Enviroment', 'BlockChain Discussion', 'Save Soil Discussion', 'Freelancing Challenges']
+const Score = [10, 40, 50, 80, 60, 100];
+const avgAnswerFeedback = [2, 6, 8, 1, 4, 10];
 const MeetingsAdjusted = Meetings.map(meeting => meeting.split(' '));
 var ctx1 = document.getElementById('canva1').getContext('2d');
 var ctx2 = document.getElementById('canva2').getContext('2d');
