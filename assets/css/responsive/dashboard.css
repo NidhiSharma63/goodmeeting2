@@ -261,3 +261,11 @@
         padding: 5rem 5.9rem;
     }
 }
+
+
+@media screen and (max-width: 450px) {
+    .section2 .col2{
+        width: 90%;
+        margin: auto;
+    }
+}
