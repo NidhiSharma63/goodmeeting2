@@ -6,7 +6,7 @@
     width: 16rem;
     z-index: 4;
     justify-content: flex-start;
-    background: var(--white-background-color);
+    /* background: var(--white-background-color); */
 }
 
 .sideBarList .iconsContainer,
@@ -16,7 +16,7 @@
     justify-content: space-evenly;
     flex-direction: column;
     height: 95%;
-    background-color: rgba(19, 27, 99, 0.030);
+    background: var(--white-background-color);
 }
 
 .sideBarList .iconsContainer {
