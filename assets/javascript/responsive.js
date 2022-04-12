@@ -3,6 +3,23 @@ $(document).ready(() => {
     const headerContainer = $(".headerContainer");
     const sideBar = $(".sideBar");
     const sideBarDivContainer = $(".sideBarDivContainer");
+    if (matchMedia) {
+        var mq2 = window.matchMedia("(max-width: 945px)");
+        mq2.addListener(WidthChange2);
+        WidthChange2(mq2);
+    }
+    // media query change
+    function WidthChange2(width2) {
+        if (width2.matches) {
+            headerBox.addClass("hide");
+            sideBar.removeClass("hide");
+            headerContainer.css("justify-content", " space-between")
+        } else {
+            headerBox.removeClass("hide");
+            headerContainer.css("justify-content", " space-around")
+            sideBar.addClass("hide")
+        }
+    }
     sideBar.click(() => {
         if (sideBarDivContainer.hasClass("hide")) {
             sideBarDivContainer.removeClass("hide");
