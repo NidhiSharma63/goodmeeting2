@@ -7,10 +7,12 @@
     background-color: var(--white-background-color);
     box-shadow: .7rem 0.2rem 2rem -1.7rem var(--secondary-color);
 }
-.container{
+/* .container{
     position: relative;
     top: 10rem;
-}
+    width: 100%;
+    margin: auto;
+} */
 .headerContainer {
     padding: 1rem;
     justify-content: space-around;

@@ -1,6 +1,8 @@
 .section2 {
+    position: relative;
     max-width: 90%;
     margin: auto;
+    top: 10rem;
     padding: 3rem 0rem;
     display: grid;
     gap: 3rem;
