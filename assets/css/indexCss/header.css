@@ -7,12 +7,6 @@
     background-color: var(--white-background-color);
     box-shadow: .7rem 0.2rem 2rem -1.7rem var(--secondary-color);
 }
-/* .container{
-    position: relative;
-    top: 10rem;
-    width: 100%;
-    margin: auto;
-} */
 .headerContainer {
     padding: 1rem;
     justify-content: space-around;
@@ -100,9 +94,12 @@
     padding: .8rem 1rem;
 }
 
-.sideBarDivContainer ul li a,
+.sideBarDivContainer ul li a
+ {
+    color: var(--light-black-color);
+}
 .registerBtn a,
-.loginBtn a {
+.loginBtn a{
     color: white;
 }
 .darkSwitch {
@@ -163,11 +160,12 @@
     height: 100vh;
     top: 0;
     width: 24rem;
-    background-color: var(--primary-color);
+    background-color: var(--white-background-color);
     display: flex;
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
+    z-index: -1;
 }
 
 .sideBarDivContainer .col {
