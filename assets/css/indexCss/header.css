@@ -104,63 +104,49 @@
 .loginBtn a {
     color: white;
 }
-
 .darkSwitch {
-    border: 1px solid;
-    font-size: 2rem;
-    width: 8rem;
-    height: 3rem;
-    padding-left: 1rem;
-    border-radius: 1rem;
-    background-color: var(--secondary-color);
-    color: white;
+    height: 2rem;
+    border-radius: 50%;
     justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
 }
-
-.darkSwitch .circle {
-    margin-left: -4rem;
+.moon{
+   color: var(--secondary-color);
+   font-size: 2.3rem;
 }
-
-.darkSwitch span {
-    font-size: 1.6rem;
-    font-weight: 600;
+.sun{
+    color: #ffc23d;
+    font-size: 2rem;
 }
-
-.darkSwitch .dark {
-    opacity: 0;
+.sunHide{
+    opacity: 1;
+    transform: translateY(-5px);
+    animation: hideSunAnim;
+    animation-duration: .6s;
 }
-
-.darkSwitch .light {
-    margin-left: 1rem;
+.sunBlock{
+    opacity: 1;
+    transform: translateY(-5px);
+    animation: showSunAnim;
+    animation-duration: .6s;
 }
-
-.circleMoveRight {
-    margin-left: 1rem;
-    animation: marginLeft 1s;
-}
-
-.circleMoveLeft {
-    margin-left: 1rem;
-    animation: removeMarginLeft 1s;
-}
-
-@keyframes marginLeft {
+@keyframes showSunAnim {
     from {
-        margin-left: -4rem;
+        transform: translateY(0px);
     }
 
     to {
-        margin-left: 1rem;
+        transform: translateY(-5px);
     }
 }
-
-@keyframes removeMarginLeft {
+@keyframes hideSunAnim {
     from {
-        margin-left: 1rem;
+        transform: translateY(-10px);
     }
 
     to {
-        margin-left: -4rem;
+        transform: translateY(0px);
     }
 }
 
@@ -263,10 +249,4 @@
     to {
         width: 0rem;
     }
-}
-
-.section1fixed {
-    position: fixed;
-    width: 100%;
-    background-color: rgb(249, 249, 250);
 }

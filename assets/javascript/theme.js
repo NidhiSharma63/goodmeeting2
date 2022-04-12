@@ -14,35 +14,24 @@ $(document).ready(() => {
         $(".section6").css("background-color", "#313640");
         $(".slider").css("background-color", "#313640");
     }
-    // show dark text and move circle
-    const showDarkMode = () => {
-        if ($(".circle").hasClass("circleMoveLeft")) {
-            $(".circle").removeClass("circleMoveLeft");
-        }
-        $(".circle").addClass("circleMoveRight");
-        $(".circle").css("margin-left", "1rem");
-        $(".light").addClass("nonVisible");
-        $(".dark").addClass("visible");
-        $(".dark").removeClass("nonVisible");
+    const showSun = () => {
+        $(".sun").removeClass("nonVisible")
+        $(".sun").addClass("sunBlock");
+        $(".moon").addClass("hide");
     }
-    // show light text and move circle
-    const showLightMode = () => {
-        if ($(".circle").hasClass("circleMoveRight")) {
-            $(".circle").removeClass("circleMoveRight");
-        }
-        $(".circle").addClass("circleMoveLeft");
-        $(".circle").css("margin-left", "-4rem");
-        $(".light").removeClass("nonVisible");
-        $(".dark").addClass("nonVisible");
+    const showMoon = () => {
+        $(".sun").addClass("nonVisible")
+        $(".sun").removeClass("sunBlock");
+        $(".moon").removeClass("hide");
     }
     let setMode = localStorage.getItem("goodmeeting_today_color_scheme");
     if (setMode === 'dark') {
         switchDarkTheme();
-        showDarkMode();
+        showMoon();
         changeTestimonialsFooterColor();
     } else {
         switchLightTheme();
-        showLightMode();
+        showSun();
     }
     // Select the button
     const btns = document.querySelectorAll(".darkSwitch");
@@ -54,14 +43,20 @@ $(document).ready(() => {
                 // ... then switch it to "lightTheme-mode.css"
                 localStorage.setItem("goodmeeting_today_color_scheme", 'light');
                 switchLightTheme();
-                showLightMode();
+                showSun();
             } else {
                 // ... switch it to "darkTheme-mode.css"
-                showDarkMode();
+                showMoon();
                 switchDarkTheme();
                 changeTestimonialsFooterColor();
                 localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
             }
         });
     });
+    $(".moon").click(() => {
+        showSun();
+    });
+    $(".sun").click(() => {
+        showMoon();
+    })
 });
