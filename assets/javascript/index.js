@@ -184,7 +184,7 @@ const dashboardTouchEndHandler = (e) => {
 const dashboardDotsClicked = (e) => {
     e.preventDefault();
     dashboardMoveSlide = false;
-    const clickedDashboardDotIndex = e.target.dataset.dashboard;
+    const clickedDashboardDotIndex = e.target.dataset.index;
     if (dashboardSlide != clickedDashboardDotIndex) {
         dashboardDots[dashboardSlide].classList.remove("opacity");
     }

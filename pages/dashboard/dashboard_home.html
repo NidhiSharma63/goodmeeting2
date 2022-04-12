@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/assets/css/account/dashboard_visits.css">
     <link rel="stylesheet" href="/assets/css/account/dashboard_chart.css">
     <link rel="stylesheet" href="/assets/css/responsive/common.css">
+    <link rel="stylesheet" href="/assets/css/darkSwitch.css">
     <link rel="stylesheet" href="/assets/css/responsive/dashboard.css">
 </head>
 
@@ -31,8 +32,10 @@
         </div>
         <div class="col2 flex">
             <div class="col2Container flex secondaryColor">
-                <i class="fa-solid fa-moon moon pointer"></i>
-                <i class="fa-solid fa-bell pointer"></i>
+                <div class="darkSwitch flex pointer">
+                    <i class="fa-regular fa-moon moon visible"></i>
+                    <i class="fa-regular fa-sun sun nonVisible"></i>
+                </div>
                 <div class="button1" id="signOutBtn">Sign Out</div>
                 <img src="/assets/images/dashboardImages/images.jpeg" alt="userimage">
             </div>
@@ -76,9 +79,9 @@
                         <p> Meetings</p>
                         <i class="fa-solid fa-handshake secondaryColor"></i>
                     </span>
-                   <span id="totalMeetingCount">
-                    <p>3</p>
-                   </span>
+                    <span id="totalMeetingCount">
+                        <p>3</p>
+                    </span>
                 </div>
                 <div class="visits2 flex">
                     <span id="positiveReview">

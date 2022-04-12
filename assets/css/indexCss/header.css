@@ -102,53 +102,6 @@
 .loginBtn a{
     color: white;
 }
-.darkSwitch {
-    height: 2rem;
-    border-radius: 50%;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
-}
-.moon{
-   color: white;
-   font-size: 2.3rem;
-   text-shadow: .1rem .2rem .3rem white;
-}
-.sun{
-    color: #ffc23d;
-    font-size: 2rem;
-}
-.sunHide{
-    opacity: 1;
-    transform: translateY(-5px);
-    animation: hideSunAnim;
-    animation-duration: .6s;
-}
-.sunBlock{
-    opacity: 1;
-    transform: translateY(-5px);
-    animation: showSunAnim;
-    animation-duration: .6s;
-}
-@keyframes showSunAnim {
-    from {
-        transform: translateY(0px);
-    }
-
-    to {
-        transform: translateY(-5px);
-    }
-}
-@keyframes hideSunAnim {
-    from {
-        transform: translateY(-10px);
-    }
-
-    to {
-        transform: translateY(0px);
-    }
-}
-
 .sideBar {
     color: var(--secondary-color);
     font-size: 3rem;
