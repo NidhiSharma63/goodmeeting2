@@ -1,0 +1,318 @@
+@media screen and (max-width: 3840px) {
+
+    /* steps section */
+    .section4 .col4 .img::before,
+    .section4 .col4 .img::after {
+        left: -20.2rem;
+    }
+}
+
+@media screen and (max-width: 2880px) {
+
+    .section4 .col4 .img::before,
+    .section4 .col4 .img::after {
+        left: -18rem;
+    }
+}
+
+@media screen and (max-width: 2560px) {
+
+    .section4 .col4 .img::before,
+    .section4 .col4 .img::after {
+        left: -18rem;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+
+    .section4 .col4 .img::before,
+    .section4 .col4 .img::after {
+        left: -20.2rem;
+    }
+}
+
+
+@media screen and (max-width: 1520px) {
+
+    .section4 .col4 .img::before,
+    .section4 .col4 .img::after {
+        left: -19.2rem;
+    }
+}
+
+@media screen and (max-width: 1368px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    .section4 .col4 .img::before,
+    .section4 .col4 .img::after {
+        left: -20.2rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    html {
+        font-size: 55.5%;
+    }
+
+    .section2 .textSection {
+        min-height: 40rem;
+    }
+
+    /* .footerLinks */
+    .section6 .col3 .footerLinks {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 916px) {
+
+    /* footer links*/
+    .section6 .col3 .footerLinks {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 831px) {
+
+    /* footer links*/
+    .section6 .col3 .footerLinks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 761px) {
+    .section2 {
+        grid-template-areas:
+            'textSection'
+            'mainImgSection'
+        ;
+    }
+
+    /* .sideBarDivContainer */
+    .sideBarDivContainer {
+        width: 18rem;
+    }
+
+    .barMarginShow {
+        margin-right: 18rem;
+    }
+
+    @keyframes barMarginAnim1 {
+        from {
+            margin-right: 0rem;
+        }
+
+        to {
+            margin-right: 18rem;
+        }
+    }
+
+    @keyframes barMarginAnim2 {
+        from {
+            margin-right: 18rem;
+        }
+
+        to {
+            margin-right: 0rem;
+        }
+    }
+
+    @keyframes sideBarDivContainerAnim1 {
+        from {
+            width: 0rem;
+        }
+
+        to {
+            width: 18rem;
+        }
+    }
+
+    @keyframes sideBarDivContainerAnim2 {
+        from {
+            width: 18rem;
+        }
+
+        to {
+            width: 0rem;
+        }
+    }
+
+    .section2 .textSection {
+        align-items: center;
+    }
+
+    /* section3 */
+    .section3 .col1 {
+        max-width: 100%;
+    }
+
+    .section3 .col1 p {
+        font-size: 2.7rem;
+        font-weight: 700;
+    }
+
+    /* section 4 */
+    .section4 .text p:nth-child(2) {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section4 .col4 .text p:nth-child(2),
+    .section4 .col5 .text p:nth-child(2) {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section6 .col1 img {
+        width: 17rem;
+    }
+
+    .section6 .col1 p,
+    .section6 .col2 p:nth-child(2),
+    .section6 .col3 .footerLinks span {
+        font-size: 1rem;
+    }
+
+    .section6 .col2 p:nth-child(1),
+    .section6 .col3 p:nth-child(1) {
+        font-size: 1.8rem;
+    }
+
+    .section4 .col2::after,
+    .section4 .col2 .count::after,
+    .section4 .col2 .img::after,
+    .section4 .col3 .img::before,
+    .section4 .col3 .img::after,
+    .section4 .col3 .count::after,
+    .section4 .col3 .count::before,
+    .section4 .col3::after,
+    .section4 .col4 .img::after,
+    .section4 .col4 .img::before,
+    .section4 .col4 .count::after,
+    .section4 .col4 .count::before,
+    .section4 .col4::after,
+    .section4 .col5 .img::before,
+    .section4 .col5 .count::before {
+        display: none;
+    }
+
+    .section4 .col2,
+    .section4 .col3,
+    .section4 .col4,
+    .section4 .col5 {
+        padding-bottom: 1rem;
+        border-bottom: .1rem solid gray;
+    }
+}
+
+@media screen and (max-width: 665px) {
+    .section3 .col5 {
+        min-height: 33rem;
+    }
+
+    .section4 .col2,
+    .section4 .col4 {
+        flex-direction: column;
+
+    }
+
+    .section4 .col3,
+    .section4 .col5 {
+        flex-direction: column-reverse;
+
+    }
+
+    .section4 .count {
+        display: none;
+    }
+
+    .section4 .col2 .text,
+    .section4 .col3 .text,
+    .section4 .col4 .text,
+    .section4 .col5 .text {
+        align-items: center;
+        width: 60%;
+    }
+
+    .section5 .col3 {
+        min-height: 27rem;
+    }
+
+    /* dashboard and testimonial responsive */
+    .testimonial .testimonialTextContainer,
+    .testimonial .testimonialTextContainer .testimonialSlider .testimonialContent {
+        width: 40rem;
+    }
+
+    .section5 .slider .dashboardImageContainer {
+        width: 39rem;
+    }
+
+    .section5 .slider .dashboardImagesSlider .img1,
+    .section5 .slider .dashboardImagesSlider .img2,
+    .section5 .slider .dashboardImagesSlider .img3 {
+        width: 39rem;
+    }
+}
+@media screen and (max-width: 550px) {
+    .section2 .textSection {
+      min-height: 55rem;
+    }
+  
+    .section2 .textSection .col2 {
+      font-size: 2.3rem;
+      width: 35rem;
+    }
+  
+    .section2 .textSection .col3 {
+      font-size: 2.4rem;
+      line-height: 4rem;
+      text-align: center;
+    }
+  
+    .section2 {
+      gap: 12rem;
+    }
+  
+    .section2 .textSection .col5 {
+      width: 17rem;
+    }
+  
+    .section2 .textSection .col5 .gmail,
+    .section2 .textSection .col5 .outlook {
+      width: 7rem;
+    }
+  
+    .section2 .textSection .col5 .gmail p,
+    .section2 .textSection .col5 .outlook p,
+    .section2 .textSection .col5 small {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    .section2 .textSection .col5 .images {
+      margin-top: 1rem;
+    }
+    .section3 .col2 {
+      gap: 6rem;
+      grid-template-areas:
+        'img1'
+        'img2'
+        'img3'
+      ;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    html {
+      font-size: 36.5%;
+    }
+    .section3 .col5 p:nth-child(1) {
+      font-size: 3rem;
+    }
+  }

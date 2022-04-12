@@ -1,8 +1,15 @@
-.section1{
-    max-width: 100%;
+.section1 {
+    position: fixed;
+    width: 100%;
     grid-area: section1;
-    min-width: 30px;
+    min-width: 3rem;
+    z-index: 99;
+    background-color: var(--white-background-color);
     box-shadow: .7rem 0.2rem 2rem -1.7rem var(--secondary-color);
+}
+.container{
+    position: relative;
+    top: 10rem;
 }
 .headerContainer {
     padding: 1rem;
@@ -11,36 +18,38 @@
 }
 
 .headerContainer .headerBox {
-    background-color: inherit;
+    /* background-color: inherit; */
     justify-content: space-around;
     flex-grow: .5;
     position: relative;
     z-index: 1;
 }
 
-.headerContainer .logoContainer, .headerContainer .sideBarLogo {
+.headerContainer .logoContainer,
+.headerContainer .sideBarLogo {
     width: 22rem;
 }
 
 .headerContainer .logoContainer img,
-.headerContainer .sideBarLogo img 
-{
+.headerContainer .sideBarLogo img {
     width: 100%;
 }
 
 .headerContainer .ulContainer {
     width: 29rem;
 }
-.headerContainer  ul li,
-.sideBarDivContainer  ul li{
+
+.headerContainer ul li,
+.sideBarDivContainer ul li {
     position: relative;
 }
-.headerContainer  ul li:nth-child(1)::after,
-.headerContainer  ul li:nth-child(2)::after,
-.headerContainer  ul li:nth-child(3)::after,
-.sideBarDivContainer  ul li:nth-child(1)::after,
-.sideBarDivContainer  ul li:nth-child(2)::after,
-.sideBarDivContainer  ul li:nth-child(3)::after{
+
+.headerContainer ul li:nth-child(1)::after,
+.headerContainer ul li:nth-child(2)::after,
+.headerContainer ul li:nth-child(3)::after,
+.sideBarDivContainer ul li:nth-child(1)::after,
+.sideBarDivContainer ul li:nth-child(2)::after,
+.sideBarDivContainer ul li:nth-child(3)::after {
     content: '';
     width: 0;
     height: 0.2rem;
@@ -51,22 +60,27 @@
     left: 0rem;
     top: 3rem;
 }
-.headerContainer  ul li:nth-child(2):hover::after,
-.sideBarDivContainer  ul li:nth-child(2):hover::after {
+
+.headerContainer ul li:nth-child(2):hover::after,
+.sideBarDivContainer ul li:nth-child(2):hover::after {
     width: 9.5rem;
 }
-.headerContainer  ul li:nth-child(3):hover::after,
-.sideBarDivContainer  ul li:nth-child(3):hover::after  {
+
+.headerContainer ul li:nth-child(3):hover::after,
+.sideBarDivContainer ul li:nth-child(3):hover::after {
     width: 7.5rem;
 }
-.headerContainer  ul li:nth-child(1):hover::after,
-.sideBarDivContainer  ul li:nth-child(1):hover::after  {
+
+.headerContainer ul li:nth-child(1):hover::after,
+.sideBarDivContainer ul li:nth-child(1):hover::after {
     width: 4.5rem;
 }
-.sideBarDivContainer  ul li:nth-child(1):hover::after,
-.sideBarDivContainer  ul li:nth-child(3):hover::after {
+
+.sideBarDivContainer ul li:nth-child(1):hover::after,
+.sideBarDivContainer ul li:nth-child(3):hover::after {
     height: .3rem;
 }
+
 .login_logout_section {
     width: 30rem;
     justify-content: space-around;
@@ -75,7 +89,7 @@
 .registerBtn,
 .loginBtn {
     font-weight: 400;
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     border-radius: .2rem;
     padding: .8rem 2rem;
 }
@@ -84,12 +98,14 @@
     background-color: var(--secondary-color);
     padding: .8rem 1rem;
 }
-.sideBarDivContainer  ul li a,
+
+.sideBarDivContainer ul li a,
 .registerBtn a,
-.loginBtn a{
+.loginBtn a {
     color: white;
 }
- .darkSwitch {
+
+.darkSwitch {
     border: 1px solid;
     font-size: 2rem;
     width: 8rem;
@@ -100,50 +116,60 @@
     color: white;
     justify-content: flex-start;
 }
-.darkSwitch .circle{
+
+.darkSwitch .circle {
     margin-left: -4rem;
 }
-.darkSwitch span{
+
+.darkSwitch span {
     font-size: 1.6rem;
     font-weight: 600;
 }
-.darkSwitch .dark{
+
+.darkSwitch .dark {
     opacity: 0;
 }
-.darkSwitch .light{
+
+.darkSwitch .light {
     margin-left: 1rem;
 }
-.circleMoveRight{
-    margin-left: 1rem ;
+
+.circleMoveRight {
+    margin-left: 1rem;
     animation: marginLeft 1s;
 }
-.circleMoveLeft{
-    margin-left: 1rem ;
+
+.circleMoveLeft {
+    margin-left: 1rem;
     animation: removeMarginLeft 1s;
 }
 
-@keyframes marginLeft{
-    from{
+@keyframes marginLeft {
+    from {
         margin-left: -4rem;
     }
-    to{
-        margin-left:1rem;
-    }
-}
-@keyframes removeMarginLeft{
-    from{
+
+    to {
         margin-left: 1rem;
-    }
-    to{
-        margin-left:-4rem;
     }
 }
 
-.sideBar{
-    color:var(--secondary-color);
+@keyframes removeMarginLeft {
+    from {
+        margin-left: 1rem;
+    }
+
+    to {
+        margin-left: -4rem;
+    }
+}
+
+.sideBar {
+    color: var(--secondary-color);
     font-size: 3rem;
 }
-.sideBarDivContainer{
+
+.sideBarDivContainer {
     position: absolute;
     right: 0;
     height: 100vh;
@@ -155,70 +181,92 @@
     align-items: center;
     overflow: hidden;
 }
-.sideBarDivContainer .col{
+
+.sideBarDivContainer .col {
     height: 45rem;
     margin-top: -44rem;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
-.sideBarDivContainer .col .sideBarUl{
+
+.sideBarDivContainer .col .sideBarUl {
     flex-direction: column;
     height: 28%;
     font-size: 1.8rem;
     align-items: center;
 }
-.sideBarDivContainer .col .login_logout_section{
+
+.sideBarDivContainer .col .login_logout_section {
     width: 18rem;
     height: 11rem;
     flex-direction: column;
 }
-.sideBarDivContainer .col .login_logout_section .registerBtn{
+
+.sideBarDivContainer .col .login_logout_section .registerBtn {
     background-color: var(--secondary-color);
 }
-.barMarginShow{
+
+.barMarginShow {
     margin-right: 24rem;
     animation: barMarginAnim1 1s;
 }
-.barMarginHide{
+
+.barMarginHide {
     margin-right: 0rem;
     animation: barMarginAnim2 1s;
 }
-.sideBarDivContainerShow{
+
+.sideBarDivContainerShow {
     animation: sideBarDivContainerAnim1 1s;
 }
-.sideBarDivContainerHide{
+
+.sideBarDivContainerHide {
     animation: sideBarDivContainerAnim2 1s;
 }
+
 @keyframes barMarginAnim1 {
-    from{
+    from {
         margin-right: 0rem;
     }
-    to{
+
+    to {
         margin-right: 24rem;
     }
 }
+
 @keyframes barMarginAnim2 {
-    from{
+    from {
         margin-right: 24rem;
     }
-    to{
+
+    to {
         margin-right: 0rem;
     }
 }
+
 @keyframes sideBarDivContainerAnim1 {
-    from{
+    from {
         width: 0rem;
     }
-    to{
+
+    to {
         width: 24rem;
     }
 }
+
 @keyframes sideBarDivContainerAnim2 {
-    from{
+    from {
         width: 20rem;
     }
-    to{
+
+    to {
         width: 0rem;
     }
+}
+
+.section1fixed {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(249, 249, 250);
 }

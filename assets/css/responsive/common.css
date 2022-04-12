@@ -1,0 +1,117 @@
+@media screen and (max-width: 3840px) {
+    html {
+        font-size: 169.5%;
+    }
+
+    .section4 .col4 .img::before,
+    .section4 .col4 .img::after {
+        left: -20.2rem;
+    }
+}
+
+@media screen and (max-width: 3200px) {
+    html {
+        font-size: 121.5%;
+    }
+
+}
+
+@media screen and (max-width: 3000px) {
+    html {
+        font-size: 115.5%;
+    }
+}
+
+@media screen and (max-width: 2880px) {
+    html {
+        font-size: 110.5%;
+    }
+}
+
+@media screen and (max-width: 2560px) {
+    html {
+        font-size: 101.5%;
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    html {
+        font-size: 60.5%;
+    }
+
+}
+
+@media screen and (max-width: 1600px) {
+    html {
+        font-size: 71.5%;
+    }
+}
+
+@media screen and (max-width: 1368px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    html {
+        font-size: 55.5%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    html {
+        font-size: 51.5%;
+    }
+
+}
+
+@media screen and (max-width: 1046px) {
+    html {
+        font-size: 47.5%;
+    }
+}
+
+@media screen and (max-width: 916px) {
+    html {
+        font-size: 40.5%;
+    }
+
+    /* footer links*/
+    .section6 .col3 .footerLinks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 831px) {
+    html {
+        font-size: 36.5%;
+    }
+
+}
+
+@media screen and (max-width: 761px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media screen and (max-width: 665px) {
+    html {
+        font-size: 59.5%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    html {
+        font-size: 51.5%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    html {
+        font-size: 36.5%;
+    }
+}
