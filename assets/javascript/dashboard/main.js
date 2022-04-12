@@ -22,18 +22,5 @@ $(document).ready(function () {
     $('.feedback').click(() => {
         handleSideBar();
     });
-    if (matchMedia) {
-        var mq2 = window.matchMedia("(max-width: 950px)");
-        mq2.addListener(WidthChange2);
-        WidthChange2(mq2);
-    }
-    // media query change
-    function WidthChange2(width2) {
-        if (width2.matches) {$('.contentContainer').removeClass('shrinkContainerWidht');
-        } else {
-            headerBox.removeClass("hide");
-            headerContainer.css("justify-content", " space-around")
-            sideBar.addClass("hide")
-        }
-    }
+   
 });

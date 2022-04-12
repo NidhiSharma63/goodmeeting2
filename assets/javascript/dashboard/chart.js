@@ -9,6 +9,27 @@ let overAllStatDataChart = null;
 let howNeccesaryChart = null;
 let myChart = null;
 let textColor = '#313640';
+
+// common font size
+let fontSize = 12;
+// change font size according to window
+const fontSizeHandler =()=>{
+    if (matchMedia) {
+        var mq2 = window.matchMedia("(max-width: 560px)");
+        mq2.addListener(WidthChange2);
+        WidthChange2(mq2);
+    }
+    // media query change
+    function WidthChange2(width2) {
+        if (width2.matches) {
+            fontSize = 8;
+        } else {
+            fontSize = 12;
+        }
+    }
+}
+window.addEventListener('resize',fontSizeHandler)
+fontSizeHandler ();
 // get value on load
 const getModeOnLoad = localStorage.getItem("goodmeeting_today_color_scheme");
 if (getModeOnLoad == 'dark') {
@@ -16,38 +37,39 @@ if (getModeOnLoad == 'dark') {
 } else {
     textColor = '#313640';
 }
-const yAxisHandler = (color) => {
+
+const yAxisHandler = (color, fontSize) => {
     let yAxisTicks_stepSize2 = {
         color: color,
         padding: 9,
         stepSize: 2,
         font: {
-            size: 12,
+            size: fontSize,
             weight: 560
         }
     }
     return yAxisTicks_stepSize2
 }
-const yAxisHandler2 = (color) => {
+const yAxisHandler2 = (color, fontSize) => {
     let yAxisTicks_stepSize20 = {
         color: color,
         padding: 9,
         stepSize: 20,
         font: {
-            size: 12,
+            size: fontSize,
             weight: 560
         }
     }
     return yAxisTicks_stepSize20
 }
-const xAxisHandler = (color) => {
+const xAxisHandler = (color, fontSize) => {
     let xAxis = {
         barPercentage: 0.4,
         ticks: {
             color: color,
             padding: 9,
             font: {
-                size: 12,
+                size: fontSize,
                 weight: 600
             }
         },
@@ -55,12 +77,12 @@ const xAxisHandler = (color) => {
     };
     return xAxis;
 }
-const legendFun = (color) => {
+const legendFun = (color, fontSize) => {
     let legend = {
         labels: {
             color: color,
             font: {
-                size: 15,
+                size: fontSize,
                 weight: 700,
             },
             boxWidth: 15,
@@ -145,11 +167,11 @@ const commonConfigHandler = ({
                     ticks: yAxis,
                     grid: gridConfig
                 },
-                x: xAxisHandler(textColor),
+                x: xAxisHandler(textColor, fontSize),
             },
             plugins: {
                 tooltip,
-                legend: legendFun(textColor),
+                legend: legendFun(textColor, fontSize),
             },
             animation,
         }
@@ -181,7 +203,7 @@ $('.moon').click(() => {
         commonConfigHandler({
             type: 'bar',
             data: overAllStatData,
-            yAxis: yAxisHandler2(textColor)
+            yAxis: yAxisHandler2(textColor, fontSize)
         })
     );
     howNeccesaryChart = new Chart(
@@ -189,7 +211,7 @@ $('.moon').click(() => {
         commonConfigHandler({
             type: 'line',
             data: howNeccesaryData,
-            yAxis: yAxisHandler(textColor)
+            yAxis: yAxisHandler(textColor, fontSize)
         })
     );
     myChart = new Chart(
@@ -197,7 +219,7 @@ $('.moon').click(() => {
         commonConfigHandler({
             type: 'bar',
             data: timeManagmentData,
-            yAxis: yAxisHandler(textColor)
+            yAxis: yAxisHandler(textColor, fontSize)
         }),
     );
 })
@@ -206,7 +228,7 @@ overAllStatDataChart = new Chart(
     commonConfigHandler({
         type: 'bar',
         data: overAllStatData,
-        yAxis: yAxisHandler2(textColor)
+        yAxis: yAxisHandler2(textColor, fontSize)
     }),
 );
 howNeccesaryChart = new Chart(
@@ -214,7 +236,7 @@ howNeccesaryChart = new Chart(
     commonConfigHandler({
         type: 'line',
         data: howNeccesaryData,
-        yAxis: yAxisHandler(textColor)
+        yAxis: yAxisHandler(textColor, fontSize)
     })
 );
 myChart = new Chart(
@@ -222,6 +244,6 @@ myChart = new Chart(
     commonConfigHandler({
         type: 'bar',
         data: timeManagmentData,
-        yAxis: yAxisHandler(textColor)
+        yAxis: yAxisHandler(textColor, fontSize)
     }),
 );
