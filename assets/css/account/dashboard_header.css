@@ -1,3 +1,4 @@
+
 .section1 {
     grid-area: section1;
     display: grid;
@@ -32,7 +33,7 @@
     justify-content: flex-end;
 }
 
-.section1 .col2 .col2Container {
+.section1 .col2Container {
     min-width: 26rem;
     justify-content: space-between;
     font-size: 3rem;
@@ -40,11 +41,11 @@
 .section1 .col1 .sideBar{
     margin-left: -1rem;
 }
-.section1 .col2 .col2Container .fa-solid {
+.section1 .col2Container .fa-solid {
     font-family: "Font Awesome 6 Free";
     font-weight: 100 !important;
 }
-.section1 .col2 .col2Container #signOutBtn {
+.section1  #signOutBtn {
     background: var(--secondary-color);
     color: white;
     padding: 1rem 2rem;

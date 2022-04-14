@@ -5,7 +5,7 @@
     'col1 col2 col3'
     ;
     gap: 2rem;
-    background-color: var(--light-black-color);
+    background-color: #313640;
     padding: 1rem 2rem;
     color: white;
     min-height: 14rem;

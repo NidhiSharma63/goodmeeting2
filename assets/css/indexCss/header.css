@@ -35,8 +35,8 @@
     width: 29rem;
 }
 
-.headerContainer ul li,
-.sideBarDivContainer ul li {
+.headerContainer li,
+.sideBarDivContainer li {
     position: relative;
 }
 
@@ -130,7 +130,7 @@
     align-items: center;
 }
 
-.sideBarDivContainer .col .sideBarUl {
+.sideBarDivContainer .sideBarUl {
     flex-direction: column;
     height: 28%;
     font-size: 1.8rem;
