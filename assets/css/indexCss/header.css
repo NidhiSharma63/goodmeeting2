@@ -20,12 +20,12 @@
     z-index: 1;
 }
 
-.headerContainer .logoContainer,
 .headerContainer .sideBarLogo {
-    width: 22rem;
+    width: 26rem;
 }
-
-.headerContainer .logoContainer img,
+.headerContainer .logoContainer{
+    width: 20rem;
+}
 .headerContainer .sideBarLogo img {
     width: 100%;
 }
