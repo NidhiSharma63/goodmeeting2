@@ -26,7 +26,8 @@
 .headerContainer .logoContainer{
     width: 20rem;
 }
-.headerContainer .sideBarLogo img {
+.headerContainer .sideBarLogo img,
+.headerContainer .logoContainer img {
     width: 100%;
 }
 
