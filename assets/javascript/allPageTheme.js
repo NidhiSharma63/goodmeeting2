@@ -9,7 +9,7 @@ $(document).ready(function () {
         sun.removeClass('nonVisible')
         sun.addClass('sunBlock');
         $(document.body).removeClass("darkTheme");
-        $(".logo").html(`<img src = "/assets/images/logo.png"></img>`);
+        $(".logoContainer").html(`<img src = "/assets/images/logo.png"></img>`);
     }
     const showMoon = () =>{
         moon.addClass('visible');
@@ -17,15 +17,17 @@ $(document).ready(function () {
         sun.addClass('nonVisible')
         sun.removeClass('sunBlock');
         $(document.body).addClass("darkTheme");
-        $(".logo").html(`<img src = "/assets/images/header/logo2.png"></img>`);
+        $(".logoContainer").html(`<img src = "/assets/images/header/logo2.png"></img>`);
     }
     // switch to light theme
     moon.click(()=>{
         showSun();
+        localStorage.setItem("goodmeeting_today_color_scheme", 'light');
     });
     // switch to dark theme
     sun.click(()=>{
        showMoon();
+       localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
     });
     // change theme value according to home page
     const changeTheme = () => {
@@ -35,5 +37,5 @@ $(document).ready(function () {
             showSun()
         }
     }
-   window.onload = changeTheme();
+     changeTheme();
 })
