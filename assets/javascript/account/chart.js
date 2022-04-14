@@ -81,7 +81,7 @@ const animation = {
     duration: 1000,
     easing: 'linear'
 }
-const overAllStatData = {
+const chart1Data = {
     labels: MeetingsAdjusted,
     datasets: [{
         barThickness: 10,
@@ -93,7 +93,7 @@ const overAllStatData = {
         tension: .4
     }]
 }
-const howNeccesaryData = {
+const chart2Data = {
     labels: MeetingsAdjusted,
     datasets: [{
         label: 'Meetings Score',
@@ -103,7 +103,7 @@ const howNeccesaryData = {
         tension: .5,
     }]
 };
-const timeManagmentData = {
+const chart3Data = {
     labels: MeetingsAdjusted,
     datasets: [{
         barThickness: 10,
@@ -115,9 +115,9 @@ const timeManagmentData = {
         tension: .6,
     }]
 }
-const overAllStatChartConfig = {
+const chart1Config = {
     type: 'bar',
-    data: overAllStatData,
+    data: chart1Data,
     options: {
         scales: {
             y: {
@@ -134,9 +134,9 @@ const overAllStatChartConfig = {
    
     animation,
 }
-const howNeccesaryConfig = {
+const chart2Config = {
     type: 'line',
-    data: howNeccesaryData,
+    data: chart2Data,
     options: {
         scales: {
             y: {
@@ -154,9 +154,9 @@ const howNeccesaryConfig = {
     animation,
 };
 
-const timeManagmentConfig = {
+const chart3Config = {
     type: 'bar',
-    data: timeManagmentData,
+    data: chart3Data,
     options: {
         scales: {
             y: {
@@ -173,35 +173,35 @@ const timeManagmentConfig = {
     animation,
 }
 
-let overAllStatChart = null
-let howNeccesaryChart = null
-let myChart = null
+let chart1 = null
+let chart2 = null
+let chart3 = null
 // get getTheme
 const getTheme = () => {
     return (localStorage.getItem("goodmeeting_today_color_scheme"));
 }
 // destroy charts
 const destroyAllChart = () => {
-    if (myChart != null) {
-        myChart.destroy();
-        howNeccesaryChart.destroy();
-        overAllStatChart.destroy();
+    if (chart3 != null) {
+        chart3.destroy();
+        chart2.destroy();
+        chart1.destroy();
     }
     return;
 }
 // create New Charts
 const createNewCharts = () => {
-    overAllStatChart = new Chart(
+    chart1= new Chart(
         ctx1,
-        overAllStatChartConfig,
+        chart1Config,
     );
-    howNeccesaryChart = new Chart(
+    chart2 = new Chart(
         ctx2,
-        howNeccesaryConfig,
+        chart2Config,
     );
-    myChart = new Chart(
+    chart3 = new Chart(
         ctx3,
-        timeManagmentConfig,
+        chart3Config,
     );
     return;
 }
@@ -212,27 +212,27 @@ $(".darkSwitch").click(() => {
 let fun = () => {
     const getThemeVal = getTheme();
     if (getThemeVal == 'dark') {
-        timeManagmentConfig.options.scales.x.ticks.color = lightTextColor;
-        timeManagmentConfig.options.scales.y.ticks.color = lightTextColor;
-        timeManagmentConfig.options.plugins.legend.labels.color = lightTextColor;
-        overAllStatChartConfig.options.plugins.legend.labels.color = lightTextColor;
-        overAllStatChart.options.scales.x.ticks.color = lightTextColor;
-        overAllStatChart.options.scales.y.ticks.color = lightTextColor;
-        howNeccesaryConfig.options.scales.x.ticks.color = lightTextColor;
-        howNeccesaryConfig.options.scales.y.ticks.color = lightTextColor;
-        howNeccesaryConfig.options.plugins.legend.labels.color = lightTextColor;
+        chart3Config.options.scales.x.ticks.color = lightTextColor;
+        chart3Config.options.scales.y.ticks.color = lightTextColor;
+        chart3Config.options.plugins.legend.labels.color = lightTextColor;
+        chart1Config.options.plugins.legend.labels.color = lightTextColor;
+        chart1.options.scales.x.ticks.color = lightTextColor;
+        chart1.options.scales.y.ticks.color = lightTextColor;
+        chart2Config.options.scales.x.ticks.color = lightTextColor;
+        chart2Config.options.scales.y.ticks.color = lightTextColor;
+        chart2Config.options.plugins.legend.labels.color = lightTextColor;
         destroyAllChart();
         createNewCharts();
     } else {
-        timeManagmentConfig.options.scales.x.ticks.color = DarkTextColor;
-        howNeccesaryConfig.options.scales.x.ticks.color = DarkTextColor;
-        overAllStatChart.options.scales.x.ticks.color = DarkTextColor;
-        overAllStatChart.options.scales.y.ticks.color = DarkTextColor;
-        howNeccesaryConfig.options.scales.y.ticks.color = DarkTextColor;
-        timeManagmentConfig.options.scales.y.ticks.color = DarkTextColor;
-        timeManagmentConfig.options.plugins.legend.labels.color = DarkTextColor;
-        overAllStatChartConfig.options.plugins.legend.labels.color = DarkTextColor;
-        howNeccesaryConfig.options.plugins.legend.labels.color = DarkTextColor;
+        chart3Config.options.scales.x.ticks.color = DarkTextColor;
+        chart2Config.options.scales.x.ticks.color = DarkTextColor;
+        chart1.options.scales.x.ticks.color = DarkTextColor;
+        chart1.options.scales.y.ticks.color = DarkTextColor;
+        chart2Config.options.scales.y.ticks.color = DarkTextColor;
+        chart3Config.options.scales.y.ticks.color = DarkTextColor;
+        chart3Config.options.plugins.legend.labels.color = DarkTextColor;
+        chart1Config.options.plugins.legend.labels.color = DarkTextColor;
+        chart2Config.options.plugins.legend.labels.color = DarkTextColor;
         destroyAllChart();
         createNewCharts()
     }
