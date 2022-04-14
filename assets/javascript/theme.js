@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    let setMode = localStorage.getItem("goodmeeting_today_color_scheme");
     // declare switchDarkTheme function
     const switchDarkTheme = () => {
         $(document.body).addClass("darkTheme");
@@ -24,7 +25,6 @@ $(document).ready(() => {
         $(".sun").removeClass("sunBlock");
         $(".moon").removeClass("hide");
     }
-    let setMode = localStorage.getItem("goodmeeting_today_color_scheme");
     if (setMode === 'dark') {
         switchDarkTheme();
         showMoon();
@@ -34,24 +34,21 @@ $(document).ready(() => {
         showSun();
     }
     // Select the button
-    const btns = document.querySelectorAll(".darkSwitch");
+    const btns = document.querySelector(".darkSwitch");
     // Listen for a click on the button
-    btns.forEach(btn => {
-        btn.addEventListener("click", function () {
-
-            if ($(document.body).hasClass("darkTheme")) {
-                // ... then switch it to "lightTheme-mode.css"
-                localStorage.setItem("goodmeeting_today_color_scheme", 'light');
-                switchLightTheme();
-                showSun();
-            } else {
-                // ... switch it to "darkTheme-mode.css"
-                showMoon();
-                switchDarkTheme();
-                changeTestimonialsFooterColor();
-                localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
-            }
-        });
+    btns.addEventListener("click", function () {
+        if ($(document.body).hasClass("darkTheme")) {
+            // ... then switch it to "lightTheme-mode.css"
+            localStorage.setItem("goodmeeting_today_color_scheme", 'light');
+            switchLightTheme();
+            showSun();
+        } else {
+            // ... switch it to "darkTheme-mode.css"
+            showMoon();
+            switchDarkTheme();
+            changeTestimonialsFooterColor();
+            localStorage.setItem("goodmeeting_today_color_scheme", 'dark');
+        }
     });
     $(".moon").click(() => {
         showSun();
