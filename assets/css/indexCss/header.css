@@ -4,7 +4,7 @@
     grid-area: section1;
     min-width: 3rem;
     z-index: 99;
-    background-color: var(--white-background-color);
+    background-color: var(--white-color);
     box-shadow: .7rem 0.2rem 2rem -1.7rem var(--secondary-color);
 }
 .headerContainer {

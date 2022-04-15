@@ -76,6 +76,7 @@
     font-size: var(--fs-md2);
     text-align: center;
     line-height: 3rem;
+    letter-spacing: var(--ls-md);
 }
 .section3 .col4{
     grid-area: col4;

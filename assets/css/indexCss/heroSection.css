@@ -103,7 +103,7 @@
 
 .section2 .mainImgSection {
     grid-area: mainImgSection;
-    max-width: 48rem;
+    max-width: 51rem;
     min-width: 23rem;
     margin: auto;
     display: flex;

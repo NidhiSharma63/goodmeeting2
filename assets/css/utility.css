@@ -17,7 +17,7 @@ html {
     --primary-color: rgb(229, 80, 80);
     --secondary-color: rgb(41, 99, 224);
     --light-black-color: #313640;
-    --white-background-color: white;
+    --white-color: white;
     --lh-sm:3rem;
     --lh-md:3.4rem;
     --lh-xl:5rem;
@@ -30,15 +30,13 @@ html {
 }
 /* changes acolor to dark theme */
 body.darkTheme {
-    overflow-x: hidden;
     --light-black-color: white;
     background-color: #0E1525;
-    --white-background-color: #0E1525;
+    --white-color: #0E1525;
 }
 
 body {
-    overflow-y: scroll;
-    overflow-x: hidden;
+    width: 102%;
 }
 
 .root {
