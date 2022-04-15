@@ -6,20 +6,9 @@
 }
 
 .testimonial .heading {
-    font-size: 4rem;
+    font-size: var(--fs-xl);
 }
-
-
-.testimonial p:nth-child(3) {
-    text-align: center;
-    margin: auto;
-    font-size: 2.2rem;
-    line-height: 3rem;
-    letter-spacing: .1rem;
-}
-
 .testimonial .commaImg1 {
-
     justify-content: flex-start;
 }
 
@@ -51,12 +40,13 @@
 }
 
 .testimonial .testimonialTextContainer .testimonialSlider .testimonialContent {
-    line-height: 3rem;
+    line-height: var(--lh-sm);
     width: 85rem;
 }
 .testimonial .testimonialText {
-    font-size: 2rem;
+    font-size: var(--fs-sm);
     text-align: center;
+    letter-spacing: var(--ls-xl);
 }
 
 .testimonialContent .testimonialUser {
@@ -64,7 +54,7 @@
 }
 
 .testimonial .testimonialContent .testimonialUser p {
-    font-size: 2rem;
+    font-size: var(--fs-sm);
 }
 
 .testimonial .testimonialDots {
@@ -91,11 +81,12 @@
 }
 
 .section5 .col3 p:nth-child(1) {
-    font-size: 2.5rem;
+    font-size: var(--fs-md2);
 }
 
 .section5 .col3 p:nth-child(2) {
-    font-size: 2.6rem;
+    font-size:var(--fs-md);
+    letter-spacing: var(--ls-md);
     text-align: center;
 }
 
