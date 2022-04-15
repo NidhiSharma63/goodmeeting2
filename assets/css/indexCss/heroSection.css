@@ -23,12 +23,12 @@
 }
 
 .section2 .textSection .col1 {
-    font-size: 3.5rem;
+    font-size: var(--fs-xl);
     font-weight: 600;
 }
 
 .section2 .textSection .col2 {
-    font-size: 1.6rem;
+    font-size: var(--fs-sm);
     max-width: 26rem;
     text-align: center;
     padding: 1rem;
@@ -41,9 +41,10 @@
 }
 
 .section2 .textSection .col3 {
-    font-size: 1.8rem;
+    font-size: var(--fs-sm);
+    line-height: var(--lh-sm);
     width: 90%;
-    letter-spacing: .1rem;
+    letter-spacing: var(--ls-md);
 }
 
 .copy {
