@@ -36,7 +36,7 @@
 }
 .section3 .group1 .col1,
 .section3 .group2 .col1 {
-    font-size: 1.6rem;
+    font-size: var(--fs-sm);
     font-weight: 600;
     position: relative;
 }
@@ -62,7 +62,7 @@
 }
 .section3 .col2 .data-table {
     border-collapse: collapse;
-    font-size: 1.2rem;
+    font-size: var(--fs-sm2);
     margin: 2rem 0rem;
     width: 100%;
     align-self: center;
@@ -123,7 +123,7 @@
     margin: auto;
     max-height: 34rem;
     margin-top: 1rem;
-    font-size: 1.3rem;
+    font-size: var(--fs-sm2);
     font-weight: 800;
 }
 

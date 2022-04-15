@@ -33,7 +33,7 @@
 }
 
 .section2 .col1 p {
-    font-size: 1.7rem;
+    font-size: var(--fs-sm);
     font-weight: 600;
     margin-top: 1.2rem;
     color: white;
@@ -80,7 +80,7 @@
 .section2 .col2 .visits3 i,
 .section2 .col2 .visits4 i {
     padding: 1rem;
-    font-size: 1.3rem;
+    font-size: var(--fs-sm2);
     border: 1px solid;
     border-radius: 3rem;
 }
@@ -94,7 +94,7 @@
     align-items: baseline;
     justify-content: space-between;
     flex-direction: column;
-    font-size: 1.5rem;
+    font-size: var(--fs-sm);
 }
 
 .section2 .col2 .visits1 #totalMeetingCount,
@@ -107,7 +107,7 @@
     background: var(--secondary-color);
     border-bottom-right-radius: .5rem;
     border-top-right-radius: .5rem;
-    font-size: 2.6rem;
+    font-size: var(--fs-md);
 }
 
 .section2 .col2 .visits3 #negativesReviewsCount {
