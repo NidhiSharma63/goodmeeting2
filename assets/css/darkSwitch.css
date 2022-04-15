@@ -6,6 +6,7 @@
     align-items: center;
 }
 .moon{
+    
    color: white;
    font-size: 2.3rem;
    text-shadow: .1rem .2rem .3rem white;
@@ -22,7 +23,7 @@
 }
 .sunBlock{
     opacity: 1;
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     animation: showSunAnim;
     animation-duration: .2s;
 }
@@ -32,7 +33,7 @@
     }
 
     to {
-        transform: translateY(-2px);
+        transform: translateY(-3px);
     }
 }
 @keyframes hideSunAnim {

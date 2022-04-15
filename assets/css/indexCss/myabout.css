@@ -21,15 +21,16 @@
     margin: auto;
     text-align: center;
 }
-.section3 .col1 p:nth-child(1){
-    font-size: 1.5rem;
-}
-.section3 .col1 p{
-    font-size: 3.3rem;
+.section3 .col1 small{
+    font-size: var(--fs-sm);
     font-weight: 700;
 }
+.section3 .col1 p:nth-child(2){
+    font-size: var(--fs-xl);
+    letter-spacing: var(--ls-xl);
+}
 .section3 .col1 p:last-child{
-    font-size: 2.3rem;
+    font-size: var(--fs-md);
 }
 .section3 .col2{
     grid-area: col2;
@@ -53,10 +54,10 @@
 .section3 .col2 .img1 p,
 .section3 .col2 .img3 p
 {
-    font-size: 2.5rem;
+    font-size: var(--fs-md);
+    line-height: var(--lh-md);
     width: 50%;
     text-align: center;
-    font-weight: 700;
 }
 .section3 .col2 .img2{
     grid-area: img2;
@@ -72,9 +73,8 @@
     grid-area: col3;
     max-width: 80%;
     margin: auto;
-    font-size: 2rem;
+    font-size: var(--fs-md2);
     text-align: center;
-    font-weight: 700;
     line-height: 3rem;
 }
 .section3 .col4{
@@ -89,24 +89,18 @@
     justify-content: space-between;
 }
 .section3 .col5 p:nth-child(1){
-    font-size: 4rem;
-    font-weight: 700;
-    letter-spacing: .1rem;
+    font-size: var(--fs-xl);
+    letter-spacing: var(--ls-md);
 }
 .section3 .col5 p:nth-child(2){
     text-align: center;
-    font-size: 2rem;
-    letter-spacing: .1rem;
+    font-size: var(--fs-md2);
+    line-height: var(--lh-md);
+    letter-spacing: var(--ls-md);
 }
 .section3 .col5 p:nth-child(3){
-    font-size: 1.9rem;
-    letter-spacing: .1rem;
+    font-size: var(--fs-sm);
+    letter-spacing: var(--ls-md);
     font-weight: 800;
     text-align: center;
-}
-.section3 .col6{
-    grid-area: col6;
-}
-.section3 .col7{
-    grid-area: col7;
 }

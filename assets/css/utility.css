@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
 
 * {
     margin: 0;
@@ -12,7 +12,22 @@ html {
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
-
+:root{
+    overflow-x: hidden;
+    --primary-color: rgb(229, 80, 80);
+    --secondary-color: rgb(41, 99, 224);
+    --light-black-color: #313640;
+    --white-background-color: white;
+    --lh-sm:3rem;
+    --lh-md:3.4rem;
+    --lh-xl:5rem;
+    --fs-xl:3.3rem;
+    --fs-md:2.5rem;
+    --fs-md2:2rem;
+    --fs-sm:1.7rem;
+    --ls-xl:.16rem;
+    --ls-md:.1rem;
+}
 /* changes acolor to dark theme */
 body.darkTheme {
     overflow-x: hidden;
@@ -22,12 +37,8 @@ body.darkTheme {
 }
 
 body {
-    overflow-y: scroll;;
+    overflow-y: scroll;
     overflow-x: hidden;
-    --primary-color: rgb(229, 80, 80);
-    --secondary-color: rgb(41, 99, 224);
-    --light-black-color: #313640;
-    --white-background-color: white;
 }
 
 .root {
@@ -57,7 +68,7 @@ body {
     color: var(--light-black-color);
 }
 
- .root {
+.root {
     max-width: 4000px;
     margin: auto;
 }
@@ -67,7 +78,7 @@ body {
 }
 
 .font1 {
-    font-family: 'Trocchi', serif;
+    font-family: 'Domine', serif;
 }
 
 .font2 {
@@ -117,10 +128,12 @@ a {
     background-color: var(--primary-color) !important;
     color: white !important;
 }
+
 /* hide headerbox on width change */
 .hide {
     display: none !important;
 }
+
 /* handle visibility of moon and sun */
 .visible {
     opacity: 1 !important;
@@ -131,9 +144,10 @@ a {
     opacity: 0 !important;
     transition: 1s;
 }
+
 /* dots opacity dashboard and testimonial*/
-.opacity{
+.opacity {
     opacity: 1 !important;
     transition: 1s;
-    transform: scale(1.2,1.2);
+    transform: scale(1.2, 1.2);
 }

@@ -9,7 +9,6 @@
     grid-template-areas:
         'textSection mainImgSection'
     ;
-    
 }
 
 .section2 .textSection {
@@ -30,7 +29,7 @@
 
 .section2 .textSection .col2 {
     font-size: 1.6rem;
-    width: 22rem;
+    max-width: 26rem;
     text-align: center;
     padding: 1rem;
     border-radius: 0.4rem;
