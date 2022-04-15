@@ -9,6 +9,7 @@
     padding: 1rem 2rem;
     color: white;
     min-height: 14rem;
+    width: 100%;
 }
 .section6 .col1{
     grid-area: col1;
@@ -27,13 +28,14 @@
 }
 
 .section6 .col1 img{
-    width: 22rem;
+    width: 17rem;
 }
 .section6 .col1 p,
 .section6 .col2 p:nth-child(2),
 .section6 .col3 .footerLinks span
 {
-    font-size: 1.4rem;
+    font-size: var(--fs-sm2);
+    letter-spacing: var(--ls-md);
 }
 .section6 .col2 p:nth-child(1),
 .section6 .col3 p:nth-child(1)
