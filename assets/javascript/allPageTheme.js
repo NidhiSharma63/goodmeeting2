@@ -4,16 +4,16 @@ $(document).ready(function () {
     const sun = $('.sun');
     // declare fun.. to handle dark theme and light theme
     const showSun = () =>{
-        moon.removeClass('visible');
-        moon.addClass('hide');
+        moon.removeClass('moonBlock');
+        moon.addClass('nonVisible');
         sun.removeClass('nonVisible')
         sun.addClass('sunBlock');
         $(document.body).removeClass("darkTheme");
         $(".logoContainer").html(`<img src = "/assets/images/logo.png"></img>`);
     }
     const showMoon = () =>{
-        moon.addClass('visible');
-        moon.removeClass('hide');
+        moon.removeClass('nonVisible');
+        moon.addClass('moonBlock')
         sun.addClass('nonVisible')
         sun.removeClass('sunBlock');
         $(document.body).addClass("darkTheme");

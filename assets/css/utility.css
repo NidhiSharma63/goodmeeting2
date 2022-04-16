@@ -141,7 +141,6 @@ a {
 
 .nonVisible {
     opacity: 0 !important;
-    transition: 1s;
 }
 
 /* dots opacity dashboard and testimonial*/
