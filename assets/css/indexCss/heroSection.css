@@ -71,7 +71,7 @@
 }
 
 .section2 .textSection .col5 small {
-    font-size: 1.3rem;
+    font-size:  var(--fs-sm);
     font-weight: 600;
 }
 
