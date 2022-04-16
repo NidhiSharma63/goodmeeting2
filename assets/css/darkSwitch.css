@@ -1,26 +1,28 @@
 .darkSwitch {
-    height: 2.5rem;
+    height: 3.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
+    font-size: var(--fs-md2);
 }
-
-.moon {
+.moon, .sun{
+    border: .1rem solid var(--light-black-color);
+    padding: .5rem;
+    border-radius: 50%;
     position: relative;
     cursor: pointer;
+}
+.moon {
     color: white;
-    font-size: 2.3rem;
     text-shadow: .1rem .2rem .3rem white;
 }
-
 .sun {
-    position: relative;
     margin-top: -2rem;
-    cursor: pointer;
     color: #ffc23d;
-    font-size: 2rem;
+    text-shadow: .1rem .2rem .3rem #ffc23d;
+    transform: translateY(-25px);
 }
 
 .moonBlock {
@@ -31,18 +33,18 @@
 }
 
 .sunBlock {
-    transform: translateY(-2px);
+    transform: translateY(-25px);
     animation: showSunAnim;
     animation-duration: .2s;
 }
 
 @keyframes showSunAnim {
     from {
-        transform: translateY(2px);
+        transform: translateY(-20px);
     }
 
     to {
-        transform: translateY(-2px);
+        transform: translateY(-25px);
     }
 }
 
