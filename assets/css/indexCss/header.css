@@ -148,20 +148,20 @@
 
 .barMarginShow {
     margin-right: 24rem;
-    animation: barMarginAnim1 1s;
+    animation: barMarginAnim1 .5s;
 }
 
 .barMarginHide {
     margin-right: 0rem;
-    animation: barMarginAnim2 1s;
+    animation: barMarginAnim2 .5s;
 }
 
 .sideBarDivContainerShow {
-    animation: sideBarDivContainerAnim1 1s;
+    animation: sideBarDivContainerAnim1 .5s;
 }
 
 .sideBarDivContainerHide {
-    animation: sideBarDivContainerAnim2 1s;
+    animation: sideBarDivContainerAnim2 .5s;
 }
 
 @keyframes barMarginAnim1 {

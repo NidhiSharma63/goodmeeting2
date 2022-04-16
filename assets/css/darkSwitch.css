@@ -17,6 +17,9 @@
     border: .1rem solid white;
     padding: .5rem;
 }
+.sideBarDivContainer .sun{
+    border: .2rem solid #ffc23d;
+}
 .moon {
     color: white;
     text-shadow: .1rem .2rem .3rem white;

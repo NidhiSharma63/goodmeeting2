@@ -36,7 +36,7 @@ $(document).ready(() => {
             $("body").css("overflow-y", "visible");
             setTimeout(() => {
                 sideBarDivContainer.addClass("hide");
-            }, 800);
+            }, 500);
         }
     });
 
