@@ -8,11 +8,14 @@
     font-size: var(--fs-md2);
 }
 .moon, .sun{
-    border: .1rem solid var(--light-black-color);
-    padding: .5rem;
     border-radius: 50%;
     position: relative;
     cursor: pointer;
+}
+/* adding border to moon-sun in sidebar */
+.sideBarDivContainer .moon, .sun{
+    border: .1rem solid white;
+    padding: .5rem;
 }
 .moon {
     color: white;
