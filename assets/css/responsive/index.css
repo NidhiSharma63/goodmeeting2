@@ -9,7 +9,21 @@
         width: 26rem;
     }
 }
-
+@media screen and (max-width: 1368px) {
+    .headerContainer .logoContainer {
+        width: 19rem;
+    }
+}
+@media screen and (max-width: 1046px) {
+    .headerContainer .logoContainer {
+        width: 23rem;
+    }
+}
+@media screen and (max-width: 916px) {
+    .headerContainer .logoContainer {
+        width: 29rem;
+    }
+}
 /* @media screen and (max-width: 2880px) {
 
     .section4 .col4 .img::before,
@@ -41,14 +55,7 @@
     }
 } */
 
-@media screen and (max-width: 1368px) {
-    html {
-        font-size: 62.5%;
-    }
-    .headerContainer .logoContainer {
-        width: 19rem;
-    }
-}
+
 
 /* @media screen and (max-width: 1280px) {
     html {
