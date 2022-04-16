@@ -107,4 +107,7 @@
     html {
         font-size: 36.5%;
     }
+    :root{
+        --fs-sm2:1rem
+    }
 }

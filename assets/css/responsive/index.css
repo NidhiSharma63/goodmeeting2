@@ -116,7 +116,9 @@
     .section3 .col4 img {
         width: 3rem;
     }
-
+    .section3 .col5 p:nth-child(2) {
+        font-size: var(--fs-sm);
+    }
     .section4 .col2::after,
     .section4 .col2 .count::after,
     .section4 .col2 .img::after,
@@ -166,6 +168,13 @@
         align-items: center;
     }
 
+    .section4 .col4 .text p:nth-child(2),
+    .section4 .col5 .text p:nth-child(2),
+    .section4 .text p:nth-child(2) {
+        width: 66%;
+        text-align: center;
+    }
+
     .section5 .slider .dashboardImageContainer {
         width: 48.5rem;
     }
@@ -176,8 +185,11 @@
     }
 
     .section5 .slider .dashboardImagesSlider .img3,
-    .testimonial .testimonialTextContainer ,
+    .testimonial .testimonialTextContainer,
     .testimonial .testimonialTextContainer .testimonialSlider .testimonialContent {
         width: 45rem;
+    }
+    .section6 .col1 img {
+        width: 20rem;
     }
 }
