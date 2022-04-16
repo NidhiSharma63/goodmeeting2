@@ -21,6 +21,9 @@
     html {
         font-size: 110.5%;
     }
+    .section4 .col5 .img::before {
+        top: -8rem;
+    }
 }
 
 @media screen and (max-width: 2560px) {
@@ -31,7 +34,7 @@
 
 @media screen and (max-width: 1920px) {
     html {
-        font-size: 60.5%;
+        font-size: 70.5%;
     }
 
 }
