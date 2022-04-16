@@ -25,7 +25,7 @@
 
 .moonBlock {
     opacity: 1 !important;
-    transform: translateY(4px);
+    transform: translateY(0px);
     animation: showMoonAnim;
     animation-duration: .2s;
 }
@@ -52,7 +52,7 @@
     }
 
     to {
-        transform: translateY(2px);
+        transform: translateY(0px);
     }
 }
 
