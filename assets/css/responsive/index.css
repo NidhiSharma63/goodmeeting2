@@ -41,16 +41,14 @@
     }
 } */
 
-/* @media screen and (max-width: 1368px) {
+@media screen and (max-width: 1368px) {
     html {
         font-size: 62.5%;
     }
-
-    .section4 .col4 .img::before,
-    .section4 .col4 .img::after {
-        left: -18.2rem;
+    .headerContainer .logoContainer {
+        width: 19rem;
     }
-} */
+}
 
 /* @media screen and (max-width: 1280px) {
     html {

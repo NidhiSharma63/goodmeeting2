@@ -8,7 +8,9 @@
     html {
         font-size: 121.5%;
     }
-
+    .section4 .col5 .img::before {
+        top: -8rem;
+    }
 }
 
 @media screen and (max-width: 3000px) {
@@ -21,9 +23,7 @@
     html {
         font-size: 110.5%;
     }
-    .section4 .col5 .img::before {
-        top: -8rem;
-    }
+    
 }
 
 @media screen and (max-width: 2560px) {
