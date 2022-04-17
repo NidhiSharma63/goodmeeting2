@@ -69,6 +69,14 @@
             'group2';
     }
 
+    .section3 .group1 .col1::after,
+    .section3 .group2 .col1::after {
+        top: 4rem;
+        width: 24.7rem;
+    }
+    .section3 .group2 .col1::after{
+        width: 18rem;
+    }
     .section4 {
         grid-template-areas:
             'group1'
@@ -122,18 +130,22 @@
 }
 
 @media screen and (max-width:499px) {
+
     /* adding width to new logo */
-    .section1 .col1 .logoContainer{
+    .section1 .col1 .logoContainer {
         width: 9rem;
         overflow: hidden;
     }
+
     .section1 .col1 .logoContainer img {
         width: 17rem;
     }
-    .section2, .section3, .section4{
-        width: 80%;
-        margin: auto;
+
+    .contentContainer {
+        width: 90%;
+        margin-left: 10%;
     }
+
     .section2 .col2 {
         grid-template-areas: 'visits1'
             'visits2'
@@ -147,4 +159,3 @@
         --fs-sm2: 1.2rem
     }
 }
-
