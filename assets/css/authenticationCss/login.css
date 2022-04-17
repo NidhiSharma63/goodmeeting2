@@ -5,7 +5,6 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
-    /* background-color: var(--secondary-color); */
 }
 .cover{
     position: absolute;
@@ -27,15 +26,10 @@
     padding: 4rem 0rem;
     width: 38rem;
     margin: auto;
-    /* background-color: var(--secondary-c/olor); */
-    background-color: rgb(16, 35, 138);
+    background-color: white;
     border-radius: 2rem;
     margin-right: 9rem;
-    color: white;
-    box-shadow: 0.2rem 0rem 4rem -1.9rem black;
-}
-a{
-    color: white !important;
+    box-shadow: 0.2rem 0rem 4rem 0rem black;
 }
 .container .section1 .logo img {
     width: 14rem;
@@ -46,7 +40,6 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 100%; */
 }
 
 .section1 .image img {
@@ -79,12 +72,23 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 20rem;
+    min-height: 21rem;
     min-width: 25rem;
+    padding-bottom: 2rem;
     margin-bottom: 3rem;
     border-bottom: 1px solid;
 }
-
+.container .section2 .dashboardSection .group1 input {
+    height: 3rem;
+    outline: none;
+    padding-left: 1rem;
+    border: none;
+    border-bottom: 1px solid var(--light-black-color);
+    background-color: transparent;
+}
+.container .section2 .dashboardSection .group1 input::placeholder{
+    color: var(--light-black-color);
+}
 .container .section2 .midSection p:nth-child(1) {
     font-weight: 700;
     font-size: var(--fs-md2);
@@ -100,7 +104,9 @@ a{
     padding: .5rem;
     border-radius: 1rem;
     font-size: var(--fs-sm);
+    box-shadow: 0.3rem 0.3rem 1rem 0rem #1f20223d
 }
+
 .container .midSection .google img{
     background: white;
     padding: 0.5rem;
@@ -120,17 +126,7 @@ a{
     justify-content: space-around;
 }
 
-.container .section2 .dashboardSection .group1 input {
-    height: 3rem;
-    outline: none;
-    padding-left: 1rem;
-    border: none;
-    border-bottom: 1px solid white;
-    background-color: transparent;
-}
-.container .section2 .dashboardSection .group1 input::placeholder{
-    color: white;
-}
+
 .container .section2 .dashboardSection p:nth-child(1) {
     font-size: 2rem;
     font-weight: 700;
@@ -140,6 +136,7 @@ a{
     width: 9rem;
     padding: 1rem;
     color: white;
+    box-shadow: 0.3rem 0.3rem 1rem 0rem #5c071d7c
 }
 
 .container .section2 .group2 {
