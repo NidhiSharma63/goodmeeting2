@@ -30,7 +30,10 @@
     text-shadow: .1rem .2rem .3rem #ffc23d;
     transform: translateY(-25px);
 }
-
+/* removing margin top in dashboard */
+.dashboardSun{
+    margin-top: 0rem;
+}
 .moonBlock {
     opacity: 1 !important;
     transform: translateY(0px);
