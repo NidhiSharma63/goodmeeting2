@@ -6,7 +6,8 @@
     position: relative;
     z-index: 1;
 }
-.cover{
+
+.cover {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -14,7 +15,10 @@
     z-index: -1;
     border-bottom-right-radius: 89rem;
 }
-.crystal1, .crystal2, .crystal3{
+
+.crystal1,
+.crystal2,
+.crystal3 {
     position: fixed;
     width: 15rem;
     background: rgb(29, 78, 211);
@@ -24,35 +28,40 @@
     border-radius: 2rem;
     transform: rotate(45deg);
 }
-.crystal2{
+
+.crystal2 {
     left: 3rem;
     bottom: -2rem;
     top: 30rem;
     width: 11rem;
 }
-.crystal3{
+
+.crystal3 {
     width: 10rem;
     height: 9rem;
     top: 35rem;
     left: 70rem;
 }
+
 .container .section1 {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
+
 .container .section2 {
     height: 100%;
     flex-direction: column;
     padding: 4rem 0rem;
     width: 38rem;
     margin: auto;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.986);
     border-radius: 2rem;
     margin-right: 9rem;
     box-shadow: 0.2rem 0rem 4rem 0rem black;
 }
- .section1 .logo img {
+
+.section1 .logo img {
     width: 14rem;
     margin: 1rem;
 }
@@ -67,26 +76,8 @@
 .section1 .image img {
     width: 50rem;
 }
-
- .section2 .dashboardSection {
-    min-height: 32rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.section2 .dashboardSection p:nth-child(1) {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
 .section2 .group1 {
     height: 14rem;
-}
-
-.section2 label {
-    margin-left: 3rem;
 }
 
 .section2 .midSection {
@@ -100,44 +91,68 @@
     margin-bottom: 3rem;
     border-bottom: 1px solid var(--secondary-color);
 }
-.section2 .dashboardSection .group1 input {
-    height: 3rem;
-    outline: none;
-    padding-left: 1rem;
-    border: none;
-    border: 2px solid var(--secondary-color);
-    border-radius: 1rem;
-    background-color: transparent;
-}
-.section2 .dashboardSection .group1 input::placeholder{
-    color: var(--light-black-color);
-}
-.section2 .midSection p:nth-child(1) {
+.section2 .midSection .heading1 {
+    font-size: 2rem;
     font-weight: 700;
-    font-size: var(--fs-md2);
 }
-
- .midSection .google,
- .midSection .facebook {
-    /* border: 1px solid var(--secondary-color); */
+.midSection .google,
+.midSection .facebook {
     background-color: rgb(44, 90, 218);
     display: flex;
     min-width: 25rem;
     margin: auto;
-    justify-content: space-around;
-    padding: .5rem;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 1rem;
     font-size: var(--fs-sm);
     color: white;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #1f20223d
 }
-
-.midSection .google img{
+.google .googleImg, .facebook .facebookImg{
+    background-color: rgb(255, 255, 255);
+    padding: .7rem;
+}
+.google .text, .facebook .text{
+    padding-right: 2rem;
+}
+.section2 .dashboardSection {
+    min-height: 32rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.section2 .dashboardSection .group1 input {
+    height: 4rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding-left: 1rem;
+}
+.section2 .dashboardSection .group1 .email,
+.section2 .dashboardSection .group1 .password{
+    border: 2px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.section2 .dashboardSection .group1 input::placeholder {
+    color: var(--light-black-color);
+}
+.section2 .dashboardSection .group1 .emailIcon,
+.section2 .dashboardSection .group1 .key-icon{
+    font-size: var(--fs-sm);
+    background-color: var(--secondary-color);
+    color: white;
+    padding: .9rem;
+}
+.midSection .google img {
     background: white;
     padding: 0.5rem;
     border-radius: 50%;
     width: 2.5rem;
 }
+
 .section2 .midSection .facebook {
     margin-top: 0rem;
     background-color: rgb(211, 29, 74);
@@ -151,12 +166,14 @@
     flex-direction: column;
     justify-content: space-around;
 }
-.section2 .dashboardSection .checkBox{
+
+.section2 .dashboardSection .checkBox {
     width: 11rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
+
 .section2 .dashboardSection p:nth-child(1) {
     font-size: 2rem;
     font-weight: 700;
