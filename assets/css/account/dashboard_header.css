@@ -12,7 +12,7 @@
     box-shadow: 0rem -2.1rem 1rem 1.6rem var(--secondary-color);
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 99;
 }
 .section1 .col1 {
     grid-area: col1;
