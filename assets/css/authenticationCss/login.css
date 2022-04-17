@@ -14,7 +14,28 @@
     z-index: -1;
     border-bottom-right-radius: 89rem;
 }
-
+.crystal1, .crystal2, .crystal3{
+    position: fixed;
+    width: 15rem;
+    background: rgb(29, 78, 211);
+    top: 3rem;
+    left: 47rem;
+    height: 12rem;
+    border-radius: 2rem;
+    transform: rotate(45deg);
+}
+.crystal2{
+    left: 3rem;
+    bottom: -2rem;
+    top: 30rem;
+    width: 11rem;
+}
+.crystal3{
+    width: 10rem;
+    height: 9rem;
+    top: 35rem;
+    left: 70rem;
+}
 .container .section1 {
     flex-grow: 1;
     display: flex;
@@ -31,7 +52,7 @@
     margin-right: 9rem;
     box-shadow: 0.2rem 0rem 4rem 0rem black;
 }
-.container .section1 .logo img {
+ .section1 .logo img {
     width: 14rem;
     margin: 1rem;
 }
@@ -40,13 +61,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
 .section1 .image img {
-    width: 70rem;
+    width: 50rem;
 }
 
-.container .section2 .dashboardSection {
+ .section2 .dashboardSection {
     min-height: 32rem;
     display: flex;
     align-items: center;
@@ -54,20 +76,20 @@
     flex-direction: column;
 }
 
-.container .section2 .dashboardSection p:nth-child(1) {
+.section2 .dashboardSection p:nth-child(1) {
     font-size: 3rem;
     font-weight: 700;
 }
 
-.container .section2 .group1 {
-    height: 10rem;
+.section2 .group1 {
+    height: 14rem;
 }
 
 .section2 label {
     margin-left: 3rem;
 }
 
-.container .section2 .midSection {
+.section2 .midSection {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,27 +98,29 @@
     min-width: 25rem;
     padding-bottom: 2rem;
     margin-bottom: 3rem;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid var(--secondary-color);
 }
-.container .section2 .dashboardSection .group1 input {
+.section2 .dashboardSection .group1 input {
     height: 3rem;
     outline: none;
     padding-left: 1rem;
     border: none;
-    border-bottom: 1px solid var(--light-black-color);
+    border: 2px solid var(--secondary-color);
+    border-radius: 1rem;
     background-color: transparent;
 }
-.container .section2 .dashboardSection .group1 input::placeholder{
+.section2 .dashboardSection .group1 input::placeholder{
     color: var(--light-black-color);
 }
-.container .section2 .midSection p:nth-child(1) {
+.section2 .midSection p:nth-child(1) {
     font-weight: 700;
     font-size: var(--fs-md2);
 }
 
-.container  .midSection .google,
-.container  .midSection .facebook {
-    border: 1px solid;
+ .midSection .google,
+ .midSection .facebook {
+    /* border: 1px solid var(--secondary-color); */
+    background-color: rgb(44, 90, 218);
     display: flex;
     min-width: 25rem;
     margin: auto;
@@ -104,46 +128,52 @@
     padding: .5rem;
     border-radius: 1rem;
     font-size: var(--fs-sm);
+    color: white;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #1f20223d
 }
 
-.container .midSection .google img{
+.midSection .google img{
     background: white;
     padding: 0.5rem;
     border-radius: 50%;
     width: 2.5rem;
 }
-.container .section2 .midSection .facebook {
+.section2 .midSection .facebook {
     margin-top: 0rem;
+    background-color: rgb(211, 29, 74);
 }
 
-.container .section2 .midSection h1 {
+.section2 .midSection h1 {
     margin-top: 1rem;
 }
 
-.container .section2 .dashboardSection .group1 {
+.section2 .dashboardSection .group1 {
     flex-direction: column;
     justify-content: space-around;
 }
-
-
-.container .section2 .dashboardSection p:nth-child(1) {
+.section2 .dashboardSection .checkBox{
+    width: 11rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.section2 .dashboardSection p:nth-child(1) {
     font-size: 2rem;
     font-weight: 700;
 }
 
-.container .section2 .button1 {
+.section2 .button1 {
     width: 9rem;
-    padding: 1rem;
+    padding: .7rem;
     color: white;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #5c071d7c
 }
 
-.container .section2 .group2 {
+.section2 .group2 {
     flex-direction: column;
 }
 
-.container .section2 .group2 p:nth-child(1) {
+.section2 .group2 p:nth-child(1) {
     font-size: var(--fs-sm2);
     margin-bottom: 1rem;
 }
