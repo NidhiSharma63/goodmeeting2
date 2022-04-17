@@ -263,7 +263,7 @@ const manageChartFontSize = (width2) => {
     }
 }
 if (matchMedia) {
-    var mq2 = window.matchMedia("(max-width:534px)");
+    var mq2 = window.matchMedia("(max-width:500px)");
     mq2.addListener(manageChartFontSize);
     manageChartFontSize(mq2);
 }
@@ -271,4 +271,3 @@ window.onload = () => {
     createNewCharts();
     manageChartTheme();
 }
-console.log(chart1Data.datasets[0].barThickness)

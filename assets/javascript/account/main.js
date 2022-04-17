@@ -13,6 +13,7 @@ $(document).ready(function () {
         mq2.addListener(WidthChange2);
         WidthChange2(mq2);
     }
+
     // media query change
     function WidthChange2(width2) {
         if (width2.matches) {

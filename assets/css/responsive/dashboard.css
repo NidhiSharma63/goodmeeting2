@@ -1,270 +1,150 @@
-@media screen and (max-width: 950px) {
-    .section2 {
-        grid-template-areas:
-            'col2'
-        ;
+@media screen and (max-width:1147px) {
+    .section1 .col1 .logoContainer img {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width:922px) {
+    .section1 .col1 .logoContainer img {
+        width: 23rem;
+    }
+}
+
+@media screen and (max-width:830px) {
+    .section1 .col1 .logoContainer img {
+        width: 28rem;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .sideBarList {
+        width: 24rem;
+    }
+
+    .iconsInfo {
+        font-size: 2.7rem;
+    }
+
+    .sideBarList .iconsContainer i {
+        font-size: 4rem;
+    }
+
+    .contentContainer {
+        margin-top: 2rem;
+    }
+
+    .section1 .col1 .Menu {
+        font-size: var(--fs-xl);
+    }
+
+    .section1 .col1 .logoContainer img {
+        width: 31rem;
     }
 
     .section2 .col1 {
         display: none;
     }
 
-    .section2 .col2 {
-        grid-template-areas: 'visits1 visits2 visits3 visits4';
+    .section2 {
+        grid-template-areas: 'col2';
     }
 
     .section2 .col2 .visits1,
     .section2 .col2 .visits2,
     .section2 .col2 .visits3,
     .section2 .col2 .visits4 {
-        min-width: 100%;
+        max-width: 30rem;
+    }
+
+    .section2 .col2 .visits1 #totalMeetingCount,
+    .section2 .col2 .visits2 #positiveReviewCount,
+    .section2 .col2 .visits3 #negativesReviewsCount,
+    .section2 .col2 .visits4 #avgMeetingsCount {
+        padding: 6rem 6.9rem;
+    }
+
+    .section3 {
+        grid-template-areas:
+            'group1'
+            'group2';
+    }
+
+    .section4 {
+        grid-template-areas:
+            'group1'
+            'group2';
+    }
+
+    :root {
+        --fs-sm: 2.7rem;
+        --fs-sm2: 2.3rem
+    }
+
+}
+
+@media screen and (max-width:630px) {
+    .contentContainer {
+        margin-top: 4rem;
+    }
+
+    .section1 .col1 .logoContainer img {
+        width: 35rem;
+    }
+
+    .section2 .col2 {
+        grid-template-areas: 'visits1 visits2'
+            'visits3 visits4';
+        gap: 1rem;
+    }
+
+    .section2 .col2 .visits1,
+    .section2 .col2 .visits2,
+    .section2 .col2 .visits3,
+    .section2 .col2 .visits4 {
+        max-width: 56rem;
         justify-content: space-between;
     }
-
-    .section2 .col2 .visits1 #totalMeeting,
-    .section2 .col2 .visits2 #positiveReview,
-    .section2 .col2 .visits3 #negativesReview,
-    .section2 .col2 .visits4 #avgMeetings {
-        font-size: 2.3rem;
-    }
-
-    .section2 .col2 .visits1 #totalMeetingCount,
-    .section2 .col2 .visits2 #positiveReviewCount,
-    .section2 .col2 .visits3 #negativesReviewsCount,
-    .section2 .col2 .visits4 #avgMeetingsCount {
-        padding: 6rem 5.9rem;
-    }
-
-    .section2 .col2 .visits3 #negativesReviewsCount {
-        padding: 6rem 4.9rem;
-    }
-
-    .section1 .col1 .Menu {
-        font-size: 3.5rem;
-    }
-
-    .section1 .col1 .logo img {
-        max-width: 22rem;
-    }
-
-    .section1 .col2 .col2Container {
-        min-width: 40rem;
-    }
-
-    .section1 .col2 .col2Container {
-        font-size: 3.5rem;
-    }
-
-    .section1 .col2 .col2Container #signOutBtn {
-        font-size: 2rem;
-    }
-
-    .section1 .col2 img {
-        width: 8rem;
-    }
-
-    .section3 {
-        grid-template-areas:
-            'group2 group1'
-        ;
-        width: 100%;
-    }
-
-    .section3 .group1 .col1,
-    .section3 .group2 .col1 {
-        font-size: 2.6rem;
-    }
-
-    .section3 .col2 .data-table {
-        font-size: 1.4rem;
-    }
-
-    .section4 {
-        width: 100%;
-        font-size: 1.7rem;
-    }
-
 }
 
-@media screen and (max-width: 900px) {
-    .section1 .col1 .logo img {
-        max-width: 22rem;
+@media screen and (max-width:500px) {
+    .section1 .col1 .logoContainer img {
+        width: 25rem;
     }
 
-    .section3 {
-        grid-template-areas:
-            'group1'
-            'group2'
-        ;
-        width: 90%;
+    .section2 {
+        width: 85%;
     }
 
-    .section3 .group2 {
-        width: 90%;
-        margin: auto;
-    }
-
-    .section3 .group2 .col2 {
-        width: 92%;
-        margin: auto;
-    }
-
-    .section3 .group1 .col1,
-    .section3 .group2 .col1 {
-        padding-top: 2rem;
-        font-size: 2.6rem;
-        text-align: center;
-        margin-bottom: 1re, ;
-    }
-
-    .section3 .group1 .col2 .data-table {
-        font-size: 1.7rem;
-    }
-
-    .section3 .group2 .col1::after,
-    .section3 .group1 .col1::after {
-        content: '';
-        position: absolute;
-        top: 6rem;
-        left: 39rem;
-        width: 19rem;
-        height: 0.2rem;
-    }
-
-    .section3 .group1 .col1::after {
-        top: 5.5rem;
-        left: 42rem;
-        width: 24rem;
-        height: 0.4rem;
-    }
-
-    .section4 {
-        grid-template-areas:
-            'group2'
-            'group1'
-        ;
-        width: 90%;
-    }
-
-    .section4 .group1,
-    .section4 .group2 {
-        width: 89%;
-        margin: auto;
-        padding-top: 4rem;
-        font-size: 2rem;
-        text-align: center;
+    :root {
+        --fs-sm: 2.3rem;
+        --fs-sm2: 1.6rem
     }
 }
 
-@media screen and (max-width: 758px) {
-
-    .section1 .col1 .Menu {
-        font-size: 2.5rem;
+@media screen and (max-width:499px) {
+    /* adding width to new logo */
+    .section1 .col1 .logoContainer{
+        width: 9rem;
+        overflow: hidden;
     }
-
-    .section1 .col1 .logo img {
-        max-width: 16rem;
+    .section1 .col1 .logoContainer img {
+        width: 17rem;
     }
-
-    .section1 .col2 .col2Container {
-        min-width: 15rem;
+    .section2, .section3, .section4{
+        width: 80%;
+        margin: auto;
     }
-
-    .section1 .col2 .col2Container {
-        font-size: 2.5rem;
-    }
-
-    .section1 .col2 .col2Container #signOutBtn {
-        display: none;
-    }
-
-    .section1 .col2 img {
-        width: 5rem;
-    }
-
     .section2 .col2 {
-        grid-template-areas:
-            'visits1 visits2'
-            'visits3 visits4';
+        grid-template-areas: 'visits1'
+            'visits2'
+            'visits3'
+            'visits4';
+        gap: 1rem;
     }
 
-    .section2 .col2 .visits1,
-    .section2 .col2 .visits2,
-    .section2 .col2 .visits3,
-    .section2 .col2 .visits4 {
-        height: 100%;
-    }
-
-    .section2 .col2 .visits1 #totalMeeting,
-    .section2 .col2 .visits2 #positiveReview,
-    .section2 .col2 .visits3 #negativesReview,
-    .section2 .col2 .visits4 #avgMeetings {
-        font-size: 2rem;
-    }
-
-    .section2 .col2 .visits1 #totalMeetingCount,
-    .section2 .col2 .visits2 #positiveReviewCount,
-    .section2 .col2 .visits3 #negativesReviewsCount,
-    .section2 .col2 .visits4 #avgMeetingsCount {
-        padding: 4.3rem 5.9rem;
-    }
-
-    .section3 {
-        width: 95%;
-    }
-
-    .section3 .group1 .col2 .data-table {
-        font-size: 1rem;
-    }
-
-    .section3 .group1 .col1,
-    .section3 .group2 .col1 {
-        font-size: 2rem;
-    }
-
-    .section3 .group2 .col1::after,
-    .section3 .group1 .col1::after {
-        top: 5rem;
-        left: 21.4rem;
-        width: 15rem;
-        height: 0.2rem;
-    }
-
-    .section3 .group1 .col1::after {
-        left: 23.4rem;
-        width: 18rem;
-    }
-
-    .section4 .group1,
-    .section4 .group2 {
-        padding-top: 2rem;
-        font-size: 1.2rem;
+    :root {
+        --fs-sm: 1.7rem;
+        --fs-sm2: 1.2rem
     }
 }
 
-@media screen and (max-width: 758px) {
-
-    .section2 .col2 .visits1,
-    .section2 .col2 .visits2,
-    .section2 .col2 .visits3,
-    .section2 .col2 .visits4 {
-        min-width: 92%;
-        margin: auto;
-    }
-
-    .section2 .col2 .visits3 #negativesReviewsCount {
-        padding: 5rem 5rem;
-    }
-
-    .section2 .col2 .visits4 #avgMeetingsCount {
-        padding: 5rem 5.9rem;
-    }
-}
-
-
-@media screen and (max-width: 450px) {
-    .section2 .col2{
-        width: 90%;
-        margin: auto;
-    }
-}
