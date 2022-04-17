@@ -39,7 +39,7 @@ const xAxis = {
         color: DarkTextColor,
         padding: 9,
         font: {
-            size: 12,
+            size: 11,
             weight: 600
         }
     },
@@ -106,7 +106,7 @@ const chart2Data = {
 const chart3Data = {
     labels: MeetingsAdjusted,
     datasets: [{
-        barThickness: 10,
+        // barThickness: 10,
         borderRadius: 100,
         backgroundColor: 'rgb(41,99,224)',
         borderColor: 'rgb(41,99,224)',
@@ -131,7 +131,7 @@ const chart1Config = {
             legend,
         },
     },
-   
+
     animation,
 }
 const chart2Config = {
@@ -150,7 +150,7 @@ const chart2Config = {
             legend,
         },
     },
-   
+
     animation,
 };
 
@@ -191,7 +191,7 @@ const destroyAllChart = () => {
 }
 // create New Charts
 const createNewCharts = () => {
-    chart1= new Chart(
+    chart1 = new Chart(
         ctx1,
         chart1Config,
     );
@@ -205,39 +205,70 @@ const createNewCharts = () => {
     );
     return;
 }
+
 $(".darkSwitch").click(() => {
-    fun();
+    manageChartTheme();
 })
 
-let fun = () => {
+let manageChartTheme = () => {
     const getThemeVal = getTheme();
     if (getThemeVal == 'dark') {
         chart3Config.options.scales.x.ticks.color = lightTextColor;
         chart3Config.options.scales.y.ticks.color = lightTextColor;
         chart3Config.options.plugins.legend.labels.color = lightTextColor;
         chart1Config.options.plugins.legend.labels.color = lightTextColor;
-        chart1.options.scales.x.ticks.color = lightTextColor;
-        chart1.options.scales.y.ticks.color = lightTextColor;
+        chart1Config.options.scales.x.ticks.color = lightTextColor;
+        chart1Config.options.scales.y.ticks.color = lightTextColor;
         chart2Config.options.scales.x.ticks.color = lightTextColor;
         chart2Config.options.scales.y.ticks.color = lightTextColor;
         chart2Config.options.plugins.legend.labels.color = lightTextColor;
         destroyAllChart();
         createNewCharts();
     } else {
+        xAxis
         chart3Config.options.scales.x.ticks.color = DarkTextColor;
         chart2Config.options.scales.x.ticks.color = DarkTextColor;
-        chart1.options.scales.x.ticks.color = DarkTextColor;
-        chart1.options.scales.y.ticks.color = DarkTextColor;
+        chart1Config.options.scales.x.ticks.color = DarkTextColor;
+        chart1Config.options.scales.y.ticks.color = DarkTextColor;
         chart2Config.options.scales.y.ticks.color = DarkTextColor;
         chart3Config.options.scales.y.ticks.color = DarkTextColor;
         chart3Config.options.plugins.legend.labels.color = DarkTextColor;
         chart1Config.options.plugins.legend.labels.color = DarkTextColor;
         chart2Config.options.plugins.legend.labels.color = DarkTextColor;
+
         destroyAllChart();
         createNewCharts()
     }
 }
+
+
+// media query change
+const manageChartFontSize = (width2) => {
+    if (width2.matches) {
+        xAxis.ticks.font.size = 7;
+        yAxisTicks_stepSize2.font.size = 7;
+        yAxisTicks_stepSize20.font.size = 7;
+        chart1Data.datasets[0].barThickness = 4;
+        chart2Data.datasets[0].barThickness = 4;
+        chart3Data.datasets[0].barThickness = 4;
+        legend.labels.font.size=7
+    } else {
+        xAxis.ticks.font.size = 11; 
+        yAxisTicks_stepSize2.font.size = 11;
+        yAxisTicks_stepSize20.font.size = 11;
+        chart1Data.datasets[0].barThickness = 10;
+        chart2Data.datasets[0].barThickness = 10;
+        chart3Data.datasets[0].barThickness = 10;
+        legend.labels.font.size=15
+    }
+}
+if (matchMedia) {
+    var mq2 = window.matchMedia("(max-width:534px)");
+    mq2.addListener(manageChartFontSize);
+    manageChartFontSize(mq2);
+}
 window.onload = () => {
     createNewCharts();
-    fun()
+    manageChartTheme();
 }
+console.log(chart1Data.datasets[0].barThickness)
