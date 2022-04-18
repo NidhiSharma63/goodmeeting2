@@ -27,6 +27,7 @@
     height: 12rem;
     border-radius: 2rem;
     transform: rotate(45deg);
+    z-index: -1;
 }
 
 .crystal2 {
@@ -53,7 +54,7 @@
     height: 100%;
     flex-direction: column;
     padding: 4rem 0rem;
-    width: 38rem;
+    min-width: 38rem;
     margin: auto;
     background-color: rgba(255, 255, 255, 0.986);
     border-radius: 2rem;
@@ -62,7 +63,7 @@
 }
 
 .section1 .logo img {
-    width: 14rem;
+   width: 17rem;
     margin: 1rem;
 }
 
@@ -74,8 +75,9 @@
 }
 
 .section1 .image img {
-    width: 50rem;
+    min-width: 50rem;
 }
+
 .section2 .group1 {
     height: 14rem;
 }
@@ -91,10 +93,12 @@
     margin-bottom: 3rem;
     border-bottom: 1px solid var(--secondary-color);
 }
+
 .section2 .account-section .heading1 {
-    font-size: 2rem;
+    font-size: var(--fs-sm);
     font-weight: 700;
 }
+
 .account-section .google,
 .account-section .facebook {
     background-color: rgb(44, 90, 218);
@@ -108,13 +112,29 @@
     color: white;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #1f20223d
 }
-.google .googleImg, .facebook .facebook-img{
+
+.section2 .account-section .facebook {
+    margin-top: 0rem;
+    background-color: rgb(211, 29, 74);
+}
+
+.google .googleImg,
+.facebook .facebook-img {
+    border: 2px solid white;
     background-color: rgb(255, 255, 255);
     padding: .7rem;
 }
-.google .text, .facebook .text{
+
+.account-section .google img,
+.account-section .facebook img {
+    min-width: 2rem;
+}
+
+.google .text,
+.facebook .text {
     padding-right: 2rem;
 }
+
 .section2 .dashboard-section {
     min-height: 32rem;
     display: flex;
@@ -122,40 +142,36 @@
     justify-content: space-between;
     flex-direction: column;
 }
+
 .section2 .dashboard-section .group1 input {
-    height: 4rem;
+    min-height: 3.5rem;
     outline: none;
     border: none;
     background-color: transparent;
     padding-left: 1rem;
+    font-size: var(--fs-sm2);
 }
+
 .section2 .dashboard-section .group1 .email,
-.section2 .dashboard-section .group1 .password{
+.section2 .dashboard-section .group1 .password {
     border: 2px solid var(--secondary-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.section2 .dashboard-section .group1 input[type='checkbox']{
+    min-width: 1rem;
+}
 .section2 .dashboard-section .group1 input::placeholder {
     color: var(--light-black-color);
 }
+
 .section2 .dashboard-section .group1 .emailIcon,
-.section2 .dashboard-section .group1 .key-icon{
+.section2 .dashboard-section .group1 .key-icon {
     font-size: var(--fs-sm);
     background-color: var(--secondary-color);
     color: white;
     padding: .9rem;
-}
-.account-section .google img {
-    background: white;
-    padding: 0.5rem;
-    border-radius: 50%;
-    width: 2.5rem;
-}
-
-.section2 .account-section .facebook {
-    margin-top: 0rem;
-    background-color: rgb(211, 29, 74);
 }
 
 .section2 .account-section h1 {
@@ -168,19 +184,21 @@
 }
 
 .section2 .dashboard-section .checkBox {
-    width: 11rem;
+    min-width: 13rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    font-size: var(--fs-sm2);
 }
 
-.section2 .dashboard-section p:nth-child(1) {
-    font-size: 2rem;
+.section2 .dashboard-section .heading2 {
+    font-size: var(--fs-sm);
     font-weight: 700;
 }
 
 .section2 .button1 {
-    width: 9rem;
+    min-width: 9rem;
+    font-size: var(--fs-sm);
     padding: .7rem;
     color: white;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #5c071d7c
