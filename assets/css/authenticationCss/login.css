@@ -5,6 +5,7 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
+    padding: 1rem;
 }
 
 .cover {
@@ -64,13 +65,13 @@
 }
 
 .section1 .image img {
-    min-width: 50rem;
+    width: 70%;
 }
 .section2 {
     height: 100%;
     flex-direction: column;
     padding-block: min(10vh,4rem);
-    width: max(38rem,30%);
+    width: 30%;
     margin: auto;
     background-color: rgba(255, 255, 255, 0.986);
     border-radius: 2rem;
@@ -95,8 +96,6 @@
 }
 
 .section2 .account-section .heading1 {
-    /* font-size: var(--fs-sm); */
-    /* font-size: 1.3vw; */
     font-size: clamp(var(--fs-sm),1.5vw,2.5rem);
     font-weight: 700;
 }
@@ -110,8 +109,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 1rem;
-    /* font-size: var(--fs-sm); */
-    font-size: clamp(var(--fs-sm),1vw,2rem);
+    font-size: clamp(var(--fs-sm),1.7rem,2vw);
     color: white;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #1f20223d
 }
@@ -197,14 +195,14 @@
 }
 
 .section2 .dashboard-section .heading2 {
-    font-size: var(--fs-sm);
+    font-size: clamp(var(--fs-sm),1.5vw,2.5rem);
     font-weight: 700;
 }
 
 .section2 .button1 {
     min-width: 9rem;
     font-size: var(--fs-sm);
-    padding: min(1vh,.7rem);
+    padding: max(1.5vh,.7rem);
     color: white;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #5c071d7c
 }
@@ -216,4 +214,7 @@
 .section2 .register-section p:nth-child(1) {
     font-size: var(--fs-sm2);
     margin-bottom: 1rem;
+}
+.link{
+    font-size: var(--fs-sm2);
 }
