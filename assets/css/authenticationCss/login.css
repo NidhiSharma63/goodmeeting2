@@ -50,17 +50,6 @@
     flex-direction: column;
 }
 
-.container .section2 {
-    height: 100%;
-    flex-direction: column;
-    padding-block: min(10vh,4rem);
-    min-width: 38rem;
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.986);
-    border-radius: 2rem;
-    margin-right: 9rem;
-    box-shadow: 0.2rem 0rem 4rem 0rem black;
-}
 
 .section1 .logo img {
     width: 17rem;
@@ -76,6 +65,17 @@
 
 .section1 .image img {
     min-width: 50rem;
+}
+.section2 {
+    height: 100%;
+    flex-direction: column;
+    padding-block: min(10vh,4rem);
+    width: max(38rem,30%);
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.986);
+    border-radius: 2rem;
+    margin-right: 9rem;
+    box-shadow: 0.2rem 0rem 4rem 0rem black;
 }
 
 .section2 .group1 {
@@ -95,7 +95,9 @@
 }
 
 .section2 .account-section .heading1 {
-    font-size: var(--fs-sm);
+    /* font-size: var(--fs-sm); */
+    /* font-size: 1.3vw; */
+    font-size: clamp(var(--fs-sm),1.5vw,2.5rem);
     font-weight: 700;
 }
 
@@ -108,7 +110,8 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 1rem;
-    font-size: var(--fs-sm);
+    /* font-size: var(--fs-sm); */
+    font-size: clamp(var(--fs-sm),1vw,2rem);
     color: white;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #1f20223d
 }
