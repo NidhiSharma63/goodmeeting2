@@ -80,39 +80,76 @@
   .group3 {
     margin-top: 0rem;
   }
-  .group2{
+
+  .group2 {
     width: 10rem;
   }
-  .group2 .button1{
+
+  .group2 .button1 {
     padding-inline: .6rem;
   }
-  .group2 .button1{
+
+  .group2 .button1 {
     font-size: 1.5rem;
   }
+
   .crystal1,
   .crystal2,
   .crystal3 {
     z-index: 1;
   }
 }
+
 @media screen and (max-width:586px) {
-  .container .col2{
+  .container{
+    padding-block: 1rem;
+    gap: 2rem;
+  }
+  .container .col2 {
     width: 70%;
   }
-  .container .col1 .text p:first-child{
+
+  .container .col1 .text p:first-child {
     font-size: var(--fs-md2);
-  } 
-  .container .col1 .text p:last-child{
+  }
+
+  .container .col1 .text p:last-child {
     font-size: var(--fs-sm2);
-  } 
+  }
 }
+
 @media screen and (max-width:470px) {
-  .container .col2{
+  .col1 .logo{
+    width: 5rem;
+    overflow: hidden;
+    margin-left: 1rem;
+  }
+  .col1 .text {
+    text-align: center;
+    width: 79%;
+    margin: auto;
+  }
+
+  .container .col1 .text p:first-child {
+    line-height: 5rem;
+    font-size: var(--fs-md);
+  }
+
+  .container .col1 .text p:last-child {
+    font-size: var(--fs-sm);
+    line-height: var(--lh-sm);
+  }
+  .container .col2 {
     width: 90%;
   }
 }
+
 @media screen and (max-width:370px) {
-  .container .col2{
+  .container .col2 {
     width: 97%;
   }
 }
+
+/* text-align: center;
+width: 79%;
+margin: auto; */
