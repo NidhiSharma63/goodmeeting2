@@ -1,29 +1,149 @@
-.container .section1 .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 10rem;
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--secondary-color);
+    border-bottom-right-radius: 89rem;
 }
 
-.container .section1 .text p:nth-child(1) {
-    font-size: 3.6rem;
-    font-weight: 700;
+.container {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        'col1 col1 col1 col2'
+    ;
+    max-height: 100vh;
+    width: 100%;
+    padding-inline: min(2vh, 2rem);
+    padding-block: min(2vh, 2rem);
+    font-size: 2rem;
+    /*declaring size of in parent container*/
 }
 
-.container .section1 .text p:nth-child(2) {
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
+.col1 {
+    grid-area: col1;
+    color: white;
 }
 
-.container .section1 .image {
+.col1 .logo img {
+    width: 14rem;
+}
+
+.col1 .image {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container .section1 .image img {
-    width: 46rem;
+.col1 .image img {
+    width: 50rem;
     margin-top: 4rem;
+    position: relative;
+    z-index: 2;/*to don't overlap crystal on image*/
+}
+
+.col2 {
+    grid-area: col2;
+    position: relative;
+    z-index: 2;/*to don't overlap crystal on form*/
+}
+
+.col1 .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: var(--lh-md);
+    letter-spacing: var(--ls-sm);
+    position: relative;
+    z-index: 2;/*to don't overlap crystal on heading*/
+}
+
+.col1 .text p:nth-child(1) {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.col1 .text p:nth-child(2) {
+    font-size: .7em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.col2 .register-content {
+    display: grid;
+    grid-template-areas: 
+    'group1'
+    'group2'
+    'group3'
+    ;
+    padding: 3rem;
+    height: 95%;
+    width: 85%;
+    background-color: rgba(255, 255, 255, 0.986);
+    border-radius: 2rem;
+    box-shadow: 0.2rem 0rem 4rem 0rem black;
+    gap: .5em;
+}
+.group1,
+.group3
+{
+    grid-area: group1;
+    flex-direction: column;
+}
+
+.register-content .group1>p {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.register-content .group1 .form>div {
+    width: 70%;
+    margin: 2rem auto;
+    border-bottom: 1px solid var(--light-black-color);
+    height: 4rem;
+    justify-content: space-between;
+}
+.register-content .group1 .form div:last-child{
+    border-bottom: none;
+    width: 100%;
+    margin: 0rem auto;
+}
+.form input {
+    border: none;
+    outline: none;
+    margin-left: 1em;
+    font-size: .9em;
+    color: var(--light-black-color);
+    width: 100%;
+}
+.form .checkbox input{
+    width: 3em;
+    margin-left: 0rem;
+}
+.register-content .group1 i {
+    font-size: 1.1em;
+}
+.form .checkbox span{
+    font-size: .7em;
+}
+
+.group2{
+    grid-area: group2;
+    width: 14rem;
+    margin: auto;
+    margin-top: -2rem;
+}
+.group2 button{
+    width: 100%;
+    color: white;
+}
+.group3{
+    grid-area: group3;
+    justify-content: flex-start;
+    margin-top: -3em;
+    font-size: .7em;
 }

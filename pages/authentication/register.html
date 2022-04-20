@@ -5,17 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/css/utility.css">
-    <link rel="stylesheet" href="/assets/css/authenticationCss/login&register.css">
+    <!-- <link rel="stylesheet" href="/assets/css/authenticationCss/login&register.css"> -->
     <link rel="stylesheet" href="/assets/css/authenticationCss/register.css">
+    <link rel="stylesheet" href="/assets/css/authenticationCss/crystal.css">
     <link rel="stylesheet" href="/assets/css/responsive/common.css">
     <link rel="stylesheet" href="/assets/css/responsive/authentication.css">
     <title>Signup</title>
 </head>
 
 <body>
+    <div class="cover"></div>
     <div class="container">
-        <div class="section1">
+        <div class="crystal1">
+        </div>
+        <div class="crystal2">
+        </div>
+        <div class="crystal3">
+        </div>
+        <div class="col1">
             <div class="logo">
                 <img src="/assets/images/header/logo2.png" alt="img" width="14rem">
             </div>
@@ -27,20 +38,28 @@
                 <img src="/assets/images/authentaction/register.png" alt="img" width="38rem">
             </div>
         </div>
-        <div class="section2">
-            <div class="dashboardSection font1">
-                <p class="letterSpacing">Register Account</p>
-                <form action="" class="group1">
-                    <input type="text" placeholder="justin.g@email.com" id="email">
-                    <input type="text" placeholder="Password" id="password">
-                    <input type="text" placeholder="Confirm Password" id="confirmPassword">
-                    <div>
-                        <input type="checkbox" name="checkbox" id="checkbox">
-                        <label for="checkbox">i agree and accept <a href="">Terms and Condition</a></label>
-                    </div>
-                </form>
-                <div class="button1">Register</div>
-                <div class="group2">
+        <div class="col2 flex">
+            <div class="register-content">
+                <div class="group1 flex lightBlackColor">
+                    <p>Register Account</p>
+                    <form action="" class="form">
+                        <div class="email flex"><span class="email-icon"><i
+                                    class="fa-solid fa-envelope secondaryColor"></i></span><input type="email"
+                                placeholder="justin.g@email.com" id="email"></div>
+                        <div class="password flex"><span class="password-icon"><i
+                                    class="fa-solid fa-lock secondaryColor"></i></span><input type="password" placeholder="Password"
+                                id="password"></div>
+                        <div class="confirmation flex"><span class="confirmation-icon"><i
+                                    class="fa-solid fa-lock secondaryColor"></i></span><input type="password"
+                                placeholder="Confirm Password" id="confirm-password"></div>
+                        <div class="checkbox flex lightBlackColor">
+                            <input type="checkbox" name="checkbox" id="checkbox">
+                            <span for="checkbox">i agree and accept <a href="">Terms and Condition</a></span>
+                        </div>
+                    </form>
+                </div>
+                <a href="" class="group2"><button class="button1">Register</button></a>
+                <div class="group3 flex font2 lightBlackColor">
                     <p>Already have an account?</p>
                     <a href="/pages/authentication/login.html">Login</a>
                 </div>
@@ -48,8 +67,8 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/javascript/allPageTheme.js"></script>
 </body>
 

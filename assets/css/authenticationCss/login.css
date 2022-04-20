@@ -51,7 +51,6 @@
     flex-direction: column;
 }
 
-
 .section1 .logo img {
     width: 17rem;
     margin: 1rem;
@@ -71,7 +70,7 @@
     height: 100%;
     flex-direction: column;
     padding-block: min(10vh,4rem);
-    width: 30%;
+    min-width: 30%;
     margin: auto;
     background-color: rgba(255, 255, 255, 0.986);
     border-radius: 2rem;
@@ -95,8 +94,9 @@
     border-bottom: 1px solid var(--secondary-color);
 }
 
-.section2 .account-section .heading1 {
-    font-size: clamp(var(--fs-sm),1.5vw,2.5rem);
+.section2 .account-section .heading1,
+.section2 .dashboard-section .heading2 {
+      font-size: clamp(var(--fs-sm),1.9vw,2rem); 
     font-weight: 700;
 }
 
@@ -109,7 +109,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 1rem;
-    font-size: clamp(var(--fs-sm),1.7rem,2vw);
+    font-size: clamp(var(--fs-sm),1.7vw,1.8rem);
     color: white;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #1f20223d
 }
@@ -150,7 +150,7 @@
     border: none;
     background-color: transparent;
     padding-left: 1rem;
-    font-size: var(--fs-sm2);
+    font-size: clamp(var(--fs-sm2),1.9vw,1.7rem);
 }
 
 .section2 .dashboard-section .group1 .email,
@@ -171,14 +171,15 @@
 
 .section2 .dashboard-section .group1 .emailIcon,
 .section2 .dashboard-section .group1 .key-icon {
-    font-size: var(--fs-sm);
+    font-size: clamp(var(--fs-sm2),1.9vw,1.7rem);
     background-color: var(--secondary-color);
     color: white;
-    padding: min(1vh,.9rem);
+    padding: min(2vh,.9rem);
 }
 
 .section2 .account-section h1 {
     margin-top: 1rem;
+    font-size: clamp(var(--fs-sm2),1.9vw,2rem)
 }
 
 .section2 .dashboard-section .group1 {
@@ -194,14 +195,9 @@
     font-size: var(--fs-sm2);
 }
 
-.section2 .dashboard-section .heading2 {
-    font-size: clamp(var(--fs-sm),1.5vw,2.5rem);
-    font-weight: 700;
-}
-
 .section2 .button1 {
     min-width: 9rem;
-    font-size: var(--fs-sm);
+    font-size: clamp(var(--fs-sm),1.5vw,1.7rem);
     padding: max(1.5vh,.7rem);
     color: white;
     box-shadow: 0.3rem 0.3rem 1rem 0rem #5c071d7c
@@ -212,9 +208,9 @@
 }
 
 .section2 .register-section p:nth-child(1) {
-    font-size: var(--fs-sm2);
+    font-size: clamp(var(--fs-sm),1.3vw,2rem);
     margin-bottom: 1rem;
 }
 .link{
-    font-size: var(--fs-sm2);
+    font-size: clamp(var(--fs-sm2),1vw,1.3rem);
 }
