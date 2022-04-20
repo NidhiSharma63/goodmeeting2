@@ -1,0 +1,108 @@
+@media (max-width: 3200px) and (min-width: 1369px) {
+.section2{
+    min-width: 35%;
+}
+    .section2 .account-section .heading1,
+    .section2 .dashboard-section .heading2 {
+        font-size: clamp(var(--fs-sm), 1.9vw, 5rem);
+        font-weight: 700;
+    }
+
+    .account-section .google,
+    .account-section .facebook {
+        min-width: 37rem;
+        font-size: clamp(var(--fs-sm), 1.7vw, 4rem);
+    }
+
+    .account-section .google img,
+    .account-section .facebook img {
+        min-width: 3rem;
+    }
+    .section2 .dashboard-section .checkBox {
+        min-width: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: var(--fs-sm2);
+    }
+    .section2 .dashboard-section .group1 input[type='checkbox'] {
+        min-width: 2rem;
+    }
+    .section2 .dashboard-section .group1 input,
+    .section2 .account-section h1,
+    .section2 .register-section p:nth-child(1),
+    .section2 .button1  {
+        font-size: clamp(var(--fs-sm), 1.7vw, 4rem);
+    }
+
+    .section2 .dashboard-section .checkBox,
+    .link {
+        font-size: clamp(var(--fs-sm), 1.3vw, 2rem);
+    }
+
+    .section2 .dashboard-section .group1 .emailIcon,
+    .section2 .dashboard-section .group1 .key-icon {
+        font-size: clamp(var(--fs-sm2), 1.9vw, 4rem);
+    }
+
+    .section1 .logo img {
+        width: 22rem;
+    }
+
+    .section2 .account-section {
+        min-height: 28rem;
+    }
+
+    .section2 .dashboard-section {
+        min-height: 49rem;
+    }
+
+    .section2 .group1 {
+        min-height: 22rem;
+    }
+
+    /*
+   
+
+    .account-section .google,
+    .account-section .facebook {
+        min-width: 36rem;
+    }
+
+    .account-section .google img,
+    .account-section .facebook img {
+        width: 3rem;
+    }
+
+    .section2 .dashboard-section {
+        min-height: 48rem;
+    }
+
+    .section2 .group1 {
+        height: 19rem;
+    }
+
+    .section2 .dashboard-section .checkBox {
+        width: 23rem;
+    }
+
+    .section2 .dashboard-section .group1 input[type='checkbox'] {
+        min-width: 2rem;
+    }
+
+    :root {
+        --fs-sm: 2.7rem;
+        --fs-sm2: 2.3rem;
+    } */
+}
+
+@media (max-width: 1600px) and (min-width: 1369px) {
+
+    .section1 .image img {
+        width: max(40rem, 85%);
+    }
+
+    .section2 {
+        width: max(38rem, 36%);
+    }
+}

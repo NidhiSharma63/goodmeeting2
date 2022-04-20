@@ -2,6 +2,7 @@
   html {
     font-size: 158.5%;
   }
+
 }
 
 @media (max-width:2256px) and (min-width:1368px) {
@@ -9,8 +10,12 @@
     width: 16rem;
   }
 
+  .col1 .login-image img {
+    width: 50rem;
+  }
+
   .col1 .image img {
-    width: 40rem;
+    width: 59rem;
   }
 
   .col2 .register-content {
@@ -33,13 +38,22 @@
     font-size: 62.5%;
   }
 }
+
 @media screen and (max-width:1100px) {
   .col1 .image img {
     width: 38rem;
   }
 
+  .col1 .login-image img {
+    width: 50rem;
+  }
+
   .col2 .register-content {
     width: 95%;
+  }
+
+  .col2 .wrapper {
+    width: 99%;
   }
 }
 
@@ -53,7 +67,7 @@
       'col1'
       'col2'
     ;
-    padding: 0;
+    padding: 1rem;
   }
 
   .container .col1 .image img {
@@ -91,13 +105,18 @@
   .crystal3 {
     z-index: 1;
   }
+
+  .wrapper .group2 {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width:586px) {
-  .container{
+  .container {
     padding-block: 1rem;
     gap: 2rem;
   }
+
   .container .col2 {
     width: 70%;
   }
@@ -109,14 +128,21 @@
   .container .col1 .text p:last-child {
     font-size: var(--fs-sm2);
   }
+
+  /* login section */
+  .col2 .wrapper .group1 .google,
+  .col2 .wrapper .group1 .facebook {
+    width: 81%;
+  }
 }
 
 @media screen and (max-width:470px) {
-  .col1 .logo{
+  .col1 .logo {
     width: 5rem;
     overflow: hidden;
     margin-left: 1rem;
   }
+
   .col1 .text {
     text-align: center;
     width: 79%;
@@ -132,8 +158,18 @@
     font-size: var(--fs-sm);
     line-height: var(--lh-sm);
   }
+
   .container .col2 {
     width: 90%;
+  }
+
+  /* login section */
+  .wrapper .group3>a {
+    font-size: var(--fs-sm);
+  }
+
+  .wrapper .group3>P {
+    font-size: var(--fs-md2);
   }
 }
 

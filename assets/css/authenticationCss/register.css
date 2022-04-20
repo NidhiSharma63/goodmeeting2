@@ -1,74 +1,8 @@
-.cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: var(--secondary-color);
-    border-bottom-right-radius: 89rem;
-}
-
-.container {
-    position: relative;
-    display: grid;
-    grid-template-areas:
-        'col1 col1 col1 col2'
-    ;
-    max-height: 100vh;
-    width: 100%;
-    padding-inline: min(2vh, 2rem);
-    padding-block: min(2vh, 2rem);
-}
-
-.col1 {
-    grid-area: col1;
-    color: white;
-}
-
-.col1 .logo img {
-    width: 14rem;
-}
-
-.col1 .image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.col1 .image img {
-    width: 50rem;
-    margin-top: 4rem;
-    position: relative;
-    z-index: 2;/*to don't overlap crystal on image*/
-}
 
 .col2 {
     grid-area: col2;
     position: relative;
     z-index: 2;/*to don't overlap crystal on form*/
-}
-
-.col1 .text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    line-height: var(--lh-md);
-    letter-spacing: var(--ls-sm);
-    position: relative;
-    z-index: 2;/*to don't overlap crystal on heading*/
-}
-
-.col1 .text p:nth-child(1) {
-    font-size: var(--fs-md);
-    font-weight: 700;
-}
-
-.col1 .text p:nth-child(2) {
-    font-size: var(--fs-sm2);
-    font-weight: 600;
-    text-align: center;
 }
 
 .col2 .register-content {

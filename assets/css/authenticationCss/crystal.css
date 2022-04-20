@@ -1,0 +1,40 @@
+.crystal1,
+.crystal2,
+.crystal3 {
+    position: fixed;
+    width: 15rem;
+    background: rgb(29, 78, 211);
+    top: 3rem;
+    left: 47rem;
+    height: 12rem;
+    border-radius: 1rem;
+    transform: rotate(45deg);
+    z-index: -1;
+    /* animation: movecrystal; */
+    animation-duration: 1s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+.crystal2 {
+    left: 3rem;
+    bottom: -2rem;
+    top: 30rem;
+    width: 11rem;
+    transform: rotate(32deg);
+}
+
+.crystal3 {
+    width: 10rem;
+    height: 9rem;
+    top: 35rem;
+    left: 70rem;
+}
+@keyframes movecrystal {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(20px);
+    }
+}

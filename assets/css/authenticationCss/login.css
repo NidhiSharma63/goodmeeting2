@@ -1,216 +1,117 @@
-.container {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    padding: 1rem;
-}
 
-.cover {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: var(--secondary-color);
-    z-index: -1;
-    border-bottom-right-radius: 89rem;
-}
-
-.crystal1,
-.crystal2,
-.crystal3 {
-    position: fixed;
-    width: 15rem;
-    background: rgb(29, 78, 211);
-    top: 3rem;
-    left: 47rem;
-    height: 12rem;
-    border-radius: 2rem;
-    transform: rotate(45deg);
-    z-index: -1;
-}
-
-.crystal2 {
-    left: 3rem;
-    bottom: -2rem;
-    top: 30rem;
-    width: 11rem;
-}
-
-.crystal3 {
-    width: 10rem;
-    height: 9rem;
-    top: 35rem;
-    left: 70rem;
-}
-
-.container .section1 {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.section1 .logo img {
-    width: 17rem;
-    margin: 1rem;
-}
-
-.section1 .image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.section1 .image img {
-    width: 70%;
-}
-.section2 {
-    height: 100%;
-    flex-direction: column;
-    padding-block: min(10vh,4rem);
-    min-width: 30%;
-    margin: auto;
+.col2 .wrapper {
+    display: grid;
+    grid-template-areas: 
+    'group1'
+    'group2'
+    'group3'
+    ;
+    padding: 3rem;
+    height: 115%;
+    width: 85%;
     background-color: rgba(255, 255, 255, 0.986);
     border-radius: 2rem;
-    margin-right: 9rem;
     box-shadow: 0.2rem 0rem 4rem 0rem black;
+    gap:2rem;
 }
-
-.section2 .group1 {
-    height: 14rem;
-}
-
-.section2 .account-section {
+.col2 .wrapper .group1{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 21rem;
-    min-width: 25rem;
-    padding-block: min(2vh,2rem);
-    margin-bottom: 3rem;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--light-black-color);
 }
-
-.section2 .account-section .heading1,
-.section2 .dashboard-section .heading2 {
-      font-size: clamp(var(--fs-sm),1.9vw,2rem); 
-    font-weight: 700;
+.col2 .wrapper .group1>p{
+    font-size: var(--fs-sm);
+    font-weight: 800;
 }
-
-.account-section .google,
-.account-section .facebook {
+.col2 .wrapper .group1 .google,
+.col2 .wrapper .group1 .facebook{
     background-color: rgb(44, 90, 218);
-    display: flex;
-    min-width: 25rem;
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 1rem;
-    font-size: clamp(var(--fs-sm),1.7vw,1.8rem);
     color: white;
-    box-shadow: 0.3rem 0.3rem 1rem 0rem #1f20223d
+    box-shadow: 0.3rem 0.3rem 1rem 0rem #1f20223d;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    width: 73%;
+    justify-content: space-between;
+    font-size: 1.5rem;
 }
-
-.section2 .account-section .facebook {
-    margin-top: 0rem;
-    background-color: rgb(211, 29, 74);
-}
-
-.google .googleImg,
+.google .google-img,
 .facebook .facebook-img {
     border: 2px solid white;
     background-color: rgb(255, 255, 255);
-    padding: min(1vh,.7rem);
 }
-
-.account-section .google img,
-.account-section .facebook img {
-    min-width: 2rem;
+.google .google-img img,
+.facebook .facebook-img img{
+    width: 2.5rem;
 }
-
-.google .text,
-.facebook .text {
-    padding-right: min(1vh,1.5rem);
+.col2 .wrapper .group1 h1{
+    margin: 1rem;
+    font-size: var(--fs-sm);
 }
-
-.section2 .dashboard-section {
-    min-height: 32rem;
+/* group2 */
+.wrapper .group2{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-direction: column;
-}
-
-.section2 .dashboard-section .group1 input {
-    min-height: 3.5rem;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    padding-left: 1rem;
-    font-size: clamp(var(--fs-sm2),1.9vw,1.7rem);
-}
-
-.section2 .dashboard-section .group1 .email,
-.section2 .dashboard-section .group1 .password {
-    border: 2px solid var(--secondary-color);
-    display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
-.section2 .dashboard-section .group1 input[type='checkbox'] {
-    min-width: 1rem;
-}
-
-.section2 .dashboard-section .group1 input::placeholder {
-    color: var(--light-black-color);
-}
-
-.section2 .dashboard-section .group1 .emailIcon,
-.section2 .dashboard-section .group1 .key-icon {
-    font-size: clamp(var(--fs-sm2),1.9vw,1.7rem);
-    background-color: var(--secondary-color);
-    color: white;
-    padding: min(2vh,.9rem);
-}
-
-.section2 .account-section h1 {
-    margin-top: 1rem;
-    font-size: clamp(var(--fs-sm2),1.9vw,2rem)
-}
-
-.section2 .dashboard-section .group1 {
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.section2 .dashboard-section .checkBox {
-    min-width: 13rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: var(--fs-sm2);
-}
-
-.section2 .button1 {
-    min-width: 9rem;
-    font-size: clamp(var(--fs-sm),1.5vw,1.7rem);
-    padding: max(1.5vh,.7rem);
-    color: white;
-    box-shadow: 0.3rem 0.3rem 1rem 0rem #5c071d7c
-}
-
-.section2 .register-section {
-    flex-direction: column;
-}
-
-.section2 .register-section p:nth-child(1) {
-    font-size: clamp(var(--fs-sm),1.3vw,2rem);
+.wrapper .group2>p{
+    font-size: var(--fs-sm);
+    font-weight: 800;
     margin-bottom: 1rem;
 }
-.link{
-    font-size: clamp(var(--fs-sm2),1vw,1.3rem);
+.wrapper .group2 .form{
+    flex-direction: column;
+}
+.wrapper .group2 .form>div{
+    width: 80%;
+    margin: auto;
+    border-bottom: 1px solid;
+    padding: 1.5rem;
+}
+.wrapper .group2 .form div:last-child{
+    border-bottom: none;
+    margin-top: 1rem;
+}
+.form input {
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    font-size: var(--fs-sm);
+    color: var(--light-black-color);
+    width: 100%;
+}
+.form .checkbox input{
+    width: 3em;
+    margin-left: 0rem;
+}
+.form i {
+    font-size: var(--fs-md);
+}
+.form .checkbox span{
+    font-size: var(--fs-sm2);
+}
+.group2 .login-btn{
+    width: 25%;
+    margin: auto;
+}
+.group2 .login-btn .button1{
+    color: white;
+    width: 100%;
+    padding-block: .7rem;
+}
+.wrapper .group3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.wrapper .group3 >a{
+    font-size: var(--fs-sm2);
+}
+.wrapper .group3>P{
+    font-size: var(--fs-sm);
 }
