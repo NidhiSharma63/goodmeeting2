@@ -9,7 +9,9 @@
     padding: 1rem 2rem;
     color: white;
     min-height: 14rem;
-    width: 100%;
+    width: 100vw;
+    position: relative;
+    bottom: 0;
 }
 .section6 .col1{
     grid-area: col1;

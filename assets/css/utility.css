@@ -48,6 +48,9 @@ html,body
 .root {
     width: 100%;
     min-width: 300px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
     display: grid;
     gap: 6rem;
     grid-template-areas:

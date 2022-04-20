@@ -1,5 +1,4 @@
 .section3{
-    grid-area: section3;
     display: grid;
     width: 90%;
     margin: auto;
