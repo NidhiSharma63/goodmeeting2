@@ -22,6 +22,8 @@
 }
 .group1,
 .group3
+
+
 {
     grid-area: group1;
     flex-direction: column;

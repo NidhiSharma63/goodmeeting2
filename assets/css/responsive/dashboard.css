@@ -2,6 +2,24 @@
     .section1 .col1 .logoContainer img {
         width: 20rem;
     }
+
+    .sunBlock {
+        transform: translateY(-17px);
+    }
+
+    .sun {
+        transform: translateY(-17px);
+    }
+
+    @keyframes showSunAnim {
+        from {
+            transform: translateY(-20px);
+        }
+
+        to {
+            transform: translateY(-17px);
+        }
+    }
 }
 
 @media screen and (max-width:922px) {
@@ -13,6 +31,14 @@
 @media screen and (max-width:830px) {
     .section1 .col1 .logoContainer img {
         width: 28rem;
+    }
+
+    .section1 .col2Container {
+        min-width: 33rem;
+    }
+
+    .darkSwitch {
+        font-size: var(--fs-xl);
     }
 }
 
@@ -74,9 +100,11 @@
         top: 4rem;
         width: 24.7rem;
     }
-    .section3 .group2 .col1::after{
+
+    .section3 .group2 .col1::after {
         width: 18rem;
     }
+
     .section4 {
         grid-template-areas:
             'group1'
@@ -117,6 +145,14 @@
 @media screen and (max-width:500px) {
     .section1 .col1 .logoContainer img {
         width: 25rem;
+    }
+
+    .section1 .col2Container {
+        min-width: 23rem;
+    }
+
+    .darkSwitch {
+        font-size: var(--fs-sm);
     }
 
     .section2 {
