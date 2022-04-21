@@ -19,10 +19,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--light-black-color);
+    border-bottom: 1px solid #313640;
 }
 .col2 .wrapper .group1>p{
     font-size: var(--fs-sm);
+    color: #313640;
     font-weight: 800;
 }
 .col2 .wrapper .group1 .google,
@@ -40,14 +41,16 @@
 }
 .google .google-img,
 .facebook .facebook-img {
+    padding: .5rem;
     border: 2px solid white;
     background-color: rgb(255, 255, 255);
 }
 .google .google-img img,
 .facebook .facebook-img img{
-    width: 2.5rem;
+    width: 2.2rem;
 }
 .col2 .wrapper .group1 h1{
+    color: #313640;
     margin: 1rem;
     font-size: var(--fs-sm);
 }
@@ -60,6 +63,7 @@
 }
 .wrapper .group2>p{
     font-size: var(--fs-sm);
+    color: #313640;
     font-weight: 800;
     margin-bottom: 1rem;
 }
@@ -69,7 +73,7 @@
 .wrapper .group2 .form>div{
     width: 80%;
     margin: auto;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #313640;
     padding: 1.5rem;
 }
 .wrapper .group2 .form div:last-child{
@@ -81,7 +85,7 @@
     outline: none;
     margin-left: 1rem;
     font-size: var(--fs-sm);
-    color: var(--light-black-color);
+    color: #313640;
     width: 100%;
 }
 .form .checkbox input{
@@ -93,6 +97,7 @@
 }
 .form .checkbox span{
     font-size: var(--fs-sm2);
+    color: #313640;
 }
 .group2 .login-btn{
     width: 25%;
@@ -114,4 +119,5 @@
 }
 .wrapper .group3>P{
     font-size: var(--fs-sm);
+    color: #313640;
 }

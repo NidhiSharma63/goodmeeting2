@@ -105,12 +105,20 @@
   .crystal3 {
     z-index: 1;
   }
-
+  /* login section */
+  .col2 .wrapper{
+    width: 80%;
+    margin: auto;
+  }
   .wrapper .group2 {
     width: 100%;
   }
 }
-
+@media screen and (max-width:782px) {
+ .col2.group2 .wrapper {
+    width: 100%;
+  }
+}
 @media screen and (max-width:586px) {
   .container {
     padding-block: 1rem;

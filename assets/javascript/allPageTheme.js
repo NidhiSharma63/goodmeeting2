@@ -9,6 +9,7 @@ $(document).ready(function () {
         sun.removeClass('nonVisible')
         sun.addClass('sunBlock');
         $(document.body).removeClass("darkTheme");
+        console.log('run')
         $(".logoContainer").html(`<img src = "/assets/images/logo.png"></img>`);
     }
     const showMoon = () =>{

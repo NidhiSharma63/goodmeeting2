@@ -3,6 +3,16 @@ $(document).ready(() => {
     const headerContainer = $(".headerContainer");
     const sideBar = $(".sideBar");
     const sideBarDivContainer = $(".sideBarDivContainer");
+    const hideSideBar = () =>{
+        sideBarDivContainer.removeClass("sideBarDivContainerShow");
+        sideBarDivContainer.addClass("sideBarDivContainerHide");
+        sideBar.removeClass("barMarginShow");
+        sideBar.addClass("barMarginHide");
+        $("body").css("overflow-y", "visible");
+        setTimeout(() => {
+            sideBarDivContainer.addClass("hide");
+        }, 500)
+    }
     if (matchMedia) {
         var mq2 = window.matchMedia("(max-width: 945px)");
         mq2.addListener(WidthChange2);
@@ -29,16 +39,27 @@ $(document).ready(() => {
             sideBar.removeClass("barMarginHide");
             $("body").css("overflow-y", "hidden");
         } else {
-            sideBarDivContainer.removeClass("sideBarDivContainerShow");
-            sideBarDivContainer.addClass("sideBarDivContainerHide");
-            sideBar.removeClass("barMarginShow");
-            sideBar.addClass("barMarginHide");
-            $("body").css("overflow-y", "visible");
-            setTimeout(() => {
-                sideBarDivContainer.addClass("hide");
-            }, 500);
+            hideSideBar();
         }
     });
 
-    
+    $(".section2").click(()=>{
+        hideSideBar()
+    })   
+
+    $(".section3").click(()=>{
+        hideSideBar()
+    })   
+
+    $(".section4").click(()=>{
+        hideSideBar()
+    })   
+
+    $(".section5").click(()=>{
+        hideSideBar()
+    })   
+
+    $(".section6").click(()=>{
+        hideSideBar()
+    })   
 });
